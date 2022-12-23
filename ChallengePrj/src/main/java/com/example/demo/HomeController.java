@@ -10,6 +10,15 @@ public class HomeController {
 	public String index() {
 		return "index";
 	}
+	@RequestMapping("/detail")
+	public String detail() {
+		return "detail";
+	}
+	
+	@RequestMapping("payment")
+	public String payment() {
+		return "payment";
+	}
 	@RequestMapping("/makingChallenge")
 	public String makingChallenge(){
 		return"makingChallengeForm";
