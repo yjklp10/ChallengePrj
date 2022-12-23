@@ -4327,6 +4327,7 @@ ol {
 	}
 }
 
+/* 신호준 */
 .tgrid-image{
 	display:flex;
 }
@@ -4503,6 +4504,8 @@ ol {
 	padding: 0;
 	margin: 0;
 }
+/* 신호준 */
+
 
 /*---------------------
   Helper CSS
@@ -8619,5 +8622,5 @@ ol {
 		padding-left: 15px;
 		padding-right: 15px;
 	}
->>>>>>> refs/remotes/origin/joara
+
 }
