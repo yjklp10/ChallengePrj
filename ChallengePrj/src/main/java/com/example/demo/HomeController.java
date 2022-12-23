@@ -6,8 +6,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class HomeController {
 
-	@RequestMapping("/index")
+	@RequestMapping("/")
 	public String index() {
 		return "index";
+	}
+	@RequestMapping("/makingChallenge")
+	public String makingChallenge(){
+		return"makingChallengeForm";
 	}
 }
