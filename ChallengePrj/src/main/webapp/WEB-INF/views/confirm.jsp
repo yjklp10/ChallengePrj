@@ -26,6 +26,7 @@
     <style type="text/css">
    h1{
             text-align: center;
+            
         }
         .div1{
          background-color: burlywood;
