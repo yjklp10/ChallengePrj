@@ -5,9 +5,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class HomeController {
-
-	@RequestMapping("/index")
-	public String index() {
-		return "index";
+	
+	@RequestMapping("/mypage")
+	public String mypage() {
+		return "mypage";
 	}
-}
+	
+	@RequestMapping("/point")
+	public String point() {
+		return "point";
+	}
+	
+}	
