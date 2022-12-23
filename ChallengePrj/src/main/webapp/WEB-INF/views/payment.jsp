@@ -1,8 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<html lang="ko">
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<html lang="zxx">
 
 <head>
     <meta charset="UTF-8">
@@ -25,7 +24,6 @@
     <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
-	<link rel="stylesheet" href="css/mystyle.css" type="text/css">
 </head>
 
 <body>
@@ -75,7 +73,7 @@
                             <a href="./index.html">
                                 <img src="img/logo.png" alt="">
                             </a>
-                        </div>    
+                        </div>
                     </div>
                     <div class="col-lg-7 col-md-7">
                         <div class="advanced-search">
@@ -89,55 +87,55 @@
                     <div class="col-lg-3 text-right col-md-3">
                         <ul class="nav-right">
                             <li class="heart-icon"><a href="#">
-                                <i class="icon_heart_alt"></i>
-                                <span>1</span>
-                            </a>
+                                    <i class="icon_heart_alt"></i>
+                                    <span>1</span>
+                                </a>
                             </li>
                             <li class="cart-icon"><a href="#">
-                                <i class="icon_bag_alt"></i>
-                                <span>3</span>
-                            </a>
-                            <div class="cart-hover">
-                                <div class="select-items">
-                                    <table>
-                                        <tbody>
-                                            <tr>
-                                                <td class="si-pic"><img src="img/select-product-1.jpg" alt=""></td>
-                                                <td class="si-text">
-                                                    <div class="product-selected">
-                                                        <p>$60.00 x 1</p>
-                                                        <h6>Kabino Bedside Table</h6>
-                                                    </div>
-                                                </td>
-                                                <td class="si-close">
-                                                    <i class="ti-close"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="si-pic"><img src="img/select-product-2.jpg" alt=""></td>
-                                                <td class="si-text">
-                                                    <div class="product-selected">
-                                                        <p>$60.00 x 1</p>
-                                                        <h6>Kabino Bedside Table</h6>
-                                                    </div>
-                                                </td>
-                                                <td class="si-close">
-                                                    <i class="ti-close"></i>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                    <i class="icon_bag_alt"></i>
+                                    <span>3</span>
+                                </a>
+                                <div class="cart-hover">
+                                    <div class="select-items">
+                                        <table>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="si-pic"><img src="img/select-product-1.jpg" alt=""></td>
+                                                    <td class="si-text">
+                                                        <div class="product-selected">
+                                                            <p>$60.00 x 1</p>
+                                                            <h6>Kabino Bedside Table</h6>
+                                                        </div>
+                                                    </td>
+                                                    <td class="si-close">
+                                                        <i class="ti-close"></i>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="si-pic"><img src="img/select-product-2.jpg" alt=""></td>
+                                                    <td class="si-text">
+                                                        <div class="product-selected">
+                                                            <p>$60.00 x 1</p>
+                                                            <h6>Kabino Bedside Table</h6>
+                                                        </div>
+                                                    </td>
+                                                    <td class="si-close">
+                                                        <i class="ti-close"></i>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="select-total">
+                                        <span>total:</span>
+                                        <h5>$120.00</h5>
+                                    </div>
+                                    <div class="select-button">
+                                        <a href="#" class="primary-btn view-card">VIEW CARD</a>
+                                        <a href="#" class="primary-btn checkout-btn">CHECK OUT</a>
+                                    </div>
                                 </div>
-                                <div class="select-total">
-                                    <span>total:</span>
-                                    <h5>$120.00</h5>
-                                </div>
-                                <div class="select-button">
-                                    <a href="#" class="primary-btn view-card">VIEW CARD</a>
-                                    <a href="#" class="primary-btn checkout-btn">CHECK OUT</a>
-                                </div>
-                            </div>
-                        </li>
+                            </li>
                             <li class="cart-price">$150.00</li>
                         </ul>
                     </div>
@@ -151,8 +149,8 @@
                         <i class="ti-menu"></i>
                         <span>All departments</span>
                         <ul class="depart-hover">
-                            <li class="active"><a href="#">Womenâs Clothing</a></li>
-                            <li><a href="#">Menâs Clothing</a></li>
+                            <li class="active"><a href="#">Women’s Clothing</a></li>
+                            <li><a href="#">Men’s Clothing</a></li>
                             <li><a href="#">Underwear</a></li>
                             <li><a href="#">Kid's Clothing</a></li>
                             <li><a href="#">Brand Fashion</a></li>
@@ -174,7 +172,7 @@
                             </ul>
                         </li>
                         <li><a href="./blog.html">Blog</a></li>
-                        <li><a href="./contact.html">Contact</a></li>
+                        <li><a href="./check-out.html">Contact</a></li>
                         <li><a href="#">Pages</a>
                             <ul class="dropdown">
                                 <li><a href="./blog-details.html">Blog Details</a></li>
@@ -193,50 +191,67 @@
     </header>
     <!-- Header End -->
 
-    <!-- Breadcrumb Section Begin -->
-    <div class="breacrumb-section">
+    <!-- Blog Details Section Begin -->
+    <section class="blog-details spad">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="breadcrumb-text">
-                        <a href="#"><i class="fa fa-home"></i> Home</a>
-                        <span>아이디/비밀번호 찾기</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Breadcrumb Form Section Begin -->
-
-    <!-- Register Section Begin -->
-    <div class="register-login-section spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 offset-lg-3">
-                    <div class="register-form">
-                        <h2>아이디/비밀번호 찾기</h2>
-                        <form action="#">
-                            <div class="con">
-                            	<ul class="ayer-tab" >
-                            		<li class="active" onclick="" style>아이디</li>
-                            		<li class="" onclick="">비밀번호</li>
-                            	</ul>
-                            	<div class="tab-cont">
-                            		<p class="cont-txt">본인 확인을 위해 아래의 정보를 입력해 주세요</p>
-                            		
-                            	</div>
-                            </div>
-                        </form>
-                        <div class="switch-login">
-                            <a href="login.do" class="or-login">Or Login</a>
+                    <div class="blog-details-inner">
+                        <div class="blog-detail-title">
+                            <h2>참가하기</h2>
                         </div>
-                    </div>
+                        <hr>
+                        <div class="payment">
+                        <div class="paymentimg">
+                            <img src="img/certification/X-3.jpg" alt="">
+                        </div>
+                        <div class="payments">
+                        <div class="payment-1">
+                            <p>챌린지 이름</p>
+                            <a>운동하기</a>
+                        </div>
+                        <br><br>
+                        <div class="payment-1">
+                        	<p>챌린지 기간</p>
+                        	<a>12-22(월)~12-26(월)</a>
+                        </div>
+                        </div>
+                        </div>
+                        <hr><br>
+                        <div class="deposit">
+                        	<h3>예치금</h3>
+                        </div>
+                        <br><br>
+                        <div class="money">
+                        	<p>10,000원</p>
+                        </div>
+                        <hr>
+                        <div class="moneys">
+                        <div class="moneybut-1">
+                        	<button>10,000원</button>
+                        </div>
+                        <div class="moneybut-1">
+                        	<button>20,000원</button>
+                        </div>
+                        <div class="moneybut-1">
+                        	<button>30,000원</button>
+                        </div>
+                        <div class="moneybut-1">
+                        	<button>40,000원</button>
+                        </div>
+                        </div>
+                        <br><br>
+                        <div class="guide">
+                        	<p>주의사항</p>
+                        	
+                        </div>
+                   </div>     
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Register Form Section End -->
-    
+    </section>
+    <!-- Blog Details Section End -->
+
     <!-- Partner Logo Section Begin -->
     <div class="partner-logo">
         <div class="container">
