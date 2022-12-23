@@ -23,4 +23,8 @@ public class HomeController {
 	public String makingChallenge(){
 		return"makingChallengeForm";
 	}
+	@RequestMapping("/challdetail")
+	public String challdetail() {
+		return "challdetail";
+	}
 }
