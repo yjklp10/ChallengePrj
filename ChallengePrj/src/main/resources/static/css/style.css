@@ -84,7 +84,11 @@ p {
 	margin: 0 0 15px 0;
 }
 
-<<<<<<< HEAD
+
+img {
+	max-width: 100%;
+}
+
 
 input:focus,
 select:focus,
@@ -197,6 +201,7 @@ ol {
 	padding: 13px 45px 11px;
 	cursor: pointer;
 }
+
 .site-btn-2 {
 	color: #ffffff;
 	background: #e7ab3c;
@@ -209,6 +214,7 @@ ol {
 	position: relative;
     left: 300px;
 }
+
 
 /* Preloder */
 
@@ -2080,9 +2086,12 @@ ol {
 }
 
 .product-pic-zoom img {
+
+	min-width: 100%;
 	width: 100%;
     border: 1px solid #ebebeb;
     border-radius: 10px;
+
 }
 
 .product-pic-zoom .zoom-icon {
@@ -2437,7 +2446,6 @@ ol {
 
 .specification-table {
 	padding-top: 52px;
-	
 }
 
 .specification-table table {
@@ -3313,10 +3321,14 @@ ol {
 	letter-spacing: 0;
 }
 
+
+.blog-details-inner .blog-large-pic img {
+	min-width: 100%;
+}
+
 .paymentimg img {
 	width: 500px;
 }
-
 
 
 .blog-details-inner .blog-detail-desc {
@@ -4327,6 +4339,38 @@ ol {
 	}
 }
 
+
+/*---------------------
+ 	bomi css
+-----------------------*/
+.blog-sidebar .blog-catagory .group-input label {
+	width: 150px;
+	font-size: 16px;
+	color: #636363;
+	margin-bottom: 13px;
+}
+.blog-sidebar .blog-catagory .group-input input {
+	border: 1px solid #ebebeb;
+	height: 40px;
+	width: 300px;
+	padding-left: 20px;
+	padding-right: 15px;
+}
+.blog-sidebar .blog-catagory .group-input .checkbox {
+	font-size: 16px;
+	width: 400px;
+}
+.blog-sidebar .blog-catagory .group-input .checkbox input{
+	height: 20px;
+	width: 20px;
+	margin-top :5px;
+	margin-right :5px;
+}
+.blog-sidebar .blog-catagory .blog-btn {
+
+	letter-spacing: 2px;
+	margin-top: 15px;
+=======
 /* 신호준 */
 .tgrid-image{
 	display:flex;
@@ -4506,7 +4550,6 @@ ol {
 }
 /* 신호준 */
 
-
 /*---------------------
   Helper CSS
 -----------------------*/
@@ -4589,12 +4632,44 @@ ol {
 }
 
 .site-btn {
+>>>
 	color: #ffffff;
 	background: #e7ab3c;
 	border: 1px solid #e7ab3c;
 	font-size: 14px;
 	font-weight: 700;
 	text-transform: uppercase;
+
+	padding: 11px 30px 11px;
+	cursor: pointer;
+}
+.blog-sidebar .blog-catagory .group-input p{
+	margin-left: 150px;
+	font-size: 13px;
+}
+
+.blog-sidebar .blog-catagory .group-input .cancel-btn,
+.blog-sidebar .blog-catagory .group-input .cancel-btn2,
+.blog-sidebar .blog-catagory .group-input .ok-btn2,
+.blog-sidebar .blog-catagory .group-input .no-btn2,
+.blog-sidebar .blog-catagory .group-input .ok-btn,
+.blog-sidebar .blog-catagory .group-input .no-btn   {
+	letter-spacing: 2px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	color: #ffffff;
+	background: #e7ab3c;
+	border: 1px solid #e7ab3c;
+	font-size: 13px;
+	font-weight: 500;
+	text-transform: uppercase;
+	padding: 10px 20px 10px;
+	cursor: pointer;
+}
+.blog-sidebar .blog-catagory .group-input .cancel-div,
+.blog-sidebar .blog-catagory .group-input .cancel-div2{
+	display: none;
+=======
 	padding: 13px 45px 11px;
 	cursor: pointer;
 }
