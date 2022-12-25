@@ -12,13 +12,14 @@ repositories {
 	mavenCentral()
 }
 
-dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+dependencies {  
+	implementation 'org.springframework.boot:spring-boot-starter-web' 
 	implementation "org.apache.tomcat.embed:tomcat-embed-jasper"
 	implementation 'javax.servlet:jstl'
+	runtimeOnly 'mysql:mysql-connector-java'
 }
 
 tasks.named('test') {
 	useJUnitPlatform()
 }
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
