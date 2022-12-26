@@ -40,5 +40,9 @@ public class HomeController {
 	public String challdetail() {
 		return "challdetail";
 	}
+	@RequestMapping("/ex")
+	public String ex() {
+		return "ex";
+	}
 }
 

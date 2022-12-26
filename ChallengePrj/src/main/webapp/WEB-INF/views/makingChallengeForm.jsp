@@ -113,6 +113,7 @@ padding-top: 8px;
                 offline_select.style.display = "none";
             }
         }
+     
     </script>
     
 
@@ -356,9 +357,7 @@ padding-top: 8px;
                                 <input type="radio" id="frequency_select8" name="frequency"><label for="frequency_select8">주 5회</label>
                                 <input type="radio" id="frequency_select8" name="frequency"><label for="frequency_select8">주 6회</label>
                             </div>
-                            <style>
-                           
-                            </style>
+ 
                             <div class="col-lg-12 choices">
                                 <label for="fir">챌린지 기간<span>*</span></label>
                                 <br>
