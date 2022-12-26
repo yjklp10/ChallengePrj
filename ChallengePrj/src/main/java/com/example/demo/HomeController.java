@@ -17,12 +17,16 @@ public class HomeController {
 		return "point";
 	}
 	
-}	
-
+	@RequestMapping("/main")
+	public String main() {
+		return "main";
+	}
+	
 	@RequestMapping("/")
 	public String index() {
 		return "index";
 	}
+	
 	@RequestMapping("/detail")
 	public String detail() {
 		return "detail";
