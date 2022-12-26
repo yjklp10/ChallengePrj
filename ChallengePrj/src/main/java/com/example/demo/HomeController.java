@@ -18,6 +18,7 @@ public class HomeController {
 	}
 	
 
+
 	@RequestMapping("/main")
 	public String main() {
 		return "main";
@@ -45,6 +46,10 @@ public class HomeController {
 	@RequestMapping("/challdetail")
 	public String challdetail() {
 		return "challdetail";
+	}
+	@RequestMapping("/ex")
+	public String ex() {
+		return "ex";
 	}
 }
 
