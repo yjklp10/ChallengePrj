@@ -238,10 +238,10 @@
                             	<div class="tab-cont">
                             		<strong class="cont-txt" style="margin-left:135px;">본인 확인을 위해 아래의 정보를 입력해 주세요</strong>
                             		<div class="group-input">
-                            			<input id="forget" type="text" placeholder="이름" name="name">
+                            			<input id="forget" type="text" placeholder="이름" name="name" required="required">
                             		</div>
                             		<div class="group-input">
-                            			<input type="email" placeholder="이메일 'abcd@naver.com'" name="email">
+                            			<input type="email" placeholder="이메일 'abcd@naver.com'" name="email" required="required">
                             		</div>
                             		 <button type="submit" class="site-btn register-btn">확인</button>
                             	</div>
