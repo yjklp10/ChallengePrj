@@ -6,10 +6,30 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class HomeController {
 
+
+	
+	@RequestMapping("/mypage")
+	public String mypage() {
+		return "mypage";
+	}
+	
+	@RequestMapping("/point")
+	public String point() {
+		return "point";
+	}
+	
+
+	@RequestMapping("/main")
+	public String main() {
+		return "main";
+	}
+	
+
 	@RequestMapping("/")
 	public String index() {
 		return "index";
 	}
+	
 	@RequestMapping("/detail")
 	public String detail() {
 		return "detail";
@@ -27,6 +47,7 @@ public class HomeController {
 	public String challdetail() {
 		return "challdetail";
 	}
+
 	
 	@RequestMapping("/mypage")
 	public String mypage() {
@@ -44,6 +65,10 @@ public class HomeController {
 	}
 	
 	
+	@RequestMapping("/ex")
+	public String ex() {
+		return "ex";
+	}
 
 }
 

@@ -32,6 +32,74 @@
 /*----------------------------------------*/
 
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	color: #111111;
+	font-weight: 400;
+	font-family: "Muli", sans-serif;
+}
+
+h1 {
+	font-size: 70px;
+}
+
+h2 {
+	font-size: 36px;
+}
+
+h3 {
+	font-size: 30px;
+}
+
+h4 {
+	font-size: 24px;
+}
+
+h5 {
+	font-size: 18px;
+}
+
+h6 {
+	font-size: 16px;
+}
+
+p {
+	font-size: 16px;
+	font-family: "Muli", sans-serif;
+	color: #636363;
+	font-weight: 400;
+	line-height: 26px;
+	margin: 0 0 15px 0;
+}
+
+
+input:focus,
+select:focus,
+button:focus,
+textarea:focus {
+	outline: none;
+}
+
+a:hover,
+a:focus {
+	text-decoration: none;
+	outline: none;
+	color: #fff;
+}
+
+ul,
+ol {
+	padding: 0;
+	margin: 0;
+}
+
+
+
 /*---------------------
  	bomi css
 -----------------------*/
@@ -62,6 +130,7 @@
 
 	letter-spacing: 2px;
 	margin-top: 15px;
+
 	color: #ffffff;
 	background: #e7ab3c;
 	border: 1px solid #e7ab3c;
@@ -74,6 +143,52 @@
 .blog-sidebar .blog-catagory .group-input p{
 	margin-left: 150px;
 	font-size: 13px;
+=======
+	
+=======
+=======
+/*---------------------
+    bomi css
+-----------------------*/
+.blog-sidebar .blog-catagory .group-input label {
+   width: 150px;
+   font-size: 16px;
+   color: #636363;
+   margin-bottom: 13px;
+}
+.blog-sidebar .blog-catagory .group-input input {
+   border: 1px solid #ebebeb;
+   height: 40px;
+   width: 300px;
+   padding-left: 20px;
+   padding-right: 15px;
+}
+.blog-sidebar .blog-catagory .group-input .checkbox {
+   font-size: 16px;
+   width: 400px;
+}
+.blog-sidebar .blog-catagory .group-input .checkbox input{
+   height: 20px;
+   width: 20px;
+   margin-top :5px;
+   margin-right :5px;
+}
+.blog-sidebar .blog-catagory .blog-btn {
+
+   letter-spacing: 2px;
+   margin-top: 15px;
+   color: #ffffff;
+   background: #e7ab3c;
+   border: 1px solid #e7ab3c;
+   font-size: 14px;
+   font-weight: 700;
+   text-transform: uppercase;
+   padding: 11px 30px 11px;
+   cursor: pointer;
+}
+.blog-sidebar .blog-catagory .group-input p{
+   margin-left: 150px;
+   font-size: 13px;
 }
 
 .blog-sidebar .blog-catagory .group-input .cancel-btn,
@@ -82,6 +197,7 @@
 .blog-sidebar .blog-catagory .group-input .no-btn2,
 .blog-sidebar .blog-catagory .group-input .ok-btn,
 .blog-sidebar .blog-catagory .group-input .no-btn   {
+
 	letter-spacing: 2px;
 	margin-top: 10px;
 	margin-bottom: 10px;
@@ -97,6 +213,22 @@
 .blog-sidebar .blog-catagory .group-input .cancel-div,
 .blog-sidebar .blog-catagory .group-input .cancel-div2{
 	display: none;
+   letter-spacing: 2px;
+   margin-top: 10px;
+   margin-bottom: 10px;
+   color: #ffffff;
+   background: #e7ab3c;
+   border: 1px solid #e7ab3c;
+   font-size: 13px;
+   font-weight: 500;
+   text-transform: uppercase;
+   padding: 10px 20px 10px;
+   cursor: pointer;
+}
+.blog-sidebar .blog-catagory .group-input .cancel-div,
+.blog-sidebar .blog-catagory .group-input .cancel-div2{
+   display: none;
+
 }
 
 
@@ -253,7 +385,43 @@
 
 .dropdown-content.show{
   display : block;
-=======
+}
+/* 신호준 */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	color: #111111;
+	font-weight: 400;
+	font-family: "Muli", sans-serif;
+}
+
+h1 {
+	font-size: 70px;
+}
+
+h2 {
+	font-size: 36px;
+}
+
+h3 {
+	font-size: 30px;
+}
+
+h4 {
+	font-size: 24px;
+}
+
+h5 {
+	font-size: 18px;
+}
+
+.dropdown-content.show{
+  display : block;
 }
 
 h1,
@@ -301,10 +469,21 @@ p {
 	margin: 0 0 15px 0;
 }
 
+h6 {
+	font-size: 16px;
 
-img {
-	max-width: 100%;
 }
+
+p {
+	font-size: 16px;
+	font-family: "Muli", sans-serif;
+	color: #636363;
+	font-weight: 400;
+	line-height: 26px;
+	margin: 0 0 15px 0;
+}
+
+
 
 input:focus,
 select:focus,
@@ -320,12 +499,6 @@ a:focus {
 	color: #fff;
 }
 
-ul,
-ol {
-	padding: 0;
-	margin: 0;
-}
-/* 신호준 */
 
 /*---------------------
   Helper CSS
@@ -446,7 +619,6 @@ ol {
 .blog-sidebar .blog-catagory .group-input .cancel-div,
 .blog-sidebar .blog-catagory .group-input .cancel-div2{
 	display: none;
-=======
 	padding: 13px 45px 11px;
 	cursor: pointer;
 }
@@ -515,8 +687,8 @@ ol {
 	}
 }
 
+/* 아라 */
 
-/*
 /*---------------------
   Header
 -----------------------*/

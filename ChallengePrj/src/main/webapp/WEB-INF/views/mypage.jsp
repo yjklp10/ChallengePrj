@@ -23,7 +23,10 @@
     <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+
   
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+
 </head>
 
 <body>
