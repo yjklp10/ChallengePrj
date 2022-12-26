@@ -17,7 +17,7 @@ public class HomeController {
 		return "point";
 	}
 	
-}	
+
 
 	@RequestMapping("/")
 	public String index() {
