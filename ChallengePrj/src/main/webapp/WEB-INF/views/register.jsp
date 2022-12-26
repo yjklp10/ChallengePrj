@@ -218,29 +218,29 @@
                         <form action="#">
                             <div class="group-input">
                                 <label for="username">아이디*</label>
-                                <input type="text" id="username">
+                                <input type="text" id="username" name="userid" required="required">
                                 <input type="button" value="중복확인" onclick="" style="width: 100px;float: right;">
                             </div>
                             <div class="group-input">
                                 <label for="pass">비밀번호 *</label>
-                                <input type="password" id="pass">
+                                <input type="password" name="userpw" id="pass" required="required">
                             </div>
                             <div class="group-input">
                                 <label for="passch">비밀번호 확인 *</label>
-                                <input type="password" id="passch">
+                                <input type="password" name="userpwch" id="passch" required="required">
                             </div>
                              <div class="group-input">
                                 <label for="email">이메일 *</label>
-                                <input type="email" id="email">
+                                <input type="email" name="useremail" id="email" required="required">
                             </div>
                              <div class="group-input">
                                 <label for="nick">닉네임 *</label>
-                                <input type="text" id="nick">
+                                <input type="text" name="nickname" id="nick" required="required">
                                 <input type="button" value="중복확인" onclick="" style="width: 100px;float: right;">
                             </div>
                              <div class="group-input">
                                 <label for="name">이름 *</label>
-                                <input type="text" id="name">
+                                <input type="text" name="name" id="name">
                             </div>
                             <div class="group-input-radio" style="margin-bottom: 25px;">
                             	<label for="gender" style="display: block;font-size: 18px;color: #252525;margin-bottom: 13px;">성별 *</label>

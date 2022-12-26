@@ -4,6 +4,20 @@
 <!DOCTYPE html>
 <html lang="ko">
 
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+<script type="text/javascript">
+	function forgetID(){
+		$("#forget").attr("name","name").attr("placeholder","이름")
+		$("#inputID").attr("class","active")
+		$("#inputPW").attr("class","")
+	}
+	function forgetPW(){
+		$("#forget").attr("name","userid").attr("placeholder","아이디")
+		$("#inputID").attr("class","")
+		$("#inputPW").attr("class","active")
+	}
+</script>
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Fashi Template">
@@ -218,12 +232,18 @@
                         <form action="#">
                             <div class="con">
                             	<ul class="ayer-tab" >
-                            		<li class="active" onclick="" style>아이디</li>
-                            		<li class="" onclick="">비밀번호</li>
+                            		<li id="inputID" class="active" onclick="forgetID()" >아이디</li>
+                            		<li id="inputPW" class="" onclick="forgetPW()">비밀번호</li>
                             	</ul>
                             	<div class="tab-cont">
-                            		<p class="cont-txt">본인 확인을 위해 아래의 정보를 입력해 주세요</p>
-                            		
+                            		<strong class="cont-txt" style="margin-left:135px;">본인 확인을 위해 아래의 정보를 입력해 주세요</strong>
+                            		<div class="group-input">
+                            			<input id="forget" type="text" placeholder="이름" name="name" required="required">
+                            		</div>
+                            		<div class="group-input">
+                            			<input type="email" placeholder="이메일 'abcd@naver.com'" name="email" required="required">
+                            		</div>
+                            		 <button type="submit" class="site-btn register-btn">확인</button>
                             	</div>
                             </div>
                         </form>
