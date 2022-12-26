@@ -24,10 +24,42 @@
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
 
-  
-    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+<style>
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	text-align: center;
+}
 
+.list-table {
+	font-size: 14px;
+	margin-left: 50px;
+	margin-top: 50px;
+	width: 90%;
+	border-top: 3px solid lightgray;
+	border-bottom: 3px solid lightgray;
+}
+
+.list-table .th-num{
+	width: 100px;
+}
+
+.list-table th {
+	width: 250px;
+}
+
+.list-table th, .list-table td {
+	padding: 12px 0;
+}
+
+.list-table tbody td {
+	padding-left: 20px;
+	padding-right: 12px;
+	border-top: 2px solid lightgray;
+}
+</style>
 </head>
+
 
 <body>
     <!-- Page Preloder -->
@@ -44,56 +76,44 @@
 	<section class="blog-section spad">
 		<div class="container">
 			<div class="blog-sidebar">
-				<div class="blog-catagory">
-					<h4>회원정보</h4>
-					<!--<form action="#">  -->
-						<div class="group-input">
-							<label for="name">이름</label> <input id="name" type="text">
-						</div>
-						<div class="group-input">
-							<label for="email">이메일</label> <input id="email" type="text">
-						</div>
-						<div class="group-input">
-							<label for="phone">전화번호</label> <input id="phone" type="text">
-						</div>
-						<div class="group-input">
-							<label for="deposit">예치금</label> <input id="deposit" type="text">
-						</div>
-						<div class="group-input">
-							<label for="point">포인트</label> <input id="point" type="text">
-						</div>
-						<button type="submit" class="blog-btn">수정하기</button>
-						<button type="submit" class="blog-btn" onclick="location.href='/point'">환급신청</button>
-				<!--</form>-->
-				</div>
 				<div class="recent-post">
-					<h4>챌린지 현황</h4>
-					<div class="recent-blog">
-						<a href="#" class="rb-item">
-							<div class="rb-pic">
-								<img src="img/blog/recent-1.jpg" alt="">
-							</div>
-							<div class="rb-text">
-								<h6>30분 운동하기</h6>								
-								<p>
-									참여중 <span>12.12-12.15</span>
-								</p>
-							</div>
-						</a> 
-						<a href="#" class="rb-item">
-							<div class="rb-pic">
-								<img src="img/blog/recent-2.jpg" alt="">
-							</div>
-							<div class="rb-text">
-								<h6>1시간 독서하기</h6>
-								<p>
-									참여완료 <span>11.28-12.05</span>
-								</p>
-							</div>
-						</a> 
-					</div>
+					<h4>환급요청 목록</h4>
+					<table class="list-table">
+						<thead>
+							<tr>
+								<th scope="col" class="th-num"></th>
+								<th scope="col">이 메 일</th>
+								<th scope="col">은 행 명</th>
+								<th scope="col">예 금 주</th>
+								<th scope="col">계좌번호</th>
+								<th scope="col">금 액</th>
+								<th scope="col">상태</th>
+							</tr>
+						</thead>
+						<tbody>
+							<c:choose>
+								<c:when test="${empty noticelist }">
+									<tr>
+										<td colspan="7" align="center">------ 요청 목록이 없습니다. ------</td>
+									</tr>
+								</c:when>
+								<c:otherwise>
+									<c:forEach items="${noticelist }" var="dto">
+										<tr>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+										</tr>
+									</c:forEach>
+								</c:otherwise>
+							</c:choose>
+						</tbody>
+					</table>
 				</div>
-
 			</div>
 		</div>
 	</section>
