@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
 <%@include file="./include/header.jsp" %>
 
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -96,7 +95,7 @@
                        </a>
                     </div>
                 </div>
-                <div class="" icon0""="">
+                <div class="icon0">
                     <div class="single-banner">
                     <a href="#">
                         <img src="img/신규.png" alt="">
@@ -106,7 +105,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="" icon0""="">
+               <div class="icon0">
                     <div class="single-banner">
                     <a href="#">
                         <img src="img/온라인.png" alt="">
@@ -116,7 +115,7 @@
                       </a>
                     </div>
                 </div>
-                 <div class="" icon0""="">
+               <div class="icon0">
                     <div class="single-banner">
                     <a href="#">
                         <img src="img/오프라인.png" alt="">
@@ -126,7 +125,7 @@
                         </a>
                     </div>
                 </div>
-               <div class="" icon0""="">
+               <div class="icon0">
                     <div class="single-banner">
                     <a href="#">
                         <img src="img/운동.png" alt="">
@@ -136,7 +135,7 @@
                     </a>
                     </div>
                 </div>
-               <div class="" icon0""="">
+                <div class="icon0">
                     <div class="single-banner">
                     <a href="#">
                         <img src="img/공부.png" alt="">
@@ -146,7 +145,7 @@
                          </a>
                     </div>
                 </div>
-               <div class="" icon0""="">
+               <div class="icon0">
                     <div class="single-banner">
                     <a href="#">
                         <img src="img/취미.png" alt="">
@@ -156,7 +155,7 @@
                          </a>
                     </div>
                 </div>
-              <div class="" icon0""="">
+               <div class="icon0">
                     <div class="single-banner">
                     <a href="#">
                         <img src="img/규칙적인생활.png" alt="">
