@@ -44,14 +44,14 @@ padding-top: 8px;
   padding: 14px;
 }       
  
-    .col-lg-12 {
+    .choices {
     padding: 15px 10px;
     }
-    .col-lg-12 input[type=radio]{
+    .choices input[type=radio]{
         display: none;
     }
     #address_btn,
-    .col-lg-12 input[type=radio]+label{
+    .choices input[type=radio]+label{
         display: inline-block;
         cursor: pointer;
         height: 24px;
@@ -64,13 +64,13 @@ padding-top: 8px;
     }
     #makeChallenge,
     #address_btn,
-    .col-lg-12 input[type=radio]+label{
+    .choices input[type=radio]+label{
         background-color: #fff;
         color: #333;
     }
     #makeChallenge:hover,
     #address_btn:hover,
-    .col-lg-12 input[type=radio]:checked+label{
+    .choices input[type=radio]:checked+label{
         background-color: #333;
         color: #fff;
     }
@@ -312,7 +312,7 @@ padding-top: 8px;
                                 <label for="town">챌린지 제목<span>*</span></label>
                                 <input type="text" id="challenge_title">
                             </div>
-                            <div class="col-lg-12" id="onOff_choice">
+                            <div class="col-lg-12 choices" id="onOff_choice">
                                 <label for="fir">온라인/오프라인 여부<span>*</span></label>
                                 <br>
                                 <input type="radio" id="onOff_select1" name="onOff" onclick="online_select();"><label for="onOff_select1">온라인</label>
@@ -343,7 +343,7 @@ padding-top: 8px;
                                          </div>
                                 </div>
                             </div>
-                            <div class="col-lg-12 scrollMenu">
+                            <div class="col-lg-12 scrollMenu choices">
                                 <label for="fir">인증빈도<span>*</span></label>
                                 <br>
                                 <input type="radio" id="frequency_select1" name="frequency"><label for="frequency_select1">매일</label>
@@ -359,7 +359,7 @@ padding-top: 8px;
                             <style>
                            
                             </style>
-                            <div class="col-lg-12">
+                            <div class="col-lg-12 choices">
                                 <label for="fir">챌린지 기간<span>*</span></label>
                                 <br>
                                 <input type="radio" id="duration_select1" name="duration"><label for="duration_select1">1주</label>
@@ -375,7 +375,7 @@ padding-top: 8px;
                                 <label for="last">인증 종료 시간<span>*</span></label>
                                 <input type="time" id="end_time">
                             </div>
-                            <div class="col-lg-12 scrollMenu" >
+                            <div class="col-lg-12 scrollMenu choices" >
                                 <label for="fir">시작일<span>*</span></label>
                                 <br>
                                 <input type="radio" id="start_date_select1" name="start_date"><label for="start_date_select1">오늘</label>
@@ -422,7 +422,7 @@ padding-top: 8px;
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-12">
+                            <div class="col-lg-12 choices">
                                 <label for="fir">카테고리 선택<span>*</span></label>
                                 <br>
                                 <input type="radio" id="category_select1" name="category"><label for="category_select1">운동</label>

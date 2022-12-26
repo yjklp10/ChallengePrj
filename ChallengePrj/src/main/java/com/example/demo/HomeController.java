@@ -23,4 +23,8 @@ public class HomeController {
 	public String makingChallenge(){
 		return"makingChallengeForm";
 	}
+	@RequestMapping("/main")
+	public String main() {
+		return "main";
+	}
 }
