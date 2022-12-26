@@ -24,6 +24,71 @@
     <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+    <style>
+    .payment{
+	display:flex;
+}
+.paymentimg{
+	margin: 10px 160px;
+    position: relative;
+}
+.paymentimg img {
+	width: 300px;
+    height: 300px;
+    border-radius: 30px 30px 30px 30px;
+    border: 1px solid #ebebeb; 
+}
+.payments{
+	margin: 20px 10px;
+	padding: 20px 10px;
+	text-align: center;
+    line-height: 10px; 
+}
+.payment-1 p{
+	width: 300px;
+    height: 50px;
+    border-radius: 30px 30px 30px 30px;
+    border: 1px solid #ebebeb;
+    text-align: center;
+    line-height: 50px; 
+    background-color: #8B00FF;
+    color: white;
+}
+.payment-1 a{
+	text-align: center;
+	line-height: 50px;
+	font-size: 20px;
+}
+
+.money p{
+	text-align:center;
+	font-size: 30px;
+}
+.moneys{
+	display:flex;
+}
+.moneybut-1{
+	margin: 10px 70px;
+    position: relative;
+}
+.moneybut-1 button{
+	width: 150px;
+	height: 50px;
+	border-radius: 30px 30px 30px 30px
+}
+.guide{
+	margin: 10px 150px
+}
+.guide p{
+	width:900px;
+	height:400px;
+	border:1px solid black;
+	font-size: 25px;
+	text-align: center;
+	line-height: 70px;
+}
+    
+    </style>
 </head>
 
 <body>
