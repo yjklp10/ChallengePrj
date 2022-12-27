@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class HomeController {
 
+	/*
 
-	
 	@RequestMapping("/mypage")
 	public String mypage() {
 		return "mypage";
@@ -17,11 +17,11 @@ public class HomeController {
 	public String point() {
 		return "point";
 	}
-	
+	*/
 
-	@RequestMapping("/main")
-	public String main() {
-		return "main";
+	@RequestMapping("/home_main")
+	public String home_main() {
+		return "home_main";
 	}
 	
 
@@ -48,16 +48,6 @@ public class HomeController {
 		return "challdetail";
 	}
 
-	
-	@RequestMapping("/mypage")
-	public String mypage() {
-		return "mypage";
-	}
-	
-	@RequestMapping("/point")
-	public String point() {
-		return "point";
-	}
 	
 	@RequestMapping("/manager")
 	public String manager() {
