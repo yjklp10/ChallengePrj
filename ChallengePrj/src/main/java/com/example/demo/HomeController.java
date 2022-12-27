@@ -49,16 +49,6 @@ public class HomeController {
 	}
 
 	
-	@RequestMapping("/mypage")
-	public String mypage() {
-		return "mypage";
-	}
-	
-	@RequestMapping("/point")
-	public String point() {
-		return "point";
-	}
-	
 	@RequestMapping("/manager")
 	public String manager() {
 		return "manager";
