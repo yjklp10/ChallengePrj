@@ -7,7 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HomeController {
 
 
-	
+	/*
+
 	@RequestMapping("/mypage")
 	public String mypage() {
 		return "mypage";
@@ -17,7 +18,11 @@ public class HomeController {
 	public String point() {
 		return "point";
 	}
-	
+	*/
+
+	@RequestMapping("/home_main")
+	public String home_main() {
+		return "home_main";
 
 	@RequestMapping("/main")
 	public String main() {
@@ -49,8 +54,7 @@ public class HomeController {
 	}
 
 	
-	
-	
+
 	@RequestMapping("/manager")
 	public String manager() {
 		return "manager";
