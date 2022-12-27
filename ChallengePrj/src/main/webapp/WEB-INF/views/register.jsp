@@ -5,6 +5,100 @@
 <!DOCTYPE html>
 <html lang="ko">
 
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+<script type="text/javascript">
+function checkForm(){
+	   var memberpw = $("#memberpw").val();
+	   var memberpw2 = $("#memberpw2").val();
+	   if(memberpw != memberpw2){
+	      alert("비밀번호가 일치하지 않습니다.");
+	      return false;
+	   }
+	};
+
+	function fn_IdCheck(){
+	    var useremail = $('#email').val();
+	    var exptext = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
+	    $.ajax({
+	       async:false,
+	        url:'', 
+	        type:'post',
+	        data:{useremail:useremail},
+	        success:function(res){
+	           if(exptext.test(useremail)==false){
+	                  
+	            
+	             alert("이메일형식이 올바르지 않습니다.");
+	           }
+	           else if(res == 0){ 
+	                $('.id_ok').css("display","flex"); 
+	                $('.id_already').css("display", "none");
+	                document.getElementById("memberemail").title = "y";
+	            }
+	            else if(res == 1){ 
+	                $('.id_already').css("display","flex");
+	                $('.id_ok').css("display", "none");
+	            }
+	            
+	        },
+	        error:function(){
+	            alert("에러입니다");
+	        }
+	        
+	    });
+	    };
+	    
+	    function fn_nickCheck(){
+	        var membernickname = $('#membernickname').val(); 
+	        $.ajax({
+	           async:false,
+	            url:'./nickChk.do',
+	            type:'post', 
+	            data:{membernickname : membernickname},
+	            success:function(res){ 
+	               if(res == 0){  
+	                  $('.nick_ok').css("display","flex"); 
+	                    $('.nick_already').css("display", "none");
+	               }
+	                else if(res == 1){
+	                    $('.nick_already').css("display","flex");
+	                    $('.nick_ok').css("display", "none");
+	                }
+	                
+	            },
+	            error:function(){
+	                alert("에러입니다");
+	            }
+	            
+	        });
+	        };
+	    
+	    function idChkConfirm(){
+	       let chk = document.getElementById("memberemail").title;
+	       if(chk=='n'){
+	       alert("아이디를 중복체크를 해주세요");
+	       document.getElementById("memberemail").focus();
+	       }
+	       
+	    };
+	    
+	    $(function(){
+	         $('#memberpw').keyup(function(){
+	          $('.pw_confirm').text('');
+	         }); //#user_pass.keyup
+
+	         $('#memberpw2').keyup(function(){
+	          if($('#memberpw').val()!=$('#memberpw2').val()){
+	           $('.pw_confirm').html("암호가 일치하지 않습니다.").css("display","flex").css("color","#f23c3c");
+	          }else{
+	           $('.pw_confirm').html("암호가 일치합니다.").css("display","flex").css("color","#008000");
+	          }
+	         }); //#chpass.keyup
+	         
+	        });
+	   
+</script>
+
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Fashi Template">
