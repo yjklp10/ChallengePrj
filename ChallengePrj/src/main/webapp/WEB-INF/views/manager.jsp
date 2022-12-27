@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -92,13 +93,13 @@ table {
 						</thead>
 						<tbody>
 							<c:choose>
-								<c:when test="${empty noticelist }">
+								<c:when test="${empty list }">
 									<tr>
 										<td colspan="7" align="center">------ 요청 목록이 없습니다. ------</td>
 									</tr>
 								</c:when>
 								<c:otherwise>
-									<c:forEach items="${noticelist }" var="dto">
+									<c:forEach items="${list }" var="dto">
 										<tr>
 											<td></td>
 											<td></td>

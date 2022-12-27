@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html lang="zxx">
 
 <head>
@@ -29,6 +30,12 @@
 <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
 <link rel="stylesheet" href="css/style.css" type="text/css">
 <style>
+.mainsimg img{
+	width: 400px;
+    height: 400px;
+    border-radius: 30px 30px 30px 30px;
+    border: 1px solid #ebebeb;
+}
 .tgrid-image{
 	display:flex;
 }
@@ -332,9 +339,8 @@ ol {
 				<div class="col-lg-9">
 					<div class="row">
 						<div class="col-lg-6">
-							<div class="product-pic-zoom">
-								<img class="product-big-img"
-									src="img/certification/X-3.jpg" alt="">
+							<div class="mainsimg">
+								<img src="img/certification/X-3.jpg" alt="">
 
 							</div>
 
@@ -343,7 +349,7 @@ ol {
 							<div class="product-details">
 								<div class="pd-title">
 									<span>챌린저스</span>
-									<h3>30분 운동하기</h3>
+									<h3><c:out value="${making.challengetitle }"/></h3>
 								</div>
 								<div class="pd-rating">
 									<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
@@ -376,7 +382,7 @@ ol {
 								<br><br>
 								<div class="pd-desc">
 
-									<h4>10,000원</h4>
+									<h4><c:out value="${making.challengmoney }"/></h4>
 								</div>
 								<div class="quantity">
 
@@ -401,18 +407,8 @@ ol {
 									<div class="product-content">
 										<div class="row">
 											<div class="col-lg-7">
-												<h5>Introduction</h5>
-												<p>Lorem ipsum dolor sit amet, consectetur adipisicing
-													elit, sed do eiusmod tempor incididunt ut labore et dolore
-													magna aliqua. Ut enim ad minim veniam, quis nostrud
-													exercitation ullamco laboris nisi ut aliquip ex ea commodo
-													consequat. Duis aute irure dolor in</p>
-												<h5>Features</h5>
-												<p>Lorem ipsum dolor sit amet, consectetur adipisicing
-													elit, sed do eiusmod tempor incididunt ut labore et dolore
-													magna aliqua. Ut enim ad minim veniam, quis nostrud
-													exercitation ullamco laboris nisi ut aliquip ex ea commodo
-													consequat. Duis aute irure dolor in</p>
+												<h5>소개글</h5>
+												<p><c:out value="${making.challengeintro }"/></p>
 											</div>
 										</div>
 									</div>
@@ -421,13 +417,7 @@ ol {
 									<div class="product-content">
 										<div class="row">
 											<div class="col-lg-7">
-												<h5>Introduction</h5>
-												<p>Lorem ipsum dolor sit amet, consectetur adipisicing
-													elit, sed do eiusmod tempor incididunt ut labore et dolore
-													magna aliqua. Ut enim ad minim veniam, quis nostrud
-													exercitation ullamco laboris nisi ut aliquip ex ea commodo
-													consequat. Duis aute irure dolor in</p>
-												<h5>Features</h5>
+												<h5>주의사항</h5>
 												<p>Lorem ipsum dolor sit amet, consectetur adipisicing
 													elit, sed do eiusmod tempor incididunt ut labore et dolore
 													magna aliqua. Ut enim ad minim veniam, quis nostrud
