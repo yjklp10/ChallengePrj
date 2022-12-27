@@ -29,6 +29,12 @@
 <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
 <link rel="stylesheet" href="css/style.css" type="text/css">
 <style>
+.mainsimg img{
+	width: 400px;
+    height: 400px;
+    border-radius: 30px 30px 30px 30px;
+    border: 1px solid #ebebeb;
+}
 .tgrid-image{
 	display:flex;
 }
@@ -332,9 +338,8 @@ ol {
 				<div class="col-lg-9">
 					<div class="row">
 						<div class="col-lg-6">
-							<div class="product-pic-zoom">
-								<img class="product-big-img"
-									src="img/certification/X-3.jpg" alt="">
+							<div class="mainsimg">
+								<img src="img/certification/X-3.jpg" alt="">
 
 							</div>
 
