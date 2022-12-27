@@ -23,7 +23,72 @@
     <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+<style>
+.blog-sidebar .blog-catagory .group-input label {
+	width: 150px;
+	font-size: 16px;
+	color: #636363;
+	margin-bottom: 13px;
+}
+.blog-sidebar .blog-catagory .group-input input {
+	border: 1px solid #ebebeb;
+	height: 40px;
+	width: 300px;
+	padding-left: 20px;
+	padding-right: 15px;
+}
+.blog-sidebar .blog-catagory .group-input .checkbox {
+	font-size: 16px;
+	width: 400px;
+}
+.blog-sidebar .blog-catagory .group-input .checkbox input{
+	height: 20px;
+	width: 20px;
+	margin-top :5px;
+	margin-right :5px;
+}
+.blog-sidebar .blog-catagory .blog-btn {
 
+	letter-spacing: 2px;
+	margin-top: 15px;
+	color: #ffffff;
+	background: #e7ab3c;
+	border: 1px solid #e7ab3c;
+	font-size: 14px;
+	font-weight: 700;
+	text-transform: uppercase;
+	padding: 11px 30px 11px;
+	cursor: pointer;
+}
+.blog-sidebar .blog-catagory .group-input p{
+	margin-left: 150px;
+	font-size: 13px;
+}
+
+.blog-sidebar .blog-catagory .group-input .cancel-btn,
+.blog-sidebar .blog-catagory .group-input .cancel-btn2,
+.blog-sidebar .blog-catagory .group-input .ok-btn2,
+.blog-sidebar .blog-catagory .group-input .no-btn2,
+.blog-sidebar .blog-catagory .group-input .ok-btn,
+.blog-sidebar .blog-catagory .group-input .no-btn   {
+	letter-spacing: 2px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	color: #ffffff;
+	background: #e7ab3c;
+	border: 1px solid #e7ab3c;
+	font-size: 13px;
+	font-weight: 500;
+	text-transform: uppercase;
+	padding: 10px 20px 10px;
+	cursor: pointer;
+}
+.blog-sidebar .blog-catagory .group-input .cancel-div,
+.blog-sidebar .blog-catagory .group-input .cancel-div2{
+	display: none;
+}
+
+</style>
   
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
 
@@ -46,7 +111,7 @@
 			<div class="blog-sidebar">
 				<div class="blog-catagory">
 					<h4>회원정보</h4>
-					<!--<form action="#">  -->
+						<form action="myinfo/update">
 						<div class="group-input">
 							<label for="name">이름</label> <input id="name" type="text">
 						</div>
@@ -63,8 +128,8 @@
 							<label for="point">포인트</label> <input id="point" type="text">
 						</div>
 						<button type="submit" class="blog-btn">수정하기</button>
-						<button type="submit" class="blog-btn" onclick="location.href='/point'">환급신청</button>
-				<!--</form>-->
+						<button type="button" class="blog-btn" onclick="location.href='/point'">환급신청</button>
+					</form>
 				</div>
 				<div class="recent-post">
 					<h4>챌린지 현황</h4>
