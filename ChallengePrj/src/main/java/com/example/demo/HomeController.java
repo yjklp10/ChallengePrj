@@ -54,6 +54,7 @@ public class HomeController {
 	}
 
 	
+
 	@RequestMapping("/manager")
 	public String manager() {
 		return "manager";
@@ -62,7 +63,7 @@ public class HomeController {
 	
 	@RequestMapping("/ex")
 	public String ex() {
-		return "ex";
+		return "exwrite";
 	}
 
 }

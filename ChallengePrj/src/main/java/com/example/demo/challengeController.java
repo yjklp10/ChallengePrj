@@ -1,5 +1,8 @@
 package com.example.demo;
 
-public class challengeController {
+import org.springframework.stereotype.Controller;
 
+@Controller
+public class challengeController {
+	
 }
