@@ -49,15 +49,7 @@ public class HomeController {
 	}
 
 	
-	@RequestMapping("/mypage")
-	public String mypage() {
-		return "mypage";
-	}
 	
-	@RequestMapping("/point")
-	public String point() {
-		return "point";
-	}
 	
 	@RequestMapping("/manager")
 	public String manager() {
@@ -67,7 +59,7 @@ public class HomeController {
 	
 	@RequestMapping("/ex")
 	public String ex() {
-		return "ex";
+		return "exwrite";
 	}
 
 }

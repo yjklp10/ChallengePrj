@@ -2,11 +2,22 @@ package com.example.dto;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+
+import org.springframework.data.annotation.Id;
+
 import lombok.Data;
 
+@Entity
 @Data
-public class makingChallenge {
+public class makingChallengeDto {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int challengeno;
+	
 	private String challengetitle;
 	private String onoffchoice;
 	private String chllengeprequency;
