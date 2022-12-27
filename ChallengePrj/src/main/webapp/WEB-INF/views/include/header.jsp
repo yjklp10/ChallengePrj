@@ -21,6 +21,9 @@
 
     <!-- Css Styles -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/main_detail.css" type="text/css">
+
+    
     <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="css/themify-icons.css" type="text/css">
     <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
@@ -28,8 +31,8 @@
     <link rel="stylesheet" href="css/nice-select.css" type="text/css">
     <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
- 	<link rel="stylesheet" href="css/joara.css">
- 	 
+    
+
 </head>
 <body>
 
@@ -38,7 +41,7 @@
         <div class="header-top">
             <div class="container">
                 <div class="ht-right">
-                    <a href="#" class="login-panel"><i class="fa fa-user"></i>로그인/회원가입</a>
+                    <a href="#" class="login-panel"><img src="img/백일블럭.png"></i>로그인/회원가입</a>
                 </div>
             </div>
         </div>
@@ -46,18 +49,20 @@
             <div class="inner-header">
                 <div class="row">
                         <div class="logo">
-                            <a href="views/index.jsp">
+                            <a href="views/home_detail.jsp">
                                 <img src="img/logo2.png">
                             </a>
                         </div>
-                        <!-- 
                         <div class="advanced-search">
                             <div class="input-group">
                                 <input type="text" placeholder="챌린지 검색">
-                                <button type="button"><i class="ti-search"></i></button>
+                                <button type="button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                  </svg></button>
                             </div>
                         </div>
-                         -->
+                    </div>
+                      
                     </div>
                 </div>
             </div>
@@ -101,5 +106,18 @@
         <hr size="5" color="gray" padding-top="-10">
         </div>
         
+        
+        	<script src="js/jquery-3.3.1.min.js"></script>
+				<script src="js/bootstrap.min.js"></script>
+				<script src="js/jquery-ui.min.js"></script>
+				<script src="js/jquery.countdown.min.js"></script>
+				<script src="js/jquery.nice-select.min.js"></script>
+				<script src="js/jquery.zoom.min.js"></script>
+				<script src="js/jquery.dd.min.js"></script>
+				<script src="js/jquery.slicknav.js"></script>
+				<script src="js/owl.carousel.min.js"></script>
+				<script src="js/main.js"></script>
+        
+
     </header>
     <!-- Header End -->
