@@ -8,6 +8,7 @@ public class BoardFileResponseDto {
 	private String orignFileName;
 	private String saveFileName;
 	private String filePath;
+
 	
 	public BoardFileResponseDto(BoardFile entity) {
 		this.orignFileName=entity.getOrignFileName();
