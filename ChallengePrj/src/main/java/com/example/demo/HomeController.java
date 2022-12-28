@@ -7,23 +7,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HomeController {
 
 
-	/*
-
-	@RequestMapping("/mypage")
-	public String mypage() {
-		return "mypage";
-	}
-	
-	@RequestMapping("/point")
-	public String point() {
-		return "point";
-	}
-	*/
-
 	@RequestMapping("/home_main")
 	public String home_main() {
 		return "home_main";
-
+	}
+	
 	@RequestMapping("/main")
 	public String main() {
 		return "main";
@@ -44,16 +32,26 @@ public class HomeController {
 	public String payment() {
 		return "payment";
 	}
+	
 	@RequestMapping("/makingChallenge")
 	public String makingChallenge(){
 		return"makingChallengeForm";
 	}
+	
 	@RequestMapping("/challdetail")
 	public String challdetail() {
 		return "challdetail";
 	}
 
+	@RequestMapping("/mypage")
+	public String mypage() {
+		return "mypage";
+	}
 	
+	@RequestMapping("/point")
+	public String point() {
+		return "point";
+	}
 
 	@RequestMapping("/manager")
 	public String manager() {
