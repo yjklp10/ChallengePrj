@@ -7,97 +7,33 @@
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
 <script type="text/javascript">
-function checkForm(){
-	   var memberpw = $("#memberpw").val();
-	   var memberpw2 = $("#memberpw2").val();
-	   if(memberpw != memberpw2){
-	      alert("비밀번호가 일치하지 않습니다.");
-	      return false;
-	   }
-	};
 
-	function fn_IdCheck(){
-	    var useremail = $('#email').val();
-	    var exptext = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
-	    $.ajax({
-	       async:false,
-	        url:'', 
-	        type:'post',
-	        data:{useremail:useremail},
-	        success:function(res){
-	           if(exptext.test(useremail)==false){
-	                  
-	            
-	             alert("이메일형식이 올바르지 않습니다.");
-	           }
-	           else if(res == 0){ 
-	                $('.id_ok').css("display","flex"); 
-	                $('.id_already').css("display", "none");
-	                document.getElementById("memberemail").title = "y";
-	            }
-	            else if(res == 1){ 
-	                $('.id_already').css("display","flex");
-	                $('.id_ok').css("display", "none");
-	            }
-	            
-	        },
-	        error:function(){
-	            alert("에러입니다");
-	        }
-	        
-	    });
-	    };
-	    
-	    function fn_nickCheck(){
-	        var membernickname = $('#membernickname').val(); 
-	        $.ajax({
-	           async:false,
-	            url:'./nickChk.do',
-	            type:'post', 
-	            data:{membernickname : membernickname},
-	            success:function(res){ 
-	               if(res == 0){  
-	                  $('.nick_ok').css("display","flex"); 
-	                    $('.nick_already').css("display", "none");
-	               }
-	                else if(res == 1){
-	                    $('.nick_already').css("display","flex");
-	                    $('.nick_ok').css("display", "none");
-	                }
-	                
-	            },
-	            error:function(){
-	                alert("에러입니다");
-	            }
-	            
-	        });
-	        };
-	    
-	    function idChkConfirm(){
-	       let chk = document.getElementById("memberemail").title;
-	       if(chk=='n'){
-	       alert("아이디를 중복체크를 해주세요");
-	       document.getElementById("memberemail").focus();
-	       }
-	       
-	    };
-	    
-	    $(function(){
-	         $('#memberpw').keyup(function(){
-	          $('.pw_confirm').text('');
-	         }); //#user_pass.keyup
 
-	         $('#memberpw2').keyup(function(){
-	          if($('#memberpw').val()!=$('#memberpw2').val()){
-	           $('.pw_confirm').html("암호가 일치하지 않습니다.").css("display","flex").css("color","#f23c3c");
-	          }else{
-	           $('.pw_confirm').html("암호가 일치합니다.").css("display","flex").css("color","#008000");
-	          }
-	         }); //#chpass.keyup
+	
+	    
+$(function(){
+	$('#memberpw').keyup(function(){
+		$('.pw_confirm').text('');
+	}); 
+	$('#memberpwchk').keyup(function(){
+		if($('#memberpw').val()!=$('#memberpwchk').val()){
+			$('#pwchk').html("비밀번호가 일치하지 않습니다.").css("display","flex").css("color","#f23c3c");
+		}else{
+			 $('#pwchk').html("비밀번호가 일치합니다.").css("display","flex").css("color","#008000");
+		}
+	}); 
 	         
-	        });
+});
 	   
 </script>
+<style>
+	#pwchk{
+		display:none;
+		color: red;
+		float: right;
+		font-size: 18px;
+	}
+</style>
 
 <head>
     <meta charset="UTF-8">
@@ -143,7 +79,7 @@ function checkForm(){
                     </div>
                 </div>
                 <div class="ht-right">
-                    <a href="#" class="login-panel"><i class="fa fa-user"></i>Login</a>
+                    <a href="#" class="login-panel"><i class="fa fa-"></i>Login</a>
                     <div class="lan-selector">
                         <select class="language_drop" name="countries" id="countries" style="width:300px;">
                             <option value='yt' data-image="img/flag-1.jpg" data-imagecss="flag yt"
@@ -311,21 +247,22 @@ function checkForm(){
                         <h2>회원가입</h2>
                         <form action="#">
                             <div class="group-input">
-                                <label for="username">아이디*</label>
-                                <input type="text" id="username" name="userid" required="required">
+                                <label for="membername">아이디*</label>
+                                <input type="text" id="membername" name="memberid" required="required">
                                 <input type="button" value="중복확인" onclick="" style="width: 100px;float: right;">
                             </div>
                             <div class="group-input">
                                 <label for="pass">비밀번호 *</label>
-                                <input type="password" name="userpw" id="pass" required="required">
+                                <input type="password" name="memberpw" id="memberpw" required="required">
                             </div>
                             <div class="group-input">
                                 <label for="passch">비밀번호 확인 *</label>
-                                <input type="password" name="userpwch" id="passch" required="required">
+                                <input type="password" name="memberpwchk" id="memberpwchk" required="required">
+                                <span id="pwchk"></span>
                             </div>
                              <div class="group-input">
                                 <label for="email">이메일 *</label>
-                                <input type="email" name="useremail" id="email" required="required">
+                                <input type="email" name="memberemail" id="memberemail" required="required">
                             </div>
                              <div class="group-input">
                                 <label for="nick">닉네임 *</label>
