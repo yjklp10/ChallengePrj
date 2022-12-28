@@ -146,54 +146,50 @@ $(function (){
 			<div class="blog-sidebar">
 				<div class="blog-catagory">
 					<h4>예치금 및 포인트</h4>
-				<form action="#">
+					<form action="#">
 						<div class="group-input">
 							<label for="deposit">예치금</label> 
 							<input id="deposit" type="text" disabled><br>
 							<button type="button" class="cancel-btn">환급신청</button>
 							<div class="cancel-div">
-							
-
-							<c:choose>
-								<c:when test="${empty list }">
-									------ 결제 내역이 없습니다.------
-								</c:when>
-								<c:otherwise>
-									<c:forEach items="${list }" var="dto">
-										 <label class="checkbox">
-							 <input type="checkbox" name="color" value="blue">  
-										<tr>
-											<td>현대카드</td>
-											<td>50,000</td>
-											<td>날짜</td>
-										</tr>
-									</c:forEach>
-								</c:otherwise>
-							</c:choose>
-						</tbody>
-					</table>
-				
-							</label><br>
+								<c:choose>
+									<c:when test="${empty list }">
+									------ 예치금이 없습니다. ------ <br>
+									</c:when>
+									<c:otherwise>
+										<c:forEach items="${list }" var="dto">
+											<label class="checkbox"> 
+											<input type="checkbox" name="color" value="blue">
+												 현대카드 50,000 날짜 <br>
+											</label>
+										</c:forEach>
+									</c:otherwise>
+								</c:choose>
 								<button type="submit" class="ok-btn">환급신청</button>
 								<button type="button" class="no-btn">취소</button>
 							</div>
 						</div>
 					</form>
-					<form>	
+					<form action="/point/update" method="post">
+  					 <input type="hidden" name="memberid" value="${dto.memberid }">
+    				 <input type="hidden" name="point" value="${dto.point}" >
 						<div class="group-input">
-							<label for="point">포인트</label> 
-							<input id="point" type="text" disabled><br>
+							<label for="point">포인트</label> <input id="point" type="text" disabled><br>								
 							<P>포인트는 3000원 이상부터 출금 가능해요.</P>
 							<button type="button" class="cancel-btn2">출금신청</button>
 							<div class="cancel-div2">
 								<label for="withdraw">출금포인트</label> 
-								<input id="withdraw" type="text"><br>						
-								<label for="deposit">은행명</label> 
-								<input id="deposit" type="text"><br>
-								<label for="deposit">예금주</label> 
-								<input id="deposit" type="text"><br>
-								<label for="deposit">계좌번호</label> 
-								<input id="deposit" type="text"><br>
+								<input id="withdraw" type="text" value="${dto.withdrawpoint }"><br> 
+								
+								<label for="bankname">은행명</label>									
+								<input id="bankname" type="text" value="${dto.bankname }"><br> 
+								
+								<label for="accountHolder">예금주</label>
+								<input id="accountHolder" type="text" value="${dto.accountholder }"><br>
+									
+								<label for="accountNumber">계좌번호</label> 
+								<input id="accountNumber" type="text" value="${dto.accountnumber }"><br>
+								
 								<button type="submit" class="ok-btn2">출금신청</button>
 								<button type="button" class="no-btn2">취소</button>
 							</div>
@@ -203,8 +199,8 @@ $(function (){
 			</div>
 		</div>
 	</section>
-			
-				<!-- Blog Section End -->
+
+	<!-- Blog Section End -->
 
 				<!-- Partner Logo Section Begin -->
 
