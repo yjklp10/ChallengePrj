@@ -2,6 +2,8 @@ package com.example.dto;
 
 import com.example.entity.BoardFile;
 
+import lombok.Getter;
+@Getter
 public class BoardFileResponseDto {
 	private String orignFileName;
 	private String saveFileName;
@@ -12,8 +14,11 @@ public class BoardFileResponseDto {
 		this.saveFileName=entity.getSaveFileName();
 		this.filePath=entity.getFilePath();
 	}
+
 	@Override
 	public String toString() {
-		return "File";
+		return "BoardFileResponseDto [orignFileName=" + orignFileName + ", saveFileName=" + saveFileName + ", filePath="
+				+ filePath + "]";
 	}
+
 }
