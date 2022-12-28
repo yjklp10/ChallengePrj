@@ -23,7 +23,7 @@ public class HomeController {
 	@RequestMapping("/home_main")
 	public String home_main() {
 		return "home_main";
-
+	}
 	@RequestMapping("/main")
 	public String main() {
 		return "main";
