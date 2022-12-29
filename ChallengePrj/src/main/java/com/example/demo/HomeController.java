@@ -28,20 +28,14 @@ public class HomeController {
 		return "detail";
 	}
 	
-	@RequestMapping("payment")
-	public String payment() {
-		return "payment";
-	}
+	
 	
 	@RequestMapping("/makingChallenge")
 	public String makingChallenge(){
 		return"makingChallengeForm";
 	}
 	
-	@RequestMapping("/challdetail")
-	public String challdetail() {
-		return "challdetail";
-	}
+	
 
 	@RequestMapping("/mypage")
 	public String mypage() {
