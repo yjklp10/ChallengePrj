@@ -60,10 +60,7 @@
 	padding: 11px 30px 11px;
 	cursor: pointer;
 }
-.blog-sidebar .blog-catagory .group-input p{
-	margin-left: 150px;
-	font-size: 13px;
-}
+
 
 .blog-sidebar .blog-catagory .group-input .cancel-btn,
 .blog-sidebar .blog-catagory .group-input .cancel-btn2,
@@ -113,19 +110,24 @@
 					<h4>회원정보</h4>
 						<form action="myinfo/update">
 						<div class="group-input">
-							<label for="name">이름</label> <input id="name" type="text">
+							<label for="name">이름</label> 
+							<input id="name" type="text" value="${dto.membername }">
 						</div>
 						<div class="group-input">
-							<label for="email">이메일</label> <input id="email" type="text">
+							<label for="email">이메일</label> 
+							<input id="email" type="text" value="${dto.memberemail }">
 						</div>
 						<div class="group-input">
-							<label for="phone">전화번호</label> <input id="phone" type="text">
+							<label for="phone">전화번호</label> 
+							<input id="phone" type="text" value="${dto.memberphone }">
 						</div>
 						<div class="group-input">
-							<label for="deposit">예치금</label> <input id="deposit" type="text">
+							<label for="deposit">예치금</label> 
+							<input id="deposit" type="text" value="${dto.membername }">
 						</div>
 						<div class="group-input">
-							<label for="point">포인트</label> <input id="point" type="text">
+							<label for="point">포인트</label> 
+							<input id="point" type="text" value="${dto.mypoint }">
 						</div>
 						<button type="submit" class="blog-btn">수정하기</button>
 						<button type="button" class="blog-btn" onclick="location.href='/point'">환급신청</button>
@@ -158,7 +160,6 @@
 						</a> 
 					</div>
 				</div>
-
 			</div>
 		</div>
 	</section>
