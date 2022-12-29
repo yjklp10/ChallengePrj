@@ -101,13 +101,13 @@ table {
 								<c:otherwise>
 									<c:forEach items="${list }" var="dto">
 										<tr>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
+											<td>${dto.pointno }</td>
+											<td>${dto.pointno }</td>
+											<td>${dto.bankname }</td>
+											<td>${dto.acoountholder }</td>
+											<td>${dto.acoountnumber }</td>
+											<td>${dto.withdrawpoint }</td>
+											<td>${dto.status }</td>
 										</tr>
 									</c:forEach>
 								</c:otherwise>
