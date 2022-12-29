@@ -8,74 +8,35 @@
 
  
     <!-- 상단 홍보 배너 -->
+    
     <section class="hero-section">
-        <div class="hero-items owl-carousel owl-loaded owl-drag">
-            
-            
-        <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-4050px, 0px, 0px); transition: all 0s ease 0s; width: 8100px;">
-        <div class="owl-item cloned" style="width: 1350px;"><div class="single-hero-items set-bg" data-setbg="img/2023챌린지2.png" style="background-image: url(&quot;img/2023챌린지2.png&quot;);">
+        <div class="hero-items owl-carousel">
+            <div class="single-hero-items set-bg" data-setbg="img/2023챌린지1.jpg">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-5">
                             <h1>NEW</h1>
-                            <h2>2023 미라클 모닝</h2>
-                            <h2>챌린지</h2>
+                          <h2>2023 미라클 모닝</h2>
+                          <h2>챌린지</h2>
                         </div>
                     </div>
                 </div>
-            </div></div><div class="owl-item cloned" style="width: 1350px;"><div class="single-hero-items set-bg" data-setbg="img/2023챌린지2.png" style="background-image: url(&quot;img/2023챌린지2.png&quot;);">
-               
+            </div>
+             <div class="single-hero-items set-bg" data-setbg="img/상단배너1.jpg">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-5">
                             <h1>NEW</h1>
-                            <h2>2023 미라클 모닝</h2>
-                            <h2>챌린지</h2>
+                          <h2>2023 미라클 모닝</h2>
+                          <h2>챌린지</h2>
                         </div>
                     </div>
                 </div>
-            </div></div><div class="owl-item" style="width: 1350px;"><div class="single-hero-items set-bg" data-setbg="img/2023챌린지2.png" style="background-image: url(&quot;img/2023챌린지2.png&quot;);">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-5">
-                            <h1>NEW</h1>
-                            <h2>2023 미라클 모닝</h2>
-                            <h2>챌린지</h2>
-                        </div>
-                    </div>
-                </div>
-            </div></div><div class="owl-item animated owl-animated-in fadeIn active" style="width: 1350px;"><div class="single-hero-items set-bg" data-setbg="img/2023챌린지2.png" style="background-image: url(&quot;img/2023챌린지2.png&quot;);">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-5">
-                            <h1>NEW</h1>
-                            <h2>2023 미라클 모닝</h2>
-                            <h2>챌린지</h2>
-                        </div>
-                    </div>
-                </div>
-            </div></div><div class="owl-item cloned" style="width: 1350px;"><div class="single-hero-items set-bg" data-setbg="img/2023챌린지2.png" style="background-image: url(&quot;img/2023챌린지2.png&quot;);">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-5">
-                            <h1>NEW</h1>
-                            <h2>2023 미라클 모닝</h2>
-                            <h2>챌린지</h2>
-                        </div>
-                    </div>
-                </div>
-            </div></div><div class="owl-item animated owl-animated-in fadeIn cloned" style="width: 1350px;"><div class="single-hero-items set-bg" data-setbg="img/2023챌린지2.png" style="background-image: url(&quot;img/2023챌린지2.png&quot;);">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-5">
-                            <h1>NEW</h1>
-                            <h2>2023 미라클 모닝</h2>
-                            <h2>챌린지</h2>
-                        </div>
-                    </div>
-                </div>
-            </div></div></div></div><div class="owl-nav"><button type="button" role="presentation" class="owl-prev"><i class="ti-angle-left"></i></button><button type="button" role="presentation" class="owl-next"><i class="ti-angle-right"></i></button></div><div class="owl-dots disabled"></div></div>
+            </div>
+    	</div>
     </section>
+    
+   
     <!-- 상단 홍보 배너 끝 -->
 
     <!-- 카테고리 아이콘 -->
