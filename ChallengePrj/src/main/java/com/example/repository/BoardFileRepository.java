@@ -9,8 +9,10 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-public interface BoardFileRepository extends JpaRepository{
-	 static final String SELECT_FILE_ID = "SELECT ID FROM board_file " +
+import com.example.entity.BoardFile;
+
+public interface BoardFileRepository extends JpaRepository<BoardFile,Long>{
+           	    static final String SELECT_FILE_ID = "SELECT ID FROM board_file " +
 			    "WHERE BOARD_ID = :boardId AND DELETE_YN != 'Y'";
 
 			    static final String UPDATE_DELETE_YN = "UPDATE board_file " +

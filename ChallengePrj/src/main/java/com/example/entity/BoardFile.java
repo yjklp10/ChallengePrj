@@ -15,12 +15,11 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor(access= AccessLevel.PROTECTED)
-@Getter
 @Entity
 public class BoardFile {
 @Id
 @GeneratedValue(strategy=GenerationType.IDENTITY)
-private Long id;
+private Long Id;
 private Long boardid;
 private String orignFileName;
 private String saveFileName;
@@ -32,18 +31,64 @@ private String deleteYn;
 @CreatedDate
 private LocalDateTime registerTime;
 
-@Builder
-public BoardFile(Long id,Long boardid, String orginFileName, String saveFileName, 
-		int fileSize, String fileExt, String filePath,String deleteYn, LocalDateTime registerTime ) {
-	this.id=id;
-	this.boardid=boardid;
-	this.orignFileName=orignFileName;
-	this.saveFileName=saveFileName;
-	this.fileSize=fileSize;
-	this.fileExt=fileExt;
-	this.filePath=filePath;
-	this.deleteYn=deleteYn;
-	this.registerTime=registerTime;
+
+
+public BoardFile(Long Id, Long boardid, String orignFileName, String saveFileName, int fileSize, String fileExt,
+		String filePath, String deleteYn, LocalDateTime registerTime) {
+	this.Id = Id;
+	this.boardid = boardid;
+	this.orignFileName = orignFileName;
+	this.saveFileName = saveFileName;
+	this.fileSize = fileSize;
+	this.fileExt = fileExt;
+	this.filePath = filePath;
+	this.deleteYn = deleteYn;
+	this.registerTime = registerTime;
+}
+
+
+public Long getId() {
+	return Id;
+}
+
+
+public Long getBoardid() {
+	return boardid;
+}
+
+
+public String getOrignFileName() {
+	return orignFileName;
+}
+
+
+public String getSaveFileName() {
+	return saveFileName;
+}
+
+
+public int getFileSize() {
+	return fileSize;
+}
+
+
+public String getFileExt() {
+	return fileExt;
+}
+
+
+public String getFilePath() {
+	return filePath;
+}
+
+
+public String getDeleteYn() {
+	return deleteYn;
+}
+
+
+public LocalDateTime getRegisterTime() {
+	return registerTime;
 }
 
 

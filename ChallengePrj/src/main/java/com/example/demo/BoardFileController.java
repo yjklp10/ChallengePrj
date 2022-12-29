@@ -9,6 +9,7 @@ import java.net.URLEncoder;
 
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -23,10 +24,11 @@ import lombok.RequiredArgsConstructor;
 
 
 
-@RequiredArgsConstructor
+
 @Controller
 public class BoardFileController {
-	  private final BoardFileService boardFileService;
+	@Autowired 
+	private  BoardFileService boardFileService;
 	  @GetMapping("/file/download")
 		public void downloadFile(@RequestParam() Long id, HttpServletResponse response) throws Exception{
 		  try {
@@ -44,7 +46,7 @@ public class BoardFileController {
 				// 파일이 존재하면
 				if (fSize > 0) {
 					// 파일명을 URLEncoder 하여 attachment, Content-Disposition Header로 설정
-					String encodedFilename = "attachment; filename*=" + "UTF-8" + "''" + URLEncoder.encode(fileInfo.getOrigFileName(), "UTF-8");
+					String encodedFilename = "attachment; filename*=" + "UTF-8" + "''" + URLEncoder.encode(fileInfo.getOrignFileName(), "UTF-8");
 					
 					// ContentType 설정
 					response.setContentType("application/octet-stream; charset=utf-8");
