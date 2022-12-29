@@ -1,10 +1,13 @@
 package com.example.biz;
 
-import org.springframework.stereotype.Service;
+
 
 import com.example.dto.makingChallengeDto;
 
-@Service
-public interface makingChallengeBiz {
+
+public interface MakingChallengeBiz {
 	public void writeEx(makingChallengeDto dto);
+	
+	//신호준
+	public makingChallengeDto getDetail(int challengeno);
 }

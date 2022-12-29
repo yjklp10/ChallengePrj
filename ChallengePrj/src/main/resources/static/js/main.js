@@ -47,7 +47,7 @@
         animateOut: 'fadeOut',
         animateIn: 'fadeIn',
         navText: ['<i class="ti-angle-left"></i>', '<i class="ti-angle-right"></i>'],
-        smartSpeed: 1200,
+        smartSpeed: 2000,
         autoHeight: false,
         autoplay: true,
     });

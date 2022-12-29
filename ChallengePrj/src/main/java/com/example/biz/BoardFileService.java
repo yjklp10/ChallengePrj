@@ -9,17 +9,21 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import org.apache.commons.lang3.RandomStringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.example.dto.BoardFileResponseDto;
 import com.example.entity.BoardFile;
 import com.example.repository.BoardFileRepository;
-
+@Service
 public class BoardFileService {
-private final BoardFileRepository boardFileRepository;
+@Autowired
+private  BoardFileRepository boardFileRepository;
 public BoardFileResponseDto findById(Long id) throws Exception {
-	return new BoardFileResponseDto( boardFileRepository.findById(id).get());
+	return new BoardFileResponseDto(boardFileRepository.findById(id).get());
 }
 
 public List<Long> findByBoardId(Long boardId) throws Exception {
@@ -104,17 +108,10 @@ public boolean uploadFile(MultipartHttpServletRequest multiRequest, Long boardId
 				mFile.transferTo(saveFile);
 			}
 			
-			BoardFile boardFile = BoardFile.builder()
-					.boardId(boardId)
-					.origFileName(realFileName)
-					.saveFileName(saveFileName)
-					.fileSize(fileSize)
-					.fileExt(fileExt)
-					.filePath(filePath)
-					.deleteYn("N")
-					.build();
 			
-			resultList.add(boardFileRepository.save(boardFile).getId());
+			  BoardFile boardFile= new BoardFile(null,boardId, realFileName,saveFileName, fileSize, fileExt,filePath,"N",null);
+				resultList.add(boardFileRepository.save(boardFile).getId());
+			
 		}
 	}
 	
@@ -127,4 +124,5 @@ public int updateDeleteYn(Long[] deleteIdList) throws Exception {
 
 public int deleteBoardFileYn(Long[] boardIdList) throws Exception {
 	return boardFileRepository.deleteBoardFileYn(boardIdList);
+}
 }
