@@ -25,7 +25,11 @@ dependencies {
 	
 	// https://mvnrepository.com/artifact/commons-io/commons-io
 	implementation 'commons-io:commons-io:2.6'
-
+	
+	
+	
+	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.4'
+	
 }
 
 tasks.named('test') {
