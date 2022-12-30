@@ -6,15 +6,9 @@
 	
 <body><h2>파일 업로드</h2>
 	
-        <form action="/upload" method="post" enctype="multipart/form-data">
-     	  
-           <h4>단일 파일 업로드</h4>
-           <input type="file" name="file">
-                   	
-           <h4>다중 파일 업로드</h4>
-           <input type="file" multiple="multiple" name="files">
-			
-	   <input type="submit"/>
-	</form>
+        <form name="form" method="post" action="/ex" enctype="multipart/form-data">
+    <input type="file" name="files" multiple="multiple"/>
+    <input type="submit" id="submit" value="전송"/>
+</form>
 </body>
 </html>
