@@ -2,7 +2,7 @@ package com.example.mybatis.mapper;
 
 import org.springframework.stereotype.Repository;
 
-import com.example.dto.makingChallengeDto;
+import com.example.demo.dto.makingChallengeDto;
 @Repository
 public interface ChallengeMapper {
 
