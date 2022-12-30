@@ -154,6 +154,7 @@
 							<div class="rb-text">
 								<h6>1시간 독서하기</h6>
 								<p>
+								
 									참여완료 <span>11.28-12.05</span>
 								</p>
 							</div>
