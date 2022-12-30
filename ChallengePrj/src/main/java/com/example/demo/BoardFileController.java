@@ -88,6 +88,7 @@ public class BoardFileController {
 		
 		
 		
+		
 		@PostMapping("/file/delete.ajax")
 		public String updateDeleteYn(Model model,BoardFileRequestDto boardFileRequestDto) {
 			return "";

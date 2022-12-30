@@ -18,6 +18,8 @@ public class BoardFileRequestDto {
 		this.fileid = fileid;
 		
 		
+		
+		
 	
 	
 	
