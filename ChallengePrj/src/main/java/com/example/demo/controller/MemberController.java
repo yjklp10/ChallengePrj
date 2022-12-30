@@ -1,37 +1,26 @@
 package com.example.demo.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.example.demo.biz.MemberBiz;
 
 @Controller
-public class LoginController {
-
-
+public class MemberController {
 	
-	@RequestMapping("/login.do")
-	public String login() {
-		return "login";
-	}
-
-	@RequestMapping("/register.do")
-	public String register() {
-		return "register";
-	}
+	@Autowired
+	private MemberBiz biz;
 	
-	@RequestMapping("/forget.do")
-	public String forget() {
-		return "forget";
-	}
 	
-
 	@ResponseBody
 	@RequestMapping("idchk.do")
 	public int idchk(@RequestParam("memberid") String memberid) {
 		int res = 0;
+		
+		res = biz.idChk(memberid);
 		
 		return res;
 	}
