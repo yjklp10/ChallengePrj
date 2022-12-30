@@ -349,7 +349,7 @@ ol {
 							<div class="product-details">
 								<div class="pd-title">
 									<span>챌린저스</span>
-									<h3><c:out value="${making.challengetitle }"/></h3>
+									<h3><c:out value="${challengetitle }"/></h3>
 								</div>
 								<div class="pd-rating">
 									<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
@@ -382,7 +382,7 @@ ol {
 								<br><br>
 								<div class="pd-desc">
 
-									<h4><c:out value="${making.challengmoney }"/></h4>
+									<h4><c:out value="${challengmoney }"/></h4>
 								</div>
 								<div class="quantity">
 
@@ -408,7 +408,7 @@ ol {
 										<div class="row">
 											<div class="col-lg-7">
 												<h5>소개글</h5>
-												<p><c:out value="${making.challengeintro }"/></p>
+												<p><c:out value="${challengeintro }"/></p>
 											</div>
 										</div>
 									</div>
