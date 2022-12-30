@@ -1,26 +1,24 @@
-package com.example.demo;
+package com.example.demo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
 
-import com.example.biz.MakingChallengeBiz;
-import com.example.dto.makingChallengeDto;
+import com.example.demo.biz.MakingChallengeBiz;
+import com.example.demo.dto.makingChallengeDto;
 
 @Controller
 public class challengeController {
 	
 	
-	
+	@Autowired
 	private MakingChallengeBiz makingChallengeBiz;
 	
 	
 	
 	//신호준
-	@GetMapping("/chdetail")
+	@GetMapping(value="/chdetail")
 	public String challengeView(int challengeno, Model model) {
 		
 		makingChallengeDto challenge = makingChallengeBiz.getDetail(challengeno);
@@ -29,4 +27,6 @@ public class challengeController {
 		
 		return "board/challdetail";
 	}
+	
+	
 }

@@ -1,16 +1,16 @@
-package com.example.biz;
+package com.example.demo.biz;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.dto.makingChallengeDto;
-import com.example.mybatis.mapper.ChallengeMapper;
+import com.example.demo.dto.makingChallengeDto;
+import com.example.demo.mapper.ChallengeMapper;
 
 @Service
 public class MakingChallengeBizImple implements MakingChallengeBiz{
 
 	@Autowired
-	private ChallengeMapper mapper;
+	private ChallengeMapper dao;
 	
 	
 	@Override
@@ -21,7 +21,7 @@ public class MakingChallengeBizImple implements MakingChallengeBiz{
 
 	@Override
 	public makingChallengeDto getDetail(int challengeno) {
-		return mapper.getDetail(challengeno);
+		return dao.getDetail(challengeno);
 	}
 
 }

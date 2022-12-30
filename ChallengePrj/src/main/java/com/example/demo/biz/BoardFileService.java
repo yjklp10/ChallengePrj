@@ -1,4 +1,4 @@
-package com.example.biz;
+package com.example.demo.biz;
 
 import java.io.File;
 import java.security.SecureRandom;
@@ -15,12 +15,12 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
-import com.example.dto.BoardFileResponseDto;
-import com.example.entity.BoardFile;
-import com.example.repository.BoardFileRepository;
+import com.example.demo.dto.BoardFileResponseDto;
+import com.example.demo.entity.BoardFile;
+import com.example.demo.repository.BoardFileRepository;
 @Service
 public class BoardFileService {
-@Autowired
+
 private  BoardFileRepository boardFileRepository;
 public BoardFileResponseDto findById(Long id) throws Exception {
 	return new BoardFileResponseDto(boardFileRepository.findById(id).get());
@@ -62,7 +62,7 @@ public boolean uploadFile(MultipartHttpServletRequest multiRequest, Long boardId
 			
 			// 파일 업로드 경로 + 현재 년월(월별관리)
 			filePath = filePath + File.separator + String.valueOf(cal.get(Calendar.YEAR)) + File.separator + String.valueOf(cal.get(Calendar.MONTH) + 1);
-			randomFileName = "FILE_" + RandomStringUtils.random(8, 0, 0, false, true, null, new SecureRandom());
+			//randomFileName = "FILE_" + RandomStringUtils.random(8, 0, 0, false, true, null, new SecureRandom());
 			
 			String realFileName = mFile.getOriginalFilename();
 			String fileExt = realFileName.substring(realFileName.lastIndexOf(".") + 1);

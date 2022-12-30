@@ -1,4 +1,4 @@
-package com.example.repository;
+package com.example.demo.repository;
 
 import java.util.List;
 
@@ -9,7 +9,7 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import com.example.entity.BoardFile;
+import com.example.demo.entity.BoardFile;
 
 public interface BoardFileRepository extends JpaRepository<BoardFile,Long>{
            	    static final String SELECT_FILE_ID = "SELECT ID FROM board_file " +

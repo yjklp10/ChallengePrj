@@ -1,10 +1,10 @@
-package com.example.biz;
+package com.example.demo.biz;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.example.dto.PointDto;
+import com.example.demo.dto.PointDto;
 
 public class PointBizImpl {
 

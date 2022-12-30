@@ -1,8 +1,8 @@
-package com.example.biz;
+package com.example.demo.biz;
 
 
 
-import com.example.dto.makingChallengeDto;
+import com.example.demo.dto.makingChallengeDto;
 
 
 public interface MakingChallengeBiz {

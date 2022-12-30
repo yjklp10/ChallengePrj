@@ -1,4 +1,4 @@
-package com.example.dto;
+package com.example.demo.dto;
 
 import java.util.Date;
 
@@ -6,7 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 
-import org.springframework.data.annotation.Id;
+import javax.persistence.Id;
 
 import lombok.Data;
 import lombok.Getter;
@@ -19,7 +19,6 @@ import lombok.Setter;
 public class makingChallengeDto {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int challengeno;
 	
 	private String challengetitle;

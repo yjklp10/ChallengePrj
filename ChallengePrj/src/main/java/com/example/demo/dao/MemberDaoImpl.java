@@ -1,28 +1,21 @@
-package com.example.demo.biz;
+package com.example.demo.dao;
 
+import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
+import org.springframework.stereotype.Repository;
 
 import com.example.demo.dto.MemberDto;
-import com.example.deom.dao.MemberDao;
 
+@Repository
+public class MemberDaoImpl implements MemberDao{
 
-@Service
-public class MemberBizImpl implements MemberBiz{
-
-	
 	@Autowired
-	private MemberDao dao;
+	private SqlSessionTemplate sqlSession; 
 	
 	@Override
 	public int idChk(String memberid) {
-
-		return dao.idChk(memberid);
-
 		// TODO Auto-generated method stub
 		return 0;
-
 	}
 
 	@Override

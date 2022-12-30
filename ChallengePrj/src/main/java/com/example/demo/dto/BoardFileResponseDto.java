@@ -1,6 +1,6 @@
-package com.example.dto;
+package com.example.demo.dto;
 
-import com.example.entity.BoardFile;
+import com.example.demo.entity.BoardFile;
 
 import lombok.Getter;
 
