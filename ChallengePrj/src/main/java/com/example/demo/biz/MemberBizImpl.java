@@ -19,7 +19,6 @@ public class MemberBizImpl implements MemberBiz{
 
 		return dao.idChk(memberid);
 
-
 	}
 
 	@Override
