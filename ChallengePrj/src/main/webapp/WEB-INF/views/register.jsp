@@ -13,7 +13,7 @@
 	    
 $(function(){
 	$('#memberpw').keyup(function(){
-		$('.pw_confirm').text('');
+		$('#pwchk').text('');
 	}); 
 	$('#memberpwchk').keyup(function(){
 		if($('#memberpw').val()!=$('#memberpwchk').val()){
@@ -24,13 +24,44 @@ $(function(){
 	}); 
 	         
 });
-	   
+
+function id_overlap_chk(){
+	let memberid = $("#memberid").val();
+	$.ajax({
+		data:{memberid:memberid},
+		url:'idchk.do',
+		type:'post',
+		async:false,
+		success:function(res){
+			if(res == 0){
+				$(".id_use_chk").css("display","flex");
+				$(".id_use_chk").html("사용가능한 아이디입니다.")
+				$("#memberid").attr("title","yid");
+				
+			}
+			else{
+				$(".id_use_chk").css("display","flex");
+				$(".id_use_chk").html("이미 사용중인 아이디입니다.")
+			}
+		}
+	})
+	
+	
+}
+
+
 </script>
 <style>
 	#pwchk{
 		display:none;
 		color: red;
 		float: right;
+		font-size: 18px;
+	}
+	.id_use_chk,
+	.nick_use_chk{
+		display:none;
+		color:#008000;
 		font-size: 18px;
 	}
 </style>
@@ -248,8 +279,10 @@ $(function(){
                         <form action="#">
                             <div class="group-input">
                                 <label for="membername">아이디*</label>
-                                <input type="text" id="membername" name="memberid" required="required">
-                                <input type="button" value="중복확인" onclick="" style="width: 100px;float: right;">
+                                <input type="text" id="memberid" name="memberid" title="nid" required="required">
+                                <span class="id_use_chk">사용가능한 아이디입니다.</span>
+                                
+                                <input type="button" value="중복확인" onclick="id_overlap_chk();" style="width: 100px;float: right;">
                             </div>
                             <div class="group-input">
                                 <label for="pass">비밀번호 *</label>
@@ -263,27 +296,31 @@ $(function(){
                              <div class="group-input">
                                 <label for="email">이메일 *</label>
                                 <input type="email" name="memberemail" id="memberemail" required="required">
+                                
                             </div>
                              <div class="group-input">
                                 <label for="nick">닉네임 *</label>
-                                <input type="text" name="nickname" id="nick" required="required">
+                                <input type="text" name="nickname" id="nick" title="nnick" required="required">
+                                <span class="nick_use_chk">사용가능한 닉네임입니다.</span>
+                                
                                 <input type="button" value="중복확인" onclick="" style="width: 100px;float: right;">
                             </div>
                              <div class="group-input">
                                 <label for="name">이름 *</label>
                                 <input type="text" name="name" id="name">
                             </div>
-                            <div class="group-input-radio" style="margin-bottom: 25px;">
+                           
+                             <div class="group-input">
+                                <label for="tel">전화번호 *</label>
+                                <input type="tel" id="tel">
+                            </div>
+                             <div class="group-input-radio" style="margin-bottom: 25px;">
                             	<label for="gender" style="display: block;font-size: 18px;color: #252525;margin-bottom: 13px;">성별 *</label>
                             	<input type="radio" name="gender" value="male">
                             	남성
                             	&nbsp;&nbsp;
                             	<input type="radio" name="gender" value="female">
                             	여성
-                            </div>
-                             <div class="group-input">
-                                <label for="tel">전화번호 *</label>
-                                <input type="tel" id="tel">
                             </div>
                             <button type="submit" class="site-btn register-btn">회원가입</button>
                         </form>

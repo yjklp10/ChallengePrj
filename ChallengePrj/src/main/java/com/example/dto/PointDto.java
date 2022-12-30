@@ -5,7 +5,6 @@ import java.util.Date;
 public class PointDto {
 
 	private int pointno;
-	private int point;
 	private String memberid;
 	private String bankname;
 	private String accountnumber;
@@ -18,11 +17,10 @@ public class PointDto {
 
 	};
 	
-	public PointDto(int pointno, int point, String memberid, String bankname, String accountnumber,
+	public PointDto(int pointno, String memberid, String bankname, String accountnumber,
 			String accountholder, int withdrawpoint, String status, Date pointdate) {
 		super();
 		this.pointno = pointno;
-		this.point = point;
 		this.memberid = memberid;
 		this.bankname = bankname;
 		this.accountnumber = accountnumber;
@@ -38,14 +36,6 @@ public class PointDto {
 
 	public void setPointno(int pointno) {
 		this.pointno = pointno;
-	}
-
-	public int getPoint() {
-		return point;
-	}
-
-	public void setPoint(int point) {
-		this.point = point;
 	}
 
 	public String getMemberid() {
