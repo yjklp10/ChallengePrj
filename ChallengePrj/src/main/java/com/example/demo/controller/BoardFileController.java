@@ -1,5 +1,5 @@
 package com.example.demo.controller;
-package com.example.controller;
+package com.example.demo.controller;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
