@@ -3,9 +3,8 @@ package com.example.demo.biz;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
+import com.example.demo.dao.MemberDao;
 import com.example.demo.dto.MemberDto;
-import com.example.deom.dao.MemberDao;
 
 
 @Service
@@ -20,8 +19,6 @@ public class MemberBizImpl implements MemberBiz{
 
 		return dao.idChk(memberid);
 
-		// TODO Auto-generated method stub
-		return 0;
 
 	}
 

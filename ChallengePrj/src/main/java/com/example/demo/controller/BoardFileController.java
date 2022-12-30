@@ -1,5 +1,4 @@
 package com.example.demo.controller;
-package com.example.controller;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -15,8 +14,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.example.biz.BoardFileService;
-import com.example.dto.BoardFileResponseDto;
+import com.example.demo.biz.BoardFileService;
+import com.example.demo.dto.BoardFileResponseDto;
 
 import lombok.RequiredArgsConstructor;
 
