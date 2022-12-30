@@ -3,9 +3,8 @@ package com.example.demo.biz;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
+import com.example.demo.dao.MemberDao;
 import com.example.demo.dto.MemberDto;
-import com.example.deom.dao.MemberDao;
 
 
 @Service
