@@ -34,4 +34,6 @@ public interface BoardFileRepository {
 	public int deleteBoardFileYn(@Param("boardIdList") Long[] boardIdList);    
 	
 	
+	
+	
 }

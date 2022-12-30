@@ -34,6 +34,8 @@ public class BoardFile {
 		this.deleteYn = deleteYn;
 		this.registerTime = registerTime;
 
+		
+		
 
 	}
 

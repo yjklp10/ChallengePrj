@@ -58,6 +58,8 @@ public class BoardFileService {
 				
 				if (fileSize > 0) {
 					
+					
+					
 					String filePath = "C:\\dev_tools\\eclipse\\workspace\\uploadFiles\\";
 					
 					// 파일 업로드 경로 + 현재 년월(월별관리)

@@ -16,6 +16,8 @@ public class BoardFileRequestDto {
 		this.id = id;
 		this.idArr = idArr;
 		this.fileid = fileid;
+		
+		
 	
 	
 	
