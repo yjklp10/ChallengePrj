@@ -12,7 +12,7 @@
 
 
  
-    <!-- 상단 홍보 배너  -->
+    <!-- 상단 홍보 배너 -->
     
     <section class="hero-section">
         <div class="hero-items owl-carousel">
