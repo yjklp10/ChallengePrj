@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta http-equiv="X-UA-Compatible" content="ie=chrome">
 
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
 
  
     <!-- 상단 홍보 배너 -->
@@ -15,9 +20,6 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-5">
-                            <h1>NEW</h1>
-                          <h2>2023 미라클 모닝</h2>
-                          <h2>챌린지</h2>
                         </div>
                     </div>
                 </div>
@@ -26,17 +28,12 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-5">
-                            <h1>NEW</h1>
-                          <h2>2023 미라클 모닝</h2>
-                          <h2>챌린지</h2>
                         </div>
                     </div>
                 </div>
             </div>
     	</div>
     </section>
-    
-   
     <!-- 상단 홍보 배너 끝 -->
 
     <!-- 카테고리 아이콘 -->

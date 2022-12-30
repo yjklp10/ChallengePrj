@@ -528,14 +528,19 @@ img {
 
 .hero-items .owl-nav button[type=button] {
 	font-size: 30px;
+	font-weight: bold;
 	position: absolute;
-	left: 100px;
+	
+	left: 40px;
 	top: 650px;
 	color: #252525;
 }
 
 .hero-items .owl-nav button[type=button]:hover {
 	color: #7c36ff;
+	padding: 100;
+	border-radius: 10px 10px 10px 10px;
+	background-color: rgba(133, 133, 133,0.5);
 }
 
 .hero-items .owl-nav button[type=button].owl-next {
