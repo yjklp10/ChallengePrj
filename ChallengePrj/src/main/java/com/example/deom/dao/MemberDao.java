@@ -1,10 +1,10 @@
-package com.example.dao;
+package com.example.deom.dao;
 
-import com.example.dto.MemberDto;
+import com.example.demo.dto.MemberDto;
 
 public interface MemberDao {
 	
-	String NAMESPACE = "member.";
+	String NAMESPACE = "mymember.";
 	
 	public int idChk(String memberid);
 	public int nickChk(String membernick);

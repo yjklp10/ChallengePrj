@@ -1,6 +1,6 @@
-package com.example.biz;
+package com.example.demo.biz;
 
-import com.example.dto.MemberDto;
+import com.example.demo.dto.MemberDto;
 
 public interface MemberBiz {
 	public int idChk(String memberid);
