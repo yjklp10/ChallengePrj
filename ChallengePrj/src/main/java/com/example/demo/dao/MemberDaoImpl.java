@@ -14,8 +14,15 @@ public class MemberDaoImpl implements MemberDao{
 	
 	@Override
 	public int idChk(String memberid) {
-		// TODO Auto-generated method stub
-		return 0;
+		int res = 0;
+		
+		try {
+			res = sqlSession.selectOne(NAMESPACE+"idchk",memberid);
+		} catch (Exception e) {
+			System.out.println("[error] : member idchk");
+			e.printStackTrace();
+		}
+		return res;
 	}
 
 	@Override
