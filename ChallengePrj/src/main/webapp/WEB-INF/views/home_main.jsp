@@ -46,7 +46,7 @@
                        <a href="#">
                         <img src="img/인기.png" alt="">
                         <div class="inner-text">
-                            <h4>인기</h4>
+                            <h5>인기</h5>
                         </div>
                        </a>
                     </div>
@@ -56,7 +56,7 @@
                     <a href="#">
                         <img src="img/신규.png" alt="">
                         <div class="inner-text">
-                            <h4>신규</h4>
+                            <h5>신규</h5>
                         </div>
                         </a>
                     </div>
@@ -66,7 +66,7 @@
                     <a href="#">
                         <img src="img/온라인.png" alt="">
                         <div class="inner-text">
-                            <h4>온라인</h4>
+                            <h5>온라인</h5>
                         </div>
                       </a>
                     </div>
@@ -76,7 +76,7 @@
                     <a href="#">
                         <img src="img/오프라인.png" alt="">
                         <div class="inner-text">
-                            <h4>오프라인</h4>
+                            <h5>오프라인</h5>
                         </div>
                         </a>
                     </div>
@@ -86,7 +86,7 @@
                     <a href="#">
                         <img src="img/운동.png" alt="">
                         <div class="inner-text">
-                            <h4>운동</h4>
+                            <h5>운동</h5>
                         </div>
                     </a>
                     </div>
@@ -96,7 +96,7 @@
                     <a href="#">
                         <img src="img/공부.png" alt="">
                         <div class="inner-text">
-                            <h4>공부</h4>
+                            <h5>공부</h5>
                         </div>
                          </a>
                     </div>
@@ -106,7 +106,7 @@
                     <a href="#">
                         <img src="img/취미.png" alt="">
                         <div class="inner-text">
-                            <h4>취미</h4>
+                            <h5>취미</h5>
                         </div>
                          </a>
                     </div>
@@ -116,8 +116,8 @@
                     <a href="#">
                         <img src="img/규칙적인생활.png" alt="">
                         <div class="inner-text">
-                            <h4>규칙적인 생활</h4>
-                        </div>
+                           <h5>규칙적인 생활</h5>
+                         </div>
                         </a>
                     </div>
                 </div>
@@ -143,7 +143,7 @@
 
                     <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-808px, 0px, 0px); transition: all 1.2s ease 0s; width: 2695px;"><div class="owl-item cloned" style="width: 244.443px; margin-right: 25px;"><div class="product-item">
                             <div class="pi-pic">
-                                <img src="img/products/women-2.jpg" alt="">
+                                <img src="img/임시3.png" alt="">
                                 <div class="icon">
                                 </div>
                             </div>
@@ -178,7 +178,7 @@
 
                     <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-808px, 0px, 0px); transition: all 1.2s ease 0s; width: 2695px;"><div class="owl-item cloned" style="width: 244.443px; margin-right: 25px;"><div class="product-item">
                             <div class="pi-pic">
-                                <img src="img/products/women-2.jpg" alt="">
+                                <img src="img/임시3.png" alt="">
                                 <div class="icon">
                                 </div>
                             </div>
@@ -211,7 +211,7 @@
 
                     <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-808px, 0px, 0px); transition: all 1.2s ease 0s; width: 2695px;"><div class="owl-item cloned" style="width: 244.443px; margin-right: 25px;"><div class="product-item">
                             <div class="pi-pic">
-                                <img src="img/products/women-2.jpg" alt="">
+                                <img src="img/임시3.png" alt="">
                                 <div class="icon">
                                 </div>
                             </div>
