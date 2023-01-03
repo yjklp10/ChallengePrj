@@ -47,7 +47,7 @@ public class UploadController {
 	            String originalName = uploadFile.getOriginalFilename();
 
 	            String fileName = originalName.substring(originalName.lastIndexOf("\\") + 1);
-
+ 
 	            // 날짜 폴더 생성
 	            String folderPath = makeFolder();
 
