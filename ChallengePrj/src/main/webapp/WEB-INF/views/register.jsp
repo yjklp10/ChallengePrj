@@ -39,9 +39,10 @@ function id_overlap_chk(){
 				$("#memberid").attr("title","yid");
 				
 			}
-			else{
+			else if(res == 1){
 				$(".id_use_chk").css("display","flex");
 				$(".id_use_chk").html("이미 사용중인 아이디입니다.")
+				$("#memberid").attr("title","nid");
 			}
 		}
 	})

@@ -153,7 +153,7 @@ $(function (){
 							<button type="button" class="cancel-btn">환급신청</button>
 							<div class="cancel-div">
 								<c:choose>
-									<c:when test="${empty dto. }">
+									<c:when test="${empty list }">
 									------ 예치금이 없습니다. ------ <br>
 									</c:when>
 									<c:otherwise>
