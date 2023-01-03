@@ -29,6 +29,10 @@ dependencies {
   //이승욱
 	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.4'
 	implementation 'org.apache.commons:commons-lang3'
+	
+	//이재ㄴ
+	// https://mvnrepository.com/artifact/net.coobird/thumbnailator
+implementation group: 'net.coobird', name: 'thumbnailator', version: '0.4.17'
 
 }
 
