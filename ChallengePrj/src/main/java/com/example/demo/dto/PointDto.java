@@ -2,9 +2,9 @@ package com.example.demo.dto;
 
 import java.util.Date;
 
-public class PointDto {
+public class PointDto { 
 
-	private int pointno; 
+	private int pointno;  
 	private String memberid;
 	private String bankname;
 	private String accountnumber;
