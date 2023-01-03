@@ -93,7 +93,7 @@ table {
 						</thead>
 						<tbody>
 							<c:choose>
-								<c:when test="${empty list }">
+								<c:when test="${empty l }">
 									<tr>
 										<td colspan="7" align="center">------ 요청 목록이 없습니다. ------</td>
 									</tr>
