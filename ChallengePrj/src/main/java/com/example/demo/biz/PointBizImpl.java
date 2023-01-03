@@ -18,5 +18,5 @@ public class PointBizImpl implements PointBiz{
 	@Override
 	public List<PointDto> selectList() {
 		return dao.selectList();
-	}
+	} 
 }
