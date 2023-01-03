@@ -2,6 +2,7 @@ package com.example.demo.biz;
 
 import java.util.List;
 
+
 import com.example.demo.dto.PointDto;
 
 public interface PointBiz {
