@@ -48,21 +48,14 @@ h4 {
 }
 
 h5 {
-	font-size: 18px;
+	font-size: 22px;
 }
 
 h6 {
 	font-size: 16px;
 }
 
-p {
-	font-size: 16px;
-	font-family: "Muli", sans-serif;
-	color: #000000;
-	font-weight: 400;
-	line-height: 26px;
-	margin: 0 0 15px 0;
-}
+
 
 
 input:focus,
@@ -343,7 +336,7 @@ img {
 	color: #ffffff;
 	right: 20px;
 	top: 13px;
-	content: "";
+	content: "�꼪";
 	font-family: FontAwesome;
 	font-size: 18px;
 }
@@ -530,7 +523,6 @@ img {
 	font-size: 30px;
 	font-weight: bold;
 	position: absolute;
-	
 	left: 40px;
 	top: 650px;
 	color: #252525;
@@ -538,7 +530,7 @@ img {
 
 .hero-items .owl-nav button[type=button]:hover {
 	color: #7c36ff;
-	padding: 100;
+	padding: 100px;
 	border-radius: 10px 10px 10px 10px;
 	background-color: rgba(133, 133, 133,0.5);
 }
@@ -549,11 +541,16 @@ img {
 }
 
 /*---------------------
-  Banner Section
+  상단 카테고리 Section
 -----------------------*/
+.category-icon {
+	display: flex;
+    justify-content: center;
+}
 
 .banner-section {
-	padding: 80px 50px;
+	padding-top: 100px;
+	padding-bottom: 50px;
 }
 
 .single-banner {
@@ -571,9 +568,11 @@ img {
 	position: absolute;
 	left: 35px;
 	top: 30px;
-	border: 13px solid #ffffff;
+	padding: 100px #d4b9ff;
+	border-radius: 5px;
+	border: 13px solid #d4b9ff;
 	content: "";
-	opacity: 0.3;
+	opacity: 0.7;
 	width: calc(100% - 70px);
 	height: calc(100% - 60px);
 	-webkit-transform: scale(0);
@@ -585,42 +584,34 @@ img {
 }
 
 .single-banner img {
+	margin: auto;
+    display: block;
 	width: 40%;
 }
 
 .single-banner .inner-text {
 	position: bottom;
-	left: 0;
-	top: 0;
-	display: -webkit-box;
-	display: -ms-flexbox;
 	display: flex;
-	-webkit-box-pack: center;
-	-ms-flex-pack: center;
-	justify-content: center;
-	width: 50%;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	align-items: center;
+    justify-content: center;
 	height: 100%;
+	padding-top: 20px;
+
 }
 
-.single-banner .inner-text h4 {
+.single-banner .inner-text h5 {
 	color: #252525;
 	font-weight: 700;
-	padding: 11px 28px;
-	background: #ffffff;
-	border-radius: 2px;
+    align-items: center;
 }
 
 /*---------------------
-  Women Banner Section
+  Banner Section
 -----------------------*/
 
 .women-banner {
 	padding-right: 65px;
 	padding-left: 65px;
-	padding-top: 0;
+	padding-top: 100px;
 	padding-bottom: 80px;
 }
 
@@ -1001,7 +992,7 @@ img {
 	position: absolute;
 	right: -18px;
 	top: 0px;
-	content: " 꼨";
+	content: " 瑗�";
 	font-family: "FontAwesome";
 	font-size: 16px;
 	color: #b2b2b2;
