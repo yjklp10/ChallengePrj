@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import com.example.demo.biz.MakingChallengeBiz;
+import com.example.demo.dto.Testchallenge;
 import com.example.demo.dto.makingChallengeDto;
 
 @Controller
@@ -21,11 +22,11 @@ public class challengeController {
 	@GetMapping(value="/chdetail")
 	public String challengeView(int challengeno, Model model) {
 		
-		makingChallengeDto challenge = makingChallengeBiz.getDetail(challengeno);
+		Testchallenge challenge = makingChallengeBiz.getDetail(challengeno);
 		
 		model.addAttribute("challenge", challenge);
 		
-		return "board/challdetail";
+		return "challdetail";
 	}
 	
 	

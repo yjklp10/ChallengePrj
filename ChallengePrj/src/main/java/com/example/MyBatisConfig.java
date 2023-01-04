@@ -27,7 +27,7 @@ public class MyBatisConfig {
 		
 		factoryBean.setDataSource(dataSource);
 		
-		factoryBean.setConfigLocation(new PathMatchingResourcePatternResolver().getResource("/com/example/mybatis/config/mybatis-config.xml"));
+		factoryBean.setConfigLocation(new PathMatchingResourcePatternResolver().getResource("com/example/mybatis/config/mybatis-config.xml"));
 		
 		factoryBean.setTypeAliasesPackage("com.example.demo.dto");
 		
