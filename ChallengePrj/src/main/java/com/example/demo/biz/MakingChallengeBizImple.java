@@ -3,6 +3,7 @@ package com.example.demo.biz;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.dto.Testchallenge;
 import com.example.demo.dto.makingChallengeDto;
 import com.example.demo.mapper.ChallengeMapper;
 
@@ -10,7 +11,7 @@ import com.example.demo.mapper.ChallengeMapper;
 public class MakingChallengeBizImple implements MakingChallengeBiz{
 
 	@Autowired
-	private ChallengeMapper dao;
+	private ChallengeMapper mapper;
 	
 	
 	@Override
@@ -20,8 +21,8 @@ public class MakingChallengeBizImple implements MakingChallengeBiz{
 	}
 
 	@Override
-	public makingChallengeDto getDetail(int challengeno) {
-		return dao.getDetail(challengeno);
+	public Testchallenge getDetail(int challengeno) {
+		return mapper.getDetail(challengeno);
 	}
 
 }

@@ -7,4 +7,8 @@
 	<settings>
 		<setting name="jdbcTypeForNull" value="NULL" />
 	</settings>
+	
+	<mappers>
+		<mapper resource="net/mybatis/mapper/ChallengeMapper.xml"/>
+	</mappers>
 </configuration>
