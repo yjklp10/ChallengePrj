@@ -22,9 +22,10 @@ public class MemberBizImpl implements MemberBiz{
 	}
 
 	@Override
-	public int nickChk(String membernick) {
-		// TODO Auto-generated method stub
-		return 0;
+	public MemberDto nickChk(String membernick) {
+		
+		
+		return mapper.nickChk(membernick);
 	}
 
 	@Override

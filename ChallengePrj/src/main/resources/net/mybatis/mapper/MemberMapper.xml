@@ -8,6 +8,10 @@
    <select id="idChk" resultType="MemberDto">
    		SELECT * FROM MEMBER WHERE MEMBERID = #{memberid}
    </select>
+   
+   <select id="nickChk" resultType="MemberDto">
+   		SELECT * FROM MEMBER WHERE MEMBERID = #{membernick}
+   </select>
 
 	
 </mapper>
