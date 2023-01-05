@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class MainController {
 
-	
-	@RequestMapping("/home_main")
-	public String home_main() {
-		return "home_main";
-	}
+//	
+//	@RequestMapping("/home_main")
+//	public String home_main() {
+//		return "home_main";
+//	}
 
 }

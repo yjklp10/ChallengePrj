@@ -1,5 +1,17 @@
 package com.example.demo.controller;
 
+
+import net.coobird.thumbnailator.Thumbnailator;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.util.FileCopyUtils;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -13,19 +25,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.util.FileCopyUtils;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.multipart.MultipartFile;
-
 import com.example.demo.dto.UploadDto;
 
-import net.coobird.thumbnailator.Thumbnailator;
 
 @RestController
 public class UploadController {
@@ -67,7 +68,7 @@ public class UploadController {
 
 	                File thumbnailFile = new File(thubmnailSaveName);
 	                // 섬네일 생성
-	                Thumbnailator.createThumbnail(savePath.toFile(),thumbnailFile,100,100);
+	                Thumbnailator.createThumbnail(savePath.toFile(),thumbnailFile,200,200);
 
 	                resultDTOList.add(new UploadDto(fileName,uuid,folderPath));
 	            }catch (IOException e){
