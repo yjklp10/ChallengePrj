@@ -131,32 +131,32 @@
     
      <section class="challenge-list">
     	 <div class="list-container">
-   			 <ul>
-   		  		<li class="list-name"><a href="#"><h3>이 달의 챌린지👍</h3></a></li>
-   		  		<li class="list-plus"><a href="#"><h6>더보기 +</h6></a></li>
-
-   		 		<li><h2><label for="content-list" class="prev">&#x2039;</label>
-      					<label for="content-list" class="next">&#x203a;</label></h2></li>
-    	 	</ul>
-    	
+   			 	<div class="list">
+   			 		 <ul>
+   		  			<li class="list-name"><a href="#"><h3>이 달의 챌린지👍</h3></a></li>
+   		  			<li class="list-plus"><a href="#"><h6>더보기 +</h6></a></li>
+   		  			</ul>
+				</div>
+				
+				<div class="control">
+					<ul>
+   		 			<li><label for="content-list" class="prev">&#x2039;</label>
+      					<label for="content-list" class="next">&#x203a;</label></li>
+    	 			</ul>
+    			</div>
     
    		 	<div class="content-list">
-   		 		<img src="img/임시2.png" alt="">
-  		 	</div>
-  		 	<div class="content-name">
-  		 		<h6>챌린지 이름/타입</h6>
-  		 		<h6>기한</h6>
+   		 		<div class="content-pic">
+   		 			<img src="img/임시2.png" alt="">
+  		 		</div>
+  		 		
+  		 		<div class="content-name">
+  		 			<h6>챌린지 이름/타입</h6>
+  		 			<h6>기한</h6>
+  		 		</div>
   		 	</div>
   		 </div>
     </section>
-    
-    
-    
-    
-    
-    
-    
-    
     
         <!-- 챌린지 리스트 끝 -->
     
@@ -173,7 +173,8 @@
                     </div>
                     <div class="product-slider owl-carousel owl-loaded owl-drag">
 
-                    <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-808px, 0px, 0px); transition: all 1.2s ease 0s; width: 2695px;"><div class="owl-item cloned" style="width: 244.443px; margin-right: 25px;"><div class="product-item">
+                    <div class="owl-stage-outer">
+                    <div class="owl-stage" style="transform: translate3d(-808px, 0px, 0px); transition: all 1.2s ease 0s; width: 2695px;"><div class="owl-item cloned" style="width: 244.443px; margin-right: 25px;"><div class="product-item">
                             <div class="pi-pic">
                                 <img src="img/임시3.png" alt="">
                                 <div class="icon">
