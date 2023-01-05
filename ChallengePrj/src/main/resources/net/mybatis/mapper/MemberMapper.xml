@@ -3,9 +3,9 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="mybatis.mapper.MemberMapper">
+<mapper namespace="com.example.demo.mapper.MemberMapper">
    
-   <select id="idchk" parameterType="memeberDto">
+   <select id="idChk" resultType="MemberDto">
    		SELECT * FROM MEMBER WHERE MEMBERID = #{memberid}
    </select>
 
