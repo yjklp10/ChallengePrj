@@ -7,11 +7,10 @@ import org.apache.ibatis.annotations.Select;
 
 import com.example.demo.dto.PointDto;
 
-@Mapper
 public interface PointDao {
 
-//	String NAMESPACE = "mypoint.";
+	String NAMESPACE = "mypoint.";
 	
-	@Select("SELECT * FROM MYPOINT ORDER BY POINTNO DESC")
-	List<PointDto> selectList();
+	public List<PointDto> selectList();
+	public int insert(PointDto dto);
 }

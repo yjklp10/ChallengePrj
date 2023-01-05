@@ -10,5 +10,6 @@
 	
 	<mappers>
 		<mapper resource="net/mybatis/mapper/ChallengeMapper.xml"/>
+		<mapper resource="net/mybatis/mapper/PointMapper.xml"/>
 	</mappers>
 </configuration>

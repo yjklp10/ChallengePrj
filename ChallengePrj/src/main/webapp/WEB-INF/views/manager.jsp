@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -88,12 +89,13 @@ table {
 								<th scope="col">예 금 주</th>
 								<th scope="col">계좌번호</th>
 								<th scope="col">금 액</th>
+								<th scope="col">신청날짜</th>
 								<th scope="col">상태</th>
 							</tr>
 						</thead>
 						<tbody>
 							<c:choose>
-								<c:when test="${empty l }">
+								<c:when test="${empty list }">
 									<tr>
 										<td colspan="7" align="center">------ 요청 목록이 없습니다. ------</td>
 									</tr>
@@ -102,11 +104,12 @@ table {
 									<c:forEach items="${list }" var="dto">
 										<tr>
 											<td>${dto.pointno }</td>
-											<td>${dto.pointno }</td>
+											<td>${dto.memberid }</td>
 											<td>${dto.bankname }</td>
-											<td>${dto.acoountholder }</td>
-											<td>${dto.acoountnumber }</td>
+											<td>${dto.accountholder }</td>
+											<td>${dto.accountnumber }</td>
 											<td>${dto.withdrawpoint }</td>
+											<td><fmt:formatDate pattern="yyyy-MM-dd" value="${dto.pointdate }"/></td>
 											<td>${dto.status }</td>
 										</tr>
 									</c:forEach>

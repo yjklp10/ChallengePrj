@@ -170,7 +170,7 @@ $(function (){
 							</div>
 						</div>
 					</form>
-					<form action="/point/update" method="post">
+					<form action="/point.do" method="post">
   					 <input type="hidden" name="memberid" value="${dto.memberid }">
     				 <input type="hidden" name="point" value="${dto.point}" >
 						<div class="group-input">
@@ -178,17 +178,17 @@ $(function (){
 							<P>포인트는 3000원 이상부터 출금 가능해요.</P>
 							<button type="button" class="cancel-btn2">출금신청</button>
 							<div class="cancel-div2">
-								<label for="withdraw">출금포인트</label> 
-								<input id="withdraw" type="text" value="${dto.withdrawpoint }"><br> 
+								<label for="withdrawpoint">출금포인트</label> 
+								<input id="withdrawpoint" type="text" name="withdrawpoint"><br> 
 								
 								<label for="bankname">은행명</label>									
-								<input id="bankname" type="text" value="${dto.bankname }"><br> 
+								<input id="bankname" type="text" name="bankname"><br> 
 								
 								<label for="accountHolder">예금주</label>
-								<input id="accountHolder" type="text" value="${dto.accountholder }"><br>
+								<input id="accountHolder" type="text" name="accountholder"><br>
 									
 								<label for="accountNumber">계좌번호</label> 
-								<input id="accountNumber" type="text" value="${dto.accountnumber }"><br>
+								<input id="accountNumber" type="text" name="accountnumber"><br>
 								
 								<button type="submit" class="ok-btn2">출금신청</button>
 								<button type="button" class="no-btn2">취소</button>

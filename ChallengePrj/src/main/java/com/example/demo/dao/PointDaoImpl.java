@@ -28,4 +28,17 @@ public class PointDaoImpl implements PointDao {
 		}
 		return list;
 	}
+	
+	@Override
+	public int insert(PointDto dto) {
+		int res=0;
+		try {
+			res=sqlSession.insert(NAMESPACE+"insert",dto);
+		} catch (Exception e) {
+			System.out.println("[error] : insert");
+			e.printStackTrace();
+		}
+		
+		return res;
+	}
 }
