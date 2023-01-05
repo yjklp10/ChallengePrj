@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mypoint">
+   
+   <resultMap type="pointDto" id="pointMap">
+		<result property="pointno" column="POINTNO"/>
+		<result property="memberid" column="MEMBERID"/>
+		<result property="bankname" column="BANKNAME"/>
+		<result property="accountnumber" column="ACCOUNTNUMBER"/>
+		<result property="accountholder" column="ACCOUNTHOLDER"/>	
+		<result property="withdrawpoint" column="WITHDRAWPOINT"/>	
+		<result property="status" column="STATUS"/>	
+		<result property="pointdate" column="POINTDATE"/>		
+	</resultMap>
+	
+   <select id="selectList" resultMap="pointMap">
+   		SELECT * from MYPOINT;
+   </select>
+
+	<insert id="insert" parameterType="pointDto">
+		INSERT INTO MYPOINT
+		VALUES( NULL, "SS", #{bankname}, #{accountnumber},#{accountholder},#{withdrawpoint},"진행중", NOW())	
+	</insert>
+	
+</mapper>
