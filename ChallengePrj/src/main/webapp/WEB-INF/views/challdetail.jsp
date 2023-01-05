@@ -322,22 +322,7 @@ ol {
 													<div class="at-reply">Nice !</div>
 												</div>
 											</div>
-											<div class="co-item">
-												<div class="avatar-pic">
-													<img src="img/product-single/avatar-2.png" alt="">
-												</div>
-												<div class="avatar-text">
-													<div class="at-rating">
-														<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-															class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-															class="fa fa-star-o"></i>
-													</div>
-													<h5>
-														Roy Banks <span>27 Aug 2019</span>
-													</h5>
-													<div class="at-reply">Nice !</div>
-												</div>
-											</div>
+											
 										</div>
 										<button type="submit" class="site-btn-2">후기 더보기</button>
 										<br><br>
