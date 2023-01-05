@@ -14,10 +14,15 @@ public class UploadDto {
 	    private String uuid;
 
 	    private String folderPath;
+ 
 
-	    public UploadDto(String fileName2, String uuid2, String folderPath2) {
-			// TODO Auto-generated constructor stub
+		public UploadDto(String fileName, String uuid, String folderPath) {
+			super();
+			this.fileName = fileName;
+			this.uuid = uuid;
+			this.folderPath = folderPath;
 		}
+
 
 
 		public String getImageURL(){
