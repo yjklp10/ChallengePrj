@@ -17,12 +17,18 @@
 	</resultMap>
 	
    <select id="selectList" resultMap="pointMap">
-   		SELECT * from MYPOINT;
+   		SELECT * FROM MYPOINT;
    </select>
+   
+   <select id="selectMyinfo" resultType="MoneyDto">
+ 		 SELECT MEMBERID,IFNULL(MYDEPOSIT,0), IFNULL(MYPOINT,0) 
+ 		 FROM MYMONEY WHERE MEMBERID = 'SS' 
+	</select>
+	
 
 	<insert id="insert" parameterType="pointDto">
 		INSERT INTO MYPOINT
-		VALUES( NULL, "SS", #{bankname}, #{accountnumber},#{accountholder},#{withdrawpoint},"진행중", NOW())	
+		VALUES( NULL, #{memberid}, #{bankname}, #{accountnumber},#{accountholder},#{withdrawpoint},"진행중", NOW())	
 	</insert>
 	
 </mapper>

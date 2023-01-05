@@ -2,9 +2,7 @@ package com.example.demo.dao;
 
 import java.util.List;
 
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
-
+import com.example.demo.dto.MoneyDto;
 import com.example.demo.dto.PointDto;
 
 public interface PointDao {
@@ -13,4 +11,8 @@ public interface PointDao {
 	
 	public List<PointDto> selectList();
 	public int insert(PointDto dto);
+	
+	public MoneyDto selectMyinfo(String memberid);
+
+
 }
