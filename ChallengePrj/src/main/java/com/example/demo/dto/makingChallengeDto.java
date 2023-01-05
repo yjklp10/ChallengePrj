@@ -1,21 +1,23 @@
 package com.example.demo.dto;
 
+import java.util.ArrayList;
 import java.util.Date;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+import java.util.List;
 
 import javax.persistence.Id;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
-@Entity
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class makingChallengeDto {
 	
 	@Id
@@ -35,4 +37,7 @@ public class makingChallengeDto {
 	private String category;
 	private String thumbnailname;
 	private String thumbnailpath;
+	
+//	@Builder.Default
+//	private List<challengeImageDto> imageDtoList = new ArrayList<>();
 }
