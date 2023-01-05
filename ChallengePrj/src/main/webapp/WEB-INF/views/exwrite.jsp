@@ -12,6 +12,19 @@
 
 </div>
 
+<form method="post" name="enrollform" enctype="multipart/form-data" action="admin_enroll_product">
+	<div class="form-group">
+		Main Picture <br>
+		<input class="form-control form-control-user" type="file" 
+		name="product_image" id="product_image" onchange="setThumbnail(event);">
+	</div>
+										
+	<div class="form-group">
+		Detail Picture <br>
+		<input class="form-control form-control-user" type="file" multiple="multiple"
+		name="product_detail_image" id="product_detail_image" onchange="setDetailImage(event);">
+	</div>
+</form>
 
 <script
         src="https://code.jquery.com/jquery-3.5.1.min.js"

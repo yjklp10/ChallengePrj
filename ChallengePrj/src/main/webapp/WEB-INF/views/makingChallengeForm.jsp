@@ -99,7 +99,10 @@ padding-top: 8px;
     resize:none;
     }
     </style>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script
+        src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+        crossorigin="anonymous"></script>
     <script>
         function offline_select(){
             const offline_select = document.getElementById("offline_select");
@@ -115,8 +118,7 @@ padding-top: 8px;
         }
      
     </script>
-    
-
+  
 </head>
 
 <body>
@@ -303,7 +305,7 @@ padding-top: 8px;
     <!-- Shopping Cart Section Begin -->
     <section class="checkout-section spad">
         <div class="container">
-            <form action="#" class="checkout-form">
+            <form action="#" class="checkout-form" method="post" enctype="multipart/form-data">
                 <div class="row">
                     <div class="col-lg-12">
                         
@@ -394,12 +396,19 @@ padding-top: 8px;
                             <div class="col-lg-6">
                                 <label for="fir">인증 성공 예시<span>*</span></label>
                                 <br>
-                                <img src="/img/hero-1.jpg" class="rounded" style="width:250px;height:250px;" alt="...">
+                                <!-- <img src="/img/hero-1.jpg" class="rounded" style="width:250px;height:250px;" alt="..."> -->
+                             <input name="uploadFiles" type="file" multiple class="rounded" style="width:250px;height:250px;" alt="...">
+								<button class="uploadBtn">Upload</button>
+								
+								<div class="uploadResult">
                             </div>
                             <div class="col-lg-6">
                                 <label for="last">인증 실패 예시<span>*</span></label>
                                 <br>
-                                <img src="/img/hero-2.jpg" class="rounded" style="width:250px;height:250px;" alt="...">
+                             <input name="uploadFiles" type="file" multiple class="rounded" style="width:250px;height:250px;" alt="...">
+								<button class="uploadBtn">Upload</button>
+								
+								<div class="uploadResult">
                             </div>
                             <div class="col-lg-12">
                                 <label for="cun">챌린지 소개<span>*</span></label>
@@ -432,7 +441,10 @@ padding-top: 8px;
                             <div class="col-lg-12">
                                 <label for="fir">대표 사진 선택<span>*</span></label>
                                 <br>
-                                <img src="/img/hero-3.jpg" class="rounded" style="width:250px;height:250px;" alt="...">
+                               <input name="uploadFiles" type="file" multiple class="rounded" style="width:250px;height:250px;" alt="...">
+								<button class="uploadBtn">Upload</button>
+								
+								<div class="uploadResult">
                             </div>
                         </div>
                      
@@ -636,14 +648,90 @@ var geocoder = new kakao.maps.services.Geocoder();
 
 var marker = new kakao.maps.Marker(), // 클릭한 위치를 표시할 마커입니다
     infowindow = new kakao.maps.InfoWindow({zindex:1}); // 클릭한 위치에 대한 주소를 표시할 인포윈도우입니다
-
+/* 
 // 현재 지도 중심좌표로 주소를 검색해서 지도 좌측 상단에 표시합니다
 searchAddrFromCoords(map.getCenter(), displayCenterInfo);
+ */
+
+</script>
+  <script>
+
+    $('.uploadBtn').click(function( ) {
+
+        var formData = new FormData();
+
+        var inputFile = $("input[type='file']");
+
+        var files = inputFile[0].files;
+
+        for (var i = 0; i < files.length; i++) {
+            console.log(files[i]);
+            formData.append("uploadFiles", files[i]);
+        }
+
+        //실제 업로드 부분
+        //upload ajax
+        $.ajax({
+            url: '/uploadAjax',
+            processData: false,
+            contentType: false,
+            data: formData,
+            type: 'POST',
+            dataType:'json',
+            success: function(result){
+                console.log(result);
+                //나중에 화면 처리
+                showUploadedImages(result);
+            },
+            error: function(jqXHR, textStatus, errorThrown){
+                console.log(textStatus);
+            }
+
+        }); //$.ajax
+    }); //end click
+
+    function showUploadedImages(arr){
+
+        console.log(arr);
+
+        var divArea = $(".uploadResult");
+
+        var str = "";
+
+        for(var i = 0; i < arr.length; i++){
+            str += "<div>";
+            str += "<img src='/display?fileName="+arr[i].thumbnailURL+"'>";
+            str += "<button class='removeBtn' data-name='"+arr[i].imageURL+"'>REMOVE</button>"
+            str += "<div>"
+        }
+        divArea.append(str);
+
+    }
+
+    $(".uploadResult").on("click", ".removeBtn", function(e){
+
+        var target = $(this);
+        var fileName = target.data("name");
+        var targetDiv = $(this).closest("div");
+
+        console.log(fileName);
+
+        $.post('/removeFile', {fileName: fileName}, function(result){
+            console.log(result);
+            if(result === true){
+                targetDiv.remove();
+            }
+        } )
+
+    });
+
+
 
 
 </script>
 
-	 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9ac0def900a39c342fe65cab35fe4b06=LIBRARY"></script>
+
+	<!--  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9ac0def900a39c342fe65cab35fe4b06=LIBRARY"></script> -->
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9ac0def900a39c342fe65cab35fe4b06&libraries=services,clusterer,drawing"></script>
 	 
 </body>
