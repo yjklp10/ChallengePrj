@@ -45,5 +45,15 @@ public class LoginController {
 		
 		return (res != null)?1:0;
 	}
+	
+	@ResponseBody
+	@RequestMapping("/nickchk.do")
+	public int nickchk(@RequestParam("membernick") String membernick) {
+		MemberDto res;
+		res  = biz.nickChk(membernick);
+		
+		
+		return (res != null)?1:0;
+	}
 
 }

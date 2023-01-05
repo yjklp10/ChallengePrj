@@ -46,9 +46,46 @@ function id_overlap_chk(){
 			}
 		}
 	})
-	
-	
 }
+	function nick_overlap_chk(){
+	let memberid = $("#membernick").val();
+	$.ajax({
+		data:{membernick:membernick},
+		url:'nickchk.do',
+		type:'post',
+		async:false,
+		success:function(res){
+			if(res == 0){
+				$(".nick_use_chk").css("display","flex");
+				$(".nick_use_chk").html("사용가능한 닉네임입니다.")
+				$("#membernick").attr("title","ynick");
+				
+			}
+			else if(res == 1){
+				$(".nick_use_chk").css("display","flex");
+				$(".nick_use_chk").html("이미 사용중인 닉네임입니다.")
+				$("#membernick").attr("title","nnick");
+			}
+		}
+	})
+}
+	
+	function overlap_chk(){
+		let nickchk = document.getElementById("membernick").title;
+		let idchk = document.getElementById("memberid").title;
+		
+		if(idchk == 'nid'){
+			alert("아이디 중복체크를 해주세요");
+			document.getElementById("memberid").focus();
+		}else if(idchk == 'yid' && nickchk == 'nnick'){
+			alert("닉네임 중복체크를 해주세요");
+			document.getElementById("membernick").focus();
+		}else{
+			$(".site-btn register-btn").attr("type","submit")
+		}
+	}
+	
+
 
 
 </script>
@@ -301,10 +338,10 @@ function id_overlap_chk(){
                             </div>
                              <div class="group-input">
                                 <label for="nick">닉네임 *</label>
-                                <input type="text" name="nickname" id="nick" title="nnick" required="required">
+                                <input type="text" name="nickname" id="membernick" title="nnick" required="required">
                                 <span class="nick_use_chk">사용가능한 닉네임입니다.</span>
                                 
-                                <input type="button" value="중복확인" onclick="" style="width: 100px;float: right;">
+                                <input type="button" value="중복확인" onclick="nick_overlap_chk()" style="width: 100px;float: right;">
                             </div>
                              <div class="group-input">
                                 <label for="name">이름 *</label>
@@ -323,7 +360,7 @@ function id_overlap_chk(){
                             	<input type="radio" name="gender" value="female">
                             	여성
                             </div>
-                            <button type="submit" class="site-btn register-btn">회원가입</button>
+                            <button type="button" onclick="overlap_chk()" class="site-btn register-btn">회원가입</button>
                         </form>
                         <div class="switch-login">
                             <a href="login.do" class="or-login">로그인</a>
