@@ -171,7 +171,7 @@ $(function (){
 						</div>
 					</form>
 					<form action="/point.do" method="post">
-  					 <input type="hidden" name="memberid" value="${dto.memberid }">
+  					 <input type="hidden" id="memberid" name="memberid" value="${dto.memberid }">
     				 <input type="hidden" name="point" value="${dto.point}" >
 						<div class="group-input">
 							<label for="point">포인트</label> <input id="point" type="text" disabled><br>								

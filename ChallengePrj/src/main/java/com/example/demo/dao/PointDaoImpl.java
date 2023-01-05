@@ -7,6 +7,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.example.demo.dto.MoneyDto;
 import com.example.demo.dto.PointDto;
 
 @Repository
@@ -41,4 +42,18 @@ public class PointDaoImpl implements PointDao {
 		
 		return res;
 	}
+
+	@Override
+	public MoneyDto selectMyinfo(String memberid) {
+		MoneyDto dto =null;
+		try {
+			dto =sqlSession.selectOne(NAMESPACE+"selectMyinfo", memberid);
+		} catch (Exception e) {
+			System.out.println("[error] : select one");
+			e.printStackTrace();
+		}
+		
+		return dto;
+	}
+
 }
