@@ -3,8 +3,8 @@ package com.example.demo.biz;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.dao.MemberDao;
 import com.example.demo.dto.MemberDto;
+import com.example.demo.mapper.MemberMapper;
 
 
 @Service
@@ -12,12 +12,12 @@ public class MemberBizImpl implements MemberBiz{
 
 	
 	@Autowired
-	private MemberDao dao;
+	private MemberMapper mapper;
 	
 	@Override
-	public int idChk(String memberid) {
+	public MemberDto idChk(String memberid) {
 
-		return dao.idChk(memberid);
+		return mapper.idChk(memberid);
 
 	}
 

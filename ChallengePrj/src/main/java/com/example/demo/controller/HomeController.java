@@ -11,15 +11,10 @@ import com.example.demo.dto.PointDto;
 @Controller
 public class HomeController {
 
+
 	@Autowired
 	private PointBiz biz;
-	
 
-	@RequestMapping("/main")
-	public String main() {
-		return "main";
-	}
-	
 
 	@RequestMapping("/")
 	public String index() {

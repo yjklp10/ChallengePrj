@@ -127,7 +127,39 @@
     </section>
     <!-- 카테고리 아이콘 끝 -->
 
-    <!-- 각 챌린지 -->
+    <!-- 챌린지 리스트 -->
+    
+     <section class="challenge-list">
+    	 <div class="list-container">
+   			 <ul>
+   		  		<li class="list-name"><a href="#"><h3>이 달의 챌린지👍</h3></a></li>
+   		  		<li class="list-plus"><a href="#"><h6>더보기 +</h6></a></li>
+
+   		 		<li><h2><label for="content-list" class="prev">&#x2039;</label>
+      					<label for="content-list" class="next">&#x203a;</label></h2></li>
+    	 	</ul>
+    	
+    
+   		 	<div class="content-list">
+   		 		<img src="img/임시2.png" alt="">
+  		 	</div>
+  		 	<div class="content-name">
+  		 		<h6>챌린지 이름/타입</h6>
+  		 		<h6>기한</h6>
+  		 	</div>
+  		 </div>
+    </section>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        <!-- 챌린지 리스트 끝 -->
+    
     <section class="women-banner spad">
         <div class="container-fluid">
             <div class="row">
@@ -161,8 +193,7 @@
         			</div>
     			</section>  
     			
-    			
-    			
+  
     	<section class="women-banner spad">
         <div class="container-fluid">
             <div class="row">

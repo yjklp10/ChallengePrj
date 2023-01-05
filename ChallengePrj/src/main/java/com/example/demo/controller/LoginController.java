@@ -7,9 +7,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.demo.biz.MemberBiz;
+import com.example.demo.dto.MemberDto;
+
+import lombok.RequiredArgsConstructor;
 
 
 @Controller
+@RequiredArgsConstructor
 public class LoginController {
 
 	@Autowired
@@ -35,11 +39,11 @@ public class LoginController {
 	@ResponseBody
 	@RequestMapping("/idchk.do")
 	public int idchk(@RequestParam("memberid") String memberid) {
-		int res = 0;
+		MemberDto res;
 		System.out.println(memberid);
 		res = biz.idChk(memberid);
 		
-		return res;
+		return (res != null)?1:0;
 	}
 
 }

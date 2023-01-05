@@ -8,8 +8,14 @@
 		<setting name="jdbcTypeForNull" value="NULL" />
 	</settings>
 	
+
+	
 	<mappers>
 		<mapper resource="net/mybatis/mapper/ChallengeMapper.xml"/>
+
 		<mapper resource="net/mybatis/mapper/PointMapper.xml"/>
+
+		<mapper resource="net/mybatis/mapper/MemberMapper.xml"/>
+
 	</mappers>
 </configuration>
