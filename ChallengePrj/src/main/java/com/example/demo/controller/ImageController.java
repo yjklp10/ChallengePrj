@@ -8,13 +8,15 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
-
+import java.net.URLDecoder;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.multipart.MultipartFile;
-
+import org.springframework.util.FileCopyUtils;
 import com.example.demo.dto.AttachImageDto;
 
 import net.coobird.thumbnailator.Thumbnails;
@@ -79,4 +81,64 @@ public class ImageController {
 		ResponseEntity<List<AttachImageDto>> result=new ResponseEntity<List<AttachImageDto>>(list,HttpStatus.OK);
 		return result;
 	}
+	@GetMapping("/display")
+	public ResponseEntity<byte[]> getImage(String fileName){
+		
+	
+		
+		File file = new File("c:\\upload\\" + fileName);
+		
+		ResponseEntity<byte[]> result = null;
+		
+		try {
+			
+			HttpHeaders header = new HttpHeaders();
+			
+			header.add("Content-type", Files.probeContentType(file.toPath()));
+			
+			result = new ResponseEntity<>(FileCopyUtils.copyToByteArray(file), header, HttpStatus.OK);
+			
+		}catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+		
+	}	
+	@PostMapping("/deleteFile")
+	public ResponseEntity<String> deleteFile(String fileName){
+		
+	
+		
+		File file = null;
+		
+		try {
+			/* 썸네일 파일 삭제 */
+			file = new File("c:\\upload\\" + URLDecoder.decode(fileName, "UTF-8"));
+			
+			file.delete();
+			
+			/* 원본 파일 삭제 */
+			String originFileName = file.getAbsolutePath().replace("s_", "");
+			
+			
+			
+			file = new File(originFileName);
+			
+			file.delete();
+			
+			
+		} catch(Exception e) {
+			
+			e.printStackTrace();
+			
+			return new ResponseEntity<String>("fail", HttpStatus.NOT_IMPLEMENTED);
+			
+		}
+		
+		return new ResponseEntity<String>("success", HttpStatus.OK);
+		
+	}	
+	
+	
 }
