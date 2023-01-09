@@ -110,16 +110,24 @@
 					<h4>회원정보</h4>
 						<form action="myinfo/update">
 						<div class="group-input">
-							<label for="name">이름</label> 
-							<input id="name" type="text" value="${dto.mydeposit  }" disabled>
+							<label for="membername">이름</label> 
+							<input id="membername" type="text" value="${dto.membername  }" disabled>
 						</div>
 						<div class="group-input">
-							<label for="memberid">이메일</label> 
-							<input id="memberid" type="text" value="${dto.memberid }">
+							<label for="memberid">아이디</label> 
+							<input id="memberid" type="text" value="${dto.memberid }" disabled>
+						</div>
+						<div class="group-input">
+							<label for="membernick">닉네임</label> 
+							<input id="membernick" type="text" value="${dto.membernick }">
+						</div>
+						<div class="group-input">
+							<label for="membereail">이메일</label> 
+							<input id="memberemail" type="text" value="${dto.memberemail }">
 						</div>
 						<div class="group-input">
 							<label for="phone">전화번호</label> 
-							<input id="phone" type="text" value="${dto.mydeposit  }">
+							<input id="phone" type="text" value="${dto.memberphone  }">
 						</div>
 						<div class="group-input">
 							<label for="deposit">예치금</label> 

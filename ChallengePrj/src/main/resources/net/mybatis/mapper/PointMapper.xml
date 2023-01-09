@@ -15,14 +15,31 @@
 		<result property="status" column="STATUS"/>	
 		<result property="pointdate" column="POINTDATE"/>		
 	</resultMap>
+
 	
+	<resultMap type="moneyDto" id="moneyMap">
+		<result property="memberid" column="MEMBERID"/>
+		<result property="mydeposit" column="MYDEPOSIT"/>
+		<result property="mypoint" column="MYPOINT"/>
+	</resultMap>
+	
+	<resultMap type="memberDto" id="memberMap">
+		<result property="memberid" column="MEMBERID"/>
+		<result property="membernick" column="MEMBERNICK"/>
+		<result property="memberemail" column="MEMBEREMAIL"/>
+		<result property="membername" column="MEMBERNAME"/>
+		<result property="memberphone" column="MEMBERPHONE"/>
+	</resultMap>
+
+
    <select id="selectList" resultMap="pointMap">
    		SELECT * FROM MYPOINT;
    </select>
-   
-   <select id="selectMyinfo" resultType="MoneyDto">
- 		 SELECT MEMBERID,IFNULL(MYDEPOSIT,0), IFNULL(MYPOINT,0) 
- 		 FROM MYMONEY WHERE MEMBERID = 'SS' 
+
+
+   <select id="selectMyinfo" resultMap="moneyMap,memberMap">
+ 		 SELECT * FROM MEMBER INNER JOIN MYMONEY ON MEMBER.MEMBERID =MYMONEY.MEMBERID 
+ 		 WHERE MYMONEY.MEMBERID = 'SS' 
 	</select>
 	
 
@@ -30,5 +47,5 @@
 		INSERT INTO MYPOINT
 		VALUES( NULL, #{memberid}, #{bankname}, #{accountnumber},#{accountholder},#{withdrawpoint},"진행중", NOW())	
 	</insert>
-	
+
 </mapper>
