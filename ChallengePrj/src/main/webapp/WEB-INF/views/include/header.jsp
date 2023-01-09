@@ -42,7 +42,7 @@
             <div class="container">
                 <div class="ht-right">
                     <a href="#" class="login-panel">
-                    <img src="img/백일블럭2.png"> 로그인/회원가입</a>
+                    <img src="img/백일블럭2.png"> 로그인 / 회원가입</a>
                 </div>
             </div>
         </div>
@@ -82,14 +82,14 @@
                                 <li><a href="#">이벤트</a></li>
                             </ul>
                         </li>
-                      	<li><a href="#">작심백일!</a>
+                      	<li><a href="./detaillist.jsp">작심백일!</a>
                             <ul class="dropdown">
-                                <li><a href="./detail.jsp">인기/신규</a></li>
-                                <li><a href="#">온라인/오프라인</a></li>
-                                <li><a href="#">운동</a></li>
-                                <li><a href="#">공부</a></li>
-                                <li><a href="#">취미</a></li>
-                                <li><a href="#">규칙적인 생활</a></li>
+                                <li><a href="./detaillist.jsp">인기/신규</a></li>
+                                <li><a href="./detaillist.jsp">온라인/오프라인</a></li>
+                                <li><a href="./detaillist.jsp">운동</a></li>
+                                <li><a href="./detaillist.jsp">공부</a></li>
+                                <li><a href="./detaillist.jsp">취미</a></li>
+                                <li><a href="./detaillist.jsp">규칙적인 생활</a></li>
                             </ul>
                         </li>
                         <li><a href="#">MY 챌린지</a>

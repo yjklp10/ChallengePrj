@@ -14,4 +14,9 @@ public String home_main() {
 	return "home_main";
 	}
 
+@RequestMapping("/detaillist")
+public String detaillist() {
+	return "detaillist";
+	}
+
 }

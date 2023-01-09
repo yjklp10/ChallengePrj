@@ -632,8 +632,8 @@ img {
 	padding-bottom: 10px;
 }
 
-.list-container .list-name li {
-	font-weight: 900;
+.list h3 {
+	font-weight: 700;
 }
 
 .list-container .list-plus {
@@ -651,20 +651,28 @@ img {
 }
 
 .list-container .control .prev {
-	padding-right: 30px;
+	padding-right: 15px;
 }
 
-.list-container .control .right {
-	padding-left: 30px;
+.list-container .control .next {
+	padding-left: 15px;
 }
 
 .list-container .content-list {
+	padding-top: 65px;
 	display: inline-block;
+	padding-right: 50px;
+}
+
+.content-pic {
+	width: 200px;
+	height: 200px;
 }
 
 
 .content-name {
 	padding-top: 15px;
+	line-height: 10px;
 }
 
 
