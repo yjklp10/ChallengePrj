@@ -2,6 +2,20 @@
     pageEncoding="UTF-8"%>
 <html>
 <head>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/themify-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 <body>
 
@@ -12,20 +26,33 @@
 
 </div>
 
-<form method="post" name="enrollform" enctype="multipart/form-data" action="admin_enroll_product">
-	<div class="form-group">
-		Main Picture <br>
-		<input class="form-control form-control-user" type="file" 
-		name="product_image" id="product_image" onchange="setThumbnail(event);">
-	</div>
-										
-	<div class="form-group">
-		Detail Picture <br>
-		<input class="form-control form-control-user" type="file" multiple="multiple"
-		name="product_detail_image" id="product_detail_image" onchange="setDetailImage(event);">
-	</div>
-</form>
+<label for="fir">인증 성공 예시<span>*</span></label>
+<br>
+<!-- <img src="/img/hero-1.jpg" class="rounded" style="width:250px;height:250px;" alt="..."> -->
+<input name="uploadFiles1" type="file" multiple class="rounded" style="width:250px;height:250px;" alt="...">
+<button class="uploadBtn1">Upload</button>
 
+<div class="uploadResult1">
+</div>
+                    
+
+   <label for="last">인증 실패 예시<span>*</span></label>
+   <br>
+<input name="uploadFiles2" type="file" multiple class="rounded" style="width:250px;height:250px;" alt="...">
+<button class="uploadBtn2">Upload</button>
+
+<div class="uploadResult2">
+                    </div>
+                    
+
+ <label for="fir">대표 사진 선택<span>*</span></label>
+ <br>
+<input name="uploadFiles3" type="file" multiple class="rounded" style="width:250px;height:250px;" alt="...">
+<button class="uploadBtn3">Upload</button>
+
+<div class="uploadResult3">
+</div>
+                            
 <script
         src="https://code.jquery.com/jquery-3.5.1.min.js"
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
@@ -101,9 +128,7 @@
         } )
 
     });
-
-
-
+/* ------------- */
 
 </script>
 
