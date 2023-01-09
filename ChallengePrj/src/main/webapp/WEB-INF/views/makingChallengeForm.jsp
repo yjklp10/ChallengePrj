@@ -393,10 +393,10 @@ padding-top: 8px;
                                 <br>
                                 <textarea cols="55" rows="10" id="certification_method" placeholder="ex) 오늘 날짜와 걸음 수가 보이도록 업로드&#13;&#10;&#13;&#10;- 챌린지가 시작되면 인증 방법을 수정할 수 없습니다. 신중히 작성해주세요.&#13;&#10;- 혼란을 겪지 않도록 정확한 기준과 구체적인 인증 방법을 적어주세요. "></textarea>
                             </div>
-                            <div class="col-lg-6">
+                            <!-- <div class="col-lg-6">
                                 <label for="fir">인증 성공 예시<span>*</span></label>
                                 <br>
-                                <!-- <img src="/img/hero-1.jpg" class="rounded" style="width:250px;height:250px;" alt="..."> -->
+                                <img src="/img/hero-1.jpg" class="rounded" style="width:250px;height:250px;" alt="...">
                              <input name="uploadFiles" type="file" multiple class="rounded" style="width:250px;height:250px;" alt="...">
 								<button class="uploadBtn">Upload</button>
 								
@@ -409,7 +409,7 @@ padding-top: 8px;
 								<button class="uploadBtn">Upload</button>
 								
 								<div class="uploadResult">
-                            </div>
+                            </div> -->
                             <div class="col-lg-12">
                                 <label for="cun">챌린지 소개<span>*</span></label>
                                 <br>
@@ -438,14 +438,14 @@ padding-top: 8px;
                                 <input type="radio" id="category_select3" name="category"><label for="category_select3">기상</label>
                                 <input type="radio" id="category_select4" name="category"><label for="category_select4">취미</label>
                             </div>
-                            <div class="col-lg-12">
+                            <!-- <div class="col-lg-12">
                                 <label for="fir">대표 사진 선택<span>*</span></label>
                                 <br>
                                <input name="uploadFiles" type="file" multiple class="rounded" style="width:250px;height:250px;" alt="...">
 								<button class="uploadBtn">Upload</button>
 								
 								<div class="uploadResult">
-                            </div>
+                            </div> -->
                         </div>
                      
                     </div>
