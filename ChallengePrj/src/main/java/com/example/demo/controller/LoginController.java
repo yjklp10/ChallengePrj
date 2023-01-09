@@ -25,9 +25,9 @@ public class LoginController {
 		return "login";
 	}
 
-	@RequestMapping("/register.do")
+	@RequestMapping("/registerform.do")
 	public String register() {
-		return "register";
+		return "registerform";
 	}
 	
 	@RequestMapping("/forget.do")
@@ -50,10 +50,24 @@ public class LoginController {
 	@RequestMapping("/nickchk.do")
 	public int nickchk(@RequestParam("membernick") String membernick) {
 		MemberDto res;
+		System.out.println(membernick);
 		res  = biz.nickChk(membernick);
 		
 		
 		return (res != null)?1:0;
 	}
+	
+	@RequestMapping("/register.do")
+	public String memberinsert(MemberDto dto) {
+		int res = biz.insert(dto);
+		
+		if(res  > 0 ){
+			return "redirect:login.do";
+		}else {
+			return "redirect:registerform.do";
+		}
+		
+	}
+	
 
 }

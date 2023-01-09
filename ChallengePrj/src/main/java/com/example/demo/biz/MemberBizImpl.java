@@ -30,14 +30,12 @@ public class MemberBizImpl implements MemberBiz{
 
 	@Override
 	public MemberDto login(MemberDto dto) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public int insert(MemberDto dto) {
-		// TODO Auto-generated method stub
-		return 0;
+		return mapper.insert(dto);
 	}
 
 }
