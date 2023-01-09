@@ -1,5 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="UTF-8">
@@ -22,74 +24,6 @@
     <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
-    
-    
-    <style type="text/css">
-   h1{
-            text-align: center;
-            
-        }
-        .div1{
-         background-color: burlywood;
-         margin: auto;
-         font-size: 25px;
-         position: relative;
-         width:1000px;
-         text-align: center;
-         margin-bottom: 50px;
-        }
-        #fullscreen{
-            
-	width: 1000px;
-	height: 1000px;
-	
-    margin: auto;
-    
-}
-#screen1{
-	width: 300px;
-	height: 300px;
-	float: left;
-  
-	
-}
-#screen1-1{
-	width: 300px;
-	height: 50px;
-
-    text-align: center;
-}
-#screen1-2{
-	width: 300px;
-	height: 250px;
-	background-image: url('img/다운로드.jfif');
-  
-    background-repeat: no-repeat;
-}
-
-
-#screen3{
-	width: 300px;
-	height: 300px;
-    float: right;
-	
-}
-#screen3-1{
-	width: 300px;
-	height: 50px;
-	text-align: center;
-
-}
-#screen3-2{
-	width: 300px;
-	height: 250px;   
-}
-.text{
-    width: 300px;
-	height: 250px;     
-}
-
-</style>
 </head>
 
 <body>
@@ -139,7 +73,7 @@
                             <a href="./index.html">
                                 <img src="img/logo.png" alt="">
                             </a>
-                        </div>    
+                        </div>
                     </div>
                     <div class="col-lg-7 col-md-7">
                         <div class="advanced-search">
@@ -150,63 +84,58 @@
                             </form>
                         </div>
                     </div>
-                    
-            
-            
-            
-                    
                     <div class="col-lg-3 text-right col-md-3">
                         <ul class="nav-right">
                             <li class="heart-icon"><a href="#">
-                                <i class="icon_heart_alt"></i>
-                                <span>1</span>
-                            </a>
+                                    <i class="icon_heart_alt"></i>
+                                    <span>1</span>
+                                </a>
                             </li>
                             <li class="cart-icon"><a href="#">
-                                <i class="icon_bag_alt"></i>
-                                <span>3</span>
-                            </a>
-                            <div class="cart-hover">
-                                <div class="select-items">
-                                    <table>
-                                        <tbody>
-                                            <tr>
-                                                <td class="si-pic"><img src="img/select-product-1.jpg" alt=""></td>
-                                                <td class="si-text">
-                                                    <div class="product-selected">
-                                                        <p>$60.00 x 1</p>
-                                                        <h6>Kabino Bedside Table</h6>
-                                                    </div>
-                                                </td>
-                                                <td class="si-close">
-                                                    <i class="ti-close"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="si-pic"><img src="img/select-product-2.jpg" alt=""></td>
-                                                <td class="si-text">
-                                                    <div class="product-selected">
-                                                        <p>$60.00 x 1</p>
-                                                        <h6>Kabino Bedside Table</h6>
-                                                    </div>
-                                                </td>
-                                                <td class="si-close">
-                                                    <i class="ti-close"></i>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                    <i class="icon_bag_alt"></i>
+                                    <span>3</span>
+                                </a>
+                                <div class="cart-hover">
+                                    <div class="select-items">
+                                        <table>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="si-pic"><img src="img/select-product-1.jpg" alt=""></td>
+                                                    <td class="si-text">
+                                                        <div class="product-selected">
+                                                            <p>$60.00 x 1</p>
+                                                            <h6>Kabino Bedside Table</h6>
+                                                        </div>
+                                                    </td>
+                                                    <td class="si-close">
+                                                        <i class="ti-close"></i>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="si-pic"><img src="img/select-product-2.jpg" alt=""></td>
+                                                    <td class="si-text">
+                                                        <div class="product-selected">
+                                                            <p>$60.00 x 1</p>
+                                                            <h6>Kabino Bedside Table</h6>
+                                                        </div>
+                                                    </td>
+                                                    <td class="si-close">
+                                                        <i class="ti-close"></i>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="select-total">
+                                        <span>total:</span>
+                                        <h5>$120.00</h5>
+                                    </div>
+                                    <div class="select-button">
+                                        <a href="#" class="primary-btn view-card">VIEW CARD</a>
+                                        <a href="#" class="primary-btn checkout-btn">CHECK OUT</a>
+                                    </div>
                                 </div>
-                                <div class="select-total">
-                                    <span>total:</span>
-                                    <h5>$120.00</h5>
-                                </div>
-                                <div class="select-button">
-                                    <a href="#" class="primary-btn view-card">VIEW CARD</a>
-                                    <a href="#" class="primary-btn checkout-btn">CHECK OUT</a>
-                                </div>
-                            </div>
-                        </li>
+                            </li>
                             <li class="cart-price">$150.00</li>
                         </ul>
                     </div>
@@ -233,7 +162,7 @@
                 </div>
                 <nav class="nav-menu mobile-menu">
                     <ul>
-                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="./home.html">Home</a></li>
                         <li><a href="./shop.html">Shop</a></li>
                         <li><a href="#">Collection</a>
                             <ul class="dropdown">
@@ -267,39 +196,119 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="breadcrumb-text">
-                        <a href="#"><i class="fa fa-home"></i> Home</a>
-                        <span>confirm</span>
+                    <div class="breadcrumb-text product-more">
+                        <a href="./index.html"><i class="fa fa-home"></i> Home</a>
+                        <a href="./shop.html">Shop</a>
+                        <span>Check Out</span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Breadcrumb Form Section Begin -->
-   <h1>인증페이지</h1>
-    <div class="div1">챌린지 인증시간 06:00~09:00</div>
-    <div id="fullscreen">
-        <div id="screen1">
-            <div id="screen1-1">
-                <h3>인증사진 예시</h3>
-            </div>
-            <div id="screen1-2" >
-                
-            </div>
+    <!-- Breadcrumb Section Begin -->
+
+    <!-- Shopping Cart Section Begin -->
+    <section class="checkout-section spad">
+        <div class="container">
+            <form action="#" class="checkout-form">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="checkout-content">
+                            <a href="#" class="content-btn">내 챌린지명:4조</a>
+                        </div>
+                        <h4 >인증 사진 예시</h4>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label for="fir">First Name<span>*</span></label>
+                                <input type="text" id="fir">
+                            </div>
+                            <div class="col-lg-6">
+                                <label for="last">Last Name<span>*</span></label>
+                                <input type="text" id="last">
+                            </div>
+                            <div class="col-lg-12">
+                                <label for="cun-name">Company Name</label>
+                                <input type="text" id="cun-name">
+                            </div>
+                            <div class="col-lg-12">
+                                <label for="cun">Country<span>*</span></label>
+                                <input type="text" id="cun">
+                            </div>
+                            <div class="col-lg-12">
+                                <label for="street">Street Address<span>*</span></label>
+                                <input type="text" id="street" class="street-first">
+                                <input type="text">
+                            </div>
+                            <div class="col-lg-12">
+                                <label for="zip">Postcode / ZIP (optional)</label>
+                                <input type="text" id="zip">
+                            </div>
+                            <div class="col-lg-12">
+                                <label for="town">Town / City<span>*</span></label>
+                                <input type="text" id="town">
+                            </div>
+                            <div class="col-lg-6">
+                                <label for="email">Email Address<span>*</span></label>
+                                <input type="text" id="email">
+                            </div>
+                            <div class="col-lg-6">
+                                <label for="phone">Phone<span>*</span></label>
+                                <input type="text" id="phone">
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="create-item">
+                                    <label for="acc-create">
+                                        Create an account?
+                                        <input type="checkbox" id="acc-create">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="checkout-content">
+                            <input type="text" placeholder="인증방법">
+                        </div>
+                        <div class="place-order">
+                            <h4>주의사항!</h4>
+                            <div class="order-total">
+                                <ul class="order-table">
+                                    <li>Product <span>Total</span></li>
+                                    <li class="fw-normal">Combination x 1 <span>$60.00</span></li>
+                                    <li class="fw-normal">Combination x 1 <span>$60.00</span></li>
+                                    <li class="fw-normal">Combination x 1 <span>$120.00</span></li>
+                                    <li class="fw-normal">Subtotal <span>$240.00</span></li>
+                                    <li class="total-price">Total <span>$240.00</span></li>
+                                </ul>
+                                <div class="payment-check">
+                                    <div class="pc-item">
+                                        <label for="pc-check">
+                                            Cheque Payment
+                                            <input type="checkbox" id="pc-check">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                    <div class="pc-item">
+                                        <label for="pc-paypal">
+                                            Paypal
+                                            <input type="checkbox" id="pc-paypal">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="order-btn">
+                                    <button type="submit" class="site-btn place-btn">Place Order</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
         </div>
-       
-        <div id="screen3">
-            <div id="screen3-1">
-                <h3>인증방법</h3>
-            </div>
-            <div id="screen3-2">
-                <textarea class="text"></textarea>
-            </div>
-        </div>
-       
-    </div>
-  
-    </div>
+    </section>
+    <!-- Shopping Cart Section End -->
+    <button onclick="">등록하기</button>
     <!-- Partner Logo Section Begin -->
     <div class="partner-logo">
         <div class="container">
