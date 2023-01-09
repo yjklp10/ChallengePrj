@@ -41,14 +41,14 @@ function id_overlap_chk(){
 			}
 			else if(res == 1){
 				$(".id_use_chk").css("display","flex");
-				$(".id_use_chk").html("이미 사용중인 아이디입니다.")
+				$(".id_use_chk").html("이미 사용중인 아이디입니다.").css("color","#f23c3c");
 				$("#memberid").attr("title","nid");
 			}
 		}
 	})
 }
 	function nick_overlap_chk(){
-	let memberid = $("#membernick").val();
+	let membernick = $("#membernick").val();
 	$.ajax({
 		data:{membernick:membernick},
 		url:'nickchk.do',
@@ -63,7 +63,7 @@ function id_overlap_chk(){
 			}
 			else if(res == 1){
 				$(".nick_use_chk").css("display","flex");
-				$(".nick_use_chk").html("이미 사용중인 닉네임입니다.")
+				$(".nick_use_chk").html("이미 사용중인 닉네임입니다.").css("color","#f23c3c");
 				$("#membernick").attr("title","nnick");
 			}
 		}
@@ -77,16 +77,15 @@ function id_overlap_chk(){
 		if(idchk == 'nid'){
 			alert("아이디 중복체크를 해주세요");
 			document.getElementById("memberid").focus();
+			return false;
 		}else if(idchk == 'yid' && nickchk == 'nnick'){
 			alert("닉네임 중복체크를 해주세요");
 			document.getElementById("membernick").focus();
-		}else{
-			$(".site-btn register-btn").attr("type","submit")
+			return false;
 		}
+		
+
 	}
-	
-
-
 
 </script>
 <style>
@@ -314,7 +313,7 @@ function id_overlap_chk(){
                 <div class="col-lg-6 offset-lg-3">
                     <div class="register-form">
                         <h2>회원가입</h2>
-                        <form action="#">
+                        <form method="post" onsubmit="return overlap_chk()" action="register.do">
                             <div class="group-input">
                                 <label for="membername">아이디*</label>
                                 <input type="text" id="memberid" name="memberid" title="nid" required="required">
@@ -338,29 +337,29 @@ function id_overlap_chk(){
                             </div>
                              <div class="group-input">
                                 <label for="nick">닉네임 *</label>
-                                <input type="text" name="nickname" id="membernick" title="nnick" required="required">
+                                <input type="text" name="membernick" id="membernick" title="nnick" required="required">
                                 <span class="nick_use_chk">사용가능한 닉네임입니다.</span>
                                 
                                 <input type="button" value="중복확인" onclick="nick_overlap_chk()" style="width: 100px;float: right;">
                             </div>
                              <div class="group-input">
                                 <label for="name">이름 *</label>
-                                <input type="text" name="name" id="name">
+                                <input type="text" name="membername" id="name">
                             </div>
                            
                              <div class="group-input">
                                 <label for="tel">전화번호 *</label>
-                                <input type="tel" id="tel">
+                                <input type="tel" name="memberphone" id="memberphone">
                             </div>
                              <div class="group-input-radio" style="margin-bottom: 25px;">
                             	<label for="gender" style="display: block;font-size: 18px;color: #252525;margin-bottom: 13px;">성별 *</label>
-                            	<input type="radio" name="gender" value="male">
+                            	<input type="radio" name="membergender" value="m" required="required">
                             	남성
                             	&nbsp;&nbsp;
-                            	<input type="radio" name="gender" value="female">
+                            	<input type="radio" name="membergender" value="w" required="required">
                             	여성
                             </div>
-                            <button type="button" onclick="overlap_chk()" class="site-btn register-btn">회원가입</button>
+                            <button type="submit" onclick="overlap_chk()" class="site-btn register-btn">회원가입</button>
                         </form>
                         <div class="switch-login">
                             <a href="login.do" class="or-login">로그인</a>

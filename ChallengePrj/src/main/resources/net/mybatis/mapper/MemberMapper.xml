@@ -12,6 +12,9 @@
    <select id="nickChk" resultType="MemberDto">
    		SELECT * FROM MEMBER WHERE MEMBERID = #{membernick}
    </select>
-
+	
+	<insert id="insert" parameterType="MemberDto">
+		INSERT INTO MEMBER VALUES(NULL,#{memberid}, #{memberpw}, #{memberemail}, #{membernick}, #{membername}, #{memberphone}, #{membergender}, '유저', 'n', NOW(), NULL)
+	</insert>
 	
 </mapper>
