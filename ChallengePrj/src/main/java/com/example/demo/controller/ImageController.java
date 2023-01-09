@@ -22,6 +22,13 @@ import com.example.demo.dto.AttachImageDto;
 import net.coobird.thumbnailator.Thumbnails;
 
 public class ImageController {
+	
+	//팝업창 오픈
+	@GetMapping("/fopen")	
+	public String fopen() {
+		return "imageuploadpopup";
+	}
+	
 	@PostMapping(value="/uploadAjaxAction", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public ResponseEntity<List<AttachImageDto>> uploadAjaxActionPOST(MultipartFile[] uploadFile) {
 
