@@ -126,14 +126,14 @@
     </div>
     </section>
     <!-- 카테고리 아이콘 끝 -->
-
-    <!-- 챌린지 리스트 -->
+    
+        <!-- 이 달의 챌린지 리스트 -->
     
      <section class="challenge-list">
     	 <div class="list-container">
    			 	<div class="list">
    			 		 <ul>
-   		  			<li class="list-name"><a href="#"><h3>이 달의 챌린지👍</h3></a></li>
+   		  			<li class="list-name"><a href="#"><h3>이 달의 챌린지 👍</h3></a></li>
    		  			<li class="list-plus"><a href="#"><h6>더보기 +</h6></a></li>
    		  			</ul>
 				</div>
@@ -141,13 +141,13 @@
 				<div class="control">
 					<ul>
    		 			<li><label for="content-list" class="prev">&#x2039;</label>
-      					<label for="content-list" class="next">&#x203a;</label></li>
+      				<label for="content-list" class="next">&#x203a;</label></li>
     	 			</ul>
     			</div>
     
    		 	<div class="content-list">
    		 		<div class="content-pic">
-   		 			<img src="img/임시2.png" alt="">
+   		 			<img src="img/임시.png" alt="">
   		 		</div>
   		 		
   		 		<div class="content-name">
@@ -158,7 +158,102 @@
   		 </div>
     </section>
     
-        <!-- 챌린지 리스트 끝 -->
+        <!-- 인기 챌린지 리스트 끝 -->
+
+    <!-- 인기 챌린지 리스트 -->
+    
+     <section class="challenge-list">
+    	 <div class="list-container">
+   			 	<div class="list">
+   			 		 <ul>
+   		  			<li class="list-name"><a href="#"><h3>인기 챌린지 🔥</h3></a></li>
+   		  			<li class="list-plus"><a href="#"><h6>더보기 +</h6></a></li>
+   		  			</ul>
+				</div>
+				
+				<div class="control">
+					<ul>
+   		 			<li><label for="content-list" class="prev">&#x2039;</label>
+      				<label for="content-list" class="next">&#x203a;</label></li>
+    	 			</ul>
+    			</div>
+    
+   		 	<div class="content-list">
+   		 		<div class="content-pic">
+   		 			<img src="img/임시.png" alt="">
+  		 		</div>
+  		 		
+  		 		<div class="content-name">
+  		 			<h6>챌린지 이름/타입</h6>
+  		 			<h6>기한</h6>
+  		 		</div>
+  		 	</div>
+  		 </div>
+    </section>
+    
+        <!-- 인기 챌린지 리스트 끝 -->
+        
+           <!-- 신규 챌린지 리스트 -->
+    
+     <section class="challenge-list">
+    	 <div class="list-container">
+   			 	<div class="list">
+   			 		 <ul>
+   		  			<li class="list-name"><a href="#"><h3>신규 챌린지 🐥</h3></a></li>
+   		  			<li class="list-plus"><a href="#"><h6>더보기 +</h6></a></li>
+   		  			</ul>
+				</div>
+				
+				<div class="control">
+					<ul>
+   		 			<li><label for="content-list" class="prev">&#x2039;</label>
+      				<label for="content-list" class="next">&#x203a;</label></li>
+    	 			</ul>
+    			</div>
+    
+   		 	<div class="content-list">
+   		 		<div class="content-pic">
+   		 			<img src="img/임시.png" alt="">
+  		 		</div>
+  		 		
+  		 		<div class="content-name">
+  		 			<h6>챌린지 이름/타입</h6>
+  		 			<h6>기한</h6>
+  		 		</div>
+  		 	</div>
+  		 </div>
+    </section>
+    
+        <!-- 신규 챌린지 리스트 끝 -->
+        
+        
+        <!-- 온라인/오프라인 가이드 -->
+        
+        <section class="guide_offline">
+        <h3>코로나 싫어! 밖에 나갈래!</h3>
+        <h5>그럼 오프라인 모임은 어때? 😉</h5>
+        
+        </section>
+        
+       <section class="vs">
+       <h3>VS</h3>
+       </section>
+        
+       <section class="guide_online">
+      	<h3>날 추운데 어딜나가!</h3>
+	   <h5>온라인으로 하면되지! 😁</h5>
+        </section>
+        
+      <!-- 온라인/오프라인 가이드 끝 -->
+      
+      
+      <!-- 작심삼일 가이드 -->
+      
+      <section class="guide3">
+       <h3>작심삼일? NO!</h3>
+	   <h6>어떻게 하면 더 잘할 수 있을까? 자기 관리 잘하는 고수들의 노하우!</h6>
+       </section>
+        
     
     <section class="women-banner spad">
         <div class="container-fluid">
