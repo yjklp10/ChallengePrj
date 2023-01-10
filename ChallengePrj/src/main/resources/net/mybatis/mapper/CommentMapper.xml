@@ -12,15 +12,25 @@
     
     <select id="commentList" resultType="CommentDto">
         SELECT
-            *
-        FROM COMMENT
+    		  CNO, CONTENT, MEMBERID, REG_DATE
+    	 FROM COMMENT
+    	WHERE CHALLENGENO = #{challengeno}
     </select>
     
     
-    <insert id="commentInsert" parameterType="CommentDto">
-        INSERT INTO
-        COMMENT (CNO, CHALLENGENO, MEMBERID, CONTENT, REG_DATE)
-        VALUES(#{cno},#{bno},#{memberid},#{content},now()) 
+    <insert id="commentInsert">
+       INSERT INTO COMMENT(
+	CHALLENGENO
+	, CNO
+	, CONTENT
+	, MEMBERID
+	, REG_DATE
+)
+VALUES( #{bno}
+	, #{cno}
+	, #{content}
+	, #{memberid}
+	, #{reg_date} ) 
     </insert>
     
     <update id="commentUpdate" parameterType="CommentDto">

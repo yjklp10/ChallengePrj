@@ -11,7 +11,7 @@ import com.example.demo.dto.CommentDto;
 public interface CommentMapper {
 
 	public int commentCount();
-	public  List<CommentDto> commentList();
+	public  List<CommentDto> commentList(int challengeno);
 	public  int commentInsert(CommentDto comment);
 	public int commentUpdate(CommentDto comment);
 	public int commentDelete(int cno);

@@ -18,6 +18,7 @@ private int challengeno;
 	private String category;
 	private String thumbnailname;
 	private String thumbnailpath;
+	private String memberid;
 	
 	public Testchallenge() {
 		super();
@@ -26,7 +27,7 @@ private int challengeno;
 	public Testchallenge(int challengeno, String challengetitle, String onoffchoice, String chllengeprequency,
 			String challengeperiod, Date certificationstarttime, Date certificationendtime, Date challengestartdate,
 			String certificationway, String challengeintro, int deposit, int maxchallenger, String category,
-			String thumbnailname, String thumbnailpath) {
+			String thumbnailname, String thumbnailpath, String memberid) {
 		super();
 		this.challengeno = challengeno;
 		this.challengetitle = challengetitle;
@@ -43,6 +44,7 @@ private int challengeno;
 		this.category = category;
 		this.thumbnailname = thumbnailname;
 		this.thumbnailpath = thumbnailpath;
+		this.memberid = memberid;
 	}
 
 	public int getChallengeno() {
@@ -164,6 +166,16 @@ private int challengeno;
 	public void setThumbnailpath(String thumbnailpath) {
 		this.thumbnailpath = thumbnailpath;
 	}
+
+	public String getMemberid() {
+		return memberid;
+	}
+
+	public void setMemberid(String memberid) {
+		this.memberid = memberid;
+	}
+
+	
 	
 	
 	
