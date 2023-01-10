@@ -38,10 +38,84 @@
 width:30px;
 height:30px;
 }
+.popup-wrap{
+  background-color:rgba(0,0,0,.3);  
+  justify-content:center; 
+  align-items:center;     
+  position:fixed;        
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;               
+  display:flex; 
+  padding:15px; 
+}
+.popup{
+  width:100%;             
+  max-width:400px;         
+  border-radius:10px;       
+  overflow:hidden;        
+  background-color:#264db5; 
+  box-shadow: 5px 10px 10px 1px rgba(0,0,0,.3); 
+}
+.popup-head{
+  width:100%;
+  height:50px;  
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.popup-body{               
+  width:100%;
+  background-color:#ffffff; 
+}
+.body-content{             
+  width:100%;
+  padding:30px;             
+}
+.body-titlebox{             
+  text-align:center;      
+  width:100%;
+  height:40px;
+  margin-bottom:10px;      
+}
+.body-contentbox{         
+  word-break:break-word; 
+  overflow-y:auto;        
+  min-height:100px;         
+  max-height:200px;        
+}
+.popup-foot{                    
+  width:100%;
+  height:50px;
+}
+.pop-btn{ 
+  display:inline-flex;           
+  width:50%;                    
+  height:100%;                  
+  justify-content:center;       
+  align-items:center;             
+  float:left;                   
+  color:#ffffff;                 
+  cursor:pointer;                
+}
+
 </style>
 </head>
 <body>
-<div class="form_section">
+<div class="container"> 
+        <div class="popup-wrap" id="popup"> 
+          <div class="popup">	
+            <div class="popup-head">	
+                <span class="head-title">인증 사진 올리기</span>
+            </div>
+            <div class="popup-body">	
+              <div class="body-content">
+                <div class="body-titlebox">
+                  <h1>파일 입력</h1>
+                </div>
+                <div class="body-contentbox">
+                 <div class="form_section">
     <div class="form_section_title">
         <label>인증 사진</label>
     </div>
@@ -51,6 +125,16 @@ height:30px;
    </div>
  </div>  
 </div>
+                </div>
+              </div>
+            </div>
+            <div class="popup-foot"> 
+              <span class="pop-btn" id="confirm">확인</span>
+              <span class="pop-btn" id="close">창 닫기</span>
+            </div>
+          </div>
+         </div>
+      </div>
 
 <script type="text/javascript">
 $("input[type='file']").on("change",function(e) {
@@ -171,6 +255,21 @@ function timecheck(){
 	        
 	    }
 }
+$(function(){
+	  $("#confirm").click(function(){
+	      modalClose(); 
+	  });
+	  $("#modal-open").click(function(){        
+	      $("#popup").css('display','flex').hide().fadeIn();
+	     
+	  });
+	  $("#close").click(function(){
+	      modalClose(); 
+	  });
+	  function modalClose(){
+	      $("#popup").fadeOut(); 
+	  }
+	});
 </script>
 </body>
 </html>
