@@ -108,34 +108,34 @@
 			<div class="blog-sidebar">
 				<div class="blog-catagory">
 					<h4>회원정보</h4>
-						<form action="myinfo/update">
+						<form action="update" method="post">
 						<div class="group-input">
 							<label for="membername">이름</label> 
-							<input id="membername" type="text" value="${dto.membername  }" disabled>
+							<input id="membername" name="membername" type="text" value="${dto.membername  }" disabled>
 						</div>
 						<div class="group-input">
 							<label for="memberid">아이디</label> 
-							<input id="memberid" type="text" value="${dto.memberid }" disabled>
+							<input id="memberid" name="memberid" type="text" value="${dto.memberid }" disabled>
 						</div>
 						<div class="group-input">
 							<label for="membernick">닉네임</label> 
-							<input id="membernick" type="text" value="${dto.membernick }">
+							<input id="membernick" name="membernick" type="text" value="${dto.membernick }">
 						</div>
 						<div class="group-input">
 							<label for="membereail">이메일</label> 
-							<input id="memberemail" type="text" value="${dto.memberemail }">
+							<input id="memberemail" name="memberemail" type="text" value="${dto.memberemail }">
 						</div>
 						<div class="group-input">
-							<label for="phone">전화번호</label> 
-							<input id="phone" type="text" value="${dto.memberphone  }">
+							<label for="memberphone">전화번호</label> 
+							<input id="memberphone" name="memberphone" type="text" value="${dto.memberphone  }">
 						</div>
 						<div class="group-input">
 							<label for="deposit">예치금</label> 
-							<input id="deposit" type="text" value="${dto.mydeposit }" disabled>
+							<input id="deposit" name="deposit" type="text" value="${dto.mydeposit }" disabled>
 						</div>
 						<div class="group-input">
 							<label for="point">포인트</label> 
-							<input id="point" type="text" value="${dto.mypoint }" disabled>
+							<input id="point" name="point" type="text" value="${dto.mypoint }" disabled>
 						</div>
 						<button type="submit" class="blog-btn">수정하기</button>
 						<button type="button" class="blog-btn" onclick="location.href='/point?memberid=${dto.memberid }'">환급신청</button>
