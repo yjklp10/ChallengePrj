@@ -172,9 +172,9 @@ $(function (){
 					</form>
 					<form action="/point.do" method="post">
   					 <input type="hidden" id="memberid" name="memberid" value="${dto.memberid }">
-    				 <input type="hidden" name="point" value="${dto.point}" >
+    				 <input type="hidden" name="point" value="${dto.mypoint}" >
 						<div class="group-input">
-							<label for="point">포인트</label> <input id="point" type="text" disabled><br>								
+							<label for="point">포인트</label> <input id="point" type="text" value="${dto.mypoint}" disabled><br>								
 							<P>포인트는 3000원 이상부터 출금 가능해요.</P>
 							<button type="button" class="cancel-btn2">출금신청</button>
 							<div class="cancel-div2">

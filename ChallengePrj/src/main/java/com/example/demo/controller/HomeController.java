@@ -7,6 +7,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.demo.biz.PointBiz;
+import com.example.demo.dto.MemberDto;
+import com.example.demo.dto.MoneyDto;
 import com.example.demo.dto.PointDto;
 
 @Controller
@@ -42,9 +44,21 @@ public class HomeController {
 		return "mypage";
 	}
 	
+	@RequestMapping("/update")
+	public String updateRes(MoneyDto dto) {
+		int res = biz.update(dto);
+		
+		if(res>0) {
+	
+			return "redirect:mypage";
+		}else {
+			return "redirect:mypage";
+		}
+	}
 	
 	@RequestMapping("/point")
-	public String point() {
+	public String point(Model model,String memberid) {
+		model.addAttribute("dto", biz.selectOne(memberid));
 		return "point";
 	}
 	

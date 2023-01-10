@@ -21,6 +21,10 @@
 		<result property="memberid" column="MEMBERID"/>
 		<result property="mydeposit" column="MYDEPOSIT"/>
 		<result property="mypoint" column="MYPOINT"/>
+		<result property="membernick" column="MEMBERNICK"/>
+		<result property="memberemail" column="MEMBEREMAIL"/>
+		<result property="membername" column="MEMBERNAME"/>
+		<result property="memberphone" column="MEMBERPHONE"/>
 	</resultMap>
 	
 	<resultMap type="memberDto" id="memberMap">
@@ -36,11 +40,21 @@
    		SELECT * FROM MYPOINT;
    </select>
 
+	<select id="selectOne" resultMap="moneyMap">
+   		SELECT MEMBERID,IFNULL(MYDEPOSIT,0), IFNULL(MYPOINT,0) 
+   		FROM MYMONEY WHERE MEMBERID=#{memberid}
+   </select>
 
    <select id="selectMyinfo" resultMap="moneyMap,memberMap">
  		 SELECT * FROM MEMBER INNER JOIN MYMONEY ON MEMBER.MEMBERID =MYMONEY.MEMBERID 
  		 WHERE MYMONEY.MEMBERID = 'SS' 
 	</select>
+	
+	<update id="update" parameterType="moneyDto">
+		UPDATE MEMBER
+		SET MEMBERNICK=#{membernick},MEMBEREMAIL=#{memberemail},MEMBERPHONE=#{memberphone}
+		WHERE MEMBERID='SS' 
+	</update>	
 	
 
 	<insert id="insert" parameterType="pointDto">
