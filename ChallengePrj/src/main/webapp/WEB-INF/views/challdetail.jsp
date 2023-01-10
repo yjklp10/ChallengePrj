@@ -426,6 +426,7 @@ ul, ol {
 									<div class="customer-review-option">
 										<h4>후기</h4>
 										<div class="comment-option">
+										 <c:forEach items="${comment}" var="comment">
 											<div class="co-item">
 												<div class="avatar-pic">
 													<img src="img/product-single/avatar-1.png" alt="">
@@ -437,22 +438,24 @@ ul, ol {
 															class="fa fa-star-o"></i>
 													</div>
 													<h5>
-														Brandon Kelley <span>27 Aug 2019</span>
+														<c:out value="${comment.memberid }"/> <span><c:out value="${comment.reg_date }"/></span>
 													</h5>
-													<div class="at-reply">Nice !</div>
+													<div class="at-reply"><c:out value="${comment.content }"/></div>
 												</div>
 											</div>
-
+											</c:forEach>
 										</div>
 										<hr>
 										<button type="submit" class="site-btn-2">후기 더보기</button>
 										<br>
 										<br>
 										<div class="CommentWriter">
+										<form name="replyForm">
+										<input type="hidden" id="challengeno" name="challengeno" value="${challenge.challengeno }"/>
 											<div class="comment_inbox">
-												<em class="comment_inbox_name">신슈터</em>
+												<em class="comment_inbox_name"><c:out value="${challenge.memberid}"/></em>
 											</div>
-											<div class="rating" style="position: relative; height: 20px; bottom: 38px; left: 60px;">
+											<div class="rating" style="position: relative; height: 20px; bottom: 36px; left: 60px;">
 													<!-- 해당 별점을 클릭하면 해당 별과 그 왼쪽의 모든 별의 체크박스에 checked 적용 -->
 													<input type="checkbox" name="rating" id="rating1" value="1" class="rate_radio" title="1점">
 														 <label for="rating1"></label> 
@@ -467,14 +470,15 @@ ul, ol {
 											</div>
 											<div class="comment_text">
 											<textarea placeholder="후기를 남겨보세요" rows="1"
-												class="comment_inbox_text"
+												class="comment_inbox_text" name="content"
 												style="overflow: hidden; overflow-wrap: break-word; height: 20px;"></textarea>
 											</div>
 											<div class="comment_attach">
 											<div class="register_box">
-												<button class="button btn_register">등록</button>
+												<button type="button" class="button btn_register" id="comwrite">등록</button>
 											</div>
 										</div>
+										</form>
 										</div>
 									</div>
 								</div>
@@ -488,8 +492,19 @@ ul, ol {
 
 	</section>
 	<!-- Product Shop Section End -->
+	
+	
+<!-- 등록버튼 --> 
+<script>
+$("#comwrite").on("click", function(){
+	  var formObj = $("form[name='replyForm']");
+	  formObj.attr("action", "/chdetail");
+	  formObj.submit();
+	});
 
-
+    
+    
+</script>
 
 
 	<!-- Js Plugins -->
