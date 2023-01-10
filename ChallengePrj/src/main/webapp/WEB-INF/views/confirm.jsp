@@ -25,7 +25,79 @@
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
+<script>
+      window.onload=function() {
+    	 var w;
+    	 document.getElementById("open").onclick=function() {
+    		 w=open("/fopen","","width=400px, height=400px");
+    	 };
+      };
+    </script>
+   <style>
+   .minhocontainer1 {
+      margin:auto;
+      display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+  
+}
+.item1{
+   grid-column: span 3;
+   text-align: center;
+}
+.item2{
+  
+   text-align: center;
+}
+.item3{
+  
+  text-align: center;
+}
+.item4{
+  
+  text-align: center;
+}
+.item5{
+  
+  text-align: center;
+}
+.item6{
+  
+  text-align: center;
+}
+.item7{
+  
+  text-align: center;
+}
+.item8{
+  
+  text-align: center;
+}
+.item9{
+  
+  text-align: center;
+}
+.item10{
+  
+  text-align: center;
+}
+.item11{
+   grid-column: span 3;
+   margin: auto;
+}
 
+.textarea{
+   width:200px;
+   height: 200px;
+}
+.button{
+   text-align: center;
+}
+#open{
+   width:200px;
+   display: inline-block;
+}
+
+   </style>
 <body>
     <!-- Page Preloder -->
     <div id="preloder">
@@ -190,125 +262,22 @@
         </div>
     </header>
     <!-- Header End -->
-
-    <!-- Breadcrumb Section Begin -->
-    <div class="breacrumb-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcrumb-text product-more">
-                        <a href="./index.html"><i class="fa fa-home"></i> Home</a>
-                        <a href="./shop.html">Shop</a>
-                        <span>Check Out</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Breadcrumb Section Begin -->
-
-    <!-- Shopping Cart Section Begin -->
-    <section class="checkout-section spad">
-        <div class="container">
-            <form action="#" class="checkout-form">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="checkout-content">
-                            <a href="#" class="content-btn">내 챌린지명:4조</a>
-                        </div>
-                        <h4 >인증 사진 예시</h4>
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <label for="fir">First Name<span>*</span></label>
-                                <input type="text" id="fir">
-                            </div>
-                            <div class="col-lg-6">
-                                <label for="last">Last Name<span>*</span></label>
-                                <input type="text" id="last">
-                            </div>
-                            <div class="col-lg-12">
-                                <label for="cun-name">Company Name</label>
-                                <input type="text" id="cun-name">
-                            </div>
-                            <div class="col-lg-12">
-                                <label for="cun">Country<span>*</span></label>
-                                <input type="text" id="cun">
-                            </div>
-                            <div class="col-lg-12">
-                                <label for="street">Street Address<span>*</span></label>
-                                <input type="text" id="street" class="street-first">
-                                <input type="text">
-                            </div>
-                            <div class="col-lg-12">
-                                <label for="zip">Postcode / ZIP (optional)</label>
-                                <input type="text" id="zip">
-                            </div>
-                            <div class="col-lg-12">
-                                <label for="town">Town / City<span>*</span></label>
-                                <input type="text" id="town">
-                            </div>
-                            <div class="col-lg-6">
-                                <label for="email">Email Address<span>*</span></label>
-                                <input type="text" id="email">
-                            </div>
-                            <div class="col-lg-6">
-                                <label for="phone">Phone<span>*</span></label>
-                                <input type="text" id="phone">
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="create-item">
-                                    <label for="acc-create">
-                                        Create an account?
-                                        <input type="checkbox" id="acc-create">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="checkout-content">
-                            <input type="text" placeholder="인증방법">
-                        </div>
-                        <div class="place-order">
-                            <h4>주의사항!</h4>
-                            <div class="order-total">
-                                <ul class="order-table">
-                                    <li>Product <span>Total</span></li>
-                                    <li class="fw-normal">Combination x 1 <span>$60.00</span></li>
-                                    <li class="fw-normal">Combination x 1 <span>$60.00</span></li>
-                                    <li class="fw-normal">Combination x 1 <span>$120.00</span></li>
-                                    <li class="fw-normal">Subtotal <span>$240.00</span></li>
-                                    <li class="total-price">Total <span>$240.00</span></li>
-                                </ul>
-                                <div class="payment-check">
-                                    <div class="pc-item">
-                                        <label for="pc-check">
-                                            Cheque Payment
-                                            <input type="checkbox" id="pc-check">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                    </div>
-                                    <div class="pc-item">
-                                        <label for="pc-paypal">
-                                            Paypal
-                                            <input type="checkbox" id="pc-paypal">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="order-btn">
-                                    <button type="submit" class="site-btn place-btn">Place Order</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </section>
-    <!-- Shopping Cart Section End -->
-    <button onclick="">등록하기</button>
+      <div class="minhocontainer1">
+      <div class="item1">인증 가능 시간 6:00~9:00</div>
+      <div class="item2">내 챌린지 명:4조</div>
+      <div class="item3">5</div>
+      <div class="item4">인증 방법</div>
+      <div class="item5">인증사진 예시</div>
+      <div class="item6">8</div>
+      <div class="item7">9</div>
+      <div class="item8"><img src="img/images.jpg"></div>
+      <div class="item9">11</div>
+      <div class="item10">
+         <textarea></textarea>
+      </div>
+   </div>
+    <input type="button" value="등록하기" id="open">
+   
     <!-- Partner Logo Section Begin -->
     <div class="partner-logo">
         <div class="container">
