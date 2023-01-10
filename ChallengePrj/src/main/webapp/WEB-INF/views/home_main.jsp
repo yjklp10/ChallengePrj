@@ -13,7 +13,7 @@
 
  
     <!-- 상단 홍보 배너 -->
-    
+     
     <section class="hero-section">
         <div class="hero-items owl-carousel">
             <div class="single-hero-items set-bg" data-setbg="img/2023챌린지1.jpg">
