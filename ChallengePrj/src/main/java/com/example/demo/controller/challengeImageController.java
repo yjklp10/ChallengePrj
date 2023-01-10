@@ -70,7 +70,7 @@ public class challengeImageController {
 
 	                File thumbnailFile = new File(thubmnailSaveName);
 	                // 섬네일 생성
-	                Thumbnailator.createThumbnail(savePath.toFile(),thumbnailFile,200,200);
+	                Thumbnailator.createThumbnail(savePath.toFile(),thumbnailFile,1000,1000);
 
 	                resultDTOList.add(new challengeImageDto(fileName,uuid,folderPath));
 	            }catch (IOException e){
@@ -146,4 +146,5 @@ public class challengeImageController {
 
 	        return folderPath;
 	    }
+	    
 }
