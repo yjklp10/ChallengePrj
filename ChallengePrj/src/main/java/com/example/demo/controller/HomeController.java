@@ -58,7 +58,7 @@ public class HomeController {
 	
 	@RequestMapping("/point")
 	public String point(Model model,String memberid) {
-		model.addAttribute("dto", biz.selectOne(memberid));
+		model.addAttribute("dto", biz.selectMyinfo(memberid));
 		return "point";
 	}
 	

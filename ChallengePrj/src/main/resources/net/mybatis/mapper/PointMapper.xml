@@ -40,10 +40,6 @@
    		SELECT * FROM MYPOINT;
    </select>
 
-	<select id="selectOne" resultMap="moneyMap">
-   		SELECT MEMBERID,IFNULL(MYDEPOSIT,0), IFNULL(MYPOINT,0) 
-   		FROM MYMONEY WHERE MEMBERID=#{memberid}
-   </select>
 
    <select id="selectMyinfo" resultMap="moneyMap,memberMap">
  		 SELECT * FROM MEMBER INNER JOIN MYMONEY ON MEMBER.MEMBERID =MYMONEY.MEMBERID 

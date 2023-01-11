@@ -8,7 +8,6 @@ import com.example.demo.dto.PointDto;
 
 public interface PointBiz {
 	public List<PointDto> selectList();
-	public MoneyDto selectOne(String memberid);
 	
 	public int insert(PointDto dto);
 	public int update(MoneyDto dto);

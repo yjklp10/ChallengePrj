@@ -11,7 +11,6 @@ public interface PointDao {
 	String NAMESPACE = "mypoint.";
 	
 	public List<PointDto> selectList();
-	public MoneyDto selectOne(String memberid);
 	public int insert(PointDto dto);
 	public int update(MoneyDto dto);
 	public MoneyDto selectMyinfo(String memberid);
