@@ -59,19 +59,6 @@ public class PointDaoImpl implements PointDao {
 	}
 
 	@Override
-	public MoneyDto selectOne(String memberid) {
-		MoneyDto dto =null;
-		try {
-			dto =sqlSession.selectOne(NAMESPACE+"selectOne", memberid);
-		} catch (Exception e) {
-			System.out.println("[error] : select one");
-			e.printStackTrace();
-		}
-		
-		return dto;
-	}
-
-	@Override
 	public int update(MoneyDto dto) {
 		int res=0;
 		try {

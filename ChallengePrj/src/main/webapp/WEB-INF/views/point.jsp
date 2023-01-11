@@ -146,23 +146,23 @@ $(function (){
 			<div class="blog-sidebar">
 				<div class="blog-catagory">
 					<h4>예치금 및 포인트</h4>
-					<form action="#">
+					<form action="/deposit.do" method="post">
+  					 <input type="hidden" id="memberid" name="memberid" value="${dto.memberid }">
+    				 <input type="hidden" name="mydeposit" value="${dto.mydeposit}" >
 						<div class="group-input">
 							<label for="deposit">예치금</label> 
-							<input id="deposit" type="text" disabled><br>
+							<input id="mydeposit" name="mydeposit" type="text" value="${dto.mydeposit}" disabled><br>
 							<button type="button" class="cancel-btn">환급신청</button>
 							<div class="cancel-div">
 								<c:choose>
-									<c:when test="${empty list }">
-									------ 예치금이 없습니다. ------ <br>
+									<c:when test="${0 eq dto.mydeposit}">
+									------환급 신청 가능한 예치금이 없습니다. ------ <br>
 									</c:when>
 									<c:otherwise>
-										<c:forEach items="${list }" var="dto">
 											<label class="checkbox"> 
 											<input type="checkbox" name="color" value="blue">
 												 현대카드 50,000 날짜 <br>
 											</label>
-										</c:forEach>
 									</c:otherwise>
 								</c:choose>
 								<button type="submit" class="ok-btn">환급신청</button>
@@ -172,9 +172,9 @@ $(function (){
 					</form>
 					<form action="/point.do" method="post">
   					 <input type="hidden" id="memberid" name="memberid" value="${dto.memberid }">
-    				 <input type="hidden" name="point" value="${dto.mypoint}" >
+    				 <input type="hidden" name="mypoint" value="${dto.mypoint}" >
 						<div class="group-input">
-							<label for="point">포인트</label> <input id="point" type="text" value="${dto.mypoint}" disabled><br>								
+							<label for="point">포인트</label> <input id="mypoint" name="mypoint" type="text" value="${dto.mypoint}" disabled><br>								
 							<P>포인트는 3000원 이상부터 출금 가능해요.</P>
 							<button type="button" class="cancel-btn2">출금신청</button>
 							<div class="cancel-div2">
