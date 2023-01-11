@@ -12,7 +12,7 @@
     
     <select id="commentList" resultType="CommentDto">
         SELECT
-    		  CNO, CONTENT, MEMBERID, REG_DATE
+    		  CNO, CONTENT, MEMBERID, RATING, REG_DATE
     	 FROM COMMENT
     	WHERE CHALLENGENO = #{challengeno}
     </select>
@@ -24,13 +24,15 @@
 	, CNO
 	, CONTENT
 	, MEMBERID
+	, RATING
 	, REG_DATE
 )
-VALUES( #{bno}
+VALUES( #{challengeno}
 	, #{cno}
 	, #{content}
 	, #{memberid}
-	, #{reg_date} ) 
+	, #{rating}
+	, now() ) 
     </insert>
     
     <update id="commentUpdate" parameterType="CommentDto">
