@@ -147,5 +147,9 @@ public class ImageController {
 		
 	}	
 	
-	
+	@PostMapping("/dbinsert")
+	public void dbinsert(AttachImageDto dto) {
+	  
+
+	}
 }

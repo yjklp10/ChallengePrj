@@ -194,7 +194,7 @@ function showUploadImage(uploadResultArr){
 	
 	let str = "";
 	
-	let fileCallPath=encodeURIComponent(obj.uploadPath+"/s_"+obj.uuid+"_"+obj.fileName);
+	let fileCallPath=encodeURIComponent(obj.uploadFilePath+"/s_"+obj.uuid+"_"+obj.fileName);
 	
 	
 	str += "<div id='result_card'>";
@@ -203,7 +203,7 @@ function showUploadImage(uploadResultArr){
 	str += "<form action='/dbinsert' method='post'>"
 	str += "<input type='hidden' name='imageList[0].fileName' value='"+ obj.fileName +"'>";
 	str += "<input type='hidden' name='imageList[0].uuid' value='"+ obj.uuid +"'>";
-	str += "<input type='hidden' name='imageList[0].uploadPath' value='"+ obj.uploadPath +"'>";
+	str += "<input type='hidden' name='imageList[0].uploadPath' value='"+ obj.uploadFilePath +"'>";
 	str += "<input type='submit' value='작성' onclick='timecheck();'>"
 	str += "</form>"
 	str += "</div>";		
