@@ -672,8 +672,12 @@ img {
 
 .content-name {
 	padding-top: 15px;
-	line-height: 10px;
 }
+
+.content-name h6 {
+	line-height: 120%;
+}
+
 
 
 

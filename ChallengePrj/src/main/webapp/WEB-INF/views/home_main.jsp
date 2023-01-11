@@ -24,7 +24,7 @@
                     </div>
                 </div>
             </div>
-             <div class="single-hero-items set-bg" data-setbg="img/상단배너1.jpg">
+             <div class="single-hero-items set-bg" data-setbg="img/신규이벤트.png">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-5">
