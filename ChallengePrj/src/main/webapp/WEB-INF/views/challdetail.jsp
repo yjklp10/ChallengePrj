@@ -3,6 +3,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@include file="include/header.jsp"%>
 <html lang="zxx">
 
@@ -82,7 +84,7 @@ textarea.comment_inbox_text {
 	position: relative;
 }
 
-.CommentWriter .register_box .button {
+.CommentWriter .register_box .replyWriteBtn {
 	display: inline-block;
 	min-width: 46px;
 	height: 34px;
@@ -279,8 +281,8 @@ ul, ol {
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="breadcrumb-text product-more">
-						<a href="./home.html"><i class="fa fa-home"></i> Home</a> <a
-							href="./shop.html">Shop</a> <span>Detail</span>
+						<a href="/home_main"><i class="fa fa-home"></i>Main</a> 
+						<a href="./shop.html">Categories</a> <span>Detail</span>
 					</div>
 				</div>
 			</div>
@@ -352,7 +354,7 @@ ul, ol {
 								<div class="pd-desc">
 
 									<h4>
-										<c:out value="${challenge.deposit }" />
+										<c:out value="${challenge.deposit }" />원
 									</h4>
 								</div>
 								<div class="quantity">
@@ -432,13 +434,27 @@ ul, ol {
 													<img src="img/product-single/avatar-1.png" alt="">
 												</div>
 												<div class="avatar-text">
+												
 													<div class="at-rating">
-														<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-															class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-															class="fa fa-star-o"></i>
+														<c:if test="${comment.rating eq 1 }">
+														<i style="font-size: 20px;">★</i>
+														</c:if>
+														<c:if test="${comment.rating eq 2 }">
+														<i style="font-size: 20px;">★★</i>
+														</c:if>
+														<c:if test="${comment.rating eq 3 }">
+														<i style="font-size: 20px;">★★★</i>
+														</c:if>
+														<c:if test="${comment.rating eq 4 }">
+														<i style="font-size: 20px;">★★★★</i>
+														</c:if>
+														<c:if test="${comment.rating eq 5 }">
+														<i style="font-size: 20px;">★★★★★</i>
+														</c:if>
 													</div>
+													
 													<h5>
-														<c:out value="${comment.memberid }"/> <span><c:out value="${comment.reg_date }"/></span>
+														<c:out value="${comment.memberid }"/> <span><fmt:formatDate value="${comment.reg_date }"  pattern="yyyy-MM-dd"/></span>
 													</h5>
 													<div class="at-reply"><c:out value="${comment.content }"/></div>
 												</div>
@@ -450,24 +466,25 @@ ul, ol {
 										<br>
 										<br>
 										<div class="CommentWriter">
-										<form name="replyForm">
+										<form name="replyForm" method="post">
 										<input type="hidden" id="challengeno" name="challengeno" value="${challenge.challengeno }"/>
 											<div class="comment_inbox">
-												<em class="comment_inbox_name"><c:out value="${challenge.memberid}"/></em>
+												<em class="comment_inbox_name"><c:out value="${challenge.memberid}"/><input type="hidden" id="memberid" name="memberid" value="${challenge.memberid }"></em>
 											</div>
 											<div class="rating" style="position: relative; height: 20px; bottom: 36px; left: 60px;">
 													<!-- 해당 별점을 클릭하면 해당 별과 그 왼쪽의 모든 별의 체크박스에 checked 적용 -->
-													<input type="checkbox" name="rating" id="rating1" value="1" class="rate_radio" title="1점">
+													<input type="checkbox" name="rating" id="rating1" value=1 class="rate_radio" title="1점">
 														 <label for="rating1"></label> 
-												 	<input type="checkbox" name="rating" id="rating2" value="2" class="rate_radio" title="2점">
+												 	<input type="checkbox" name="rating" id="rating2" value=2 class="rate_radio" title="2점">
 														<label for="rating2"></label> 
-													<input type="checkbox" name="rating" id="rating3" value="3" class="rate_radio" title="3점"> 
+													<input type="checkbox" name="rating" id="rating3" value=3 class="rate_radio" title="3점"> 
 														<label for="rating3"></label> 
-													<input type="checkbox" name="rating" id="rating4" value="4" class="rate_radio" title="4점"> 
+													<input type="checkbox" name="rating" id="rating4" value=4 class="rate_radio" title="4점"> 
 														<label for="rating4"></label> 
-													<input type="checkbox" name="rating" id="rating5" value="5" class="rate_radio" title="5점"> 
+													<input type="checkbox" name="rating" id="rating5" value=5 class="rate_radio" title="5점"> 
 														<label for="rating5"></label>
 											</div>
+											<input type="hidden" name="rating"/>
 											<div class="comment_text">
 											<textarea placeholder="후기를 남겨보세요" rows="1"
 												class="comment_inbox_text" name="content"
@@ -475,13 +492,13 @@ ul, ol {
 											</div>
 											<div class="comment_attach">
 											<div class="register_box">
-												<button type="button" class="button btn_register" id="comwrite">등록</button>
+												<button type="button" class="replyWriteBtn" >등록</button>
 											</div>
 										</div>
 										</form>
 										</div>
-									</div>
 								</div>
+							</div>
 							</div>
 						</div>
 					</div>
@@ -496,14 +513,13 @@ ul, ol {
 	
 <!-- 등록버튼 --> 
 <script>
-$("#comwrite").on("click", function(){
+$(".replyWriteBtn").on("click", function(){
 	  var formObj = $("form[name='replyForm']");
-	  formObj.attr("action", "/chdetail");
+	  formObj.attr("action", "/replyWrite");
 	  formObj.submit();
 	});
-
     
-    
+	  
 </script>
 
 
