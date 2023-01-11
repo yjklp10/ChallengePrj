@@ -9,7 +9,7 @@
     <meta name="keywords" content="Fashi, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Fashi | Template</title>
+    <title>챌린지 만들기</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
@@ -122,185 +122,7 @@ padding-top: 8px;
 </head>
 
 <body>
-    <!-- Page Preloder -->
-    <div id="preloder">
-        <div class="loader"></div>
-    </div>
-
-    <!-- Header Section Begin -->
-    <header class="header-section">
-        <div class="header-top">
-            <div class="container">
-                <div class="ht-left">
-                    <div class="mail-service">
-                        <i class=" fa fa-envelope"></i>
-                        hello.colorlib@gmail.com
-                    </div>
-                    <div class="phone-service">
-                        <i class=" fa fa-phone"></i>
-                        +65 11.188.888
-                    </div>
-                </div>
-                <div class="ht-right">
-                    <a href="#" class="login-panel"><i class="fa fa-user"></i>Login</a>
-                    <div class="lan-selector">
-                        <select class="language_drop" name="countries" id="countries" style="width:300px;">
-                            <option value='yt' data-image="img/flag-1.jpg" data-imagecss="flag yt"
-                                data-title="English">English</option>
-                            <option value='yu' data-image="img/flag-2.jpg" data-imagecss="flag yu"
-                                data-title="Bangladesh">German </option>
-                        </select>
-                    </div>
-                    <div class="top-social">
-                        <a href="#"><i class="ti-facebook"></i></a>
-                        <a href="#"><i class="ti-twitter-alt"></i></a>
-                        <a href="#"><i class="ti-linkedin"></i></a>
-                        <a href="#"><i class="ti-pinterest"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="inner-header">
-                <div class="row">
-                    <div class="col-lg-2 col-md-2">
-                        <div class="logo">
-                            <a href="/index">
-                                <img src="img/logo.png" alt="">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-7 col-md-7">
-                        <div class="advanced-search">
-                            <button type="button" class="category-btn">All Categories</button>
-                            <form action="#" class="input-group">
-                                <input type="text" placeholder="What do you need?">
-                                <button type="button"><i class="ti-search"></i></button>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 text-right col-md-3">
-                        <ul class="nav-right">
-                            <li class="heart-icon"><a href="#">
-                                    <i class="icon_heart_alt"></i>
-                                    <span>1</span>
-                                </a>
-                            </li>
-                            <li class="cart-icon"><a href="#">
-                                    <i class="icon_bag_alt"></i>
-                                    <span>3</span>
-                                </a>
-                                <div class="cart-hover">
-                                    <div class="select-items">
-                                        <table>
-                                            <tbody>
-                                                <tr>
-                                                    <td class="si-pic"><img src="img/select-product-1.jpg" alt=""></td>
-                                                    <td class="si-text">
-                                                        <div class="product-selected">
-                                                            <p>$60.00 x 1</p>
-                                                            <h6>Kabino Bedside Table</h6>
-                                                        </div>
-                                                    </td>
-                                                    <td class="si-close">
-                                                        <i class="ti-close"></i>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="si-pic"><img src="img/select-product-2.jpg" alt=""></td>
-                                                    <td class="si-text">
-                                                        <div class="product-selected">
-                                                            <p>$60.00 x 1</p>
-                                                            <h6>Kabino Bedside Table</h6>
-                                                        </div>
-                                                    </td>
-                                                    <td class="si-close">
-                                                        <i class="ti-close"></i>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <div class="select-total">
-                                        <span>total:</span>
-                                        <h5>$120.00</h5>
-                                    </div>
-                                    <div class="select-button">
-                                        <a href="#" class="primary-btn view-card">VIEW CARD</a>
-                                        <a href="#" class="primary-btn checkout-btn">CHECK OUT</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="cart-price">$150.00</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="nav-item">
-            <div class="container">
-                <div class="nav-depart">
-                    <div class="depart-btn">
-                        <i class="ti-menu"></i>
-                        <span>All departments</span>
-                        <ul class="depart-hover">
-                            <li class="active"><a href="#">Women’s Clothing</a></li>
-                            <li><a href="#">Men’s Clothing</a></li>
-                            <li><a href="#">Underwear</a></li>
-                            <li><a href="#">Kid's Clothing</a></li>
-                            <li><a href="#">Brand Fashion</a></li>
-                            <li><a href="#">Accessories/Shoes</a></li>
-                            <li><a href="#">Luxury Brands</a></li>
-                            <li><a href="#">Brand Outdoor Apparel</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <nav class="nav-menu mobile-menu">
-                    <ul>
-                        <li><a href="./home.html">Home</a></li>
-                        <li><a href="./shop.html">Shop</a></li>
-                        <li><a href="#">Collection</a>
-                            <ul class="dropdown">
-                                <li><a href="#">Men's</a></li>
-                                <li><a href="#">Women's</a></li>
-                                <li><a href="#">Kid's</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="./blog.html">Blog</a></li>
-                        <li><a href="./contact.html">Contact</a></li>
-                        <li><a href="#">Pages</a>
-                            <ul class="dropdown">
-                                <li><a href="./blog-details.html">Blog Details</a></li>
-                                <li><a href="./shopping-cart.html">Shopping Cart</a></li>
-                                <li><a href="./check-out.html">Checkout</a></li>
-                                <li><a href="./faq.html">Faq</a></li>
-                                <li><a href="./register.html">Register</a></li>
-                                <li><a href="./login.html">Login</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </nav>
-                <div id="mobile-menu-wrap"></div>
-            </div>
-        </div>
-    </header>
-    <!-- Header End -->
-
-    <!-- Breadcrumb Section Begin -->
-    <div class="breacrumb-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcrumb-text product-more">
-                        <a href="./index.html"><i class="fa fa-home"></i> Home</a>
-                        <a href="./shop.html">Shop</a>
-                        <span>Check Out</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Breadcrumb Section Begin -->
+    
 
     <!-- Shopping Cart Section Begin -->
     <section class="checkout-section spad">
@@ -318,8 +140,8 @@ padding-top: 8px;
                             <div class="col-lg-12 choices" id="onOff_choice">
                                 <label for="fir">온라인/오프라인 여부<span>*</span></label>
                                 <br>
-                                <input type="radio" id="onOff_select1" name="onOff" onclick="online_select();"><label for="onOff_select1">온라인</label>
-                                <input type="radio" id="onOff_select2" name="onOff" onclick="offline_select();"><label for="onOff_select2">오프라인</label>
+                                <input type="radio" id="onOff_select1" name="onOff" value="challenge_online" onclick="online_select();"><label for="onOff_select1">온라인</label>
+                                <input type="radio" id="onOff_select2" name="onOff" value="challenge_offline" onclick="offline_select();"><label for="onOff_select2">오프라인</label>
                             </div>
                             <div class="col-lg-12" id="offline_select">
                                 <label for="fir">오프라인 모임 장소 지정<span>*</span></label>
@@ -331,17 +153,17 @@ padding-top: 8px;
    										 <label for="town">주소 검색<span>*</span></label>
                                         <br>
                                         <div id="searchDiv">
-                                        <input type="text" id="address" style="width: 300px;">
+                                        <input type="text" id="offline_address" id="offline_address" style="width: 300px;">
 										<input type="button" value="검색" id="address_btn"onclick="search_location();">
                                         </div>
                                         
                                         <label for="town">모임 장소 상세 설명<span>*</span></label>
                                         <br>
-                                        <textarea  style="width: 300px;height:150px"id="offline_spot_explain" ></textarea>
+                                        <textarea  style="width: 300px;height:150px" id="offline_spot_detail" name="offline_spot_detail" ></textarea>
                                         <br>
                                         <label for="town">모임 시작 시간 설정<span>*</span></label>
                                         
-                                        <input  type="time" id="offline_start_time">
+                                        <input  type="time" id="offline_start_time" name="offline_start_time">
                                         
                                          </div>
                                 </div>
@@ -349,45 +171,48 @@ padding-top: 8px;
                             <div class="col-lg-12 scrollMenu choices">
                                 <label for="fir">인증빈도<span>*</span></label>
                                 <br>
-                                <input type="radio" id="frequency_select1" name="frequency"><label for="frequency_select1">매일</label>
-                                <input type="radio" id="frequency_select2" name="frequency"><label for="frequency_select2">평일 매일</label>
-                                <input type="radio" id="frequency_select3" name="frequency"><label for="frequency_select3">주말 매일</label>
-                                <input type="radio" id="frequency_select4" name="frequency"><label for="frequency_select4">주 1회</label>
-                                <input type="radio" id="frequency_select5" name="frequency"><label for="frequency_select5">주 2회</label>
-                                <input type="radio" id="frequency_select6" name="frequency"><label for="frequency_select6">주 3회</label>
-                                <input type="radio" id="frequency_select7" name="frequency"><label for="frequency_select7">주 4회</label>
-                                <input type="radio" id="frequency_select8" name="frequency"><label for="frequency_select8">주 5회</label>
-                                <input type="radio" id="frequency_select8" name="frequency"><label for="frequency_select8">주 6회</label>
+                                <input type="radio" id="frequency_everyday" name="frequency" value="frequency_everyday"><label for="frequency_everyday">매일</label>
+                                <input type="radio" id="frequency_everyweek" name="frequency" value="frequency_week"><label for="frequency_week">평일 매일</label>
+                                <input type="radio" id="frequency_everyweekend" name="frequency" value="frequency_weekend"><label for="frequency_weekend">주말 매일</label>
+                                <input type="radio" id="frequency_week1" name="frequency" value="frequency_week1"><label for="frequency_week1">주 1회</label>
+                                <input type="radio" id="frequency_week2" name="frequency" value="frequency_week2"><label for="frequency_week2">주 2회</label>
+                                <input type="radio" id="frequency_week3" name="frequency" value="frequency_week3"><label for="frequency_week3">주 3회</label>
+                                <input type="radio" id="frequency_week4" name="frequency" value="frequency_week4"><label for="frequency_week4">주 4회</label>
+                                <input type="radio" id="frequency_week5" name="frequency" value="frequency_week5"><label for="frequency_week5">주 5회</label>
+                                <input type="radio" id="frequency_week6" name="frequency" value="frequency_week6"><label for="frequency_week6">주 6회</label>
                             </div>
  
                             <div class="col-lg-12 choices">
                                 <label for="fir">챌린지 기간<span>*</span></label>
                                 <br>
-                                <input type="radio" id="duration_select1" name="duration"><label for="duration_select1">1주</label>
-                                <input type="radio" id="duration_select2" name="duration"><label for="duration_select2">2주</label>
-                                <input type="radio" id="duration_select3" name="duration"><label for="duration_select3">3주</label>
-                                <input type="radio" id="duration_select4" name="duration"><label for="duration_select4">4주</label>
+                                <input type="radio" id="duration_week1" name="duration" value="duration_week1"><label for="duration_week1">1주</label>
+                                <input type="radio" id="duration_week2" name="duration" value="duration_week2"><label for="duration_week2">2주</label>
+                                <input type="radio" id="duration_week3" name="duration" value="duration_week3"><label for="duration_week3">3주</label>
+                                <input type="radio" id="duration_week4" name="duration" value="duration_week4"><label for="duration_week4">4주</label>
                             </div>
                             <div class="col-lg-3">
                                 <label for="fir">인증 가능 시간<span>*</span></label>
-                                <input type="time" id="fir">
+                                <input type="time" id="certification_start_time">
                             </div>
                             <div class="col-lg-3">
                                 <label for="last">인증 종료 시간<span>*</span></label>
-                                <input type="time" id="end_time">
+                                <input type="time" id="certification_end_time">
                             </div>
                             <div class="col-lg-12 scrollMenu choices" >
                                 <label for="fir">시작일<span>*</span></label>
                                 <br>
-                                <input type="radio" id="start_date_select1" name="start_date"><label for="start_date_select1">오늘</label>
-                                <input type="radio" id="start_date_select2" name="start_date"><label for="start_date_select2">내일</label>
-                                <input type="radio" id="start_date_select3" name="start_date"><label for="start_date_select3">2일 후</label>
-                                <input type="radio" id="start_date_select4" name="start_date"><label for="start_date_select4">3일 후</label>
-                                <input type="radio" id="start_date_select5" name="start_date"><label for="start_date_select5">4일 후</label>
-                                <input type="radio" id="start_date_select6" name="start_date"><label for="start_date_select6">5일 후</label>
-                                <input type="radio" id="start_date_select7" name="start_date"><label for="start_date_select7">6일 후</label>
-                                <input type="radio" id="start_date_select8" name="start_date"><label for="start_date_select8">7일 후</label>
+                                <input type="radio" id="start_date_today" name="start_date"><label for="start_date_today">오늘</label>
+                                <input type="radio" id="start_date_tomorrow" name="start_date"><label for="start_date_tomorrow">내일</label>
+                                <input type="radio" id="start_date_after2" name="start_date"><label for="start_date_after2">2일 후</label>
+                                <input type="radio" id="start_date_after3" name="start_date"><label for="start_date_after3">3일 후</label>
+                                <input type="radio" id="start_date_after4" name="start_date"><label for="start_date_after4">4일 후</label>
+                                <input type="radio" id="start_date_after5" name="start_date"><label for="start_date_after5">5일 후</label>
+                                <input type="radio" id="start_date_after6" name="start_date"><label for="start_date_after6">6일 후</label>
+                                <input type="radio" id="start_date_after7" name="start_date"><label for="start_date_after7">7일 후</label>
                             </div>
+                            <script>
+  document.getElementById('start_date_today').value = new Date().toISOString().substring(0, 10);;
+</script>
                             <div class="col-lg-12">
                                 <label for="cun">인증 방법<span>*</span></label>
                                 <br>
@@ -460,114 +285,7 @@ padding-top: 8px;
     </section>
     <!-- Shopping Cart Section End -->
 
-    <!-- Partner Logo Section Begin -->
-    <div class="partner-logo">
-        <div class="container">
-            <div class="logo-carousel owl-carousel">
-                <div class="logo-item">
-                    <div class="tablecell-inner">
-                        <img src="img/logo-carousel/logo-1.png" alt="">
-                    </div>
-                </div>
-                <div class="logo-item">
-                    <div class="tablecell-inner">
-                        <img src="img/logo-carousel/logo-2.png" alt="">
-                    </div>
-                </div>
-                <div class="logo-item">
-                    <div class="tablecell-inner">
-                        <img src="img/logo-carousel/logo-3.png" alt="">
-                    </div>
-                </div>
-                <div class="logo-item">
-                    <div class="tablecell-inner">
-                        <img src="img/logo-carousel/logo-4.png" alt="">
-                    </div>
-                </div>
-                <div class="logo-item">
-                    <div class="tablecell-inner">
-                        <img src="img/logo-carousel/logo-5.png" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Partner Logo Section End -->
-
-    <!-- Footer Section Begin -->
-    <footer class="footer-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3">
-                    <div class="footer-left">
-                        <div class="footer-logo">
-                            <a href="#"><img src="img/footer-logo.png" alt=""></a>
-                        </div>
-                        <ul>
-                            <li>Address: 60-49 Road 11378 New York</li>
-                            <li>Phone: +65 11.188.888</li>
-                            <li>Email: hello.colorlib@gmail.com</li>
-                        </ul>
-                        <div class="footer-social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-pinterest"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 offset-lg-1">
-                    <div class="footer-widget">
-                        <h5>Information</h5>
-                        <ul>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Checkout</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">Serivius</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-2">
-                    <div class="footer-widget">
-                        <h5>My Account</h5>
-                        <ul>
-                            <li><a href="#">My Account</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">Shopping Cart</a></li>
-                            <li><a href="#">Shop</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="newslatter-item">
-                        <h5>Join Our Newsletter Now</h5>
-                        <p>Get E-mail updates about our latest shop and special offers.</p>
-                        <form action="#" class="subscribe-form">
-                            <input type="text" placeholder="Enter Your Mail">
-                            <button type="button">Subscribe</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="copyright-reserved">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="copyright-text">
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        </div>
-                        <div class="payment-pic">
-                            <img src="img/payment-method.png" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- Footer Section End -->
+   
 
     <!-- Js Plugins -->
     <script src="js/jquery-3.3.1.min.js"></script>
