@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,16 +18,19 @@ import lombok.RequiredArgsConstructor;
 public class LoginController {
 
 	@Autowired
+	private BCryptPasswordEncoder bCryptPasswordEncoder;
+	
+	@Autowired
 	private MemberBiz biz;
 
 	
-	@RequestMapping("/login.do")
-	public String login() {
-		return "login";
+	@RequestMapping("/loginform.do")
+	public String loginForm() {
+		return "loginForm";
 	}
 
 	@RequestMapping("/registerform.do")
-	public String register() {
+	public String registerForm() {
 		return "registerform";
 	}
 	
@@ -59,15 +63,21 @@ public class LoginController {
 	
 	@RequestMapping("/register.do")
 	public String memberinsert(MemberDto dto) {
+		String rawPassword = dto.getMemberpw();
+		String encPassword = bCryptPasswordEncoder.encode(rawPassword);
+		dto.setMemberpw(encPassword);
+		dto.setMemberrole("ROLE_USER");
 		int res = biz.insert(dto);
 		
+		
 		if(res  > 0 ){
-			return "redirect:login.do";
+			return "redirect:loginform.do";
 		}else {
 			return "redirect:registerform.do";
 		}
 		
 	}
+	
 	
 
 }
