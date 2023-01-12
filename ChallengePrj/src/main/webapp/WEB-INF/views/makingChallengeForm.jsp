@@ -210,9 +210,58 @@ padding-top: 8px;
                                 <input type="radio" id="start_date_after6" name="start_date"><label for="start_date_after6">6일 후</label>
                                 <input type="radio" id="start_date_after7" name="start_date"><label for="start_date_after7">7일 후</label>
                             </div>
-                            <script>
-  document.getElementById('start_date_today').value = new Date().toISOString().substring(0, 10);;
-</script>
+                           <script>
+                           	let dt = new Date();
+                           	
+                           	var today = dt.getFullYear()+'-'+(dt.getMonth()+1)+'-'+dt.getDate();
+                           	var tmr = dt.getFullYear()+'-'+(dt.getMonth()+1)+'-'+(dt.getDate()+1);
+                           	var after2 = dt.getFullYear()+'-'+(dt.getMonth()+1)+'-'+(dt.getDate()+2);
+                           	var after3 = dt.getFullYear()+'-'+(dt.getMonth()+1)+'-'+(dt.getDate()+3);
+                           	var after4 = dt.getFullYear()+'-'+(dt.getMonth()+1)+'-'+(dt.getDate()+4);
+                           	var after5 = dt.getFullYear()+'-'+(dt.getMonth()+1)+'-'+(dt.getDate()+5);
+                           	var after6 = dt.getFullYear()+'-'+(dt.getMonth()+1)+'-'+(dt.getDate()+6);
+                           	var after7 = dt.getFullYear()+'-'+(dt.getMonth()+1)+'-'+(dt.getDate()+7);
+                           	
+                           	var start_today = document.getElementById("start_date_today").value;                           	
+                           	var start_tmr = document.getElementById("start_date_tomorrow").value;
+                           	var start_after2 = document.getElementById("start_date_after2").value;
+                           	var start_after3 = document.getElementById("start_date_after3").value;
+                           	var start_after2 = document.getElementById("start_date_after4").value;
+                           	var start_after2 = document.getElementById("start_date_after5").value;
+                           	var start_after2 = document.getElementById("start_date_after6").value;
+                           	var start_after7 = document.getElementById("start_date_after7").value;
+                           	
+                           	start_today = today;
+                           	start_tmr = tmr;
+                           	start_after2 = after2;
+                         	start_after3 = after3;
+                         	start_after4 = after4;
+                         	start_after5 = after5;
+                         	start_after6 = after6;
+                         	start_after7 = after7;
+                         	
+                            console.log(start_today);
+                            console.log(start_tmr);
+                            console.log(start_after2);
+                            console.log(start_after3);
+                           </script>
+                           <script>
+                           $(document).ready(function() {
+                        	   $("input[name='start_date']").click(function () {
+                        		   var radio = document.querySelector('input[name="start_date"]').checked; // 체크 여부(checked)
+                            	   console.log(radio);
+                            	   
+                            	   if(radio == true){
+                            		   var radioVal = document.querySelector('input[name="start_date"]:checked').value; // 체크된 값(checked value)
+                            		   alert(radioVal);
+                            	   }
+                        		  });
+                        	   
+                        	   
+                        	});
+                          
+                           
+                           </script>
                             <div class="col-lg-12">
                                 <label for="cun">인증 방법<span>*</span></label>
                                 <br>
