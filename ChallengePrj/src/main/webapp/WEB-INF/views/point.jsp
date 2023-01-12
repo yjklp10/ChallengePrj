@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html>
@@ -124,6 +124,10 @@ $(function (){
   });
 });
 
+var message = '${msg}'; 
+var Url = '${url}'; 
+alert(message); 
+document.location.href = url; 
 
 </script>
 
@@ -133,7 +137,7 @@ $(function (){
     <!-- Page Preloder -->
 
     <!-- Header Section Begin -->
-    
+    <%@include file="./include/header.jsp" %>
     <!-- Header End -->
 
     <!-- Breadcrumb Section Begin -->
@@ -207,7 +211,7 @@ $(function (){
 				<!-- Partner Logo Section End -->
 
 				<!-- Footer Section Begin -->
-
+				<%@include file="./include/footer.jsp" %>
 				<!-- Footer Section End -->
 
 				<!-- Js Plugins -->

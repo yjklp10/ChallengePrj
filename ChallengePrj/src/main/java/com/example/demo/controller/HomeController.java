@@ -67,13 +67,15 @@ public class HomeController {
 	}
 	
 	@RequestMapping("/point.do")
-	public String insertRes(PointDto dto) {
+	public String insertRes(Model model,PointDto dto) {
 		int res= biz.insert(dto);
 		
 		if(res>0) {
-			return "redirect:mypage";
+			model.addAttribute("msg", "신청완료");
+			model.addAttribute("url", "mypage.jsp");
+			return "redirect";
 		}else {
-			return "redirect:point";
+			return "redirect";
 		}	
 	}
 
