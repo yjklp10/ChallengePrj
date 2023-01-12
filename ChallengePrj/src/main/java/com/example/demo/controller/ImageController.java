@@ -9,19 +9,28 @@ import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 import java.net.URLDecoder;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.util.FileCopyUtils;
+
+import com.example.demo.biz.FileUploadbiz;
 import com.example.demo.dto.AttachImageDto;
 
 import net.coobird.thumbnailator.Thumbnails;
 
 public class ImageController {
+	
+	@Autowired
+	private FileUploadbiz biz;
+	
 	
 	//팝업창 오픈
 	@GetMapping("/fopen")	
@@ -149,7 +158,16 @@ public class ImageController {
 	
 	@PostMapping("/dbinsert")
 	public void dbinsert(AttachImageDto dto) {
-	  
+	  if(biz.insert(dto)>0) {
+		 
+	  }else {
+		 
+	  }
 
 	}
+	@PostMapping("/myuploadimage")
+	public String myuploadimage(Model model) {
+		return "";
+	}
+	
 }
