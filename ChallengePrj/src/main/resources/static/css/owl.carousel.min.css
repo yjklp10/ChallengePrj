@@ -6,13 +6,15 @@
 <<<<<<< HEAD
 .owl-carousel, .owl-carousel .owl-item {
 	-webkit-tap-highlight-color: transparent;
-	position: relative
+	position: relative;
+	object-fit: cover
 }
 
 .owl-carousel {
 	display: none;
 	width: 100%;
-	z-index: 1
+	z-index: 1;
+	object-fit: cover
 }
 
 .owl-carousel .owl-stage {
@@ -55,7 +57,8 @@
 
 .owl-carousel .owl-item img {
 	display: block;
-	width: 100%
+	width: 100%;
+	object-fit: cover
 }
 
 .owl-carousel .owl-dots.disabled, .owl-carousel .owl-nav.disabled {
