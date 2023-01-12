@@ -16,7 +16,7 @@
      
     <section class="hero-section">
         <div class="hero-items owl-carousel">
-            <div class="single-hero-items set-bg" data-setbg="img/2023챌린지1.jpg">
+            <div class="single-hero-items set-bg" data-setbg="img/메인배너1.jpg">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-5">
@@ -24,7 +24,23 @@
                     </div>
                 </div>
             </div>
-             <div class="single-hero-items set-bg" data-setbg="img/신규이벤트.png">
+             <div class="single-hero-items set-bg" data-setbg="img/2023미라클모닝.jpg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-5">
+                        </div>
+                    </div>
+                </div>
+            </div>
+             <div class="single-hero-items set-bg" data-setbg="img/오프라인홍보.jpg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-5">
+                        </div>
+                    </div>
+                </div>
+            </div>
+             <div class="single-hero-items set-bg" data-setbg="img/신규이벤트.jpg">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-5">
@@ -33,8 +49,17 @@
                 </div>
             </div>
     	</div>
+    	
+    	<div style="text-align:center">
+ 		 <span class="dot"></span> 
+ 	 	<span class="dot"></span> 
+	  	<span class="dot"></span> 
+	</div>
     </section>
     <!-- 상단 홍보 배너 끝 -->
+
+
+
 
     <!-- 카테고리 아이콘 -->
     <section class="category-icon">
