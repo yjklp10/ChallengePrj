@@ -25,4 +25,7 @@ public class MakingChallengeBizImple implements MakingChallengeBiz{
 		return mapper.getDetail(challengeno);
 	}
 
+
+	
+
 }

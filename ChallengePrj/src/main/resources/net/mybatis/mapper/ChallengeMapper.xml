@@ -7,6 +7,6 @@
    <select id="getDetail" resultType="Testchallenge" >
    		select *
    		from MAKECHALLENGE
-   		where CHALLENGENO = #{CHALLENGENO}
+   		where CHALLENGENO = #{CHALLENGENO} 
    </select>
 </mapper>
