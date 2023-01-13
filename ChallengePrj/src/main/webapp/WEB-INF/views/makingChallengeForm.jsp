@@ -118,7 +118,126 @@ padding-top: 8px;
         }
      
     </script>
-  
+   <script>
+$(document).ready(function() {
+    	   
+        	  
+    	   $("input[name='start_date']").click(function () {
+    		   var obj_length = document.getElementsByName("start_date").length;
+    		   
+    	        for (var i=0; i<obj_length; i++) {
+    	        	
+    	            if (document.getElementsByName("start_date")[i].checked == true) {
+
+                        let now = new Date();
+
+
+                        var today_m = now.getTime();
+                        var tmr_m = new Date(now.setDate(now.getDate()+1)).getTime();
+                        var after2_m = new Date(now.setDate(now.getDate()+1)).getTime();
+                        var after3_m = new Date(now.setDate(now.getDate()+1)).getTime();
+                        var after4_m = new Date(now.setDate(now.getDate()+1)).getTime();
+                        var after5_m = new Date(now.setDate(now.getDate()+1)).getTime();
+                        var after6_m = new Date(now.setDate(now.getDate()+1)).getTime();
+                        var after7_m = new Date(now.setDate(now.getDate()+1)).getTime();
+
+                        
+
+                        
+                        $('#start_date_today').val(today_m);
+                        $('#start_date_tomorrow').val(tmr_m);
+                        $('#start_date_after2').val(after2_m);
+                        $('#start_date_after3').val(after3_m);
+                        $('#start_date_after4').val(after4_m);
+                        $('#start_date_after5').val(after5_m);
+                        $('#start_date_after6').val(after6_m);
+                        $('#start_date_after7').val(after7_m);
+
+             		   var checkVal = parseInt($("input[name='start_date']:checked").val());
+                        var checkDate = new Date(checkVal);
+                        
+                        var startDay = checkDate.getFullYear()+"-"+(checkDate.getMonth()+1)+"-"+checkDate.getDate();
+
+                        $("input[name='start_date']:checked").attr('value',startDay);
+
+             		   console.log("시작일: " + startDay);
+                       
+                    
+    	            }
+    	        }
+             
+    		  });
+
+              $("input[name='duration']").click(function () {
+    		   var obj_length = document.getElementsByName("duration").length;
+    		   
+    	        for (var i=0; i<obj_length; i++) {
+    	        	
+    	            if (document.getElementsByName("duration")[i].checked == true) {
+
+                        let now = new Date();
+
+
+                        var today_m = now.getTime();
+                        var tmr_m = new Date(now.setDate(now.getDate()+1)).getTime();
+                        var after2_m = new Date(now.setDate(now.getDate()+1)).getTime();
+                        var after3_m = new Date(now.setDate(now.getDate()+1)).getTime();
+                        var after4_m = new Date(now.setDate(now.getDate()+1)).getTime();
+                        var after5_m = new Date(now.setDate(now.getDate()+1)).getTime();
+                        var after6_m = new Date(now.setDate(now.getDate()+1)).getTime();
+                        var after7_m = new Date(now.setDate(now.getDate()+1)).getTime();
+
+                        
+
+                        
+                        $('#start_date_today').val(today_m);
+                        $('#start_date_tomorrow').val(tmr_m);
+                        $('#start_date_after2').val(after2_m);
+                        $('#start_date_after3').val(after3_m);
+                        $('#start_date_after4').val(after4_m);
+                        $('#start_date_after5').val(after5_m);
+                        $('#start_date_after6').val(after6_m);
+                        $('#start_date_after7').val(after7_m);
+
+                                    
+                        var week1 = 604800000;
+                        var week2 = 1209600000;
+                        var week3 = 1814400000;
+                        var week4 = 2419200000;
+                        
+                        $('#duration_week1').val(week1);
+                        $('#duration_week2').val(week2);
+                        $('#duration_week3').val(week3);
+                        $('#duration_week4').val(week4);
+
+                        
+
+             		   var checkVal = parseInt($("input[name='start_date']:checked").val());
+             		   
+             		  var durationVal = parseInt($("input[name='duration']:checked").val());
+                       console.log("기존 기간 밸류 값(밀리 초) : "+durationVal);
+                      var endDate = new Date(checkVal+durationVal);
+                    
+                      
+
+                      var endDay = endDate.getFullYear()+"-"+(endDate.getMonth()+1)+"-"+endDate.getDate();
+                      var durationDate = (durationVal/1000/60/60/24);
+
+                      $("input[name='duration']:checked").attr('value',durationDate);
+                      var newDurationVal = parseInt($("input[name='duration']:checked").val());
+                      console.log("챌린지 기간: "+durationDate);
+                        console.log("수정된 기간 밸류 값(밀리 초 -> 일로 변경): " + newDurationVal);
+                      console.log("마감일: "+endDay);
+
+    	            }
+    	        }
+             
+    		  });
+    	   
+
+            });
+
+    </script>
 </head>
 
 <body>
@@ -181,14 +300,25 @@ padding-top: 8px;
                                 <input type="radio" id="frequency_week5" name="frequency" value="frequency_week5"><label for="frequency_week5">주 5회</label>
                                 <input type="radio" id="frequency_week6" name="frequency" value="frequency_week6"><label for="frequency_week6">주 6회</label>
                             </div>
- 
+  							<div class="col-lg-12 scrollMenu choices" >
+                                <label for="fir">시작일<span>*</span></label>
+                                <br>
+                                <input type="radio" id="start_date_today" name="start_date" value=""><label for="start_date_today">오늘</label>
+                                <input type="radio" id="start_date_tomorrow" name="start_date" value=""><label for="start_date_tomorrow">내일</label>
+                                <input type="radio" id="start_date_after2" name="start_date" value=""><label for="start_date_after2">2일 후</label>
+                                <input type="radio" id="start_date_after3" name="start_date" value=""><label for="start_date_after3">3일 후</label>
+                                <input type="radio" id="start_date_after4" name="start_date" value=""><label for="start_date_after4">4일 후</label>
+                                <input type="radio" id="start_date_after5" name="start_date" value=""><label for="start_date_after5">5일 후</label>
+                                <input type="radio" id="start_date_after6" name="start_date" value=""><label for="start_date_after6">6일 후</label>
+                                <input type="radio" id="start_date_after7" name="start_date" value=""><label for="start_date_after7">7일 후</label>
+                            </div>
                             <div class="col-lg-12 choices">
                                 <label for="fir">챌린지 기간<span>*</span></label>
                                 <br>
-                                <input type="radio" id="duration_week1" name="duration" value="duration_week1"><label for="duration_week1">1주</label>
-                                <input type="radio" id="duration_week2" name="duration" value="duration_week2"><label for="duration_week2">2주</label>
-                                <input type="radio" id="duration_week3" name="duration" value="duration_week3"><label for="duration_week3">3주</label>
-                                <input type="radio" id="duration_week4" name="duration" value="duration_week4"><label for="duration_week4">4주</label>
+                                <input type="radio" id="duration_week1" name="duration" value="7"><label for="duration_week1">1주</label>
+                                <input type="radio" id="duration_week2" name="duration" value="14"><label for="duration_week2">2주</label>
+                                <input type="radio" id="duration_week3" name="duration" value="21"><label for="duration_week3">3주</label>
+                                <input type="radio" id="duration_week4" name="duration" value="28"><label for="duration_week4">4주</label>
                             </div>
                             <div class="col-lg-3">
                                 <label for="fir">인증 가능 시간<span>*</span></label>
@@ -198,70 +328,11 @@ padding-top: 8px;
                                 <label for="last">인증 종료 시간<span>*</span></label>
                                 <input type="time" id="certification_end_time">
                             </div>
-                            <div class="col-lg-12 scrollMenu choices" >
-                                <label for="fir">시작일<span>*</span></label>
-                                <br>
-                                <input type="radio" id="start_date_today" name="start_date"><label for="start_date_today">오늘</label>
-                                <input type="radio" id="start_date_tomorrow" name="start_date"><label for="start_date_tomorrow">내일</label>
-                                <input type="radio" id="start_date_after2" name="start_date"><label for="start_date_after2">2일 후</label>
-                                <input type="radio" id="start_date_after3" name="start_date"><label for="start_date_after3">3일 후</label>
-                                <input type="radio" id="start_date_after4" name="start_date"><label for="start_date_after4">4일 후</label>
-                                <input type="radio" id="start_date_after5" name="start_date"><label for="start_date_after5">5일 후</label>
-                                <input type="radio" id="start_date_after6" name="start_date"><label for="start_date_after6">6일 후</label>
-                                <input type="radio" id="start_date_after7" name="start_date"><label for="start_date_after7">7일 후</label>
-                            </div>
-                           <script>
-                           	let dt = new Date();
-                           	
-                           	var today = dt.getFullYear()+'-'+(dt.getMonth()+1)+'-'+dt.getDate();
-                           	var tmr = dt.getFullYear()+'-'+(dt.getMonth()+1)+'-'+(dt.getDate()+1);
-                           	var after2 = dt.getFullYear()+'-'+(dt.getMonth()+1)+'-'+(dt.getDate()+2);
-                           	var after3 = dt.getFullYear()+'-'+(dt.getMonth()+1)+'-'+(dt.getDate()+3);
-                           	var after4 = dt.getFullYear()+'-'+(dt.getMonth()+1)+'-'+(dt.getDate()+4);
-                           	var after5 = dt.getFullYear()+'-'+(dt.getMonth()+1)+'-'+(dt.getDate()+5);
-                           	var after6 = dt.getFullYear()+'-'+(dt.getMonth()+1)+'-'+(dt.getDate()+6);
-                           	var after7 = dt.getFullYear()+'-'+(dt.getMonth()+1)+'-'+(dt.getDate()+7);
-                           	
-                           	var start_today = document.getElementById("start_date_today").value;                           	
-                           	var start_tmr = document.getElementById("start_date_tomorrow").value;
-                           	var start_after2 = document.getElementById("start_date_after2").value;
-                           	var start_after3 = document.getElementById("start_date_after3").value;
-                           	var start_after2 = document.getElementById("start_date_after4").value;
-                           	var start_after2 = document.getElementById("start_date_after5").value;
-                           	var start_after2 = document.getElementById("start_date_after6").value;
-                           	var start_after7 = document.getElementById("start_date_after7").value;
-                           	
-                           	start_today = today;
-                           	start_tmr = tmr;
-                           	start_after2 = after2;
-                         	start_after3 = after3;
-                         	start_after4 = after4;
-                         	start_after5 = after5;
-                         	start_after6 = after6;
-                         	start_after7 = after7;
-                         	
-                            console.log(start_today);
-                            console.log(start_tmr);
-                            console.log(start_after2);
-                            console.log(start_after3);
-                           </script>
-                           <script>
-                           $(document).ready(function() {
-                        	   $("input[name='start_date']").click(function () {
-                        		   var radio = document.querySelector('input[name="start_date"]').checked; // 체크 여부(checked)
-                            	   console.log(radio);
-                            	   
-                            	   if(radio == true){
-                            		   var radioVal = document.querySelector('input[name="start_date"]:checked').value; // 체크된 값(checked value)
-                            		   alert(radioVal);
-                            	   }
-                        		  });
-                        	   
-                        	   
-                        	});
-                          
                            
+                           <script>
+                      
                            </script>
+                           
                             <div class="col-lg-12">
                                 <label for="cun">인증 방법<span>*</span></label>
                                 <br>
