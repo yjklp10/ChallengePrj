@@ -2,13 +2,18 @@ package com.example.demo.config.auth;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Map;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.oauth2.core.user.OAuth2User;
 
 import com.example.demo.dto.MemberDto;
 
-public class PrincipalDetails implements UserDetails{
+import lombok.Data;
+
+@Data
+public class PrincipalDetails implements UserDetails, OAuth2User{
 	
 	private MemberDto dto;
 	
@@ -29,6 +34,10 @@ public class PrincipalDetails implements UserDetails{
 		});
 		return collect;
 	}
+	
+	public MemberDto getMemberDto() {
+        return dto;
+    }
 
 	@Override
 	public String getPassword() {
@@ -62,6 +71,18 @@ public class PrincipalDetails implements UserDetails{
 	@Override
 	public boolean isEnabled() {
 		return true;
+	}
+
+	@Override
+	public Map<String, Object> getAttributes() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getName() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
