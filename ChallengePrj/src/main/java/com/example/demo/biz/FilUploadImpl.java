@@ -1,5 +1,7 @@
 package com.example.demo.biz;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.example.demo.dto.AttachImageDto;
@@ -14,5 +16,13 @@ public int insert(AttachImageDto dto) {
 	
 	return fileUploadMapper.insert(dto);
 }
+
+@Override
+public List<AttachImageDto> getAttachList() {
+	// TODO Auto-generated method stub
+	return fileUploadMapper.seletList();
+}
+
+
 
 }
