@@ -166,8 +166,11 @@ public class ImageController {
 
 	}
 	@PostMapping("/myuploadimage")
-	public String myuploadimage(Model model) {
+	public String myuploadimage() {
 		return "";
 	}
-	
+	@GetMapping(value="/getAttachList",produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
+	public ResponseEntity<List<AttachImageDto>> getAttachList(){
+		return new ResponseEntity<List<AttachImageDto>>(biz.getAttachList(),HttpStatus.OK);
+	}
 }
