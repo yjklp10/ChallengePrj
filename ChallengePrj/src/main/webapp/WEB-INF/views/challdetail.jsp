@@ -381,14 +381,17 @@ ul, ol {
 									<div class="product-content">
 										<div class="row">
 											<div class="col-lg-7">
-												<h3 style="text-align:center;margin: 0 0 15px; position: relative;
-   													 right: 40px;">소개글</h3>
-												<hr>
+												<h3 style="margin-bottom: 23px;">소개글</h3>
+												
+												
 												<p>
 													<c:out value="${challenge.challengeintro }" />
 												</p>
 											</div>
+											<div class="maps">
+											<input type="hidden" name="onoffchoice" id="onoff" value="${challenge.onoffchoice }">
 											<div id="map" style="width:350px;height:300px;right:105px;"></div>
+											</div>
 										</div>
 									</div>
 								</div>
@@ -396,7 +399,7 @@ ul, ol {
 									<div class="product-content">
 										<div class="row">
 											<div class="col-lg-7">
-												<h5>주의사항</h5>
+												<h3 style="margin-bottom: 23px;">주의사항</h3>
 												<p>Lorem ipsum dolor sit amet, consectetur adipisicing
 													elit, sed do eiusmod tempor incididunt ut labore et dolore
 													magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -537,17 +540,43 @@ $(".rate_radio").on("click",function(){
 </script>
 
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=617c64aeafcfa7bd484ea2b0d79f230b"></script>
+
 <script>
-var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
-var options = { //지도를 생성할 때 필요한 기본 옵션
-	center: new kakao.maps.LatLng(33.450701, 126.570667), //지도의 중심좌표.
-	level: 3 //지도의 레벨(확대, 축소 정도)
+var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+mapOption = { 
+    center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+    level: 3 // 지도의 확대 레벨
 };
 
-var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
+var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+//마커가 표시될 위치입니다 
+var markerPosition  = new kakao.maps.LatLng(33.450701, 126.570667); 
+
+//마커를 생성합니다
+var marker = new kakao.maps.Marker({
+position: markerPosition
+});
+
+//마커가 지도 위에 표시되도록 설정합니다
+marker.setMap(map);
 
 </script>
 
+
+<script type="text/javascript">
+//온라인 지도 안보이게 , 오프라인 지도 보이게 하기
+
+
+
+if($("#onoff").val() == "OFF" ){
+	$("#map").hide();
+}else{
+	$("#map").show();
+}
+
+
+</script>
 
 	<!-- Js Plugins -->
 	<script src="js/jquery-3.3.1.min.js"></script>
