@@ -268,7 +268,7 @@ function naverLogout() {
                 <div class="col-lg-6 offset-lg-3">
                     <div class="login-form">
                         <h2>Login</h2>
-                        <form action="/login.do" method="post">
+                        <form action="/login" method="post">
                             <div class="group-input">
                                 <label for="username">Username or email address *</label>
                                 <input type="text" id="membername" name="memberid">
@@ -292,6 +292,9 @@ function naverLogout() {
                             	<sction class="c_login_easy">
                             		<h2 class="title" style="margin-top:30px;font-size:18px;">간편 로그인</h2>
                             		<div>
+                            			<a href="/oauth2/authorization/google">
+                            				구글로그인
+                            			</a>
                             			<a href="#">
                             				<img alt="카카오" src="img/kakao.png" style="whid:215px; margin-left:30px;">
                             			</a>
