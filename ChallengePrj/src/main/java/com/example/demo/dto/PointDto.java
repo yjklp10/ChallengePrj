@@ -12,13 +12,14 @@ public class PointDto {
 	private int withdrawpoint;
 	private String status;
 	private Date pointdate;
+	private int mypoint;
 	
 	public PointDto(){
 
 	};
 	
 	public PointDto(int pointno, String memberid, String bankname, String accountnumber,
-			String accountholder, int withdrawpoint, String status, Date pointdate) {
+			String accountholder, int withdrawpoint, String status, Date pointdate,int mypoint) {
 		super();
 		this.pointno = pointno;
 		this.memberid = memberid;
@@ -28,6 +29,7 @@ public class PointDto {
 		this.withdrawpoint = withdrawpoint;
 		this.status = status;
 		this.pointdate = pointdate;
+		this.mypoint = mypoint;
 	}
 
 	public int getPointno() {
@@ -92,6 +94,14 @@ public class PointDto {
 
 	public void setPointdate(Date pointdate) {
 		this.pointdate = pointdate;
+	}
+
+	public int getMypoint() {
+		return mypoint;
+	}
+
+	public void setMypoint(int mypoint) {
+		this.mypoint = mypoint;
 	}
 	
 	

@@ -7,7 +7,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.demo.biz.PointBiz;
-import com.example.demo.dto.MemberDto;
 import com.example.demo.dto.MoneyDto;
 import com.example.demo.dto.PointDto;
 
@@ -29,15 +28,11 @@ public class HomeController {
 		return "detail";
 	}
 	
-	
-	
 	@RequestMapping("/makingChallenge")
 	public String makingChallenge(){
 		return"makingChallengeForm";
 	}
 	
-	
-
 	@RequestMapping("/mypage")
 	public String mypage(Model model,String memberid) {
 		model.addAttribute("dto", biz.selectMyinfo(memberid));
@@ -49,7 +44,6 @@ public class HomeController {
 		int res = biz.update(dto);
 		
 		if(res>0) {
-	
 			return "redirect:mypage";
 		}else {
 			return "redirect:mypage";
@@ -63,15 +57,14 @@ public class HomeController {
 	}
 	
 	@RequestMapping("/point.do")
-	public String insertRes(Model model,PointDto dto) {
+	public String insertRes(PointDto dto){
 		int res= biz.insert(dto);
 		
 		if(res>0) {
-			model.addAttribute("msg", "신청완료");
-			model.addAttribute("url", "mypage.jsp");
-			return "redirect";
+			biz.updatepoint(dto);
+            return "redirect:mypage";
 		}else {
-			return "redirect";
+			return "redirect:point";
 		}	
 	}
 
