@@ -15,10 +15,6 @@ public class MainDetailDaoImpl implements MainDetailDao {
 	@Autowired
 	private SqlSessionTemplate sqlSession;
 
-	@Override
-	public List<MainDetailDto> monthbest() {
-		return monthbest();
-	}
 
 	@Override
 	public List<MainDetailDto> challenge_hot() {
@@ -31,8 +27,13 @@ public class MainDetailDaoImpl implements MainDetailDao {
 	}
 
 	@Override
-	public List<MainDetailDto> challenge_list(String category) {
-		return challenge_list(category);
+	public List<MainDetailDto> challenge_onofflist(String onoffchoice) {
+		return challenge_onofflist(onoffchoice);
+	}
+	
+	@Override
+	public List<MainDetailDto> challenge_categorylist(String category) {
+		return challenge_categorylist(category);
 	}
 
 	

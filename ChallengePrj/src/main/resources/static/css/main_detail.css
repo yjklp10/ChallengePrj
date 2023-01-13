@@ -481,39 +481,8 @@ img {
 .hero-items .single-hero-items {
 	height: 725px;
 	padding-top: 100px;
-	max-width: 100%
-}
-
-
-.hero-items .single-hero-items h1 {
-	color: #252525;
-	font-size: 72px;
-	font-weight: 700;
-	margin-bottom: 6px;
-	position: relative;
-	top: 50px;
-	opacity: 0;
-}
-
-.hero-items .owl-item.active .single-hero-items span,
-.hero-items .owl-item.active .single-hero-items h1,
-.hero-items .owl-item.active .single-hero-items p,
-.hero-items .owl-item.active .single-hero-items .primary-btn {
-	top: 0;
-	opacity: 1;
-}
-
-
-.hero-items .owl-item.active .single-hero-items h1 {
-	-webkit-transition: all 0.4s ease 0.4s;
-	-o-transition: all 0.4s ease 0.4s;
-	transition: all 0.4s ease 0.4s;
-}
-
-.hero-items .owl-item.active .single-hero-items p {
-	-webkit-transition: all 0.6s ease 0.6s;
-	-o-transition: all 0.6s ease 0.6s;
-	transition: all 0.6s ease 0.6s;
+	max-width: 100%;
+	object-fit: cover;
 }
 
 
@@ -547,6 +516,23 @@ img {
 	left: auto;
 	right: 40px;
 }
+
+
+/* The dots/bullets/indicators */
+.banner_dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.banner_dot_active {
+  background-color: #717171;
+}
+
 
 /*---------------------
 카테고리 Section
@@ -676,6 +662,32 @@ img {
 
 .content-name h6 {
 	line-height: 120%;
+}
+
+
+/*---------------------
+  공백
+-----------------------*/
+.blank	{
+	padding-top: 100px;
+}
+
+
+/*---------------------
+  온오프 가이드
+-----------------------*/
+
+.guide_onoff {
+	padding-left: 380px;
+}
+
+
+.guide_offline {
+	float: left;
+}
+
+.guide_online {
+	float: right;
 }
 
 

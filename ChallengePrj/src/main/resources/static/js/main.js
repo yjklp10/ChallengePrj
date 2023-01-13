@@ -27,6 +27,9 @@
         allowParentLinks: true
     });
 
+
+
+
     /*------------------
         Hero Slider
     --------------------*/
@@ -43,6 +46,8 @@
         autoHeight: false,
         autoplay: true,
     });
+    
+    
 
     /*------------------
         Product Slider

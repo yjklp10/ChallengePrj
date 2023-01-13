@@ -15,7 +15,7 @@ public class MemberDto {
 	private String membernick;
 	private String membername;
 	private String memberphone;
-	private String memberlevel;
+	private String memberrole;
 	private String membergender;
 	private String membercertify;
 	private Date memberjoin;
@@ -28,7 +28,7 @@ public class MemberDto {
 
 
 	public MemberDto(int memberno, String memberid, String memberpw, String memberemail, String membernick,
-			String membername, String memberphone, String memberlevel, String membergender, String membercertify,
+			String membername, String memberphone, String memberrole, String membergender, String membercertify,
 			Date memberjoin, Date memberquit) {
 		super();
 		this.memberno = memberno;
@@ -38,7 +38,7 @@ public class MemberDto {
 		this.membernick = membernick;
 		this.membername = membername;
 		this.memberphone = memberphone;
-		this.memberlevel = memberlevel;
+		this.memberrole = memberrole;
 		this.membergender = membergender;
 		this.membercertify = membercertify;
 		this.memberjoin = memberjoin;
@@ -116,13 +116,13 @@ public class MemberDto {
 	}
 
 
-	public String getMemberlevel() {
-		return memberlevel;
+	public String getMemberrole() {
+		return memberrole;
 	}
 
 
-	public void setMemberlevel(String memberlevel) {
-		this.memberlevel = memberlevel;
+	public void setMemberrole(String memberrole) {
+		this.memberrole = memberrole;
 	}
 
 
@@ -170,7 +170,7 @@ public class MemberDto {
 	public String toString() {
 		return "MemberDto [memberno=" + memberno + ", memberid=" + memberid + ", memberpw=" + memberpw
 				+ ", memberemail=" + memberemail + ", membernick=" + membernick + ", membername=" + membername
-				+ ", memberphone=" + memberphone + ", memberlevel=" + memberlevel + ", membergender=" + membergender
+				+ ", memberphone=" + memberphone + ", memberrole=" + memberrole + ", membergender=" + membergender
 				+ ", membercertify=" + membercertify + ", memberjoin=" + memberjoin + ", memberquit=" + memberquit
 				+ "]";
 	}

@@ -262,6 +262,7 @@ ul, ol {
 	padding: 0;
 	margin: 0;
 }
+
 }
 </style>
 
@@ -330,11 +331,11 @@ ul, ol {
 
 								<div class="dropdown">
 									<button class="dropbtn">
-										<span class="dropbtn_icon">more_horiz</span> <span
-											class="dropbtn_content">Select a menu...</span> <span
+										 <span
+											class="dropbtn_content" style="font-size: 15px;"><c:out value="${challenge.challengetitle}" /></span> <span
 											class="dropbtn_click"
 											style="font-family: Material Icons; font-size: 16px; color: #3b3b3b; float: right;"
-											onclick="dropdown()">arrow_drop_down</span>
+											onclick="dropdown()">▼</span>
 									</button>
 									<div class="dropdown-content">
 										<div class="fastfood" onclick="showMenu(this.innerText)">Burgerking</div>
@@ -380,10 +381,16 @@ ul, ol {
 									<div class="product-content">
 										<div class="row">
 											<div class="col-lg-7">
-												<h5>소개글</h5>
+												<h3 style="margin-bottom: 23px;">소개글</h3>
+												
+												
 												<p>
 													<c:out value="${challenge.challengeintro }" />
 												</p>
+											</div>
+											<div class="maps">
+											<input type="hidden" name="onoffchoice" id="onoff" value="${challenge.onoffchoice }">
+											<div id="map" style="width:350px;height:300px;right:105px;"></div>
 											</div>
 										</div>
 									</div>
@@ -392,7 +399,7 @@ ul, ol {
 									<div class="product-content">
 										<div class="row">
 											<div class="col-lg-7">
-												<h5>주의사항</h5>
+												<h3 style="margin-bottom: 23px;">주의사항</h3>
 												<p>Lorem ipsum dolor sit amet, consectetur adipisicing
 													elit, sed do eiusmod tempor incididunt ut labore et dolore
 													magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -466,25 +473,27 @@ ul, ol {
 										<br>
 										<br>
 										<div class="CommentWriter">
-										<form name="replyForm" method="post">
+										<form name="reviewform" class="reviewform" method="post">
 										<input type="hidden" id="challengeno" name="challengeno" value="${challenge.challengeno }"/>
 											<div class="comment_inbox">
 												<em class="comment_inbox_name"><c:out value="${challenge.memberid}"/><input type="hidden" id="memberid" name="memberid" value="${challenge.memberid }"></em>
 											</div>
+											
 											<div class="rating" style="position: relative; height: 20px; bottom: 36px; left: 60px;">
 													<!-- 해당 별점을 클릭하면 해당 별과 그 왼쪽의 모든 별의 체크박스에 checked 적용 -->
-													<input type="checkbox" name="rating" id="rating1" value=1 class="rate_radio" title="1점">
+													<input type="hidden" name="rating" id="ratings" value=""> 
+													<input type="checkbox"  id="rating1" value="1" class="rate_radio" title="1점">
 														 <label for="rating1"></label> 
-												 	<input type="checkbox" name="rating" id="rating2" value=2 class="rate_radio" title="2점">
+												 	<input type="checkbox"  id="rating2" value="2" class="rate_radio" title="2점">
 														<label for="rating2"></label> 
-													<input type="checkbox" name="rating" id="rating3" value=3 class="rate_radio" title="3점"> 
+													<input type="checkbox"  id="rating3" value="3" class="rate_radio" title="3점"> 
 														<label for="rating3"></label> 
-													<input type="checkbox" name="rating" id="rating4" value=4 class="rate_radio" title="4점"> 
+													<input type="checkbox"  id="rating4" value="4" class="rate_radio" title="4점"> 
 														<label for="rating4"></label> 
-													<input type="checkbox" name="rating" id="rating5" value=5 class="rate_radio" title="5점"> 
+													<input type="checkbox"  id="rating5" value="5" class="rate_radio" title="5점"> 
 														<label for="rating5"></label>
 											</div>
-											<input type="hidden" name="rating"/>
+							
 											<div class="comment_text">
 											<textarea placeholder="후기를 남겨보세요" rows="1"
 												class="comment_inbox_text" name="content"
@@ -513,15 +522,61 @@ ul, ol {
 	
 <!-- 등록버튼 --> 
 <script>
-$(".replyWriteBtn").on("click", function(){
-	  var formObj = $("form[name='replyForm']");
+
+/*댓글 등록, 별점 */
+$(".replyWriteBtn").on("click", function(e){
+	
+	var formObj = $("form[name='reviewform']");
+
 	  formObj.attr("action", "/replyWrite");
 	  formObj.submit();
 	});
     
-	  
+$(".rate_radio").on("click",function(){
+	let ratingEle = $(this).val(); 
+	$("#ratings").val(ratingEle);
+	});
+ 
 </script>
 
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=617c64aeafcfa7bd484ea2b0d79f230b"></script>
+
+<script>
+var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+mapOption = { 
+    center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+    level: 3 // 지도의 확대 레벨
+};
+
+var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+//마커가 표시될 위치입니다 
+var markerPosition  = new kakao.maps.LatLng(33.450701, 126.570667); 
+
+//마커를 생성합니다
+var marker = new kakao.maps.Marker({
+position: markerPosition
+});
+
+//마커가 지도 위에 표시되도록 설정합니다
+marker.setMap(map);
+
+</script>
+
+
+<script type="text/javascript">
+//온라인 지도 안보이게 , 오프라인 지도 보이게 하기
+
+
+
+if($("#onoff").val() == "OFF" ){
+	$("#map").hide();
+}else{
+	$("#map").show();
+}
+
+
+</script>
 
 	<!-- Js Plugins -->
 	<script src="js/jquery-3.3.1.min.js"></script>

@@ -43,7 +43,14 @@ dependencies {
 	
 	//이재ㄴ
 	// https://mvnrepository.com/artifact/net.coobird/thumbnailator
-implementation group: 'net.coobird', name: 'thumbnailator', version: '0.4.17'
+	implementation group: 'net.coobird', name: 'thumbnailator', version: '0.4.17'
+
+
+	implementation 'org.springframework.boot:spring-boot-devtools:2.7.2'
+	implementation 'org.springframework.security.oauth:spring-security-oauth2:2.3.6.RELEASE'
+	implementation 'org.springframework.boot:spring-boot-starter-security:2.7.6'
+	
+	
 
 }
 

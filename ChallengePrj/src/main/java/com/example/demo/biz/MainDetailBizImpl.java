@@ -15,11 +15,6 @@ public class MainDetailBizImpl implements MainDetailBiz {
 	private MainDetailDao dao;
 
 	@Override
-	public List<MainDetailDto> monthbest() {
-		return dao.monthbest();
-	}
-
-	@Override
 	public List<MainDetailDto> challenge_hot() {
 		return dao.challenge_hot();
 	}
@@ -30,8 +25,13 @@ public class MainDetailBizImpl implements MainDetailBiz {
 	}
 
 	@Override
-	public List<MainDetailDto> challenge_list(String category) {
-		return dao.challenge_list(category);
+	public List<MainDetailDto> challenge_onofflist(String onoffchoice) {
+		return dao.challenge_onofflist(onoffchoice);
+	}
+	
+	@Override
+	public List<MainDetailDto> challenge_categorylist(String category) {
+		return dao.challenge_categorylist(category);
 	}
 
 }

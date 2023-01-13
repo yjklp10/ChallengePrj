@@ -11,4 +11,5 @@ public interface MakingChallengeBiz {
 	
 	//신호준
 	public Testchallenge getDetail(int challengeno);
+	
 }

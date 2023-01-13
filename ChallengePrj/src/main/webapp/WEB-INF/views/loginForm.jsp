@@ -234,8 +234,8 @@ function naverLogout() {
                                 <li><a href="./shopping-cart.html">Shopping Cart</a></li>
                                 <li><a href="./check-out.html">Checkout</a></li>
                                 <li><a href="./faq.html">Faq</a></li>
-                                <li><a href="./register.html">Register</a></li>
-                                <li><a href="./login.html">Login</a></li>
+                                <li><a href="./registerForm.html">Register</a></li>
+                                <li><a href="./loginForm.html">Login</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -268,14 +268,14 @@ function naverLogout() {
                 <div class="col-lg-6 offset-lg-3">
                     <div class="login-form">
                         <h2>Login</h2>
-                        <form action="#">
+                        <form action="/login.do" method="post">
                             <div class="group-input">
                                 <label for="username">Username or email address *</label>
-                                <input type="text" id="username">
+                                <input type="text" id="membername" name="memberid">
                             </div>
                             <div class="group-input">
                                 <label for="pass">Password *</label>
-                                <input type="text" id="pass">
+                                <input type="text" id="memberpw" name="memberpw">
                             </div>
                             <div class="group-input gi-check">
                                 <div class="gi-more">
@@ -287,6 +287,7 @@ function naverLogout() {
                                     <a href="forget.do" class="forget-pass">Forget your ID or Password</a>
                             </div>
                             <button type="submit" class="site-btn login-btn">로그인</button>
+                        </form>
                             <div class="b_login_sync">
                             	<sction class="c_login_easy">
                             		<h2 class="title" style="margin-top:30px;font-size:18px;">간편 로그인</h2>
@@ -300,9 +301,9 @@ function naverLogout() {
                             		</div>
                             	</sction>
                             </div>
-                        </form>
+                        
                         <div class="switch-login">
-                            <a href="register.do" class="or-login">Or Create An Account</a>
+                            <a href="registerform.do" class="or-login">Or Create An Account</a>
                         </div>
                     </div>
                 </div>
