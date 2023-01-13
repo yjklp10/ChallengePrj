@@ -18,5 +18,7 @@
 		<mapper resource="net/mybatis/mapper/MemberMapper.xml"/>
 
 		<mapper resource="net/mybatis/mapper/CommentMapper.xml"/>
+		
+		<mapper resource="net/mybatis/mapper/MainDetailMapper.xml"/>
 	</mappers>
 </configuration>
