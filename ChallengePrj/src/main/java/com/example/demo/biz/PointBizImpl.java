@@ -36,4 +36,9 @@ public class PointBizImpl implements PointBiz {
 		return dao.update(dto);
 	}
 
+	@Override
+	public int updatepoint(PointDto dto) {
+		return dao.updatepoint(dto);
+	}
+
 }

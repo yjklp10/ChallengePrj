@@ -84,7 +84,7 @@ table {
 						<thead>
 							<tr>
 								<th scope="col" class="th-num"></th>
-								<th scope="col">이 메 일</th>
+								<th scope="col">I D</th>
 								<th scope="col">은 행 명</th>
 								<th scope="col">예 금 주</th>
 								<th scope="col">계좌번호</th>

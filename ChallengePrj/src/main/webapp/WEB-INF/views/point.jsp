@@ -124,10 +124,6 @@ $(function (){
   });
 });
 
-var message = '${msg}'; 
-var Url = '${url}'; 
-alert(message); 
-document.location.href = url; 
 
 </script>
 

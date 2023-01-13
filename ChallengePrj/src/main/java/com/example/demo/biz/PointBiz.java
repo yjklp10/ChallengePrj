@@ -10,6 +10,7 @@ public interface PointBiz {
 	public List<PointDto> selectList();
 	
 	public int insert(PointDto dto);
+	public int updatepoint(PointDto dto);
 	public int update(MoneyDto dto);
 	
 	public MoneyDto selectMyinfo(String memberid);
