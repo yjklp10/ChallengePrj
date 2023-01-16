@@ -269,10 +269,7 @@ ul, ol {
 </head>
 
 <body>
-	<!-- Page Preloder -->
-	<div id="preloder">
-		<div class="loader"></div>
-	</div>
+	
 
 
 
@@ -360,7 +357,7 @@ ul, ol {
 								</div>
 								<div class="quantity">
 
-									<a href="#" class="primary-btn pd-cart">신청하기</a>
+									<a href="/payment" class="primary-btn pd-cart">신청하기</a>
 								</div>
 							</div>
 						</div>
