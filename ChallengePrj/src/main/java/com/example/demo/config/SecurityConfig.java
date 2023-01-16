@@ -42,7 +42,7 @@ public class SecurityConfig {
 			.defaultSuccessUrl("/home_main")
 			.and()
 			.oauth2Login()
-			.loginPage("/loginform.do")
+			.loginPage("/linform.do")
 			.userInfoEndpoint()
 			.userService(principalOauth2UserService);
 			

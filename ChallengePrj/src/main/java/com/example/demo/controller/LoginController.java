@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -36,7 +37,6 @@ public class LoginController {
 	}
 	
 
-	
 	@RequestMapping("/loginform.do")
 	public String loginForm() {
 		return "loginForm";
