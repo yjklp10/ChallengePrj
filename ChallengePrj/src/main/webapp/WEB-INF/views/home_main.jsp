@@ -54,6 +54,7 @@
  		 <span class="banner_dot"></span> 
  	 	<span class="banner_dot"></span> 
 	  	<span class="banner_dot"></span> 
+	    <span class="banner_dot"></span> 
 	</div>
     </section>
     <!-- 상단 홍보 배너 끝 -->
@@ -173,6 +174,28 @@
     
    		 	<div class="content-list">
    		 		<div class="content-pic">
+   		 		
+   		 		  <ul>
+				 <c:choose>
+    			<c:when test="${empty hotRes }">
+     			<p>--------- 작성된 글이 없습니다 ---------- </p>
+     			</c:when>
+     			<c:otherwise>
+    			<c:forEach items="${hotRes }" begin="0" end="4" step="1">
+       
+
+  				  <li>
+   				    <img src="${pageContext.request.contextPath }/static/img/${hotDto.thumbnailname }" alt=${hotDto.thumbnailname }">
+       				 <p>${hotDto.challengetitle }/${hotDto.onoffchoice }</p>
+        			 <p>시작일 : ${hotDto.challengestartdate } ~ </span>
+        
+     				</li>
+  
+       				 </c:forEach>
+       				 </c:otherwise>
+        			</c:choose>
+   					   </ul>
+   					 		
    		 			<img src="img/임시.png" alt="">
   		 		</div>
   		 		
@@ -218,28 +241,31 @@
     </section>
     
         <!-- 신규 챌린지 리스트 끝 -->
-        <section class="blank">
         
+        
+        
+        <!-- 공백용 -->
+        
+        <section class="blank">
         </section>
         
         <!-- 온라인/오프라인 가이드 -->
         
         <section class="guide_onoff">
-        <div class="guide_offline">
-        <h3>코로나 싫어! 밖에 나갈래!</h3>
-        <h5>그럼 오프라인 모임은 어때? 😉</h5>
-        <img src="img/오프라인가이드.png">
+      	  <div class="guide_offline">
+      		  <h3>코로나 싫어! 밖에 나갈래!</h3>
+      		  <h5>그럼 오프라인 모임은 어때? 😉</h5>
+       		 <img src="img/오프라인가이드.png">
+      	  </div>
         
-        </div>
+      		 <div class="vs">
+      	 	<h3>VS</h3>
+      		 </div>
         
-       <div class="vs">
-       <h3>VS</h3>
-       </div>
-        
-       <div class="guide_online">
-      	<h3>날 추운데 어딜나가!</h3>
-	   <h5>온라인으로 하면되지! 😁</h5>
-	   <img src="img/온라인가이드.png">
+     	  <div class="guide_online">
+      		<h3>날 추운데 어딜나가!</h3>
+	  		 <h5>온라인으로 하면되지! 😁</h5>
+	  		 <img src="img/온라인가이드.png">
         </div>
         
         </section>
@@ -247,14 +273,43 @@
       <!-- 온라인/오프라인 가이드 끝 -->
       
       
+      <!-- 공백용 -->
+        
+        <section class="blank">
+        <div class="blank">
+        </div>
+        </section>
+      
+      <!-- 공백용 끝 -->
+        
+      
       <!-- 작심삼일 가이드 -->
       
       <section class="guide3">
-       <h3>작심삼일? NO!</h3>
-	   <h6>어떻게 하면 더 잘할 수 있을까? 자기 관리 잘하는 고수들의 노하우!</h6>
+    	  <div class="challenge_guide">
+     		<h3>작심삼일? NO!</h3>
+	  		<h6>어떻게 하면 더 잘할 수 있을까? 자기 관리 잘하는 고수들의 노하우!</h6>
+	  	 </div>
+	  	 
+	  	  <div class="challenge_guide_img">
+	  		 <img src="img/가이드0.jpg">
+	  		 <img src="img/가이드1.jpg">
+	  		<img src="img/가이드2.jpg">
+	   	</div>
+	    
        </section>
+       
+       
+     <!-- 공백용 -->
         
-    
+        <section class="blank">
+        <div class="blank">
+        </div>
+        </section>
+      
+      <!-- 공백용 끝 -->
+        
+    <!-- 
     <section class="women-banner spad">
         <div class="container-fluid">
             <div class="row">
@@ -355,9 +410,9 @@
        				  </div>
         			</div>
     			</section> 
-    			
+    			 -->
     			    <!-- 각 챌린지 끝-->
-
+				
 
     
     <script src="js/jquery-3.3.1.min.js"></script>
