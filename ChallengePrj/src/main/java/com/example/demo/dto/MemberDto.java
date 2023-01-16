@@ -2,11 +2,20 @@ package com.example.demo.dto;
 
 import java.util.Date;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 
 
+@Getter
+@Setter
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class MemberDto {
 	private int memberno;
 	private String memberid;
@@ -18,6 +27,8 @@ public class MemberDto {
 	private String memberrole;
 	private String membergender;
 	private String membercertify;
+	private String provider;
+	private String providerId;
 	private Date memberjoin;
 	private Date memberquit;
 	
@@ -26,10 +37,29 @@ public class MemberDto {
 		super();
 	}
 
+	@Builder
+	public MemberDto( String memberid, String memberpw, String memberemail, String membernick,
+			String membername, String memberphone, String memberrole, String membergender, String membercertify,
+			String provider, String providerId, Date memberjoin, Date memberquit) {
+		super();
+		this.memberid = memberid;
+		this.memberpw = memberpw;
+		this.memberemail = memberemail;
+		this.membernick = membernick;
+		this.membername = membername;
+		this.memberphone = memberphone;
+		this.memberrole = memberrole;
+		this.membergender = membergender;
+		this.membercertify = membercertify;
+		this.provider = provider;
+		this.providerId = providerId;
+		this.memberjoin = memberjoin;
+		this.memberquit = memberquit;
+	}
 
 	public MemberDto(int memberno, String memberid, String memberpw, String memberemail, String membernick,
 			String membername, String memberphone, String memberrole, String membergender, String membercertify,
-			Date memberjoin, Date memberquit) {
+			String provider, String providerId, Date memberjoin, Date memberquit) {
 		super();
 		this.memberno = memberno;
 		this.memberid = memberid;
@@ -41,6 +71,8 @@ public class MemberDto {
 		this.memberrole = memberrole;
 		this.membergender = membergender;
 		this.membercertify = membercertify;
+		this.provider = provider;
+		this.providerId = providerId;
 		this.memberjoin = memberjoin;
 		this.memberquit = memberquit;
 	}
@@ -146,6 +178,26 @@ public class MemberDto {
 	}
 
 
+	public String getProvider() {
+		return provider;
+	}
+
+
+	public void setProvider(String provider) {
+		this.provider = provider;
+	}
+
+
+	public String getProviderId() {
+		return providerId;
+	}
+
+
+	public void setProviderId(String providerId) {
+		this.providerId = providerId;
+	}
+
+
 	public Date getMemberjoin() {
 		return memberjoin;
 	}
@@ -166,15 +218,4 @@ public class MemberDto {
 	}
 
 
-	@Override
-	public String toString() {
-		return "MemberDto [memberno=" + memberno + ", memberid=" + memberid + ", memberpw=" + memberpw
-				+ ", memberemail=" + memberemail + ", membernick=" + membernick + ", membername=" + membername
-				+ ", memberphone=" + memberphone + ", memberrole=" + memberrole + ", membergender=" + membergender
-				+ ", membercertify=" + membercertify + ", memberjoin=" + memberjoin + ", memberquit=" + memberquit
-				+ "]";
-	}
-
-	
-	
 }
