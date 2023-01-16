@@ -543,7 +543,7 @@ img {
 }
 
 .banner-section {
-	padding-top: 100px;
+	padding-top: 50px;
 	padding-bottom: 50px;
 }
 
@@ -604,9 +604,9 @@ img {
 -----------------------*/
 
 .challenge-list {
-	padding-top: 100px;
+	padding-top: 50px;
 	padding-left: 380px;
-	padding-bottom: 100px;
+	padding-bottom: 50px;
 
 }
 
@@ -668,8 +668,9 @@ img {
 /*---------------------
   공백
 -----------------------*/
-.blank	{
-	padding-top: 100px;
+.blank .blank	{
+	padding-top: 50px;
+	padding-bottom: 50px;
 }
 
 
@@ -679,6 +680,12 @@ img {
 
 .guide_onoff {
 	padding-left: 380px;
+	display: flex;
+	align-items: flex-start;
+}
+
+.guide_onoff h3 {
+	font-weight: 600;
 }
 
 
@@ -686,12 +693,61 @@ img {
 	float: left;
 }
 
+.vs {
+	display: flex;
+	align-items: center;
+	padding-left: 150px;
+	float: center;
+}
+
+
 .guide_online {
+	padding-left: 150px;
 	float: right;
 }
 
 
+/*---------------------
+  공백
+-----------------------*/
+.blank	{
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
 
+
+
+/*---------------------
+  챌린지 가이드
+-----------------------*/
+
+.guide3 {
+	padding-left: 380px;
+}
+
+.challenge_guide {
+	padding-bottom: 10px;
+}
+
+
+.challenge_guide h3 {
+	font-weight: 600;
+	}
+	
+.challenge_guide_img {
+	display: flex;
+	align-items: flex-start;
+	}
+
+
+.challenge_guide_img img {
+	text-align: center;
+	width: 380px;
+	padding-right: 20px;
+	}
+
+
+	
 
 /*---------------------
   Banner Section
