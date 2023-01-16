@@ -2,14 +2,13 @@ package com.example.demo.controller;
 
 import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.context.annotation.RequestScope;
 
 import com.example.demo.biz.MemberBiz;
 import com.example.demo.config.auth.PrincipalDetails;
@@ -28,8 +27,16 @@ public class LoginController {
 	@Autowired
 	private MemberBiz biz;
 	
-
+	@RequestMapping("/test/login")
+	public @ResponseBody String testLogin(Authentication authentication, @AuthenticationPrincipal PrincipalDetails userDetails) {
+		System.out.println("/test/login ====================");
+		System.out.println("userDetails"+ userDetails.getMemberDto());
+		
+		
+		return "세션정보확인하기";
+	}
 	
+
 	@RequestMapping("/loginform.do")
 	public String loginForm() {
 		return "loginForm";

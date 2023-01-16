@@ -16,11 +16,19 @@ import lombok.Data;
 public class PrincipalDetails implements UserDetails, OAuth2User{
 	
 	private MemberDto dto;
+	private Map<String,Object> attributes;
 	
+	//일반로그인
 	public PrincipalDetails(MemberDto dto) {
 		this.dto = dto;
 	}
-
+	
+	//OAuth로그인
+	public PrincipalDetails(MemberDto dto, Map<String,Object> attributes) {
+		this.dto = dto;
+		this.attributes = attributes;
+	}
+	
 	//해당 user의 권한을 리턴하는 곳
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -75,13 +83,11 @@ public class PrincipalDetails implements UserDetails, OAuth2User{
 
 	@Override
 	public Map<String, Object> getAttributes() {
-		// TODO Auto-generated method stub
-		return null;
+		return attributes;
 	}
 
 	@Override
 	public String getName() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
