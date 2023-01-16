@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+
 
 <head>
     <meta charset="UTF-8">
@@ -24,53 +24,36 @@
     <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
-</head>
-<script>
-      window.onload=function() {
-    	 var w;
-    	 document.getElementById("open").onclick=function() {
-    		 w=open("/fopen","","width=400px, height=400px");
-    	 };
-      };
-    </script>
-   <style>
-   .minhocontainer1 {
     
-      display: grid;
-       grid-template-rows: repeat(6, minmax(100px, auto));
-  
-}
-.item1{
- 
-   text-align: center;
-}
-.item2{
-  
-   text-align: center;
-}
-.item3{
-  
-  text-align: center;
-}
-.item4{
-  
-  text-align: center;
-}
-.item5{
-  
-  text-align: center;
-}
-.item6{
-  
-  text-align: center;
-}
+    <style>
+        body{
+            font-family: sans-serif;
+        }
+        h1{
+            text-align: center;
+            color:forestgreen;
+            margin: 30px 0 50px;
+        }
+        .minho{
+           text-align: center;
+            margin: 10px 50px;
+        }
+         a img{
+            width: 230px;
+            height: 230px;
+            padding: 5px;
+            filter: grayscale(100%);
+            transition: 1s;
+       
+        }
+          a img:hover{
+            filter: grayscale(0%);
+            transform: scale(1.1);
+        }
+    
+       </style>   
+</head>
 
-#open{
-   width:200px;
-   display: inline-block;
-}
-
-   </style>
 <body>
     <!-- Page Preloder -->
     <div id="preloder">
@@ -115,10 +98,10 @@
                 <div class="row">
                     <div class="col-lg-2 col-md-2">
                         <div class="logo">
-                            <a href="./index.html">
+                           
                                 <img src="img/logo.png" alt="">
-                            </a>
-                        </div>
+                            
+                        </div>    
                     </div>
                     <div class="col-lg-7 col-md-7">
                         <div class="advanced-search">
@@ -132,55 +115,55 @@
                     <div class="col-lg-3 text-right col-md-3">
                         <ul class="nav-right">
                             <li class="heart-icon"><a href="#">
-                                    <i class="icon_heart_alt"></i>
-                                    <span>1</span>
-                                </a>
+                                <i class="icon_heart_alt"></i>
+                                <span>1</span>
+                            </a>
                             </li>
                             <li class="cart-icon"><a href="#">
-                                    <i class="icon_bag_alt"></i>
-                                    <span>3</span>
-                                </a>
-                                <div class="cart-hover">
-                                    <div class="select-items">
-                                        <table>
-                                            <tbody>
-                                                <tr>
-                                                    <td class="si-pic"><img src="img/select-product-1.jpg" alt=""></td>
-                                                    <td class="si-text">
-                                                        <div class="product-selected">
-                                                            <p>$60.00 x 1</p>
-                                                            <h6>Kabino Bedside Table</h6>
-                                                        </div>
-                                                    </td>
-                                                    <td class="si-close">
-                                                        <i class="ti-close"></i>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="si-pic"><img src="img/select-product-2.jpg" alt=""></td>
-                                                    <td class="si-text">
-                                                        <div class="product-selected">
-                                                            <p>$60.00 x 1</p>
-                                                            <h6>Kabino Bedside Table</h6>
-                                                        </div>
-                                                    </td>
-                                                    <td class="si-close">
-                                                        <i class="ti-close"></i>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <div class="select-total">
-                                        <span>total:</span>
-                                        <h5>$120.00</h5>
-                                    </div>
-                                    <div class="select-button">
-                                        <a href="#" class="primary-btn view-card">VIEW CARD</a>
-                                        <a href="#" class="primary-btn checkout-btn">CHECK OUT</a>
-                                    </div>
+                                <i class="icon_bag_alt"></i>
+                                <span>3</span>
+                            </a>
+                            <div class="cart-hover">
+                                <div class="select-items">
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td class="si-pic"><img src="img/select-product-1.jpg" alt=""></td>
+                                                <td class="si-text">
+                                                    <div class="product-selected">
+                                                        <p>$60.00 x 1</p>
+                                                        <h6>Kabino Bedside Table</h6>
+                                                    </div>
+                                                </td>
+                                                <td class="si-close">
+                                                    <i class="ti-close"></i>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="si-pic"><img src="img/select-product-2.jpg" alt=""></td>
+                                                <td class="si-text">
+                                                    <div class="product-selected">
+                                                        <p>$60.00 x 1</p>
+                                                        <h6>Kabino Bedside Table</h6>
+                                                    </div>
+                                                </td>
+                                                <td class="si-close">
+                                                    <i class="ti-close"></i>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
-                            </li>
+                                <div class="select-total">
+                                    <span>total:</span>
+                                    <h5>$120.00</h5>
+                                </div>
+                                <div class="select-button">
+                                    <a href="#" class="primary-btn view-card">VIEW CARD</a>
+                                    <a href="#" class="primary-btn checkout-btn">CHECK OUT</a>
+                                </div>
+                            </div>
+                        </li>
                             <li class="cart-price">$150.00</li>
                         </ul>
                     </div>
@@ -207,7 +190,7 @@
                 </div>
                 <nav class="nav-menu mobile-menu">
                     <ul>
-                        <li><a href="./home.html">Home</a></li>
+                        <li><a href="./index.html">Home</a></li>
                         <li><a href="./shop.html">Shop</a></li>
                         <li><a href="#">Collection</a>
                             <ul class="dropdown">
@@ -235,20 +218,24 @@
         </div>
     </header>
     <!-- Header End -->
-      <div class="minhocontainer1">
-      <div class="item1">인증 가능시간 6:00~9:00</div>
-      <div class="item2">인증 방법</div>
-      <div class="item3">
-         주의사항<br>
-         1)인터넷에서 퍼온 사진을 쓰지 않기<br>
-         2)정해진 시간에 올리기<br>
-         3)몸의 일정부분이 나와야 함
-         
-      </div>
-      <div class="item4">인증 예시</div>
-      <div class="item5"><img src="img/기룡.jfif" ></div>
-      <div class="item6"> <input type="button" value="등록하기" id="open"></div>
-   
+
+    <!-- Breadcrumb Section Begin -->
+    <div class="breacrumb-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-text">
+                        <a href="#"><i class="fa fa-home"></i> Home</a>
+                        <span>Register</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h1>mypage</h1>
+    <div class="minho">
+
+    </div>
     <!-- Partner Logo Section Begin -->
     <div class="partner-logo">
         <div class="container">
@@ -290,7 +277,7 @@
                 <div class="col-lg-3">
                     <div class="footer-left">
                         <div class="footer-logo">
-                            <a href="#"><img src="img/footer-logo.png" alt=""></a>
+                       <img src="img/footer-logo.png" alt="">
                         </div>
                         <ul>
                             <li>Address: 60-49 Road 11378 New York</li>
@@ -359,6 +346,39 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <!-- Footer Section End -->
 
     <!-- Js Plugins -->
+         <script> 
+      
+           let minho= $("#minho");
+    	   $.getJSON("/getAttachList",function(arr){
+       
+       	   let str=""; 
+    		   
+    		   
+       for(key in arr){
+           let fileCallPath= (arr[key].uploadFilePath+ "/s_"+arr[key].uuid+"_"+arr[key].fileName);
+            console.log(fileCallPath);
+           
+           let attrObj = { 
+                   'data-path': arr[key].uploadFilePath, 
+                   'data-uuid': arr[key].uuid, 
+                   'data-fileName':arr[key].fileName 
+               };
+        
+        
+               minho.attr(attrObj);
+              
+               str += "<img src='/display?fileName=" + fileCallPath +"'>";
+          
+		
+			
+           minho.html(str);
+    	  
+       }
+     
+      
+         });
+     
+       </script>
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
