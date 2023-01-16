@@ -124,6 +124,22 @@ $(function (){
   });
 });
 
+function pointChk(){
+	if(isNaN(document.withdraw.withdrawpoint.value)){
+		alert("출금포인트는 숫자만 입력해주세요.")
+		return false;
+	}else if(document.withdraw.withdrawpoint.value>document.withdraw.mypoint.value){
+		alert("보유포인트를 확인해주세요.")
+		return false;
+	}else if(document.withdraw.withdrawpoint.value<"3000"){
+		alert("3000원부터 신청가능합니다.")
+		return false;
+	}else{
+		return true;
+	}
+};
+
+
 
 </script>
 
@@ -170,7 +186,7 @@ $(function (){
 							</div>
 						</div>
 					</form>
-					<form action="/point.do" method="post">
+					<form action="/point.do" method="post" name="withdraw" onsubmit="return pointChk()">
   					 <input type="hidden" id="memberid" name="memberid" value="${dto.memberid }">
     				 <input type="hidden" name="mypoint" value="${dto.mypoint}" >
 						<div class="group-input">
