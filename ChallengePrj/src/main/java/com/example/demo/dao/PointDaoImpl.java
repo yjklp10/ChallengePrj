@@ -7,7 +7,6 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.example.demo.dto.MemberDto;
 import com.example.demo.dto.MoneyDto;
 import com.example.demo.dto.PointDto;
 
