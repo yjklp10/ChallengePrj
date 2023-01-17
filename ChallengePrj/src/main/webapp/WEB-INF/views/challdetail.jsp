@@ -357,7 +357,7 @@ ul, ol {
 								</div>
 								<div class="quantity">
 
-									<a href="/payment" class="primary-btn pd-cart">신청하기</a>
+									<a href="/payment?challengeno=${challenge.challengeno }" class="primary-btn pd-cart">신청하기</a>
 								</div>
 							</div>
 						</div>

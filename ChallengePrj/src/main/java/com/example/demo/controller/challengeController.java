@@ -45,6 +45,15 @@ public class challengeController {
 		return "challdetail";
 	}
 	
+	@GetMapping(value="/payment")
+	public String paymentView(Testchallenge challenge, Model model) {
+		logger.info("payment");
+		
+		model.addAttribute("payment", makingChallengeBiz.getDetail(challenge.getChallengeno()));
+		
+		return "payment";
+	}
+	
 	@RequestMapping(value="/replyWrite", method = RequestMethod.POST)
 	public String replyWrite(CommentDto comment, RedirectAttributes rttr) throws Exception {
 		logger.info("reply Write");

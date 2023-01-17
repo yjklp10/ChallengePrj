@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 	<%@include file="include/header.jsp"%>
 <html lang="zxx">
 
@@ -88,6 +89,18 @@
 	text-align: center;
 	line-height: 70px;
 }
+#selected button{ background:red }
+
+.buy #buys{
+background:black; 
+color:white;
+margin: 0 70px;
+position: relative;
+left: 400px;
+width: 300px;
+height: 50px;
+}
+
     
     </style>
 </head>
@@ -114,7 +127,7 @@
                         <div class="payments">
                         <div class="payment-1">
                             <p>챌린지 이름</p>
-                            <a>운동하기</a>
+                            <a><c:out value="${payment.challengetitle }"/></a>
                         </div>
                         <br><br>
                         <div class="payment-1">
@@ -129,27 +142,31 @@
                         </div>
                         <br><br>
                         <div class="money">
-                        	<p>10,000원</p>
+                        	<p class="payname"><c:out value="${payment.deposit }"/>원</p>
                         </div>
                         <hr>
                         <div class="moneys">
                         <div class="moneybut-1">
-                        	<button>10,000원</button>
+                        	<button id="pay1">10,000원</button>
                         </div>
                         <div class="moneybut-1">
-                        	<button>20,000원</button>
-                        </div>
+                        	<button id="pay2">20,000원</button>
+                        	</div>
+                        	<div class="moneybut-1">
+                        	<button id="pay3">30,000원</button>
+                        	</div>
                         <div class="moneybut-1">
-                        	<button>30,000원</button>
-                        </div>
-                        <div class="moneybut-1">
-                        	<button>40,000원</button>
+                        	<button id="pay4">40,000원</button>
                         </div>
                         </div>
                         <br><br>
                         <div class="guide">
                         	<p>주의사항</p>
                         	
+                        </div>
+                        <br><br><br>
+                        <div class="buy">
+                        	<button id="buys"><c:out value="${payment.deposit }"/>충전하기</button>
                         </div>
                    </div>     
                 </div>
@@ -171,6 +188,36 @@
     <script src="js/jquery.slicknav.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
+    
+    <script>
+    $(document).ready(function () {
+        $(".moneybut-1").each(function () {
+            $(this).click(function () {
+                $(this).attr('id','selected');                      //클릭된 부분을 상단에 정의된 CCS인 selected클래스로 적용
+                $(this).siblings().removeAttr('id','selected');  //siblings:형제요소들,    removeClass:선택된 클래스의 특성을 없앰
+            });
+        });
+    });
+
+	$("#pay1").click(function(){
+		$(".payname").text("10000원");
+		$("#buys").text("10000원 충전하기");
+	});
+	$("#pay2").click(function(){
+		$(".payname").text("20000원");
+		$("#buys").text("20000원 충전하기");
+	});
+	$("#pay3").click(function(){
+		$(".payname").text("30000원");
+		$("#buys").text("30000원 충전하기");
+	});
+	$("#pay4").click(function(){
+		$(".payname").text("40000원");
+		$("#buys").text("40000원 충전하기");
+	});
+   
+    	
+    </script>
 </body>
 <!-- footer -->
 <%@include file="./include/footer.jsp"%>
