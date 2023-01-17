@@ -10,8 +10,6 @@ import javax.persistence.Id;
 import org.springframework.data.annotation.CreatedDate;
 
 import lombok.AccessLevel;
-import lombok.Builder;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor(access= AccessLevel.PROTECTED)

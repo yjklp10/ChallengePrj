@@ -2,10 +2,10 @@ package com.example.demo.controller;
 
 import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -38,13 +38,20 @@ public class LoginController {
 	
 
 	@RequestMapping("/loginform.do")
-	public String loginForm() {
+	public String loginForm( ) {
 		return "loginForm";
 	}
 
 	@RequestMapping("/registerform.do")
 	public String registerForm() {
+		
 		return "registerform";
+	}
+	
+	public String registerFormGoogle(Model model, MemberDto dto) {
+		model.addAttribute("memberDto",dto);
+		
+		return "registerformgoogle";
 	}
 	
 	@RequestMapping("/forget.do")

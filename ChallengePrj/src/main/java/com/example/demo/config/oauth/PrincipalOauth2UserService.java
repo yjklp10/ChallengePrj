@@ -1,6 +1,7 @@
 package com.example.demo.config.oauth;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
 import org.springframework.security.oauth2.client.userinfo.OAuth2UserRequest;
@@ -16,14 +17,18 @@ import com.example.demo.mapper.MemberMapper;
 @Service
 public class PrincipalOauth2UserService extends DefaultOAuth2UserService{
 	
+	@Lazy
 	@Autowired
 	private LoginController controller;
 	
+	
+	@Lazy
 	@Autowired
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
 	
 	@Autowired
 	private MemberMapper mapper;
+	
 	
 	@Override
 	public OAuth2User loadUser(OAuth2UserRequest userRequest) throws OAuth2AuthenticationException {
@@ -44,17 +49,11 @@ public class PrincipalOauth2UserService extends DefaultOAuth2UserService{
 		MemberDto memberEntity = mapper.idChk(memberid);
 		
 		if(memberEntity == null) {
-			memberEntity.setMemberid(memberid);
-			memberEntity.setMemberpw(memberpw);
-			memberEntity.setMemberemail(memberemail);
-			memberEntity.setMemberrole(role);
-			memberEntity.setProvider(provider);
-			memberEntity.setProviderId(providerId);
-			//controller.registerForm(memberEntity);
+			//memberEntity = memberEntity.
 					
 		}else {
 			
-		}
+		}  
 		
 		return new PrincipalDetails(memberEntity,oauth2User.getAttributes());
 	}

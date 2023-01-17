@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.dao.PointDao;
-import com.example.demo.dto.MemberDto;
 import com.example.demo.dto.MoneyDto;
 import com.example.demo.dto.PointDto;
 
