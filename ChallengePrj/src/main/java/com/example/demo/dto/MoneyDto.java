@@ -10,6 +10,7 @@ public class MoneyDto {
 	private String membernick;
 	private String membername;
 	private String memberphone;
+	private String memberrole;
 
 
 	public MoneyDto() {
@@ -26,6 +27,7 @@ public class MoneyDto {
 		this.membernick = membernick;
 		this.membername = membername;
 		this.memberphone = memberphone;
+		this.memberrole = memberrole;
 	}
 
 	public String getMemberid() {
@@ -82,6 +84,14 @@ public class MoneyDto {
 
 	public void setMemberphone(String memberphone) {
 		this.memberphone = memberphone;
+	}
+
+	public String getMemberrole() {
+		return memberrole;
+	}
+
+	public void setMemberrole(String memberrole) {
+		this.memberrole = memberrole;
 	}
 	
 }

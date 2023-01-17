@@ -26,31 +26,24 @@
 		<result property="memberemail" column="MEMBEREMAIL"/>
 		<result property="membername" column="MEMBERNAME"/>
 		<result property="memberphone" column="MEMBERPHONE"/>
+		<result property="memberrole" column="MEMBERROLE"/>
 	</resultMap>
 	
-	<resultMap type="memberDto" id="memberMap">
-		<result property="memberid" column="MEMBERID"/>
-		<result property="membernick" column="MEMBERNICK"/>
-		<result property="memberemail" column="MEMBEREMAIL"/>
-		<result property="membername" column="MEMBERNAME"/>
-		<result property="memberphone" column="MEMBERPHONE"/>
-	</resultMap>
-
 
    <select id="selectList" resultMap="pointMap">
    		SELECT * FROM POINTINFO;
    </select>
 
 
-   <select id="selectMyinfo" resultMap="moneyMap,memberMap">
+   <select id="selectMyinfo" resultMap="moneyMap">
  		 SELECT * FROM MEMBER INNER JOIN MYMONEY ON MEMBER.MEMBERID =MYMONEY.MEMBERID 
- 		 WHERE MYMONEY.MEMBERID = 'SS' 
+ 		 WHERE MEMBER.MEMBERID = 'SSS' 
 	</select>
 	
 	<update id="update" parameterType="moneyDto">
 		UPDATE MEMBER
 		SET MEMBERNICK=#{membernick},MEMBEREMAIL=#{memberemail},MEMBERPHONE=#{memberphone}
-		WHERE MEMBERID='SS' 
+		WHERE MEMBERID=#{memberid}  
 	</update>	
 	
 

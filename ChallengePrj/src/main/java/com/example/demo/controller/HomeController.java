@@ -41,7 +41,7 @@ public class HomeController {
 	}
 	
 	@RequestMapping("/update")
-	public String updateRes(MoneyDto dto) {
+	public String update(MoneyDto dto) {
 		int res = biz.update(dto);
 		
 		if(res>0) {
@@ -58,7 +58,7 @@ public class HomeController {
 	}
 	
 	@RequestMapping("/point.do")
-	public String insertRes(PointDto dto){
+	public String insert(PointDto dto){
 		int res= biz.insert(dto);
 		
 		if(res>0) {
@@ -68,7 +68,7 @@ public class HomeController {
 			return "redirect:point";
 		}	
 	}
-
+	
 	@RequestMapping("/manager")
 	public String list(Model model) {
 		model.addAttribute("list", biz.selectList());
