@@ -34,41 +34,98 @@
       };
     </script>
    <style>
-   .minhocontainer1 {
+    <style>
+     h3{
+        text-align: center;
+     }   
+    .container1{
+        display: grid;
+        grid-template-columns:500px 500px;
+        margin: auto;
+        text-align: center;
+        width: max-content;
+        
+        
     
-      display: grid;
-       grid-template-rows: repeat(6, minmax(100px, auto));
-  
-}
-.item1{
- 
-   text-align: center;
-}
-.item2{
-  
-   text-align: center;
-}
-.item3{
-  
-  text-align: center;
-}
-.item4{
-  
-  text-align: center;
-}
-.item5{
-  
-  text-align: center;
-}
-.item6{
-  
-  text-align: center;
-}
+    }
+    .item1{
 
-#open{
-   width:200px;
-   display: inline-block;
+        text-align: center;
+    }
+  .item1 h2 {
+  color: #fff;
+  padding: 0.7rem 0.7rem 0.7rem 2rem;
+  border-radius: 100vh;
+  background-image: -webkit-linear-gradient(right, #f4ff81 0%, #00e676 100%);
+  background-image: linear-gradient(to left, #f4ff81 0%, #00e676 100%);
 }
+    .item2{
+        text-align: center;
+    }
+    
+
+    .item3{
+        
+        text-align: center;
+    }
+    .item4{
+        text-align: center;
+    }
+    .item5{
+       
+        text-align: center;
+    }
+    .item5 h2 {
+  color: #fff;
+  padding: 0.7rem 0.7rem 0.7rem 2rem;
+  border-radius: 100vh;
+  background-image: -webkit-linear-gradient(right, #f4ff81 0%, #00e676 100%);
+  background-image: linear-gradient(to left, #f4ff81 0%, #00e676 100%);
+}
+    .item6{
+      
+        text-align: center;
+    }
+    .item7{
+        text-align: center;
+    }
+    .item8{
+        text-align: center;
+    }
+    .item9{
+        text-align: center;
+    }
+    .item9 h2 {
+  color: #fff;
+  padding: 0.7rem 0.7rem 0.7rem 2rem;
+  border-radius: 100vh;
+  background-image: -webkit-linear-gradient(right, #f4ff81 0%, #00e676 100%);
+  background-image: linear-gradient(to left, #f4ff81 0%, #00e676 100%);
+}
+    .item10{
+        text-align: center;
+    }
+    .btn-3 {
+  background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%);
+}
+   
+.btn {
+ 
+  margin: 10px;
+  padding: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+ }
+ .btn:hover {
+  background-position: right center; 
+}
+    </style>
 
    </style>
 <body>
@@ -235,19 +292,18 @@
         </div>
     </header>
     <!-- Header End -->
-      <div class="minhocontainer1">
-      <div class="item1">인증 가능시간 6:00~9:00</div>
-      <div class="item2">인증 방법</div>
-      <div class="item3">
-         주의사항<br>
-         1)인터넷에서 퍼온 사진을 쓰지 않기<br>
-         2)정해진 시간에 올리기<br>
-         3)몸의 일정부분이 나와야 함
-         
-      </div>
-      <div class="item4">인증 예시</div>
-      <div class="item5"><img src="img/기룡.jfif" ></div>
-      <div class="item6"> <input type="button" value="등록하기" id="open"></div>
+     <h3>인증 안내</h3>
+   <div class="container1">
+   <div class="item1"><h2>step1</h2></div>
+   <div class="item2">i)인증방법이란</div>
+   <div class="item3">인증 방법</div>
+   <div class="item4">1.방장이 정해준 기준대로 사진을 올리는 것</div>
+   <div class="item5"><h2>step2</h2></div>
+   <div class="item6">i)아래의 사진과 같이 사진을 올린다</div>
+   <div class="item7">인증 예시</div>
+   <div class="item8"><img></div>
+   <div class="item9"><h2>step3</h2></div>
+   <div class="item10"> <a class="btn btn-3">confirm</a></div>
    
     <!-- Partner Logo Section Begin -->
     <div class="partner-logo">
