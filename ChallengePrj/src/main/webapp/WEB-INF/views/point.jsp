@@ -125,16 +125,29 @@ $(function (){
 });
 
 function pointChk(){
-	if(isNaN(document.withdraw.withdrawpoint.value)){
+	
+	var a = document.withdraw.withdrawpoint.value
+	
+	if(isNaN(a)){
 		alert("출금포인트는 숫자만 입력해주세요.")
 		return false;
-	}else if(document.withdraw.withdrawpoint.value>document.withdraw.mypoint.value){
-		alert("보유포인트를 확인해주세요.")
-		return false;
-	}else if(document.withdraw.withdrawpoint.value<"3000"){
+	}else if(a<"3000"){
 		alert("3000원부터 신청가능합니다.")
 		return false;
+	}else if(a>'${dto.mypoint}'){
+		alert("보유포인트를 확인해주세요.")
+		return false;
+	}else if(document.withdraw.bankname.value==""){
+		alert("은행명을 입력해주세요.")
+		return false;
+	}else if(document.withdraw.accountHolder.value==""){
+		alert("예금주을 입력해주세요.")
+		return false;
+	}else if(document.withdraw.accountNumber.value==""){
+		alert("계좌번호를 입력해주세요.")
+		return false;		
 	}else{
+		alert("출금신청 완료!!")
 		return true;
 	}
 };

@@ -109,6 +109,7 @@
 				<div class="blog-catagory">
 					<h4>회원정보</h4>
 						<form action="update" method="post">
+						<input type="hidden" id="memberid" name="memberid" value="${dto.memberid }">
 						<div class="group-input">
 							<label for="membername">이름</label> 
 							<input id="membername" name="membername" type="text" value="${dto.membername  }" disabled>
@@ -168,6 +169,9 @@
 							</div>
 						</a> 
 					</div>
+				</div>
+				<div class="group-input">
+				<button type="button" class="blog-btn" onclick="location.href='/manager?memberrole=${dto.memberrole }'">관리자 페이지</button>
 				</div>
 			</div>
 		</div>
