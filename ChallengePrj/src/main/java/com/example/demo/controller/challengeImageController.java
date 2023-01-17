@@ -34,7 +34,7 @@ import net.coobird.thumbnailator.Thumbnailator;
 public class challengeImageController {
 	 @Value("${com.example.upload.path}") // application.properties의 변수
 	    private String uploadPath;
-	 @PostMapping("/uploadAjaxs")
+	 @PostMapping("/uploadAjax")
 	    public ResponseEntity<List<challengeImageDto>> uploadFile(MultipartFile[] uploadFiles){
 
 	        List<challengeImageDto> resultDTOList = new ArrayList<>();
@@ -81,7 +81,7 @@ public class challengeImageController {
 	        return new ResponseEntity<>(resultDTOList, HttpStatus.OK);
 	    }
 
-	    @GetMapping("/displays")
+	    @GetMapping("/display")
 	    public ResponseEntity<byte[]> getFile(String fileName, String size){
 
 	        ResponseEntity<byte[]> result = null;
@@ -110,7 +110,7 @@ public class challengeImageController {
 	        return result;
 	    }
 
-	    @PostMapping("/removeFiles")
+	    @PostMapping("/removeFile")
 	    public ResponseEntity<Boolean> removeFile(String fileName){
 	        String srcFileName = null;
 

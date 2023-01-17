@@ -272,18 +272,23 @@ $(document).ready(function() {
    										 <label for="town">주소 검색<span>*</span></label>
                                         <br>
                                         <div id="searchDiv">
-                                        <input type="text" id="offline_address" id="offline_address" style="width: 300px;">
+                                        <input type="text"  id="offline_address" style="width: 300px;">
 										<input type="button" value="검색" id="address_btn"onclick="search_location();">
                                         </div>
                                         
                                         <label for="town">모임 장소 상세 설명<span>*</span></label>
                                         <br>
-                                        <textarea  style="width: 300px;height:150px" id="offline_spot_detail" name="offline_spot_detail" ></textarea>
+                                      
+                                        <br>
+                                   
+                                          <input type="text" name="offline_spot_address"  style="width: 300px;height:50px">
+                                          <br>
+                                        <textarea  style="width: 300px;height:75px" id="offline_spot_detail" name="offline_spot_detail" ></textarea>
                                         <br>
                                         <label for="town">모임 시작 시간 설정<span>*</span></label>
-                                        
+                                        <br>
                                         <input  type="time" id="offline_start_time" name="offline_start_time">
-                                        
+                                       
                                          </div>
                                 </div>
                             </div>
@@ -338,23 +343,7 @@ $(document).ready(function() {
                                 <br>
                                 <textarea cols="55" rows="10" id="certification_method" placeholder="ex) 오늘 날짜와 걸음 수가 보이도록 업로드&#13;&#10;&#13;&#10;- 챌린지가 시작되면 인증 방법을 수정할 수 없습니다. 신중히 작성해주세요.&#13;&#10;- 혼란을 겪지 않도록 정확한 기준과 구체적인 인증 방법을 적어주세요. "></textarea>
                             </div>
-                            <!-- <div class="col-lg-6">
-                                <label for="fir">인증 성공 예시<span>*</span></label>
-                                <br>
-                                <img src="/img/hero-1.jpg" class="rounded" style="width:250px;height:250px;" alt="...">
-                             <input name="uploadFiles" type="file" multiple class="rounded" style="width:250px;height:250px;" alt="...">
-								<button class="uploadBtn">Upload</button>
-								
-								<div class="uploadResult">
-                            </div>
-                            <div class="col-lg-6">
-                                <label for="last">인증 실패 예시<span>*</span></label>
-                                <br>
-                             <input name="uploadFiles" type="file" multiple class="rounded" style="width:250px;height:250px;" alt="...">
-								<button class="uploadBtn">Upload</button>
-								
-								<div class="uploadResult">
-                            </div> -->
+                            
                             <div class="col-lg-12">
                                 <label for="cun">챌린지 소개<span>*</span></label>
                                 <br>
@@ -378,19 +367,12 @@ $(document).ready(function() {
                             <div class="col-lg-12 choices">
                                 <label for="fir">카테고리 선택<span>*</span></label>
                                 <br>
-                                <input type="radio" id="category_select1" name="category"><label for="category_select1">운동</label>
-                                <input type="radio" id="category_select2" name="category"><label for="category_select2">식습관</label>
-                                <input type="radio" id="category_select3" name="category"><label for="category_select3">기상</label>
-                                <input type="radio" id="category_select4" name="category"><label for="category_select4">취미</label>
+                                <input type="radio" id="category_select1" value="exercise" name="category"><label for="category_select1">운동</label>
+                                <input type="radio" id="category_select2" value="eatingHabits" name="category"><label for="category_select2">식습관</label>
+                                <input type="radio" id="category_select3" value="wakeUp" name="category"><label for="category_select3">기상</label>
+                                <input type="radio" id="category_select4" value="hobby" name="category"><label for="category_select4">취미</label>
                             </div>
-                            <!-- <div class="col-lg-12">
-                                <label for="fir">대표 사진 선택<span>*</span></label>
-                                <br>
-                               <input name="uploadFiles" type="file" multiple class="rounded" style="width:250px;height:250px;" alt="...">
-								<button class="uploadBtn">Upload</button>
-								
-								<div class="uploadResult">
-                            </div> -->
+                            
                         </div>
                      
                     </div>
@@ -478,7 +460,7 @@ function displayMarker(place) {
     });
 }
 function search_location(){
-	var address = document.getElementById("address").value;
+	var address = document.getElementById("offline_address").value;
 	// 키워드로 장소를 검색합니다
 	ps.keywordSearch(address, placesSearchCB);	
 }
@@ -490,8 +472,68 @@ var marker = new kakao.maps.Marker(), // 클릭한 위치를 표시할 마커입
 // 현재 지도 중심좌표로 주소를 검색해서 지도 좌측 상단에 표시합니다
 searchAddrFromCoords(map.getCenter(), displayCenterInfo);
  */
+//지도를 클릭했을 때 클릭 위치 좌표에 대한 주소정보를 표시하도록 이벤트를 등록합니다
+ kakao.maps.event.addListener(map, 'click', function(mouseEvent) {
+     searchDetailAddrFromCoords(mouseEvent.latLng, function(result, status) {
+         if (status === kakao.maps.services.Status.OK) {
+             var detailAddr = !!result[0].road_address ? '<div>도로명주소 : ' + result[0].road_address.address_name + '</div>' : '';
+             detailAddr += '<div>지번 주소 : ' + result[0].address.address_name + '</div>';
+             
+             var content = '<div class="bAddr">' +
+                             '<span class="title">법정동 주소정보</span>' + 
+                             detailAddr + 
+                         '</div>';
 
+             // 마커를 클릭한 위치에 표시합니다 
+             marker.setPosition(mouseEvent.latLng);
+             marker.setMap(map);
+
+             // 인포윈도우에 클릭한 위치에 대한 법정동 상세 주소정보를 표시합니다
+             infowindow.setContent(content);
+             infowindow.open(map, marker);
+             $('input[name=offline_spot_address]').attr('value',result[0].address.address_name);
+             
+         }   
+     });
+ });
+
+ // 중심 좌표나 확대 수준이 변경됐을 때 지도 중심 좌표에 대한 주소 정보를 표시하도록 이벤트를 등록합니다
+ kakao.maps.event.addListener(map, 'idle', function() {
+     searchAddrFromCoords(map.getCenter(), displayCenterInfo);
+ });
+
+ function searchAddrFromCoords(coords, callback) {
+     // 좌표로 행정동 주소 정보를 요청합니다
+     geocoder.coord2RegionCode(coords.getLng(), coords.getLat(), callback);         
+ }
+
+ function searchDetailAddrFromCoords(coords, callback) {
+     // 좌표로 법정동 상세 주소 정보를 요청합니다
+     geocoder.coord2Address(coords.getLng(), coords.getLat(), callback);
+ }
+
+ // 지도 좌측상단에 지도 중심좌표에 대한 주소정보를 표출하는 함수입니다
+ function displayCenterInfo(result, status) {
+     if (status === kakao.maps.services.Status.OK) {
+         var infoDiv = document.getElementById('centerAddr');
+
+         for(var i = 0; i < result.length; i++) {
+             // 행정동의 region_type 값은 'H' 이므로
+             if (result[i].region_type === 'H') {
+                 infoDiv.innerHTML = result[i].address_name;
+                 break;
+             }
+         }
+     }    
+ }
 </script>
+<style>
+    .map_wrap {position:relative;width:100%;height:350px;}
+    .title {font-weight:bold;display:block;}
+    .hAddr {position:absolute;left:10px;top:10px;border-radius: 2px;background:#fff;background:rgba(255,255,255,0.8);z-index:1;padding:5px;}
+    #centerAddr {display:block;margin-top:2px;font-weight: normal;}
+    .bAddr {padding:5px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;}
+</style>
   <script>
 
     $('.uploadBtn').click(function( ) {
