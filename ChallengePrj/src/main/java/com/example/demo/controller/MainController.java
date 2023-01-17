@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.demo.biz.MainDetailBiz;
@@ -31,7 +32,7 @@ public class MainController {
 	@Autowired
 	private MainDetailBiz biz;
 	
-	@RequestMapping("/mainlist.do")
+	@GetMapping("/mainlist")
     public String mainlist(Model model) {
 		
 		List<MainDetailDto> hotRes = biz.challenge_hot();
@@ -40,7 +41,7 @@ public class MainController {
 		model.addAttribute("hotRes", hotRes);
 		model.addAttribute("newRes", newRes);
 		
-		return "/views/home_main";
+		return "home_main";
 		
         }
 	

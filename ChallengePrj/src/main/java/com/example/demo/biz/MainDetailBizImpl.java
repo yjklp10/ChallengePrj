@@ -14,6 +14,7 @@ public class MainDetailBizImpl implements MainDetailBiz {
 	@Autowired
 	private MainDetailDao dao;
 
+	
 	@Override
 	public List<MainDetailDto> challenge_hot() {
 		return dao.challenge_hot();
@@ -23,7 +24,7 @@ public class MainDetailBizImpl implements MainDetailBiz {
 	public List<MainDetailDto> challenge_new() {
 		return dao.challenge_new();
 	}
-
+	
 	@Override
 	public List<MainDetailDto> challenge_onofflist(String onoffchoice) {
 		return dao.challenge_onofflist(onoffchoice);

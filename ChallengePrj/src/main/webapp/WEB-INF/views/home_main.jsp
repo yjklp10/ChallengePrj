@@ -69,7 +69,7 @@
             <div class="row">
                 <div class="icon0">
                     <div class="single-banner">
-                       <a href="#">
+                       <a href="detaillist.do">
                         <img src="img/인기.png" alt="">
                         <div class="inner-text">
                             <h5>인기</h5>
@@ -176,35 +176,32 @@
    		 		<div class="content-pic">
    		 		
    		 		  <ul>
-				 <c:choose>
-    			<c:when test="${empty hotRes }">
-     			<p>--------- 작성된 글이 없습니다 ---------- </p>
-     			</c:when>
+					 <c:choose>
+    				<c:when test="${empty hotRes }">
+     					<p>--- 작성된 글이 없습니다 ---</p>
+     				</c:when>
+     			
      			<c:otherwise>
-    			<c:forEach items="${hotRes }" begin="0" end="4" step="1">
-       
+    			<c:forEach var="hotRes" items="${hotRes }" begin="0" end="4" step="1">
 
   				  <li>
-   				    <img src="${pageContext.request.contextPath }/static/img/${hotDto.thumbnailname }" alt=${hotDto.thumbnailname }">
-       				 <p>${hotDto.challengetitle }/${hotDto.onoffchoice }</p>
-        			 <p>시작일 : ${hotDto.challengestartdate } ~ </span>
-        
+   				    <img src="${pageContext.request.contextPath }/static/img/thumbs/${hotRes.thumbnailname }" alt="${hotRes.thumbnailname }">
+   				    
+   				    <div class="content-name">
+       				 <p><c:out value="${hotRes.challengetitle }"/>/<c:out value="${hotRes.onoffchoice }"/></p>
+        			 <p>시작일 : ${hotRes.challengestartdate } ~ </p>
+      				  </div>
      				</li>
   
-       				 </c:forEach>
-       				 </c:otherwise>
-        			</c:choose>
-   					   </ul>
+       			 </c:forEach>
+       			 </c:otherwise>
+        		</c:choose>
+   				 </ul>
    					 		
-   		 			<img src="img/임시.png" alt="">
-  		 		</div>
-  		 		
-  		 		<div class="content-name">
-  		 			<h6>챌린지 이름/타입</h6>
-  		 			<h6>기한</h6>
-  		 		</div>
+  		 		</div>	
+  		 		</div>	
   		 	</div>
-  		 </div>
+  		 
     </section>
     
         <!-- 인기 챌린지 리스트 끝 -->

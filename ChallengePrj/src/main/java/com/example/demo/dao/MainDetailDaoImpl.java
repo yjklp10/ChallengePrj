@@ -17,6 +17,7 @@ public class MainDetailDaoImpl implements MainDetailDao {
 	private SqlSessionTemplate sqlSession;
 
 
+	
 	@Override
 	public List<MainDetailDto> challenge_hot() {
 		List<MainDetailDto> challenge_hot = new ArrayList<MainDetailDto>();
@@ -27,9 +28,10 @@ public class MainDetailDaoImpl implements MainDetailDao {
 			System.out.println("[error] : challenge_hot");
 			e.printStackTrace();
 		}
-		return challenge_hot();
+		return challenge_hot;
 	}
 
+	
 	@Override
 	public List<MainDetailDto> challenge_new() {
 		List<MainDetailDto> challenge_new = new ArrayList<MainDetailDto>();
@@ -41,9 +43,10 @@ public class MainDetailDaoImpl implements MainDetailDao {
 			e.printStackTrace();
 		}
 		
-		return challenge_new();
+		return challenge_new;
 	}
-
+	
+	
 	@Override
 	public List<MainDetailDto> challenge_onofflist(String onoffchoice) {
 		
@@ -70,7 +73,7 @@ public class MainDetailDaoImpl implements MainDetailDao {
 			e.printStackTrace();
 		}
 
-		return challenge_categorylist(category);
+		return challenge_categorylist;
 	}
 
 	

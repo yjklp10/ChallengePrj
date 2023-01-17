@@ -5,35 +5,23 @@
 
 <mapper namespace="MainDetail">
 
-<resultMap type="MainDetailDto" id="MainDetailMap">
-		<result property="challengeno" column="CHALLENGENO" />
-		<result property="category" column="CATEGORY" />
-		<result property="onoffchoice" column="ONOFFCHOICE" />
-		<result property="challengetitle" column="CHALLENGETITLE" />
-		<result property="challengestartdate" column="CHALLENGESTARTDATE" />
-		<result property="challengeperiod" column="CHALLENGEPERIOD" />
-		<result property="thumbnailname" column="THUMBNAILNAME" />
-		<result property="thumbnailpath" column="THUMBNAILPATH" />
-		<result property="memberno" column="MEMBERNO" />
-	</resultMap>
-
 
 	<!-- 메인 - 인기 챌린지 -->
   <select id="challenge_hot" resultType="MainDetailDto">
-	SELECT * FROM MAINDETAIL
+	SELECT * FROM MainDetail
 	ORDER BY MEMBERNO DESC;
   </select>
   
   
 	<!-- 메인 - 신규 챌린지 -->
    <select id="challenge_new" resultType="MainDetailDto">
-	SELECT * FROM MAINDETAIL
+	SELECT * FROM MainDetail
 	ORDER BY CHALLENGENO DESC;
 	</select>
   
   <!-- 디테일 - 온라인/오프라인 챌린지 -->
     <select id="challenge_onofflist" resultType="MainDetailDto" parameterType="String">
-	SELECT * FROM MAINDETAIL
+	SELECT * FROM MainDetail
 	WHERE ONOFFCHOICE= #{ONOFFCHOICE}
 	ORDER BY CHALLENGENO DESC;
   </select>
@@ -41,7 +29,7 @@
   
     <!-- 디테일 - 카테고리 챌린지 -->
     <select id="challenge_categorylist" resultType="MainDetailDto" parameterType="String">
-	SELECT * FROM MAINDETAIL
+	SELECT * FROM MainDetail
 	WHERE CATEGORY= #{category}
 	ORDER BY CHALLENGENO DESC;
   </select>
