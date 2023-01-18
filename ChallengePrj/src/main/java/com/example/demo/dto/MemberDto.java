@@ -9,7 +9,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-
+@Builder
 @Getter
 @Setter
 @Data
@@ -40,7 +40,6 @@ public class MemberDto {
 	public MemberDto( String memberid, String memberpw, String memberemail, String membernick,
 			String membername, String memberphone, String memberrole, String membergender, String membercertify,
 			String provider, String providerId, Date memberjoin, Date memberquit) {
-		super();
 		this.memberid = memberid;
 		this.memberpw = memberpw;
 		this.memberemail = memberemail;
