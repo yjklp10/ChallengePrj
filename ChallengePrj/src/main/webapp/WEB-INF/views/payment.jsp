@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+    
     <style>
     .payment{
 	display:flex;
@@ -100,6 +101,27 @@ left: 400px;
 width: 300px;
 height: 50px;
 }
+.money {
+	position: relative;
+	margin-bottom: 10px;
+}
+.paydepoite{
+overflow-x: hidden;
+    overflow-y: auto;
+    display: block;
+    width: 150px;
+    min-height: 17px;
+    padding-right: 1px;
+    border: white;
+    font-size: 25px;
+    -webkit-appearance: none;
+    resize: none;
+    box-sizing: border-box;
+    background: transparent;
+    color: var(- -skinTextColor);
+    outline: 0;
+    margin: 0 550px -30px;
+}
 
     
     </style>
@@ -142,21 +164,21 @@ height: 50px;
                         </div>
                         <br><br>
                         <div class="money">
-                        	<p class="payname"><c:out value="${payment.deposit }"/>원</p>
+                        	<textarea class="paydepoite" id="depoite" name="depoite" cols="100">10000원</textarea>
                         </div>
                         <hr>
                         <div class="moneys">
                         <div class="moneybut-1">
-                        	<button id="pay1">10,000원</button>
+                        	<button id="pay1">10000원</button>
                         </div>
                         <div class="moneybut-1">
-                        	<button id="pay2">20,000원</button>
+                        	<button id="pay2">30000원</button>
                         	</div>
                         	<div class="moneybut-1">
-                        	<button id="pay3">30,000원</button>
+                        	<button id="pay3">50000원</button>
                         	</div>
                         <div class="moneybut-1">
-                        	<button id="pay4">40,000원</button>
+                        	<button id="pay4">100000원</button>
                         </div>
                         </div>
                         <br><br>
@@ -166,7 +188,7 @@ height: 50px;
                         </div>
                         <br><br><br>
                         <div class="buy">
-                        	<button id="buys"><c:out value="${payment.deposit }"/>충전하기</button>
+                        	<button id="buys" onclick="requestPay()">10000원 충전하기</button>
                         </div>
                    </div>     
                 </div>
@@ -188,8 +210,10 @@ height: 50px;
     <script src="js/jquery.slicknav.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
+
     
     <script>
+    /** 버튼 색 변경 및 텍스트 변경**/
     $(document).ready(function () {
         $(".moneybut-1").each(function () {
             $(this).click(function () {
@@ -199,25 +223,72 @@ height: 50px;
         });
     });
 
+    
 	$("#pay1").click(function(){
-		$(".payname").text("10000원");
+		$("#depoite").text("10000원");
 		$("#buys").text("10000원 충전하기");
 	});
 	$("#pay2").click(function(){
-		$(".payname").text("20000원");
-		$("#buys").text("20000원 충전하기");
-	});
-	$("#pay3").click(function(){
-		$(".payname").text("30000원");
+		$("#depoite").text("30000원");
 		$("#buys").text("30000원 충전하기");
 	});
+	$("#pay3").click(function(){
+		$("#depoite").text("50000원");
+		$("#buys").text("50000원 충전하기");
+	});
 	$("#pay4").click(function(){
-		$(".payname").text("40000원");
-		$("#buys").text("40000원 충전하기");
+		$("#depoite").text("100000원");
+		$("#buys").text("100000원 충전하기");
 	});
    
-    	
     </script>
+    
+     <!-- jQuery -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
+<!-- iamport.payment.js -->
+<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
+    
+    <script>
+    
+    
+    /** 결제api **/
+    // 결제금액,  구매자 이름, 챌린지 이름
+    const payamount = $("#depoite").val();
+    const payname = "${payment.challengetitle }";
+    const paybutton = $("#pay1").innerText();
+    
+    parseInt(payamount);
+    
+    console.log(paybutton);
+    console.log(payamount);
+    console.log(payname);
+    
+    
+    var IMP = window.IMP; 
+    IMP.init("imp56247621"); 
+    
+  function requestPay() {
+    IMP.request_pay({
+      pg: "kakaopay",
+      pay_method: "card",
+      merchant_uid: "ORD20180131-00000442",   // 주문번호
+      name: payname,
+      amount: payamount                        // 숫자 타입
+    }, function (rsp) { // callback
+      if (rsp.success) {
+    	 console.log("발령키 발급 성공", rsp)
+        // 결제 성공 시 로직
+        alert("결제 성공");
+      } else {
+        // 결제 실패 시 로직
+        var msg = "결제 실패";
+        msg += rsp.error_msg;
+        alert(msg);
+        return false;
+      }
+    });
+  }
+</script>
 </body>
 <!-- footer -->
 <%@include file="./include/footer.jsp"%>
