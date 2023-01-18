@@ -41,8 +41,8 @@
         <div class="header-top">
             <div class="container">
                 <div class="ht-right">
-                    <a href="#" class="login-panel">
-                    <img src="img/백일블럭2.png"> 로그인 / 회원가입</a>
+                    <span class="login-panel">
+                    <img src="img/백일블럭2.png"> <a href="loginform">로그인 </a>/ <a href="registerform">회원가입</a>
                 </div>
             </div>
         </div>
@@ -50,7 +50,7 @@
             <div class="inner-header">
                 <div class="row">
                         <div class="logo">
-                            <a href="views/home_detail.jsp">
+                            <a href="home_main">
                                 <img src="img/logo2.png">
                             </a>
                         </div>
@@ -73,7 +73,7 @@
             <div class="container">
                 <nav class="nav-menu mobile-menu">
                     <ul>
-                        <li class="active"><a href="./index.jsp">Home</a></li>
+                        <li class="active"><a href="home_main">Home</a></li>
                         <li><a href="#">정보</a>
                             <ul class="dropdown">
                                 <li><a href="#">소개</a></li>
@@ -82,21 +82,21 @@
                                 <li><a href="#">이벤트</a></li>
                             </ul>
                         </li>
-                      	<li><a href="./detaillist.jsp">작심백일!</a>
+                      	<li><a href="detaillist">작심백일!</a>
                             <ul class="dropdown">
-                                <li><a href="./detaillist.jsp">인기/신규</a></li>
-                                <li><a href="./detaillist.jsp">온라인/오프라인</a></li>
-                                <li><a href="./detaillist.jsp">운동</a></li>
-                                <li><a href="./detaillist.jsp">공부</a></li>
-                                <li><a href="./detaillist.jsp">취미</a></li>
-                                <li><a href="./detaillist.jsp">규칙적인 생활</a></li>
+                                <li><a href="detaillist">인기/신규</a></li>
+                                <li><a href="detaillist">온라인/오프라인</a></li>
+                                <li><a href="detaillist">운동</a></li>
+                                <li><a href="detaillist">공부</a></li>
+                                <li><a href="detaillist">취미</a></li>
+                                <li><a href="detaillist">규칙적인 생활</a></li>
                             </ul>
                         </li>
                         <li><a href="#">MY 챌린지</a>
                             <ul class="dropdown">
-                                <li><a href="#">개설하기</a></li>
-                                <li><a href="#">인증하기</a></li>
-                                <li><a href="#">포인트</a></li>
+                                <li><a href="chdetail">개설하기</a></li>
+                                <li><a href="uploadAjax">인증하기</a></li>
+                                <li><a href="payment">포인트</a></li>
                             </ul>
                         </li>
                     </ul>

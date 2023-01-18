@@ -1,3 +1,4 @@
+/*
 package com.example.demo.config.oauth;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -59,3 +60,4 @@ public class PrincipalOauth2UserService extends DefaultOAuth2UserService{
 	}
 
 }
+*/

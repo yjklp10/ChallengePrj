@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@include file="./include/header.jsp" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta http-equiv="X-UA-Compatible" content="ie=chrome">
@@ -69,7 +70,7 @@
             <div class="row">
                 <div class="icon0">
                     <div class="single-banner">
-                       <a href="detaillist.do">
+                       <a href="detaillist">
                         <img src="img/인기.png" alt="">
                         <div class="inner-text">
                             <h5>인기</h5>
@@ -79,7 +80,7 @@
                 </div>
                 <div class="icon0">
                     <div class="single-banner">
-                    <a href="#">
+                    <a href="detaillist">
                         <img src="img/신규.png" alt="">
                         <div class="inner-text">
                             <h5>신규</h5>
@@ -89,7 +90,7 @@
                 </div>
                <div class="icon0">
                     <div class="single-banner">
-                    <a href="#">
+                    <a href="detaillist">
                         <img src="img/온라인.png" alt="">
                         <div class="inner-text">
                             <h5>온라인</h5>
@@ -99,7 +100,7 @@
                 </div>
                <div class="icon0">
                     <div class="single-banner">
-                    <a href="#">
+                    <a href="detaillist">
                         <img src="img/오프라인.png" alt="">
                         <div class="inner-text">
                             <h5>오프라인</h5>
@@ -109,7 +110,7 @@
                 </div>
                <div class="icon0">
                     <div class="single-banner">
-                    <a href="#">
+                    <a href="detaillist">
                         <img src="img/운동.png" alt="">
                         <div class="inner-text">
                             <h5>운동</h5>
@@ -119,7 +120,7 @@
                 </div>
                 <div class="icon0">
                     <div class="single-banner">
-                    <a href="#">
+                    <a href="detaillist">
                         <img src="img/공부.png" alt="">
                         <div class="inner-text">
                             <h5>공부</h5>
@@ -129,7 +130,7 @@
                 </div>
                <div class="icon0">
                     <div class="single-banner">
-                    <a href="#">
+                    <a href="detaillist">
                         <img src="img/취미.png" alt="">
                         <div class="inner-text">
                             <h5>취미</h5>
@@ -139,7 +140,7 @@
                 </div>
                <div class="icon0">
                     <div class="single-banner">
-                    <a href="#">
+                    <a href="detaillist">
                         <img src="img/규칙적인생활.png" alt="">
                         <div class="inner-text">
                            <h5>규칙적인 생활</h5>
@@ -160,8 +161,8 @@
     	 <div class="list-container">
    			 	<div class="list">
    			 		 <ul>
-   		  			<li class="list-name"><a href="#"><h3>인기 챌린지 🔥</h3></a></li>
-   		  			<li class="list-plus"><a href="#"><h6>더보기 +</h6></a></li>
+   		  			<li class="list-name"><a href='detaillist'><h3>인기 챌린지 🔥</h3></a></li>
+   		  			<li class="list-plus"><a href='detaillist'><h6>더보기 +</h6></a></li>
    		  			</ul>
 				</div>
 				
@@ -182,16 +183,20 @@
      				</c:when>
      			
      			<c:otherwise>
-    			<c:forEach var="hotRes" items="${hotRes }" begin="0" end="4" step="1">
+    			<c:forEach var="hotRes" items="${hotRes }" begin="0" end="3" step="1">
 
-  				  <li>
-   				    <img src="${pageContext.request.contextPath }/static/img/thumbs/${hotRes.thumbnailname }" alt="${hotRes.thumbnailname }">
+				
+  				  <li> 
+  				  <a href=""> 				  	
+   				    <img src="${pageContext.request.contextPath }/static2/img/${hotRes.thumbnailpath }" alt="${hotRes.thumbnailpath }">
    				    
    				    <div class="content-name">
-       				 <p><c:out value="${hotRes.challengetitle }"/>/<c:out value="${hotRes.onoffchoice }"/></p>
-        			 <p>시작일 : ${hotRes.challengestartdate } ~ </p>
-      				  </div>
+       					<p><c:out value="${hotRes.challengetitle }"/> / <c:out value="${hotRes.onoffchoice }"/></p>
+        				<p>시작일 : <fmt:formatDate value="${hotRes.challengestartdate }" pattern="yyyy-MM-dd"/> ~ </p>
+      				 </div>
+      				 </a>
      				</li>
+     				
   
        			 </c:forEach>
        			 </c:otherwise>
@@ -206,14 +211,14 @@
     
         <!-- 인기 챌린지 리스트 끝 -->
         
-           <!-- 신규 챌린지 리스트 -->
+      <!-- 신규 챌린지 리스트 -->
     
      <section class="challenge-list">
     	 <div class="list-container">
    			 	<div class="list">
    			 		 <ul>
-   		  			<li class="list-name"><a href="#"><h3>신규 챌린지 🐥</h3></a></li>
-   		  			<li class="list-plus"><a href="#"><h6>더보기 +</h6></a></li>
+   		  			<li class="list-name"><a href='detaillist'><h3>신규 챌린지 🐥</h3></a></li>
+   		  			<li class="list-plus"><a href='detaillist'><h6>더보기 +</h6></a></li>
    		  			</ul>
 				</div>
 				
@@ -226,15 +231,38 @@
     
    		 	<div class="content-list">
    		 		<div class="content-pic">
-   		 			<img src="img/임시.png" alt="">
-  		 		</div>
-  		 		
-  		 		<div class="content-name">
-  		 			<h6>챌린지 이름/타입</h6>
-  		 			<h6>기한</h6>
-  		 		</div>
+   		 		
+   		 		  <ul>
+					 <c:choose>
+    				<c:when test="${empty newRes }">
+     					<p>--- 작성된 글이 없습니다 ---</p>
+     				</c:when>
+     			
+     			<c:otherwise>
+    			<c:forEach var="newRes" items="${newRes }" begin="0" end="3" step="1">
+
+				
+  				  <li> 
+  				  <a href=""> 				  	
+   				    <img src="${pageContext.request.contextPath }/static2/img/${newRes.thumbnailpath }" alt="${newRes.thumbnailpath }">
+   				    
+   				    <div class="content-name">
+       					<p><c:out value="${newRes.challengetitle }"/> / <c:out value="${newRes.onoffchoice }"/></p>
+        				<p>시작일 : <fmt:formatDate value="${newRes.challengestartdate }" pattern="yyyy-MM-dd"/> ~ </p>
+      				 </div>
+      				 </a>
+     				</li>
+     				
+  
+       			 </c:forEach>
+       			 </c:otherwise>
+        		</c:choose>
+   				 </ul>
+   					 		
+  		 		</div>	
+  		 		</div>	
   		 	</div>
-  		 </div>
+  		 
     </section>
     
         <!-- 신규 챌린지 리스트 끝 -->

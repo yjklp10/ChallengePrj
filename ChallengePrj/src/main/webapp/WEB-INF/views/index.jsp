@@ -11,13 +11,6 @@
 
 <h3><a href="detaillist">detail</a></h3>
 
-<h3><a href="login.do">login</a></h3>
-
-<h3><a href="register.do">register</a></h3>
-
-<h3><a href="forget.do">forget</a></h3>
-
-<h3><a href="idchk.do">idchk</a></h3>
    
     <!-- Js Plugins -->
     <script src="js/jquery-3.3.1.min.js"></script>
