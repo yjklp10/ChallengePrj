@@ -13,6 +13,9 @@ public interface FileUploadMapper {
 	int insert(AttachImageDto dto);
 	@Select("SELECT*FROM image_upload")
 	List<AttachImageDto> seletList();
+	
+	@Select("")
+	List<AttachImageDto> seletListtwo();
 		    
 	
 }

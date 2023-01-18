@@ -172,4 +172,15 @@ public class ImageController {
 	public ResponseEntity<List<AttachImageDto>> getAttachList(){
 		return new ResponseEntity<List<AttachImageDto>>(biz.getAttachList(),HttpStatus.OK);
 	}
+	
+	
+	@GetMapping(value="getAtttachListtwo",produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
+	public ResponseEntity<List<AttachImageDto>> getAttachListtwo(){
+		return new ResponseEntity<List<AttachImageDto>>(biz.getAttachListtwo(),HttpStatus.OK);
+	}
+	
+	
+	
+	
+	
 }
