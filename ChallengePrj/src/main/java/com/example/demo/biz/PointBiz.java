@@ -11,7 +11,7 @@ public interface PointBiz {
 	public int insert(PointDto dto);
 	public int updatepoint(PointDto dto);
 	public int update(MoneyDto dto);
-	
+	public int insertMyinfo(MoneyDto dto);
 	public MoneyDto selectMyinfo(String memberid);
 	
 }

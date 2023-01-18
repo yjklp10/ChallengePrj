@@ -29,6 +29,11 @@ public class PointBizImpl implements PointBiz {
 	public MoneyDto selectMyinfo(String memberid) {
 		return dao.selectMyinfo(memberid);
 	}
+	
+	@Override
+	public int insertMyinfo(MoneyDto dto) {
+		return dao.insertMyinfo(dto);
+	}
 
 	@Override
 	public int update(MoneyDto dto) {

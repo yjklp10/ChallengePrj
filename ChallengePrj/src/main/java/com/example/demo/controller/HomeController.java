@@ -35,7 +35,8 @@ public class HomeController {
 	}
 	
 	@RequestMapping("/mypage")
-	public String mypage(Model model,String memberid) {
+	public String mypage(Model model,String memberid,MoneyDto dto) {
+		biz.insertMyinfo(dto);
 		model.addAttribute("dto", biz.selectMyinfo(memberid));
 		return "mypage";
 	}
