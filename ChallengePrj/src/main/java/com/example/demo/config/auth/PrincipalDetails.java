@@ -13,7 +13,7 @@ import com.example.demo.dto.MemberDto;
 import lombok.Data;
 
 @Data
-public class PrincipalDetails implements UserDetails, OAuth2User{
+public class PrincipalDetails implements UserDetails{
 	
 	private MemberDto dto;
 	private Map<String,Object> attributes;
@@ -81,14 +81,6 @@ public class PrincipalDetails implements UserDetails, OAuth2User{
 		return true;
 	}
 
-	@Override
-	public Map<String, Object> getAttributes() {
-		return attributes;
-	}
-
-	@Override
-	public String getName() {
-		return null;
-	}
+	
 
 }
