@@ -55,7 +55,10 @@ h6 {
 	font-size: 18px;
 }
 
-
+a {
+  text-decoration: none;
+  color: #646464;
+}
 
 
 input:focus,
@@ -69,6 +72,7 @@ a:hover,
 a:focus {
 	text-decoration: none;
 	outline: none;
+	color: #7c36ff;
 }
 
 ul,
@@ -80,6 +84,7 @@ ol {
 img {
 	max-width: 100%;
 }
+
 
 
 /*---------------------
@@ -644,25 +649,37 @@ img {
 	padding-left: 15px;
 }
 
-.list-container .content-list {
+.content-list {
 	padding-top: 65px;
-	display: inline-block;
-	padding-right: 50px;
 }
 
-.content-pic {
-	width: 200px;
-	height: 200px;
+.content-pic ul {
+	max-width: 1000px;
+	flex-direction: row;
+	display: flex;
 }
+
+.content-pic li {
+	flex-flow: row;
+	padding-right: 35px;
+
+}
+
+
+.content-pic img {
+	width: 230px;
+	height: 230px;
+}
+
 
 
 .content-name {
 	padding-top: 15px;
+	line-height: 80%;
+	font-weight: 600;
+
 }
 
-.content-name h6 {
-	line-height: 120%;
-}
 
 
 /*---------------------

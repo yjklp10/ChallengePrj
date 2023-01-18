@@ -32,7 +32,7 @@ public class MainController {
 	@Autowired
 	private MainDetailBiz biz;
 	
-	@GetMapping("/mainlist")
+	@GetMapping("/home_main")
     public String mainlist(Model model) {
 		
 		List<MainDetailDto> hotRes = biz.challenge_hot();
