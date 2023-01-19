@@ -34,99 +34,60 @@
       };
     </script>
    <style>
-    <style>
-     h3{
-        text-align: center;
-     }   
-    .container1{
-        display: grid;
-        grid-template-columns:500px 500px;
-        margin: auto;
-        text-align: center;
-        width: max-content;
-        
-        
-    
-    }
-    .item1{
-
-        text-align: center;
-    }
-  .item1 h2 {
-  color: #fff;
-  padding: 0.7rem 0.7rem 0.7rem 2rem;
-  border-radius: 100vh;
-  background-image: -webkit-linear-gradient(right, #f4ff81 0%, #00e676 100%);
-  background-image: linear-gradient(to left, #f4ff81 0%, #00e676 100%);
-}
-    .item2{
-        text-align: center;
-    }
-    
-
-    .item3{
-        
-        text-align: center;
-    }
-    .item4{
-        text-align: center;
-    }
-    .item5{
-       
-        text-align: center;
-    }
-    .item5 h2 {
-  color: #fff;
-  padding: 0.7rem 0.7rem 0.7rem 2rem;
-  border-radius: 100vh;
-  background-image: -webkit-linear-gradient(right, #f4ff81 0%, #00e676 100%);
-  background-image: linear-gradient(to left, #f4ff81 0%, #00e676 100%);
-}
-    .item6{
-      
-        text-align: center;
-    }
-    .item7{
-        text-align: center;
-    }
-    .item8{
-        text-align: center;
-    }
-    .item9{
-        text-align: center;
-    }
-    .item9 h2 {
-  color: #fff;
-  padding: 0.7rem 0.7rem 0.7rem 2rem;
-  border-radius: 100vh;
-  background-image: -webkit-linear-gradient(right, #f4ff81 0%, #00e676 100%);
-  background-image: linear-gradient(to left, #f4ff81 0%, #00e676 100%);
-}
-    .item10{
-        text-align: center;
-    }
-    .btn-3 {
-  background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%);
-}
    
-.btn {
- 
-  margin: 10px;
-  padding: 30px;
-  text-align: center;
-  text-transform: uppercase;
-  transition: 0.5s;
-  background-size: 200% auto;
-  color: white;
+   .serv_list{
+        padding-top: 70px;
+        padding-bottom: 70px ;
+    }
+    .serv_list.container{
+        max-width: 1500px;
+        margin: auto;
+    }
+  
+   
+   .serv_list .container .item_list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+     
+   }
+    .serv_list .container .item_list .card{
+        border:1px solid #eee;
+        border-radius: 5px;
+        height: 400px;
+        width: 250px;
+        padding: 5px;
+        margin-bottom: 10px;
 
-  box-shadow: 0 0 20px #eee;
-  border-radius: 10px;
- }
- .btn:hover {
-  background-position: right center; 
-}
-    </style>
-
+    }
+    .serv_list .container .item_list .card img{
+        height: 250px;
+        width: 250px;
+    }
+     .serv_list .container .item_list .card img1{
+        height: 250px;
+        width: 250px;
+    }
+    .serv_list .container .item_list .card .text p{
+        
+        font-size: 14px;
+        opacity: .8;
+    }
+    .serv_list .container .item_list .card .text button{
+        background: black;
+        color: white;
+        border: 2px solid white;
+        border-radius: 5px;
+        padding:5px 10px;
+        font-size:10px;
+        transition: .5s ease;
+    }
+    .serv_list .container .item_list .card .text button:hover{
+        transition: .5s ease;
+        border: 2px solid black;
+        background: transparent;
+        color:black;
+    }
    </style>
 <body>
     <!-- Page Preloder -->
@@ -292,18 +253,44 @@
         </div>
     </header>
     <!-- Header End -->
-     <h3>인증 안내</h3>
-   <div class="container1">
-   <div class="item1"><h2>step1</h2></div>
-   <div class="item2">i)인증방법이란</div>
-   <div class="item3">인증 방법</div>
-   <div class="item4">1.방장이 정해준 기준대로 사진을 올리는 것</div>
-   <div class="item5"><h2>step2</h2></div>
-   <div class="item6">i)아래의 사진과 같이 사진을 올린다</div>
-   <div class="item7">인증 예시</div>
-   <div class="item8"><img></div>
-   <div class="item9"><h2>step3</h2></div>
-   <div class="item10"> <a class="btn btn-3">confirm</a></div>
+     <section class="serv_list">
+    <div class="container">
+     
+        <div class="item_list">
+            <div class="card">
+            <div class="img">
+                <img src="img/0185dfdf4b6afa4df2ad21167cb26373.jpg" alt="">
+            </div>
+            <div class="text">
+             <h2>인증 방법</h2>
+             <p>자신이 속한 챌린지의 인증방법을 참고합니다! 시간을 어기면 -1됩니다</p>
+            </div>
+            </div>
+            <img src="img/271228.png" width="100px" height="100px" style="margin-top: 100px;">
+            <div class="card">
+                <div class="img">
+                    <img src="img/TSOY-4988.jpg" alt="">
+                </div>
+                <div class="text">
+                 <h2>인증 예시</h2>
+                 <p>자신이 속한 챌린지의 인증예시를 참고하세요!</p>
+                </div>
+                </div>
+                <img src="img/271228.png" width="100px" height="100px" style="margin-top: 100px;">
+                <div class="card">
+                    <div class="img1">
+                        <img src="img/no-image.png" alt="">
+                    </div>
+                    <div class="text">
+                     <h3>인증 하기</h3>
+                     <p>자신이 속한 챌린지의 인증방법을 참고합니다!</p>
+                    <button id="open"><i class="fas fa-check"></i>인증하기</button>
+                    </div>
+                    </div>
+    
+        </div>
+    </div>
+    </section>
    
     <!-- Partner Logo Section Begin -->
     <div class="partner-logo">
