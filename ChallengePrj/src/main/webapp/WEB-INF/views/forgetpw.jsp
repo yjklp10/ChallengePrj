@@ -1,126 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="ko">
 
+
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
 <script type="text/javascript">
-
-
-	
-	    
-$(function(){
-	$('#memberpw').keyup(function(){
-		$('#pwchk').text('');
-	}); 
-	$('#memberpwchk').keyup(function(){
-		if($('#memberpw').val()!=$('#memberpwchk').val()){
-			$('#pwchk').html("비밀번호가 일치하지 않습니다.").css("display","flex").css("color","#f23c3c");
-		}else{
-			 $('#pwchk').html("비밀번호가 일치합니다.").css("display","flex").css("color","#008000");
-		}
-	}); 
-	         
-});
-
-function id_overlap_chk(){
-	let memberid = $("#memberid").val();
-	$.ajax({
-		data:{memberid:memberid},
-		url:'idchk.do',
-		type:'post',
-		async:false,
-		success:function(res){
-			if(res == 0){
-				$(".id_use_chk").css("display","flex");
-				$(".id_use_chk").html("사용가능한 아이디입니다.")
-				$("#memberid").attr("title","yid");
-				
-			}
-			else if(res == 1){
-				$(".id_use_chk").css("display","flex");
-				$(".id_use_chk").html("이미 사용중인 아이디입니다.").css("color","#f23c3c");
-				$("#memberid").attr("title","nid");
-			}
-		}
-	})
-}
-	function nick_overlap_chk(){
-	let membernick = $("#membernick").val();
-	$.ajax({
-		data:{membernick:membernick},
-		url:'nickchk.do',
-		type:'post',
-		async:false,
-		success:function(res){
-			if(res == 0){
-				$(".nick_use_chk").css("display","flex");
-				$(".nick_use_chk").html("사용가능한 닉네임입니다.")
-				$("#membernick").attr("title","ynick");
-				
-			}
-			else if(res == 1){
-				$(".nick_use_chk").css("display","flex");
-				$(".nick_use_chk").html("이미 사용중인 닉네임입니다.").css("color","#f23c3c");
-				$("#membernick").attr("title","nnick");
-			}
-		}
-	})
-}
-	
-	function overlap_chk(){
-		let nickchk = document.getElementById("membernick").title;
-		let idchk = document.getElementById("memberid").title;
-		
-		if(idchk == 'nid'){
-			alert("아이디 중복체크를 해주세요");
-			document.getElementById("memberid").focus();
-			return false;
-		}else if(idchk == 'yid' && nickchk == 'nnick'){
-			alert("닉네임 중복체크를 해주세요");
-			document.getElementById("membernick").focus();
-			return false;
-		}
-		
-
+	function forgetID(){
+		$("#forget").attr("name","name").attr("placeholder","이름")
+		$("#inputID").attr("class","active")
+		$("#inputPW").attr("class","")
 	}
-	
-	// 이메일 인증번호
-	function eamil_code(){
-		let email = $("#memberemail").val();
-	   $.ajax({
-	      type : "POST",
-	      url : "login/mailConfirm",
-	      data : {email:memberemail},
-	      success : function(data){
-	         alert("해당 이메일로 인증번호 발송이 완료되었습니다. \n 확인부탁드립니다.");
-	         console.log("data : "+data);
-	         chkEmailConfirm(data, $("#memailconfirm"), $("#memailconfirmTxt"));
-	      }
-	   });
+	function forgetPW(){
+		$("#forget").attr("name","userid").attr("placeholder","아이디")
+		$("#inputID").attr("class","")
+		$("#inputPW").attr("class","active")
 	}
-
-
-		
-
 </script>
-<style>
-	#pwchk{
-		display:none;
-		color: red;
-		float: right;
-		font-size: 18px;
-	}
-	.id_use_chk,
-	.nick_use_chk{
-		display:none;
-		color:#008000;
-		font-size: 18px;
-	}
-</style>
-
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Fashi Template">
@@ -142,6 +39,7 @@ function id_overlap_chk(){
     <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+	<link rel="stylesheet" href="css/mystyle.css" type="text/css">
 </head>
 
 <body>
@@ -165,7 +63,7 @@ function id_overlap_chk(){
                     </div>
                 </div>
                 <div class="ht-right">
-                    <a href="#" class="login-panel"><i class="fa fa-"></i>Login</a>
+                    <a href="#" class="login-panel"><i class="fa fa-user"></i>Login</a>
                     <div class="lan-selector">
                         <select class="language_drop" name="countries" id="countries" style="width:300px;">
                             <option value='yt' data-image="img/flag-1.jpg" data-imagecss="flag yt"
@@ -316,7 +214,7 @@ function id_overlap_chk(){
                 <div class="col-lg-12">
                     <div class="breadcrumb-text">
                         <a href="#"><i class="fa fa-home"></i> Home</a>
-                        <span>Register</span>
+                        <span>아이디/비밀번호 찾기</span>
                     </div>
                 </div>
             </div>
@@ -330,60 +228,27 @@ function id_overlap_chk(){
             <div class="row">
                 <div class="col-lg-6 offset-lg-3">
                     <div class="register-form">
-                        <h2>회원가입</h2>
-                        <form method="post" onsubmit="return overlap_chk()" action="register.do">
-                            <div class="group-input">
-                                <label for="membername">아이디*</label>
-                                <input type="text" id="memberid" name="memberid" title="nid" required="required">
-                                <span class="id_use_chk">사용가능한 아이디입니다.</span>
-                                
-                                <input type="button" value="중복확인" onclick="id_overlap_chk();" style="width: 100px;float: right;">
+                        <h2>아이디/비밀번호 찾기</h2>
+                        <form action="#">
+                            <div class="con">
+                            	<ul class="ayer-tab" >
+                            		<li id="inputID" class="active" onclick="forgetID()" >아이디</li>
+                            		<li id="inputPW" class="" onclick="forgetPW()">비밀번호</li>
+                            	</ul>
+                            	<div class="tab-cont">
+                            		<strong class="cont-txt" style="margin-left:135px;">본인 확인을 위해 아래의 정보를 입력해 주세요</strong>
+                            		<div class="group-input">
+                            			<input id="forget" type="text" placeholder="이름" name="name" required="required">
+                            		</div>
+                            		<div class="group-input">
+                            			<input type="email" placeholder="이메일 'abcd@naver.com'" name="email" required="required">
+                            		</div>
+                            		 <button type="submit" class="site-btn register-btn">확인</button>
+                            	</div>
                             </div>
-                            <div class="group-input">
-                                <label for="pass">비밀번호 *</label>
-                                <input type="password" name="memberpw" id="memberpw" required="required">
-                            </div>
-                            <div class="group-input">
-                                <label for="passch">비밀번호 확인 *</label>
-                                <input type="password" name="memberpwchk" id="memberpwchk" required="required">
-                                <span id="pwchk"></span>
-                            </div>
-                             <div class="group-input">
-                                <label for="email">이메일 *</label>
-                                <input type="email" name="memberemail" id="memberemail" required="required">
-                                <label for="memailconfirm" id="memailconfirmTxt">인증번호를 입력해주세요</label> 
-								<input type="text" class="form-control" id="memailconfirm">
-                                <button type="button" id="checkEmail" onclick="eamil_code();" style="width: 100px;float: right;">인증번호</button>
-                                
-                            </div>
-                             <div class="group-input">
-                                <label for="nick">닉네임 *</label>
-                                <input type="text" name="membernick" id="membernick" title="nnick" required="required">
-                                <span class="nick_use_chk">사용가능한 닉네임입니다.</span>
-                                
-                                <input type="button" value="중복확인" onclick="nick_overlap_chk()" style="width: 100px;float: right;">
-                            </div>
-                             <div class="group-input">
-                                <label for="name">이름 *</label>
-                                <input type="text" name="membername" id="name">
-                            </div>
-                           
-                             <div class="group-input">
-                                <label for="tel">전화번호 *</label>
-                                <input type="tel" name="memberphone" id="memberphone">
-                            </div>
-                             <div class="group-input-radio" style="margin-bottom: 25px;">
-                            	<label for="gender" style="display: block;font-size: 18px;color: #252525;margin-bottom: 13px;">성별 *</label>
-                            	<input type="radio" name="membergender" value="m" required="required">
-                            	남성
-                            	&nbsp;&nbsp;
-                            	<input type="radio" name="membergender" value="w" required="required">
-                            	여성
-                            </div>
-                            <button type="submit" onclick="overlap_chk()" class="site-btn register-btn">회원가입</button>
                         </form>
                         <div class="switch-login">
-                            <a href="login.do" class="or-login">로그인</a>
+                            <a href="login.do" class="or-login">Or Login</a>
                         </div>
                     </div>
                 </div>

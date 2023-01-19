@@ -25,7 +25,6 @@ public class MemberDto {
 	private String memberphone;
 	private String memberrole;
 	private String membergender;
-	private String membercertify;
 	private String provider;
 	private String providerId;
 	private Date memberjoin;
@@ -38,7 +37,7 @@ public class MemberDto {
 
 	@Builder
 	public MemberDto( String memberid, String memberpw, String memberemail, String membernick,
-			String membername, String memberphone, String memberrole, String membergender, String membercertify,
+			String membername, String memberphone, String memberrole, String membergender, 
 			String provider, String providerId, Date memberjoin, Date memberquit) {
 		this.memberid = memberid;
 		this.memberpw = memberpw;
@@ -48,7 +47,6 @@ public class MemberDto {
 		this.memberphone = memberphone;
 		this.memberrole = memberrole;
 		this.membergender = membergender;
-		this.membercertify = membercertify;
 		this.provider = provider;
 		this.providerId = providerId;
 		this.memberjoin = memberjoin;
@@ -56,7 +54,7 @@ public class MemberDto {
 	}
 
 	public MemberDto(int memberno, String memberid, String memberpw, String memberemail, String membernick,
-			String membername, String memberphone, String memberrole, String membergender, String membercertify,
+			String membername, String memberphone, String memberrole, String membergender, 
 			String provider, String providerId, Date memberjoin, Date memberquit) {
 		super();
 		this.memberno = memberno;
@@ -68,7 +66,6 @@ public class MemberDto {
 		this.memberphone = memberphone;
 		this.memberrole = memberrole;
 		this.membergender = membergender;
-		this.membercertify = membercertify;
 		this.provider = provider;
 		this.providerId = providerId;
 		this.memberjoin = memberjoin;
@@ -166,14 +163,7 @@ public class MemberDto {
 	}
 
 
-	public String getMembercertify() {
-		return membercertify;
-	}
-
-
-	public void setMembercertify(String membercertify) {
-		this.membercertify = membercertify;
-	}
+	
 
 
 	public String getProvider() {
