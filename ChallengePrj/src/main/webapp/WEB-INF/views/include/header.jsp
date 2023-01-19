@@ -95,7 +95,7 @@
                         <li><a href="#">MY 챌린지</a>
                             <ul class="dropdown">
                                 <li><a href="chdetail">개설하기</a></li>
-                                <li><a href="uploadAjax">인증하기</a></li>
+                                 <li><a href="uploadAjax">인증하기</a></li>
                                 <li><a href="payment">포인트</a></li>
                             </ul>
                         </li>
