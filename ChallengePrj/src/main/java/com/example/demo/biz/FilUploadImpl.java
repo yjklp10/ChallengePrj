@@ -23,6 +23,12 @@ public List<AttachImageDto> getAttachList() {
 	return fileUploadMapper.seletList();
 }
 
+@Override
+public List<AttachImageDto> getAttachListtwo() {
+
+	return fileUploadMapper.seletListtwo();
+}
+
 
 
 }

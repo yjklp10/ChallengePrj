@@ -1,3 +1,4 @@
+/*
 package com.example.demo.controller;
 
 import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
@@ -102,6 +103,7 @@ public class LoginController {
 		}
 		
 	}
+
 	
 	@PostMapping("login/mailConfirm")
 	@ResponseBody
@@ -114,4 +116,6 @@ public class LoginController {
 	
 	
 
+
 }
+*/

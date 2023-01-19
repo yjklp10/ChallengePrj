@@ -56,6 +56,19 @@ public class PointDaoImpl implements PointDao {
 		
 		return dto;
 	}
+	
+	@Override
+	public int insertMyinfo(MoneyDto dto) {
+		int res=0;
+		try {
+			res=sqlSession.insert(NAMESPACE+"insertMyinfo",dto);
+		} catch (Exception e) {
+			System.out.println("[error] : insert");
+			e.printStackTrace();
+		}
+		
+		return res;
+	}
 
 	@Override
 	public int update(MoneyDto dto) {

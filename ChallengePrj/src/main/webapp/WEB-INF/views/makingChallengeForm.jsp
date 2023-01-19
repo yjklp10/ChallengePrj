@@ -24,6 +24,8 @@
     <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+    
+
  <style>
 #search_wrap{
 padding-top: 8px;
@@ -238,6 +240,7 @@ $(document).ready(function() {
             });
 
     </script>
+  
 </head>
 
 <body>
@@ -287,9 +290,60 @@ $(document).ready(function() {
                                         <br>
                                         <label for="town">모임 시작 시간 설정<span>*</span></label>
                                         <br>
-                                        <input  type="time" id="offline_start_time" name="offline_start_time">
-                                       
+                                        <!-- <input  type="time" id="offline_start_time" step="1800" required name="offline_start_time"> -->
+                                       <input id="offline_start_time" list="times" type="time" name="offline_start_time" value="18:00" step="1800">
+
+<datalist id="times">
+    <option value="01:00:00">
+    <option value="01:30:00">
+    <option value="02:00:00">
+    <option value="02:30:00">
+    <option value="03:00:00">
+    <option value="03:30:00">
+    <option value="04:00:00">
+    <option value="04:30:00">
+    <option value="05:00:00">
+    <option value="05:30:00">
+    <option value="06:00:00">
+    <option value="06:30:00">
+    <option value="07:00:00">
+    <option value="07:30:00">
+    <option value="08:00:00">
+    <option value="08:30:00">
+    <option value="09:00:00">
+    <option value="09:30:00">
+    <option value="10:00:00">
+    <option value="10:30:00">
+    <option value="11:00:00">
+    <option value="11:30:00">
+    <option value="12:00:00">
+    <option value="12:30:00">
+    <option value="13:00:00">
+    <option value="13:30:00">
+    <option value="14:00:00">
+    <option value="14:30:00">
+    <option value="15:00:00">
+    <option value="15:30:00">
+    <option value="16:00:00">
+    <option value="16:30:00">
+    <option value="17:00:00">
+    <option value="17:30:00">
+    <option value="18:00:00">
+    <option value="18:30:00">
+    <option value="19:00:00">
+    <option value="19:30:00">
+    <option value="20:00:00">
+    <option value="20:30:00">
+    <option value="21:00:00">
+    <option value="21:30:00">
+    <option value="22:00:00">
+    <option value="22:30:00">
+    <option value="23:00:00">
+    <option value="23:30:00">
+    <option value="00:00:00">
+</datalist>
                                          </div>
+                                       
                                 </div>
                             </div>
                             <div class="col-lg-12 scrollMenu choices">
@@ -327,11 +381,12 @@ $(document).ready(function() {
                             </div>
                             <div class="col-lg-3">
                                 <label for="fir">인증 가능 시간<span>*</span></label>
-                                <input type="time" id="certification_start_time">
+                                <input type="time" list="times" value="00:00" step="1800" id="certification_start_time">
+                                
                             </div>
                             <div class="col-lg-3">
                                 <label for="last">인증 종료 시간<span>*</span></label>
-                                <input type="time" id="certification_end_time">
+                                <input type="time" list="times" value="23:59" id="certification_end_time">
                             </div>
                            
                            <script>
