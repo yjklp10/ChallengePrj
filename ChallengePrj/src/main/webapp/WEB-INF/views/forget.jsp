@@ -8,12 +8,12 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
 <script type="text/javascript">
 	function forgetID(){
-		$("#forget").attr("name","name").attr("placeholder","이름")
+		$("#forget").attr("name","membername").attr("placeholder","이름")
 		$("#inputID").attr("class","active")
 		$("#inputPW").attr("class","")
 	}
 	function forgetPW(){
-		$("#forget").attr("name","userid").attr("placeholder","아이디")
+		$("#forget").attr("name","memberid").attr("placeholder","아이디")
 		$("#inputID").attr("class","")
 		$("#inputPW").attr("class","active")
 	}

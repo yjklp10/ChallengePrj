@@ -275,7 +275,7 @@ function naverLogout() {
                             </div>
                             <div class="group-input">
                                 <label for="pass">Password *</label>
-                                <input type="text" id="memberpw" name="memberpw">
+                                <input type="password" id="memberpw" name="memberpw">
                             </div>
                             <div class="group-input gi-check">
                                 <div class="gi-more">

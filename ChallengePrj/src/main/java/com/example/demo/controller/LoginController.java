@@ -6,11 +6,13 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.demo.biz.MemberBiz;
+import com.example.demo.biz.RegisterMailBizImpl;
 import com.example.demo.config.auth.PrincipalDetails;
 import com.example.demo.dto.MemberDto;
 
@@ -21,6 +23,9 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class LoginController {
 
+	@Autowired
+    RegisterMailBizImpl registerMail;
+	
 	@Autowired
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
 	
@@ -98,7 +103,14 @@ public class LoginController {
 		
 	}
 	
-	
+	@PostMapping("login/mailConfirm")
+	@ResponseBody
+	String mailConfirm(@RequestParam("email") String email) throws Exception {
+
+	   String code = registerMail.sendSimpleMessage(email);
+	   System.out.println("인증코드 : " + code);
+	   return code;
+	}
 	
 	
 
