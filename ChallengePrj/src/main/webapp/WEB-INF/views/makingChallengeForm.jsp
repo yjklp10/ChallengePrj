@@ -27,6 +27,9 @@
     
 
  <style>
+ #enddayChk{
+	display: hidden; 
+ }
 #search_wrap{
 padding-top: 8px;
 }
@@ -120,6 +123,16 @@ padding-top: 8px;
         }
      
     </script>
+    <script>
+	$(function(){
+		$('#makeChallenge').click(function(e){
+			var form = $('#write-form');
+			
+			form.attr('action', '/uploadChallengeImage');
+			form.submit();
+		});
+	});
+</script>
    <script>
 $(document).ready(function() {
     	   
@@ -224,13 +237,17 @@ $(document).ready(function() {
 
                       var endDay = endDate.getFullYear()+"-"+(endDate.getMonth()+1)+"-"+endDate.getDate();
                       var durationDate = (durationVal/1000/60/60/24);
-
+							
+                      var endday = document.getElementById("endday");
+                      
                       $("input[name='duration']:checked").attr('value',durationDate);
                       var newDurationVal = parseInt($("input[name='duration']:checked").val());
                       console.log("챌린지 기간: "+durationDate);
                         console.log("수정된 기간 밸류 값(밀리 초 -> 일로 변경): " + newDurationVal);
                       console.log("마감일: "+endDay);
-
+                      $('#endday').val(endDay);
+                      $('#enddayChk').html("종료일은 "+endDay+" 입니다. ").css("display","flex").css("color","#008000");
+                      
     	            }
     	        }
              
@@ -249,7 +266,7 @@ $(document).ready(function() {
     <!-- Shopping Cart Section Begin -->
     <section class="checkout-section spad">
         <div class="container">
-            <form action="#" class="checkout-form" method="post" enctype="multipart/form-data">
+            <form action="#" id="write-form" class="checkout-form" method="post" enctype="multipart/form-data">
                 <div class="row">
                     <div class="col-lg-12">
                         
@@ -378,7 +395,11 @@ $(document).ready(function() {
                                 <input type="radio" id="duration_week2" name="duration" value="14"><label for="duration_week2">2주</label>
                                 <input type="radio" id="duration_week3" name="duration" value="21"><label for="duration_week3">3주</label>
                                 <input type="radio" id="duration_week4" name="duration" value="28"><label for="duration_week4">4주</label>
+                                <div><input type="hidden" id="endday" name="endday" value="">
+                            <span id="enddayChk"></span>
                             </div>
+                            </div>
+                            
                             <div class="col-lg-3">
                                 <label for="fir">인증 가능 시간<span>*</span></label>
                                 <input type="time" list="times" value="00:00" step="1800" id="certification_start_time">
@@ -428,6 +449,11 @@ $(document).ready(function() {
                                 <input type="radio" id="category_select4" value="hobby" name="category"><label for="category_select4">취미</label>
                             </div>
                             
+		<div>
+			<input class="form-control" type="file" name="file1" id="file1">
+			<input class="form-control" type="file" name="file2" id="file2" multiple>
+			
+		</div>
                         </div>
                      
                     </div>
