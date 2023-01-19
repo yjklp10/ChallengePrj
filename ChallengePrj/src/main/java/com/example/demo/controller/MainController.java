@@ -42,7 +42,20 @@ public class MainController {
 		model.addAttribute("newRes", newRes);
 		
 		return "home_main";
+
+        }
+	
+	@GetMapping("/detaillist")
+    public String detaillist(Model model) {
 		
+		List<MainDetailDto> hotRes = biz.challenge_hot();
+		List<MainDetailDto> newRes = biz.challenge_new();
+		
+		model.addAttribute("hotRes", hotRes);
+		model.addAttribute("newRes", newRes);
+		
+		return "detaillist";
+
         }
 	
 /*

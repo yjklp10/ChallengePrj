@@ -166,13 +166,6 @@
    		  			</ul>
 				</div>
 				
-				<div class="control">
-					<ul>
-   		 			<li><label for="content-list" class="prev">&#x2039;</label>
-      				<label for="content-list" class="next">&#x203a;</label></li>
-    	 			</ul>
-    			</div>
-    
    		 	<div class="content-list">
    		 		<div class="content-pic">
    		 		
@@ -188,11 +181,11 @@
 				
   				  <li> 
   				  <a href=""> 				  	
-   				    <img src="${pageContext.request.contextPath }/static2/img/${hotRes.thumbnailpath }" alt="${hotRes.thumbnailpath }">
+   				   <img src="${pageContext.request.contextPath }/static2/thumb/${hotRes.thumbnailpath }" alt="${hotRes.thumbnailpath }">
    				    
    				    <div class="content-name">
-       					<p><c:out value="${hotRes.challengetitle }"/> / <c:out value="${hotRes.onoffchoice }"/></p>
-        				<p>시작일 : <fmt:formatDate value="${hotRes.challengestartdate }" pattern="yyyy-MM-dd"/> ~ </p>
+       					<p class="chname"><c:out value="${hotRes.challengetitle }"/> / <span class="onoff"> <c:out value="${hotRes.onoffchoice }"/></span></p>
+        				<p class="timeoff">시작일 : <fmt:formatDate value="${hotRes.challengestartdate }" pattern="yyyy-MM-dd"/> ~ </p>
       				 </div>
       				 </a>
      				</li>
@@ -222,13 +215,6 @@
    		  			</ul>
 				</div>
 				
-				<div class="control">
-					<ul>
-   		 			<li><label for="content-list" class="prev">&#x2039;</label>
-      				<label for="content-list" class="next">&#x203a;</label></li>
-    	 			</ul>
-    			</div>
-    
    		 	<div class="content-list">
    		 		<div class="content-pic">
    		 		
@@ -244,11 +230,11 @@
 				
   				  <li> 
   				  <a href=""> 				  	
-   				    <img src="${pageContext.request.contextPath }/static2/img/${newRes.thumbnailpath }" alt="${newRes.thumbnailpath }">
+   				    <img src="${pageContext.request.contextPath }/static2/thumb/${newRes.thumbnailpath }" alt="${newRes.thumbnailpath }">
    				    
-   				    <div class="content-name">
-       					<p><c:out value="${newRes.challengetitle }"/> / <c:out value="${newRes.onoffchoice }"/></p>
-        				<p>시작일 : <fmt:formatDate value="${newRes.challengestartdate }" pattern="yyyy-MM-dd"/> ~ </p>
+   				     <div class="content-name">
+       					<p class="chname"><c:out value="${newRes.challengetitle }"/> / <span class="onoff"> <c:out value="${newRes.onoffchoice }"/></span></p>
+        				<p class="timeoff">시작일 : <fmt:formatDate value="${newRes.challengestartdate }" pattern="yyyy-MM-dd"/> ~ </p>
       				 </div>
       				 </a>
      				</li>
@@ -278,18 +264,18 @@
         
         <section class="guide_onoff">
       	  <div class="guide_offline">
-      		  <h3>코로나 싫어! 밖에 나갈래!</h3>
-      		  <h5>그럼 오프라인 모임은 어때? 😉</h5>
+      	     <h3>코로나 싫어! 밖에 나갈래!</h3>
+      		 <h5>그럼 오프라인 모임은 어때? 😉</h5>
        		 <img src="img/오프라인가이드.png">
       	  </div>
         
       		 <div class="vs">
-      	 	<h3>VS</h3>
+      	 	<h2><b>VS</b></h2>
       		 </div>
         
      	  <div class="guide_online">
       		<h3>날 추운데 어딜나가!</h3>
-	  		 <h5>온라인으로 하면되지! 😁</h5>
+	  		<h5>온라인으로 하면되지! 😁</h5>
 	  		 <img src="img/온라인가이드.png">
         </div>
         
@@ -319,7 +305,7 @@
 	  	  <div class="challenge_guide_img">
 	  		 <img src="img/가이드0.jpg">
 	  		 <img src="img/가이드1.jpg">
-	  		<img src="img/가이드2.jpg">
+	  		 <img src="img/가이드2.jpg">
 	   	</div>
 	    
        </section>
@@ -334,7 +320,8 @@
       
       <!-- 공백용 끝 -->
         
-    <!-- 
+    			
+  <!--
     <section class="women-banner spad">
         <div class="container-fluid">
             <div class="row">
@@ -368,8 +355,7 @@
        				  </div>
         			</div>
     			</section>  
-    			
-  
+ 
     	<section class="women-banner spad">
         <div class="container-fluid">
             <div class="row">
@@ -435,9 +421,9 @@
        				  </div>
         			</div>
     			</section> 
-    			 -->
+    			-->
     			    <!-- 각 챌린지 끝-->
-				
+		
 
     
     <script src="js/jquery-3.3.1.min.js"></script>
