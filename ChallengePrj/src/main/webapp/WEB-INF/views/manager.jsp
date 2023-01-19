@@ -80,7 +80,9 @@ table {
 			<div class="blog-sidebar">
 				<div class="recent-post">
 					<h4>환급요청 목록</h4>
-					<table class="list-table">
+					<form action="/point.do" method="post" name="withdraw" onsubmit="return pointChk()">
+  					 <input type="hidden" id="memberid" name="memberid" value="${dto.memberid }">
+						<table class="list-table">
 						<thead>
 							<tr>
 								<th scope="col" class="th-num"></th>
@@ -110,13 +112,15 @@ table {
 											<td>${dto.accountnumber }</td>
 											<td>${dto.withdrawpoint }</td>
 											<td><fmt:formatDate pattern="yyyy-MM-dd" value="${dto.pointdate }"/></td>
-											<td>${dto.status }</td>
+											<td><input id="accountNumber" type="text" name="accountnumber" value=${dto.status }><br></td>
 										</tr>
 									</c:forEach>
 								</c:otherwise>
 							</c:choose>
 						</tbody>
 					</table>
+					<button type="submit" class="ok-btn2">수정</button>
+					</form>
 				</div>
 			</div>
 		</div>
