@@ -60,6 +60,10 @@ table {
 	border-top: 2px solid lightgray;
 }
 </style>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+
+</script>
 </head>
 
 
@@ -112,7 +116,13 @@ table {
 											<td>${dto.accountnumber }</td>
 											<td>${dto.withdrawpoint }</td>
 											<td><fmt:formatDate pattern="yyyy-MM-dd" value="${dto.pointdate }"/></td>
-											<td><input id="accountNumber" type="text" name="accountnumber" value=${dto.status }><br></td>
+											<td>
+											<!--  select name="status">								
+												<option value=1 <c:if test="${dto.status == 1}">selected</c:if>>접수</option>
+												<option value=2 <c:if test="${dto.status == 2}">selected</c:if>>진행중</option>
+												<option value=3 <c:if test="${dto.status == 3}">selected</c:if>>>완료</option>
+											</select>-->
+											</td>
 										</tr>
 									</c:forEach>
 								</c:otherwise>
