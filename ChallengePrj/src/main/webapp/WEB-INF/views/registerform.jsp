@@ -73,6 +73,7 @@ function id_overlap_chk(){
 	function overlap_chk(){
 		let nickchk = document.getElementById("membernick").title;
 		let idchk = document.getElementById("memberid").title;
+		let emailchk = document.getElementById("memberemail").title;
 		
 		if(idchk == 'nid'){
 			alert("아이디 중복체크를 해주세요");
@@ -81,6 +82,10 @@ function id_overlap_chk(){
 		}else if(idchk == 'yid' && nickchk == 'nnick'){
 			alert("닉네임 중복체크를 해주세요");
 			document.getElementById("membernick").focus();
+			return false;
+		}else if(emailchk == 'nemail' ){
+			alert("인증코드를 확인해 주세요");
+			document.getElementById("memberemail").focus();
 			return false;
 		}
 		
@@ -93,20 +98,26 @@ function id_overlap_chk(){
 	   $.ajax({
 	      type : "POST",
 	      url : "login/mailConfirm",
-	      data : {email:memberemail},
+	      data : {email:email},
 	      success : function(data){
 	         alert("해당 이메일로 인증번호 발송이 완료되었습니다. \n 확인부탁드립니다.");
 	         console.log("data : "+data);
-	         chkEmailConfirm(data, $("#memailconfirm"), $("#memailconfirmTxt"));
+	         chkEmailConfirm(data, $("#memberemailconfirm"), $("#memberemailconfirmTxt"));
 	      }
 	   });
 	}
 
+	function chkEmailConfirm(data, $("#memberemailconfirm"), $("#memberemailconfirmTxt")){
+		if(data != $("memberemailconfirm").val(){
+			$("#memberemailconfirmTxt")
+		})
+	}
 
 		
 
 </script>
 <style>
+	#memberemailconfirmTxt,
 	#pwchk{
 		display:none;
 		color: red;
@@ -334,43 +345,44 @@ function id_overlap_chk(){
                         <form method="post" onsubmit="return overlap_chk()" action="register.do">
                             <div class="group-input">
                                 <label for="membername">아이디*</label>
-                                <input type="text" id="memberid" name="memberid" title="nid" required="required">
+                                <input type="text" class="form-control" id="memberid" name="memberid" title="nid" required="required">
                                 <span class="id_use_chk">사용가능한 아이디입니다.</span>
                                 
                                 <input type="button" value="중복확인" onclick="id_overlap_chk();" style="width: 100px;float: right;">
                             </div>
                             <div class="group-input">
                                 <label for="pass">비밀번호 *</label>
-                                <input type="password" name="memberpw" id="memberpw" required="required">
+                                <input type="password" class="form-control" name="memberpw" id="memberpw" required="required">
                             </div>
                             <div class="group-input">
                                 <label for="passch">비밀번호 확인 *</label>
-                                <input type="password" name="memberpwchk" id="memberpwchk" required="required">
+                                <input type="password" class="form-control" name="memberpwchk" id="memberpwchk" required="required">
                                 <span id="pwchk"></span>
                             </div>
                              <div class="group-input">
                                 <label for="email">이메일 *</label>
-                                <input type="email" name="memberemail" id="memberemail" required="required">
-                                <label for="memailconfirm" id="memailconfirmTxt">인증번호를 입력해주세요</label> 
-								<input type="text" class="form-control" id="memailconfirm">
-                                <button type="button" id="checkEmail" onclick="eamil_code();" style="width: 100px;float: right;">인증번호</button>
+                                <input type="email" class="form-control" name="memberemail" id="memberemail" title="nemail" required="required">
+                                <input type="button" value="인증번호 발송" id="checkEmail" onclick="eamil_code();" style="width: 100px;float: right;">
+								<input type="text" class="form-control" id="memberemailconfirm" placeholder="인증번호를 입력해 주세요" style="width:80%;">
+								<span id="memberemailconfirmTxt"></span>
+                                
                                 
                             </div>
                              <div class="group-input">
                                 <label for="nick">닉네임 *</label>
-                                <input type="text" name="membernick" id="membernick" title="nnick" required="required">
+                                <input type="text" class="form-control" name="membernick" id="membernick" title="nnick" required="required">
                                 <span class="nick_use_chk">사용가능한 닉네임입니다.</span>
                                 
                                 <input type="button" value="중복확인" onclick="nick_overlap_chk()" style="width: 100px;float: right;">
                             </div>
                              <div class="group-input">
                                 <label for="name">이름 *</label>
-                                <input type="text" name="membername" id="name">
+                                <input type="text" class="form-control" name="membername" id="name">
                             </div>
                            
                              <div class="group-input">
                                 <label for="tel">전화번호 *</label>
-                                <input type="tel" name="memberphone" id="memberphone">
+                                <input type="tel" class="form-control" name="memberphone" id="memberphone">
                             </div>
                              <div class="group-input-radio" style="margin-bottom: 25px;">
                             	<label for="gender" style="display: block;font-size: 18px;color: #252525;margin-bottom: 13px;">성별 *</label>
