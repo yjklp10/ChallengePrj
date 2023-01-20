@@ -30,10 +30,9 @@ public class ImageController {
 	@Autowired
 	private FileUploadbiz biz;
 
-	
-	//팝업창 오픈
-	@GetMapping("/fopen")	
-	public String fopen() {
+
+    @GetMapping(value="/popen")	
+	public String popen() {
 		return "imageuploadpopup";
 	}
 	

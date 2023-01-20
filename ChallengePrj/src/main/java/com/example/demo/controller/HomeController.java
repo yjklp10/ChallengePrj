@@ -80,6 +80,9 @@ public class HomeController {
 	public String ex() {
 		return "exwrite";
 	}
-
+    @RequestMapping("/confirmopen")
+    public String  confirmopen(){
+    	return "confirm";
+    }
 }
 

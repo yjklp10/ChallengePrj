@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-        <%@include file="./include/header.jsp" %>
+       <%@include file="./include/header.jsp" %>
 <!DOCTYPE html>
 
 
@@ -25,32 +25,33 @@
     <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
-    
+      <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <style>
+     
      
        </style>   
 </head>
 
 <body>
    
-    <h1>mypage_image</h1>
-    <div class="minho">
 
-    </div>
+   
+    <h2>challengeImage</h2>
+  
      <script> 
     
        
-        	 let minho= $(".minho");
+        	
         	 let str=""; 
      
-      	   $.getJSON("/getAttachList",function(arr){
+      	   $.getJSON("/getAttachList2","",function(arr){
          
          		   
          for(key in arr){
              let fileCallPath=encodeURIComponent(arr[key].uploadFilePath+ "/s_"+arr[key].uuid+"_"+arr[key].fileName);
                
                  str += "<img src='/display?fileName=" + fileCallPath +"'>";
-                 //"<a href='/display?fileName="  + fileCallPath +"' data-lightbox='mygallery' >";
+        
            
                  minho.html(str);
         
@@ -62,9 +63,14 @@
        
        </script>
    
-  
-     	<%@include file="./include/footer.jsp" %>
+    <!-- Footer Section Begin -->
+   	<%@include file="./include/footer.jsp" %>
+    <!-- Footer Section End -->
+
     <!-- Js Plugins -->
+   
+     
+
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>

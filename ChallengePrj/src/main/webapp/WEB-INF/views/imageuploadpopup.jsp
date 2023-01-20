@@ -240,36 +240,9 @@ function deleteFile(){
 		}
 	});
 }
-function timecheck(){
-	 const date1= new Date(2023,1,7,01,00,00);
-	    console.log(date1.getHours());
-	    const date2= new Date(2023,1,7,07,00,00);
-	    console.log(date2.getHours());
-	    const date3= new Date(2023,1,7,05,00,00);
-	    console.log(date3.getHours());
-	    if(date1<date2<date3){
-	        alert("인증 사진 등록가능 시간입니다");
-	    }else{
-	        alert("인증 시간 등록시간이 아닙니다");
-	        popUrl.close();
-	        
-	    }
+
 }
-$(function(){
-	  $("#confirm").click(function(){
-	      modalClose(); 
-	  });
-	  $("#modal-open").click(function(){        
-	      $("#popup").css('display','flex').hide().fadeIn();
-	     
-	  });
-	  $("#close").click(function(){
-	      modalClose(); 
-	  });
-	  function modalClose(){
-	      $("#popup").fadeOut(); 
-	  }
-	});
+
 </script>
 </body>
 </html>
