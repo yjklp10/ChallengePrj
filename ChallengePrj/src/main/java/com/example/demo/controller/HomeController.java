@@ -21,6 +21,11 @@ public class HomeController {
 	public String index() {
 		return "index";
 	}
+	@RequestMapping("/makingChallengeStart")
+	public String makingChallengeStart() {
+		return "makingChallengeStart";
+	}
+	
 	
 	@RequestMapping("/detail")
 	public String detail() {
@@ -29,9 +34,13 @@ public class HomeController {
 	
 	
 
-	@RequestMapping("/makingChallenge")
-	public String makingChallenge(){
-		return"makingChallengeForm";
+	@RequestMapping("/makingChallengeOnLine")
+	public String makingChallengeOnLine(){
+		return"makingChallengeOnLine";
+	}
+	@RequestMapping("/makingChallengeOffLine")
+	public String makingChallengeOffLine(){
+		return"makingChallengeOffLine";
 	}
 	
 	@RequestMapping("/mypage")
@@ -70,7 +79,7 @@ public class HomeController {
 		}	
 	}
 	
-	@RequestMapping("/manager")
+	@RequestMapping("/manager2")
 	public String list(Model model) {
 		model.addAttribute("list", biz.selectList());
 		return "manager";

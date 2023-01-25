@@ -1,6 +1,8 @@
 
 package com.example.demo.config.oauth;
 
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
 import org.springframework.security.oauth2.client.userinfo.OAuth2UserRequest;
 import org.springframework.security.oauth2.core.OAuth2AuthenticationException;
@@ -18,6 +20,9 @@ public class PrincipalOauth2UserService extends DefaultOAuth2UserService{
 	public OAuth2User loadUser(OAuth2UserRequest userRequest) throws OAuth2AuthenticationException {
 		System.out.println("getClientRegistration : "+userRequest.getClientRegistration());
 		System.out.println("getAccessToken : "+userRequest.getAccessToken());
+		
+		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal(); 
+		UserDetails userDetails = (UserDetails)principal; 
 		
 		
 		OAuth2User oauth2User = super.loadUser(userRequest);

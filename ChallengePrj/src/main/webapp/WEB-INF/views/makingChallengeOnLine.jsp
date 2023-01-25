@@ -27,6 +27,57 @@
     
 
  <style>
+    #ingeungDiv{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .onemoreclickDiv1{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .onemoreclickDiv{
+        padding-bottom: 50px;
+       
+    }
+ .onemoreclick{
+ 	color: #AAAAAA;
+     
+ }
+ #ingeung{
+ padding-top: 50px;
+ }
+ #make_btn{
+        padding-top: 50px;
+    }
+    .image-container2{
+        display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+    }
+     .image-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-right: 50px;
+  object-fit: cover;
+  border-radius: 30px;
+  
+ }
+ #ingeung{
+    display: flex;
+ }
+ .selected_pic{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 	background-color: #AAAAAA;
+ }
  #enddayChk{
 	display: hidden; 
  }
@@ -91,7 +142,7 @@ padding-top: 8px;
         height: 150px;
     }
     #ifOffLine{
-        background-color: gray;
+        background-color: #AAAAAA;
         display: flex;
         justify-content: space-around;
         align-items: center;
@@ -109,6 +160,17 @@ padding-top: 8px;
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
         crossorigin="anonymous"></script>
     <script>
+	$(function(){
+		$('#makeChallenge').click(function(e){
+			var form = $('#write-form');
+			
+			form.attr('action', '/registOnlineChallenge');
+			form.submit();
+		});
+	});
+</script>
+  <!--   
+    <script>
         function offline_select(){
             const offline_select = document.getElementById("offline_select");
             if(offline_select.style.display = "none"){
@@ -123,26 +185,17 @@ padding-top: 8px;
         }
      
     </script>
-    <script>
-	$(function(){
-		$('#makeChallenge').click(function(e){
-			var form = $('#write-form');
-			
-			form.attr('action', '/uploadChallengeImage');
-			form.submit();
-		});
-	});
-</script>
+     -->
    <script>
 $(document).ready(function() {
     	   
         	  
-    	   $("input[name='start_date']").click(function () {
-    		   var obj_length = document.getElementsByName("start_date").length;
+    	   $("input[name='challengestartdate']").click(function () {
+    		   var obj_length = document.getElementsByName("challengestartdate").length;
     		   
     	        for (var i=0; i<obj_length; i++) {
     	        	
-    	            if (document.getElementsByName("start_date")[i].checked == true) {
+    	            if (document.getElementsByName("challengestartdate")[i].checked == true) {
 
                         let now = new Date();
 
@@ -168,12 +221,12 @@ $(document).ready(function() {
                         $('#start_date_after6').val(after6_m);
                         $('#start_date_after7').val(after7_m);
 
-             		   var checkVal = parseInt($("input[name='start_date']:checked").val());
+             		   var checkVal = parseInt($("input[name='challengestartdate']:checked").val());
                         var checkDate = new Date(checkVal);
                         
                         var startDay = checkDate.getFullYear()+"-"+(checkDate.getMonth()+1)+"-"+checkDate.getDate();
 
-                        $("input[name='start_date']:checked").attr('value',startDay);
+                        $("input[name='challengestartdate']:checked").attr('value',startDay);
 
              		   console.log("시작일: " + startDay);
                        
@@ -183,12 +236,12 @@ $(document).ready(function() {
              
     		  });
 
-              $("input[name='duration']").click(function () {
-    		   var obj_length = document.getElementsByName("duration").length;
+              $("input[name='challengeperiod']").click(function () {
+    		   var obj_length = document.getElementsByName("challengeperiod").length;
     		   
     	        for (var i=0; i<obj_length; i++) {
     	        	
-    	            if (document.getElementsByName("duration")[i].checked == true) {
+    	            if (document.getElementsByName("challengeperiod")[i].checked == true) {
 
                         let now = new Date();
 
@@ -227,26 +280,30 @@ $(document).ready(function() {
 
                         
 
-             		   var checkVal = parseInt($("input[name='start_date']:checked").val());
+             		   var checkVal = parseInt($("input[name='challengestartdate']:checked").val());
              		   
-             		  var durationVal = parseInt($("input[name='duration']:checked").val());
+             		  var durationVal = parseInt($("input[name='challengeperiod']:checked").val());
                        console.log("기존 기간 밸류 값(밀리 초) : "+durationVal);
                       var endDate = new Date(checkVal+durationVal);
                     
+                      var checkVal2 = parseInt($("input[name='challengestartdate']:checked").val());
+                      var checkDate2 = new Date(checkVal2);
                       
-
+                      var startDay2 = checkDate2.getFullYear()+"-"+(checkDate2.getMonth()+1)+"-"+checkDate2.getDate();
+                      
+                      
                       var endDay = endDate.getFullYear()+"-"+(endDate.getMonth()+1)+"-"+endDate.getDate();
                       var durationDate = (durationVal/1000/60/60/24);
-							
+                      
                       var endday = document.getElementById("endday");
                       
-                      $("input[name='duration']:checked").attr('value',durationDate);
-                      var newDurationVal = parseInt($("input[name='duration']:checked").val());
+                      $("input[name='challengeperiod']:checked").attr('value',durationDate);
+                      var newDurationVal = parseInt($("input[name='challengeperiod']:checked").val());
                       console.log("챌린지 기간: "+durationDate);
                         console.log("수정된 기간 밸류 값(밀리 초 -> 일로 변경): " + newDurationVal);
                       console.log("마감일: "+endDay);
                       $('#endday').val(endDay);
-                      $('#enddayChk').html("종료일은 "+endDay+" 입니다. ").css("display","flex").css("color","#008000");
+                      $('#enddayChk').html("챌린지 기간은 "+startDay2 +" ~ "+endDay+" 입니다. ").css("display","flex").css("color","#008000");
                       
     	            }
     	        }
@@ -266,23 +323,23 @@ $(document).ready(function() {
     <!-- Shopping Cart Section Begin -->
     <section class="checkout-section spad">
         <div class="container">
-            <form action="#" id="write-form" class="checkout-form" method="post" enctype="multipart/form-data">
+            <form action="/uploadChallenge" id="write-form" class="checkout-form" method="post" enctype="multipart/form-data">
                 <div class="row">
                     <div class="col-lg-12">
                         
-                        <h4>챌린지 만들기</h4>
+                        <h4>온라인 챌린지 만들기</h4>
                         <div class="row">
                             <div class="col-lg-4">
                                 <label for="town">챌린지 제목<span>*</span></label>
-                                <input type="text" id="challenge_title">
+                                <input type="text" id="challenge_title" name="challengetitle">
                             </div>
-                            <div class="col-lg-12 choices" id="onOff_choice">
+                            <!-- <div class="col-lg-12 choices" id="onOff_choice" name="onoffchoice">
                                 <label for="fir">온라인/오프라인 여부<span>*</span></label>
                                 <br>
                                 <input type="radio" id="onOff_select1" name="onOff" value="challenge_online" onclick="online_select();"><label for="onOff_select1">온라인</label>
                                 <input type="radio" id="onOff_select2" name="onOff" value="challenge_offline" onclick="offline_select();"><label for="onOff_select2">오프라인</label>
-                            </div>
-                            <div class="col-lg-12" id="offline_select">
+                            </div> -->
+                            <!-- <div class="col-lg-12" id="offline_select">
                                 <label for="fir">오프라인 모임 장소 지정<span>*</span></label>
                                 <br>
                                 <div id="ifOffLine" >
@@ -292,23 +349,24 @@ $(document).ready(function() {
    										 <label for="town">주소 검색<span>*</span></label>
                                         <br>
                                         <div id="searchDiv">
-                                        <input type="text"  id="offline_address" style="width: 300px;">
+                                        <input type="text"  id="offline_address" style="width: 300px;" placeholder="주소를 입력하세요">
 										<input type="button" value="검색" id="address_btn"onclick="search_location();">
                                         </div>
-                                        
+                                        <label for="town">지번 주<span>*</span></label>
+                                        <input type="text" name="offline_spot_address"  style="width: 300px;height:50px">
                                         <label for="town">모임 장소 상세 설명<span>*</span></label>
                                         <br>
                                       
                                         <br>
                                    
-                                          <input type="text" name="offline_spot_address"  style="width: 300px;height:50px">
+                                          
                                           <br>
                                         <textarea  style="width: 300px;height:75px" id="offline_spot_detail" name="offline_spot_detail" ></textarea>
                                         <br>
                                         <label for="town">모임 시작 시간 설정<span>*</span></label>
                                         <br>
-                                        <!-- <input  type="time" id="offline_start_time" step="1800" required name="offline_start_time"> -->
-                                       <input id="offline_start_time" list="times" type="time" name="offline_start_time" value="18:00" step="1800">
+                                        <input  type="time" id="offline_start_time" step="1800" required name="offline_start_time">
+                                       <input id="offline_start_time" list="times" type="time" name="offline_start_time" value="18:00" step="1800"> -->
 
 <datalist id="times">
     <option value="01:00:00">
@@ -366,68 +424,90 @@ $(document).ready(function() {
                             <div class="col-lg-12 scrollMenu choices">
                                 <label for="fir">인증빈도<span>*</span></label>
                                 <br>
-                                <input type="radio" id="frequency_everyday" name="frequency" value="frequency_everyday"><label for="frequency_everyday">매일</label>
-                                <input type="radio" id="frequency_everyweek" name="frequency" value="frequency_week"><label for="frequency_week">평일 매일</label>
-                                <input type="radio" id="frequency_everyweekend" name="frequency" value="frequency_weekend"><label for="frequency_weekend">주말 매일</label>
-                                <input type="radio" id="frequency_week1" name="frequency" value="frequency_week1"><label for="frequency_week1">주 1회</label>
-                                <input type="radio" id="frequency_week2" name="frequency" value="frequency_week2"><label for="frequency_week2">주 2회</label>
-                                <input type="radio" id="frequency_week3" name="frequency" value="frequency_week3"><label for="frequency_week3">주 3회</label>
-                                <input type="radio" id="frequency_week4" name="frequency" value="frequency_week4"><label for="frequency_week4">주 4회</label>
-                                <input type="radio" id="frequency_week5" name="frequency" value="frequency_week5"><label for="frequency_week5">주 5회</label>
-                                <input type="radio" id="frequency_week6" name="frequency" value="frequency_week6"><label for="frequency_week6">주 6회</label>
+                                <input type="radio" id="frequency_everyday" name="chllengeprequency" value="frequency_everyday"><label for="frequency_everyday">매일</label>
+                                <input type="radio" id="frequency_everyweek" name="chllengeprequency" value="frequency_week"><label for="frequency_week">평일 매일</label>
+                                <input type="radio" id="frequency_everyweekend" name="chllengeprequency" value="frequency_weekend"><label for="frequency_weekend">주말 매일</label>
+                                <input type="radio" id="frequency_week1" name="chllengeprequency" value="frequency_week1"><label for="frequency_week1">주 1회</label>
+                                <input type="radio" id="frequency_week2" name="chllengeprequency" value="frequency_week2"><label for="frequency_week2">주 2회</label>
+                                <input type="radio" id="frequency_week3" name="chllengeprequency" value="frequency_week3"><label for="frequency_week3">주 3회</label>
+                                <input type="radio" id="frequency_week4" name="chllengeprequency" value="frequency_week4"><label for="frequency_week4">주 4회</label>
+                                <input type="radio" id="frequency_week5" name="chllengeprequency" value="frequency_week5"><label for="frequency_week5">주 5회</label>
+                                <input type="radio" id="frequency_week6" name="chllengeprequency" value="frequency_week6"><label for="frequency_week6">주 6회</label>
                             </div>
   							<div class="col-lg-12 scrollMenu choices" >
                                 <label for="fir">시작일<span>*</span></label>
                                 <br>
-                                <input type="radio" id="start_date_today" name="start_date" value=""><label for="start_date_today">오늘</label>
-                                <input type="radio" id="start_date_tomorrow" name="start_date" value=""><label for="start_date_tomorrow">내일</label>
-                                <input type="radio" id="start_date_after2" name="start_date" value=""><label for="start_date_after2">2일 후</label>
-                                <input type="radio" id="start_date_after3" name="start_date" value=""><label for="start_date_after3">3일 후</label>
-                                <input type="radio" id="start_date_after4" name="start_date" value=""><label for="start_date_after4">4일 후</label>
-                                <input type="radio" id="start_date_after5" name="start_date" value=""><label for="start_date_after5">5일 후</label>
-                                <input type="radio" id="start_date_after6" name="start_date" value=""><label for="start_date_after6">6일 후</label>
-                                <input type="radio" id="start_date_after7" name="start_date" value=""><label for="start_date_after7">7일 후</label>
+                                <input type="radio" id="start_date_today" name="challengestartdate" value=""><label for="start_date_today">오늘</label>
+                                <input type="radio" id="start_date_tomorrow" name="challengestartdate" value=""><label for="start_date_tomorrow">내일</label>
+                                <input type="radio" id="start_date_after2" name="challengestartdate" value=""><label for="start_date_after2">2일 후</label>
+                                <input type="radio" id="start_date_after3" name="challengestartdate" value=""><label for="start_date_after3">3일 후</label>
+                                <input type="radio" id="start_date_after4" name="challengestartdate" value=""><label for="start_date_after4">4일 후</label>
+                                <input type="radio" id="start_date_after5" name="challengestartdate" value=""><label for="start_date_after5">5일 후</label>
+                                <input type="radio" id="start_date_after6" name="challengestartdate" value=""><label for="start_date_after6">6일 후</label>
+                                <input type="radio" id="start_date_after7" name="challengestartdate" value=""><label for="start_date_after7">7일 후</label>
                             </div>
                             <div class="col-lg-12 choices">
                                 <label for="fir">챌린지 기간<span>*</span></label>
                                 <br>
-                                <input type="radio" id="duration_week1" name="duration" value="7"><label for="duration_week1">1주</label>
-                                <input type="radio" id="duration_week2" name="duration" value="14"><label for="duration_week2">2주</label>
-                                <input type="radio" id="duration_week3" name="duration" value="21"><label for="duration_week3">3주</label>
-                                <input type="radio" id="duration_week4" name="duration" value="28"><label for="duration_week4">4주</label>
-                                <div><input type="hidden" id="endday" name="endday" value="">
+                                <input type="radio" id="duration_week1" name="challengeperiod" value="7"><label for="duration_week1">1주</label>
+                                <input type="radio" id="duration_week2" name="challengeperiod" value="14"><label for="duration_week2">2주</label>
+                                <input type="radio" id="duration_week3" name="challengeperiod" value="21"><label for="duration_week3">3주</label>
+                                <input type="radio" id="duration_week4" name="challengeperiod" value="28"><label for="duration_week4">4주</label>
+                                <div><input type="hidden" id="endday" name="challengeenddate" value="">
                             <span id="enddayChk"></span>
                             </div>
                             </div>
                             
                             <div class="col-lg-3">
                                 <label for="fir">인증 가능 시간<span>*</span></label>
-                                <input type="time" list="times" value="00:00" step="1800" id="certification_start_time">
+                                <input type="time" list="times" value="00:00" step="1800" id="certification_start_time" name="certificationstarttime">
                                 
                             </div>
                             <div class="col-lg-3">
                                 <label for="last">인증 종료 시간<span>*</span></label>
-                                <input type="time" list="times" value="23:59" id="certification_end_time">
+                                <input type="time" list="times" value="23:59" id="certification_end_time" name="certificationendtime">
+                            </div>
+                            <div id="ingeungDiv">
+                                <div id="ingeung">
+                                    <div class="image-container" >
+                                        <h4>인증 성공예시</h4>
+                                        
+                                        <input type="file" style="display: none;" id="input-image1">
+                                        <label class="selected_pic" for="input-image1" style="width: 350px; height: 350px;">
+                                            <img style='width:auto; height:auto; max-width: 350px; max-height: 350px; object-fit: contain;' id="preview-image1" src="/img/인증성공예시.png" name="successimg">
+                                        </label>
+                                    </div>
+                                    <div class="image-container">
+                                        <h4>인증 실패예시</h4>
+                                        
+                                        <input type="file" id="input-image2" style="display: none;">
+                                        <label class="selected_pic" for="input-image2" style="width: 350px; height: 350px;">
+                                            <img style='width:auto;height:auto; max-width: 350px; max-height: 350px; object-fit: contain;' id="preview-image2" src="/img/인증실패예시.png" name="failimg">
+                                        </label>
+                                    </div>
+                                </div>
+                               
+                                <div class="onemoreclickDiv">
+                                    <label class="onemoreclick" for="x">사진을 변경하고 싶으시면 사진을 한 번 더 클릭해주세요</label>
+                                    </div>
+                                
                             </div>
                            
-                           <script>
-                      
-                           </script>
-                           
+            
                             <div class="col-lg-12">
                                 <label for="cun">인증 방법<span>*</span></label>
                                 <br>
-                                <textarea cols="55" rows="10" id="certification_method" placeholder="ex) 오늘 날짜와 걸음 수가 보이도록 업로드&#13;&#10;&#13;&#10;- 챌린지가 시작되면 인증 방법을 수정할 수 없습니다. 신중히 작성해주세요.&#13;&#10;- 혼란을 겪지 않도록 정확한 기준과 구체적인 인증 방법을 적어주세요. "></textarea>
+                                <textarea name="certificationway" cols="55" rows="10" id="certification_method" placeholder="ex) 오늘 날짜와 걸음 수가 보이도록 업로드&#13;&#10;&#13;&#10;- 챌린지가 시작되면 인증 방법을 수정할 수 없습니다. 신중히 작성해주세요.&#13;&#10;- 혼란을 겪지 않도록 정확한 기준과 구체적인 인증 방법을 적어주세요. "></textarea>
                             </div>
                             
                             <div class="col-lg-12">
                                 <label for="cun">챌린지 소개<span>*</span></label>
                                 <br>
-                                <textarea cols="55" rows="10" id="challenge_explain" placeholder="ex) 매일 한강에서 달리기 하며 건강해지고 싶습니다!&#13;&#10;&#13;&#10;- 챌린지를 소개해보세요!"></textarea>
+                                <textarea name="challengeintro" cols="55" rows="10" id="challenge_explain" placeholder="ex) 매일 한강에서 달리기 하며 건강해지고 싶습니다!&#13;&#10;&#13;&#10;- 챌린지를 소개해보세요!"></textarea>
                             </div>
                             <div class="col-lg-4">
                                 <label for="cun-name">예치금 설정</label>
-                                <input type="text" id="cun-name">
+                                <input name="deposit" type="text" id="cun-name">
                             </div>
                             
                             <div class="col-lg-4">
@@ -436,7 +516,7 @@ $(document).ready(function() {
                                 <div id="max_member">
                                     <div>
                                         
-                                        <input type="text" id="offline_spot_search">
+                                        <input type="text" id="offline_spot_search" name="maxchallenger">
                                     </div>
                                 </div>
                             </div>
@@ -450,9 +530,83 @@ $(document).ready(function() {
                             </div>
                             
 		<div>
-			<input class="form-control" type="file" name="file1" id="file1">
-			<input class="form-control" type="file" name="file2" id="file2" multiple>
-			
+            
+            <div id="ingeung">
+                <div class="image-container2">
+                   <h4>대표사진 선택</h4>
+                    <input  type="file" id="input-image3" style="display: none;">
+                    <label class="selected_pic" for="input-image3" style="width: 350px; height: 350px;">
+                        <img name="thumbnail" style='width:auto;height:auto; max-width: 350px; max-height: 350px; object-fit: contain;' id="preview-image3" src="/img/대표사진선택.png">
+                    </label>
+                </div>
+                <br>
+                
+            </div>
+				<div class="onemoreclickDiv">
+                <label class="onemoreclick" for="x">사진을 변경하고 싶으시면 사진을 한 번 더 클릭해주세요</label>
+                </div>
+    <script>
+        function readImage1(input) {
+         // 인풋 태그에 파일이 있는 경우
+         if(input.files && input.files[0]) {
+             // 이미지 파일인지 검사 (생략)
+             // FileReader 인스턴스 생성
+             const reader = new FileReader()
+             // 이미지가 로드가 된 경우
+             reader.onload = e => {
+                 const previewImage = document.getElementById("preview-image1")
+                 previewImage.src = e.target.result
+             }
+             // reader가 이미지 읽도록 하기
+             reader.readAsDataURL(input.files[0])
+         }
+     }
+     // input file에 change 이벤트 부여
+     const inputImage1 = document.getElementById("input-image1")
+     inputImage1.addEventListener("change", e => {
+         readImage1(e.target)
+     })
+     function readImage2(input) {
+         // 인풋 태그에 파일이 있는 경우
+         if(input.files && input.files[0]) {
+             // 이미지 파일인지 검사 (생략)
+             // FileReader 인스턴스 생성
+             const reader = new FileReader()
+             // 이미지가 로드가 된 경우
+             reader.onload = e => {
+                 const previewImage = document.getElementById("preview-image2")
+                 previewImage.src = e.target.result
+             }
+             // reader가 이미지 읽도록 하기
+             reader.readAsDataURL(input.files[0])
+         }
+     }
+     // input file에 change 이벤트 부여
+     const inputImage2 = document.getElementById("input-image2")
+     inputImage2.addEventListener("change", e => {
+         readImage2(e.target)
+     })
+     function readImage3(input) {
+         // 인풋 태그에 파일이 있는 경우
+         if(input.files && input.files[0]) {
+             // 이미지 파일인지 검사 (생략)
+             // FileReader 인스턴스 생성
+             const reader = new FileReader()
+             // 이미지가 로드가 된 경우
+             reader.onload = e => {
+                 const previewImage = document.getElementById("preview-image3")
+                 previewImage.src = e.target.result
+             }
+             // reader가 이미지 읽도록 하기
+             reader.readAsDataURL(input.files[0])
+         }
+     }
+     // input file에 change 이벤트 부여
+     const inputImage3 = document.getElementById("input-image3")
+     inputImage3.addEventListener("change", e => {
+         readImage3(e.target)
+     })
+                 </script>
 		</div>
                         </div>
                      
