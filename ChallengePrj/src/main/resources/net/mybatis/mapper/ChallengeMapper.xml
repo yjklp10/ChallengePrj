@@ -10,6 +10,55 @@
    		where CHALLENGENO = #{CHALLENGENO} 
    </select>
    
+
+   
+  <!-- 조아라 -->
+   
+   <!-- 메인 - 인기 챌린지 -->
+  <select id="challenge_hot" resultType="Testchallenge">
+	SELECT * FROM MAKECHALLENGE
+	ORDER BY MEMBERNO DESC;
+  </select>
+  
+  
+	<!-- 메인 - 신규 챌린지 -->
+   <select id="challenge_new" resultType="Testchallenge">
+	SELECT * FROM MAKECHALLENGE
+	ORDER BY CHALLENGENO DESC;
+	</select>
+  
+  
+ 	 <!-- 디테일 - 온라인/오프라인 챌린지 -->
+    <select id="challenge_onofflist" resultType="Testchallenge" parameterType="String">
+	SELECT * FROM MAKECHALLENGE
+	WHERE ONOFFCHOICE= #{ONOFFCHOICE}
+	ORDER BY CHALLENGENO DESC;
+	</select>
+
+  
+    <!-- 디테일 - 카테고리 챌린지 -->
+    <select id="challenge_categorylist" resultType="Testchallenge" parameterType="String">
+	SELECT * FROM MAKECHALLENGE
+	WHERE CATEGORY= #{category}
+	ORDER BY CHALLENGENO DESC;
+ 	</select>
+  
+  
+    <!-- 검색 기능 -->
+    <select id="getSearchList" resultType="Testchallenge" parameterType="String">
+    SELECT * 
+	FROM MAKECHALLENGE
+	where CHALLENGETITLE like CONCAT('%', '#{keyword}', '%')
+	or ONOFFCHOICE like CONCAT('%', '#{keyword}', '%')
+	or CATEGORY like CONCAT('%', '#{keyword}', '%')
+	or OFFLINEADDRESS like CONCAT('%', '#{keyword}', '%')
+	or OFFLINEADDRESSDETAIL like CONCAT('%', '#{keyword}', '%')
+	ORDER BY CHALLENGENO DESC;
+  	</select>
+  
+
+</mapper>
+
    <!-- 이재혁 -->
    <insert id="offlineinsert" parameterType="makingChallengeDto">
 			INSERT INTO MAKECHALLENGE VALUES(
@@ -73,3 +122,4 @@ private int challengeno;
 	private String thumbnailname;			// 대표사진 이름
 	
  -->
+

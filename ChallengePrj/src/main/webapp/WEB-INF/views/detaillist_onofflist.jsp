@@ -38,7 +38,7 @@
 	
 	
 	
- <!-- 카테고리 아이콘 -->
+	<!-- 카테고리 아이콘 -->
     <section class="category-icon">
     <div class="banner-section spad">
         <div class="container-fluid">
@@ -137,7 +137,7 @@
     	 <div class="list-container">
    			 	<div class="list">
    			 		 <ul>
-   		  			<li class="list-name"><h3>챌린지 리스트 👀</h3></li>
+   		  			<li class="list-name"><h3>챌린지 리스트 👀 </h3></li>
    		  			</ul>
 				</div>
     

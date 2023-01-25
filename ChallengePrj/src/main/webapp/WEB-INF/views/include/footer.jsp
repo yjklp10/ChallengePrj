@@ -7,7 +7,7 @@
 
  <!-- Footer Section Begin -->
     <footer class="footer-section">
-         <div class="footer-img">
+         <div class="footer">
                <img src="img/작심백일footer3.png">
         </div>
     </footer>

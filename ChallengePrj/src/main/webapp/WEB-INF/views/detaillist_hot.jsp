@@ -137,7 +137,7 @@
     	 <div class="list-container">
    			 	<div class="list">
    			 		 <ul>
-   		  			<li class="list-name"><h3>챌린지 리스트 👀</h3></li>
+   		  			<li class="list-name"><h3>인기 챌린지 리스트 👀</h3></li>
    		  			</ul>
 				</div>
     
@@ -146,21 +146,21 @@
    		 		
    		 		  <ul>
 					 <c:choose>
-    				<c:when test="${empty newRes }">
+    				<c:when test="${empty hotRes }">
      					<p>--- 작성된 글이 없습니다 ---</p>
      				</c:when>
      			
      			<c:otherwise>
-    			<c:forEach var="newRes" items="${newRes }" begin="0" step="1">
+    			<c:forEach var="hotRes" items="${hotRes }" begin="0" step="1">
 
 				
   				  <li> 
   				  <a href=""> 				  	
-   				   <img src="${pageContext.request.contextPath }/static2/thumb/${newRes.thumbnailpath }" alt="${newRes.thumbnailpath }">
+   				   <img src="${pageContext.request.contextPath }/static2/thumb/${hotRes.thumbnailpath }" alt="${hotRes.thumbnailpath }">
    				    
    				    <div class="content-name">
-       					<p class="chname"><c:out value="${newRes.challengetitle }"/> / <span class="onoff"> <c:out value="${newRes.onoffchoice }"/></span></p>
-        				<p class="timeoff">시작일 : <fmt:formatDate value="${newRes.challengestartdate }" pattern="yyyy-MM-dd"/> ~ </p>
+       					<p class="chname"><c:out value="${hotRes.challengetitle }"/> / <span class="onoff"> <c:out value="${hotRes.onoffchoice }"/></span></p>
+        				<p class="timeoff">시작일 : <fmt:formatDate value="${hotRes.challengestartdate }" pattern="yyyy-MM-dd"/> ~ </p>
       				 </div>
       				 </a>
      				</li>

@@ -1,9 +1,10 @@
 package com.example.demo.dto;
 
 import java.util.Date;
+import java.util.List;
 
 public class Testchallenge {
-private int challengeno;
+	private int challengeno;
 	private String challengetitle;
 	private String onoffchoice;
 	private String chllengeprequency;
@@ -20,6 +21,9 @@ private int challengeno;
 	private String thumbnailpath;
 	private String memberid;
 	
+	//조아라 - 검색 기능
+	private String keyword; //검색 내용
+	
 	public Testchallenge() {
 		super();
 	}
@@ -27,7 +31,7 @@ private int challengeno;
 	public Testchallenge(int challengeno, String challengetitle, String onoffchoice, String chllengeprequency,
 			String challengeperiod, Date certificationstarttime, Date certificationendtime, Date challengestartdate,
 			String certificationway, String challengeintro, int deposit, int maxchallenger, String category,
-			String thumbnailname, String thumbnailpath, String memberid) {
+			String thumbnailname, String thumbnailpath, String memberid, String keyword) {
 		super();
 		this.challengeno = challengeno;
 		this.challengetitle = challengetitle;
@@ -45,6 +49,7 @@ private int challengeno;
 		this.thumbnailname = thumbnailname;
 		this.thumbnailpath = thumbnailpath;
 		this.memberid = memberid;
+		this.keyword = keyword;
 	}
 
 	public int getChallengeno() {
@@ -175,8 +180,16 @@ private int challengeno;
 		this.memberid = memberid;
 	}
 
-	
-	
-	
+	public String getkeyword() {
+		return keyword;
+	}
+
+	public void setkeyword(String keyword) {
+		this.keyword = keyword;
+	}
+
+	public static List<Testchallenge> getSearchList(Testchallenge searchservice) {
+		return getSearchList(searchservice);
+	}
 	
 }
