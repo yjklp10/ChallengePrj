@@ -10,7 +10,7 @@
 <h3><a href="home_main">home_main</a></h3>
 
 <h3><a href="detaillist">detail</a></h3>
-
+<h3><a href="makingChallengeStart">챌린지 만들기</a></h3>
    
     <!-- Js Plugins -->
     <script src="js/jquery-3.3.1.min.js"></script>
