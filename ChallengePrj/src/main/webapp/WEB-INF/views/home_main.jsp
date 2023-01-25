@@ -12,7 +12,6 @@
     </div>
 
 
- 
     <!-- 상단 홍보 배너 -->
      
     <section class="hero-section">
@@ -62,36 +61,64 @@
 
 
 
+ <!-- 스크롤 퀵 메뉴 -->
 
-    <!-- 카테고리 아이콘 -->
+	<div id="quick">
+
+			<a href="#">
+			<img src="img/공지사항.png">
+			<p id="quick-text">공지사항</p>
+			</a>
+			
+			<a href="#">
+			<img src="img/가이드.png">
+			<p id="quick-text">가이드</p>
+			</a>
+			
+			<a href="#">
+			<img src="img/챌린지개설.png">
+			<p id="quick-text">챌린지 개설</p>
+			</a>
+			
+			<a href="#">
+			<img src="img/마이페이지.png">
+			<p id="quick-text">마이페이지</p>
+			</a>
+			
+	</div>
+
+	<!-- 스크롤 퀵 메뉴 끝 -->
+
+
+   <!-- 카테고리 아이콘 -->
     <section class="category-icon">
     <div class="banner-section spad">
         <div class="container-fluid">
             <div class="row">
                 <div class="icon0">
                     <div class="single-banner">
-                       <a href="detaillist">
-                        <img src="img/인기.png" alt="">
+                       <a href='detaillist'>
+                        <img src="img/신규.png">
                         <div class="inner-text">
-                            <h5>인기</h5>
+                            <h5>신규</h5>
                         </div>
                        </a>
                     </div>
                 </div>
                 <div class="icon0">
                     <div class="single-banner">
-                    <a href="detaillist">
-                        <img src="img/신규.png" alt="">
+                    <a href='detaillist_hot'>
+                        <img src="img/인기.png">
                         <div class="inner-text">
-                            <h5>신규</h5>
-                        </div>
-                        </a>
+                            <h5>인기</h5>
+                         </div>
+                    </a>
                     </div>
                 </div>
                <div class="icon0">
                     <div class="single-banner">
-                    <a href="detaillist">
-                        <img src="img/온라인.png" alt="">
+                    <a href='detaillist_onofflist?onoffchoice=온라인'>
+                        <img src="img/온라인2.png">
                         <div class="inner-text">
                             <h5>온라인</h5>
                         </div>
@@ -100,8 +127,8 @@
                 </div>
                <div class="icon0">
                     <div class="single-banner">
-                    <a href="detaillist">
-                        <img src="img/오프라인.png" alt="">
+                    <a href='detaillist_onofflist?onoffchoice=오프라인'>
+                        <img src="img/오프라인.png">
                         <div class="inner-text">
                             <h5>오프라인</h5>
                         </div>
@@ -110,8 +137,8 @@
                 </div>
                <div class="icon0">
                     <div class="single-banner">
-                    <a href="detaillist">
-                        <img src="img/운동.png" alt="">
+                    <a href='detaillist_category?category=운동'>
+                        <img src="img/운동.png">
                         <div class="inner-text">
                             <h5>운동</h5>
                         </div>
@@ -120,8 +147,8 @@
                 </div>
                 <div class="icon0">
                     <div class="single-banner">
-                    <a href="detaillist">
-                        <img src="img/공부.png" alt="">
+                    <a href='detaillist_category?category=공부'>
+                        <img src="img/공부2.png">
                         <div class="inner-text">
                             <h5>공부</h5>
                         </div>
@@ -130,8 +157,8 @@
                 </div>
                <div class="icon0">
                     <div class="single-banner">
-                    <a href="detaillist">
-                        <img src="img/취미.png" alt="">
+                    <a href='detaillist_category?category=취미'>
+                        <img src="img/취미2.png">
                         <div class="inner-text">
                             <h5>취미</h5>
                         </div>
@@ -140,8 +167,8 @@
                 </div>
                <div class="icon0">
                     <div class="single-banner">
-                    <a href="detaillist">
-                        <img src="img/규칙적인생활.png" alt="">
+                    <a href='detaillist_category?category=규칙적인 생활'>
+                        <img src="img/규칙적인생활.png">
                         <div class="inner-text">
                            <h5>규칙적인 생활</h5>
                          </div>
@@ -154,6 +181,7 @@
     </section>
     <!-- 카테고리 아이콘 끝 -->
     
+   
       
     <!-- 인기 챌린지 리스트 -->
     
@@ -161,8 +189,8 @@
     	 <div class="list-container">
    			 	<div class="list">
    			 		 <ul>
-   		  			<li class="list-name"><a href='detaillist'><h3>인기 챌린지 🔥</h3></a></li>
-   		  			<li class="list-plus"><a href='detaillist'><h6>더보기 +</h6></a></li>
+   		  			<li class="list-name"><a href='detaillist_hot'><h3>인기 챌린지 🔥</h3></a></li>
+   		  			<li class="list-plus"><a href='detaillist_hot'><h6>더보기 +</h6></a></li>
    		  			</ul>
 				</div>
 				
@@ -230,9 +258,9 @@
 				
   				  <li> 
   				  <a href=""> 				  	
-   				    <img src="${pageContext.request.contextPath }/static2/thumb/${newRes.thumbnailpath }" alt="${newRes.thumbnailpath }">
+   				   <img src="${pageContext.request.contextPath }/static2/thumb/${newRes.thumbnailpath }" alt="${newRes.thumbnailpath }">
    				    
-   				     <div class="content-name">
+   				    <div class="content-name">
        					<p class="chname"><c:out value="${newRes.challengetitle }"/> / <span class="onoff"> <c:out value="${newRes.onoffchoice }"/></span></p>
         				<p class="timeoff">시작일 : <fmt:formatDate value="${newRes.challengestartdate }" pattern="yyyy-MM-dd"/> ~ </p>
       				 </div>
@@ -424,6 +452,15 @@
     			-->
     			    <!-- 각 챌린지 끝-->
 		
+	 <!-- top 버튼 -->
+
+	</div>
+	  <p class="btn_top"><a href="#none">
+		 <img src="img/화살표.png">
+	  </a></p>
+	</div>
+	
+	<!-- top 버튼 끝 -->
 
     
     <script src="js/jquery-3.3.1.min.js"></script>

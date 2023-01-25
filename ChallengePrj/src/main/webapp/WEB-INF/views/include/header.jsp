@@ -56,11 +56,12 @@
                         </div>
                         <div class="advanced-search">
                             <div class="input-group">
-                                <input type="text" placeholder="챌린지 검색">
-                                <button type="button">
+                                <input type="text" name="keyword" placeholder="챌린지 검색"></input>
+                                <button type="button" onclick="getSearchList()">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                                 <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                                </svg></button>
+                                </svg>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -74,7 +75,7 @@
                 <nav class="nav-menu mobile-menu">
                     <ul>
                         <li class="active"><a href="home_main">Home</a></li>
-                        <li><a href="#">정보</a>
+                        <li class="top-menu"><a href="#">정보</a>
                             <ul class="dropdown">
                                 <li><a href="#">소개</a></li>
                                 <li><a href="#">공지사항</a></li>
@@ -82,17 +83,19 @@
                                 <li><a href="#">이벤트</a></li>
                             </ul>
                         </li>
-                      	<li><a href="detaillist">작심백일!</a>
+                      	<li class="top-menu"><a href="detaillist">작심백일!</a>
                             <ul class="dropdown">
-                                <li><a href="detaillist">인기/신규</a></li>
-                                <li><a href="detaillist">온라인/오프라인</a></li>
-                                <li><a href="detaillist">운동</a></li>
-                                <li><a href="detaillist">공부</a></li>
-                                <li><a href="detaillist">취미</a></li>
-                                <li><a href="detaillist">규칙적인 생활</a></li>
+                                <li><a href="detaillist">신규</a></li>
+                                <li><a href="detaillist_hot">인기</a></li>
+                                <li><a href='detaillist_onofflist?onoffchoice=온라인'>온라인</a></li>
+                                <li><a href='detaillist_onofflist?onoffchoice=오프라인'>오프라인</a></li>
+                                <li><a href='detaillist_category?category=운동'>운동</a></li>
+                                <li><a href='detaillist_category?category=공부'>공부</a></li>
+                                <li><a href='detaillist_category?category=취미'>취미</a></li>
+                                <li><a href='detaillist_category?category=규칙적인 생활'>규칙적인 생활</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">MY 챌린지</a>
+                        <li class="top-menu"><a href="#">MY 챌린지</a>
                             <ul class="dropdown">
                                 <li><a href="chdetail">개설하기</a></li>
                                  <li><a href="uploadAjax">인증하기</a></li>

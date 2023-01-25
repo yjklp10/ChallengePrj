@@ -28,6 +28,112 @@
     });
 
 
+    /*------------------
+		서치 기능
+	--------------------*/
+	function getSearchList(){
+	$.ajax({
+		type: 'GET',
+		url : "/getSearchList",
+		data : $("form[name=search-form]").serialize(),
+		success : function(result){
+			//테이블 초기화
+			$('#content-list > ul').empty();
+			if(result.length>=1){
+				result.forEach(function(item){
+					str='<ul>'
+					str+="<p><a href = '/getSearchList?challengeno=" + item.challengeno + "'>" + item.challengetitle + "</a></p>";
+					str+="<p>"+item.onoffchoice+"</p>";
+					str+="<p>"+item.challengestartdate+"</p>";
+					str+="</ul>"
+					$('#content-list').append(str);
+        				})				 
+					}
+				}
+			})
+		}
+
+
+    /*------------------
+		스크롤 퀵 메뉴
+	--------------------*/
+
+
+	$(function() {
+
+  	var UI = {
+  	  init: function() {
+      this.quickMenuFn();
+      this.topBtn();
+ 	   },
+
+	initialize: function() {
+      this.id = {
+        target: {
+          quick: '#quick',
+          stickyTop: '#footer-section'
+        },
+        topBtnClass: 'btn_top'
+      };
+      this.init();
+    },
+
+    quickMenuFn: function() {
+      var quick = $(this.id.target.quick);
+      var qTop = parseInt(quick.css('top'));
+
+      $(window).scroll(function() {
+        var winTop = $(window).scrollTop();
+	
+		
+        quick.stop().animate({
+          top: winTop + qTop
+        }, 1000);
+        
+      })
+    },
+
+    topBtn: function() {
+      var btnLocation = $('.' + this.id.topBtnClass);
+      var timerId = 0;
+
+      $(window).on('scroll', function() {
+        var winTop = $(window).scrollTop();
+        if (winTop > 400) {
+          btnLocation.fadeIn();
+          clearInterval(timerId);
+          timerId = setInterval(btnEffet, 1000);
+        } else {
+          btnLocation.fadeOut();
+          clearInterval(timerId);
+        }
+
+      });
+
+      function btnEffet() {
+        btnLocation.fadeTo('300', 1).fadeTo('300', 1);
+      }
+
+      this.scrollTop(btnLocation);
+    },
+
+    scrollTop: function(eTarget, speed) {
+      var speed = speed || null;
+      eTarget.on('click', function() {
+        $('html, body').animate({
+          scrollTop: $("body").offset().top
+        }, speed)
+      })
+    }
+
+  };
+
+  $(function() {
+    UI.initialize();
+  })
+
+	})
+
 
 
     /*------------------
