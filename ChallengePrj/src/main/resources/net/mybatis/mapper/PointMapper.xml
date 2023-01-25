@@ -55,7 +55,7 @@
 
 	<insert id="insert" parameterType="pointDto">
 		INSERT INTO POINTINFO
-		VALUES( NULL, #{memberid}, #{bankname}, #{accountnumber},#{accountholder},#{withdrawpoint},"진행중", NOW())		
+		VALUES( NULL, #{memberid}, #{bankname}, #{accountnumber},#{accountholder},#{withdrawpoint},"1", NOW())		
 	</insert>
 	
 	<update id="updatepoint" parameterType="pointDto">

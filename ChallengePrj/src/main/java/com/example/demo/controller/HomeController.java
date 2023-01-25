@@ -70,7 +70,7 @@ public class HomeController {
 		}	
 	}
 	
-	@RequestMapping("/manager")
+	@RequestMapping("/manager2")
 	public String list(Model model) {
 		model.addAttribute("list", biz.selectList());
 		return "manager";
