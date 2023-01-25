@@ -47,7 +47,20 @@
 	margin-top :5px;
 	margin-right :5px;
 }
-.blog-sidebar .blog-catagory .blog-btn {
+.blog-sidebar .blog-catagory .blog-btn, .blog-btn1{
+
+	letter-spacing: 2px;
+	margin-top: 15px;
+	color: #ffffff;
+	background: #e7ab3c;
+	border: 1px solid #e7ab3c;
+	font-size: 14px;
+	font-weight: 700;
+	text-transform: uppercase;
+	padding: 11px 30px 11px;
+	cursor: pointer;
+}
+.blog-sidebar .managerpage .blog-btn {
 
 	letter-spacing: 2px;
 	margin-top: 15px;
@@ -86,8 +99,15 @@
 }
 
 </style>
-  
-    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+ <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+
+$(function (){
+	$(".blog-btn1").click(function (){
+		alert("수정완료.");
+	});
+});
+</script>
 
 </head>
 
@@ -138,24 +158,32 @@
 							<label for="point">포인트</label> 
 							<input id="point" name="point" type="text" value="${dto.mypoint }" disabled>
 						</div>
-						<button type="submit" class="blog-btn">수정하기</button>
+						<button type="submit" class="blog-btn1" >수정하기</button>
 						<button type="button" class="blog-btn" onclick="location.href='/point?memberid=${dto.memberid }'">환급신청</button>
 					</form>
 				</div>
 				<div class="recent-post">
 					<h4>챌린지 현황</h4>
 					<div class="recent-blog">
-						<a href="#" class="rb-item">
-							<div class="rb-pic">
+						<c:choose>
+							<c:when test="${empty chlist }">
+								------참여한 챌린지가 없습니다. ------ <br>
+							</c:when>
+							<c:otherwise>
+								<a href="#" class="rb-item">
+								<div class="rb-pic">
 								<img src="img/blog/recent-1.jpg" alt="">
-							</div>
-							<div class="rb-text">
-								<h6>30분 운동하기</h6>								
+								</div>
+								<div class="rb-text">
+								<h6>${dto.challengeintro }</h6>								
 								<p>
-									참여중 <span>12.12-12.15</span>
+									참여중 <span>${dto.challengstartdate}</span>
 								</p>
-							</div>
-						</a> 
+								</div>
+								</a> 
+							</c:otherwise>	
+						</c:choose>		
+						 
 						<a href="#" class="rb-item">
 							<div class="rb-pic">
 								<img src="img/blog/recent-2.jpg" alt="">
@@ -170,7 +198,7 @@
 						</a> 
 					</div>
 				</div>
-				<div class="group-input">
+				<div class="managerpage">
 				<button type="button" class="blog-btn" onclick="location.href='/manager?memberrole=${dto.memberrole }'">관리자 페이지</button>
 				</div>
 			</div>
