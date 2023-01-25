@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.example.demo.config.auth.PrincipalDetails;
 import com.example.demo.dto.MemberDto;
 import com.example.demo.mapper.MemberMapper;
+import com.mysql.cj.Session;
 
 @Service
 public class PrincipalDetailsBizImpl implements UserDetailsService{
@@ -22,6 +23,7 @@ public class PrincipalDetailsBizImpl implements UserDetailsService{
 		System.out.println("memberid : "+username);
 		MemberDto dtoEntity = mapper.idChk(username);
 		if(dtoEntity != null) {
+			
 			return new PrincipalDetails(dtoEntity);
 		}
 		

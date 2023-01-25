@@ -43,6 +43,8 @@ public class PrincipalDetails implements UserDetails{
 		return collect;
 	}
 	
+	
+	
 	public MemberDto getMemberDto() {
         return dto;
     }

@@ -102,15 +102,19 @@ function id_overlap_chk(){
 	      success : function(data){
 	         alert("해당 이메일로 인증번호 발송이 완료되었습니다. \n 확인부탁드립니다.");
 	         console.log("data : "+data);
-	         chkEmailConfirm(data, $("#memberemailconfirm"), $("#memberemailconfirmTxt"));
+	         $("#emailcode").attr('value',data);
 	      }
 	   });
 	}
 
-	function chkEmailConfirm(data, $("#memberemailconfirm"), $("#memberemailconfirmTxt")){
-		if(data != $("memberemailconfirm").val(){
-			$("#memberemailconfirmTxt")
-		})
+	function chkEmailConfirm(){
+		if($("#emailcode").val() != $("#memberemailconfirm").val()){
+			$("#memberemailconfirmTxt").html("인증코드가 일치하지 않습니다.").css("display","flex").css("color","#f23c3c");
+			$("#memberemail").attr('title','nemail');
+		}else if($("#emailcode").val() == $("#memberemailconfirm").val()){
+			$("#memberemailconfirmTxt").html("인증코드가 일치합니다.").css("display","flex").css("color","#008000");
+			$("#memberemail").attr('title','yemail');
+		}
 	}
 
 		
@@ -360,10 +364,13 @@ function id_overlap_chk(){
                                 <span id="pwchk"></span>
                             </div>
                              <div class="group-input">
+                             	<input type="hidden" id="emailcode">
                                 <label for="email">이메일 *</label>
-                                <input type="email" class="form-control" name="memberemail" id="memberemail" title="nemail" required="required">
-                                <input type="button" value="인증번호 발송" id="checkEmail" onclick="eamil_code();" style="width: 100px;float: right;">
-								<input type="text" class="form-control" id="memberemailconfirm" placeholder="인증번호를 입력해 주세요" style="width:80%;">
+                                <input type="button" value="인증번호 발급" id="checkEmail" onclick="eamil_code();" style="width: 100px;float: right;">
+                                <input type="email" class="form-control" name="memberemail" id="memberemail" title="nemail" required="required" style="width:80%;"> <br>
+                                <input type="button" value="인증번호 확인" id="checkEmail" onclick="chkEmailConfirm();" style="width: 100px;float: right;">
+								<input type="text" class="form-control" id="memberemailconfirm" placeholder="인증번호를 입력해 주세요" style="width:80%;" >
+								
 								<span id="memberemailconfirmTxt"></span>
                                 
                                 
