@@ -89,10 +89,24 @@ public class PointDaoImpl implements PointDao {
 		try {
 			res1=sqlSession.update(NAMESPACE+"updatepoint",dto);
 		} catch (Exception e) {
-			System.out.println("[error] : update");
+			System.out.println("[error] : updatepoint");
 			e.printStackTrace();
 		}
 		
 		return res1;
+	}
+
+	@Override
+	public int updatestatus(PointDto dto) {
+		int res=0;
+		try {
+			res=sqlSession.update(NAMESPACE+"updatestatus",dto);
+		} catch (Exception e) {
+			System.out.println("[error] : updatestatus");
+			e.printStackTrace();
+		}
+		
+		return res;
+
 	}
 }

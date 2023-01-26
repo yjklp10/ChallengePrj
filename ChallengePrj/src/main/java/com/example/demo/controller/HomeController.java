@@ -85,6 +85,17 @@ public class HomeController {
 		return "manager";
 	}
 	
+	@RequestMapping("/manager.do")
+	public String updatestatus(PointDto dto){
+		int res = biz.updatestatus(dto);
+		
+		if(res>0) {
+			return "redirect:manager2";
+		}else {
+			return "redirect:manager2";
+		}
+	}
+	
 	@RequestMapping("/ex")
 	public String ex() {
 		return "exwrite";
