@@ -21,8 +21,6 @@ public class PrincipalOauth2UserService extends DefaultOAuth2UserService{
 		System.out.println("getClientRegistration : "+userRequest.getClientRegistration());
 		System.out.println("getAccessToken : "+userRequest.getAccessToken());
 		
-		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal(); 
-		UserDetails userDetails = (UserDetails)principal; 
 		
 		
 		OAuth2User oauth2User = super.loadUser(userRequest);

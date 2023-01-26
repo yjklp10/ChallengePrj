@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
 
 
 <!DOCTYPE html>
@@ -36,14 +37,38 @@
 
  <!-- Header Section Begin -->
     <header class="header-section">
-        <div class="header-top">
-            <div class="container">
-                <div class="ht-right">
-                    <span class="login-panel">
-                    <img src="img/백일블럭2.png"> <a href="loginform.do">로그인 </a>/ <a href="registerform.do">회원가입</a>
-                </div>
-            </div>
-        </div>
+
+    	<sec:authorize access="isAnonymous()">
+	        <div class="header-top">
+	            <div class="container">
+	                <div class="ht-right">
+	                    <span class="login-panel">
+	                    <img src="img/백일블럭2.png"> <a href="loginform.do">로그인 </a>/ <a href="registerform.do">회원가입</a>
+	                </div>
+	            </div>
+	        </div>
+        </sec:authorize>
+        <sec:authorize access="isAuthenticated()">
+	        <div class="header-top">
+	            <div class="container">
+	                <div class="ht-right">
+	                    <span class="login-panel">
+	                    <img src="img/백일블럭2.png"><a href="">마이페이지</a> / <a href="/logout">로그아웃</a>
+	                </div>
+	            </div>
+	        </div>
+        </sec:authorize>
+        <%-- <sec:authorize access="hasRole(ROLE_ADMIN)">
+	        <div class="header-top">
+	            <div class="container">
+	                <div class="ht-right">
+	                    <span class="login-panel">
+	                    <img src="img/백일블럭2.png"> <a href="">관리자페이지</a><a href="/logout">로그아웃</a>
+	                </div>
+	            </div>
+	        </div>
+        </sec:authorize> --%>
+
         <div class="container">
             <div class="inner-header">
                 <div class="row">
