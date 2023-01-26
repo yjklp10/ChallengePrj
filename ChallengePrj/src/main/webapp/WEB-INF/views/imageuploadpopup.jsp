@@ -104,6 +104,7 @@ height:30px;
 
 </head>
 <body>
+    <input type="hidden" name="chid" value="${list.chid}">
 <div class="container"> 
         <div class="popup-wrap" id="popup"> 
           <div class="popup">	
@@ -199,6 +200,8 @@ function showUploadImage(uploadResultArr){
 	
 	let title=$(".head-title")[0].innerText;
 	
+	let chid = $('input[name=chid]')[0].defaultValue;
+	
 	
 	str += "<div id='result_card'>";
 	str += "<img src='/display?fileName=" +fileCallPath +"'>";
@@ -208,6 +211,7 @@ function showUploadImage(uploadResultArr){
 	str += "<input type='hidden' name='uuid' value='"+ obj.uuid +"'>";
 	str += "<input type='hidden' name='fileName' value='"+ obj.fileName +"'>";
 	str += "<input type='hidden' name='title' value='"+title+"'>";
+	str += "<input type='hidden' name='title' value='"+chid+"'>";
 	str += "</form>"
 	str += "</div>";		
 	
@@ -246,13 +250,15 @@ function deleteFile(){
 
 function seletOne(){
 	let title=$(".head-title")[0].innerText;
+	let chid = $('input[name=chid]')[0].defaultValue;
 	var confirm=0;
 	$.ajax({
 		url:'/test',
 		type:'post',
 		data:{
 			  title,
-			  confirm         },
+			  confirm  
+			  chid },
 		success:function(data){
 			console.log(data);
 		}
