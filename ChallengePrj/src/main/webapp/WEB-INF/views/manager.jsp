@@ -62,9 +62,7 @@ table {
 </style>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script>
-$(function(){
-	$("#status").val("${dto.status}").attr("selected","selected");
-});
+
 </script>
 </head>
 
@@ -119,10 +117,10 @@ $(function(){
 											<td>${dto.withdrawpoint }</td>
 											<td><fmt:formatDate pattern="yyyy-MM-dd" value="${dto.pointdate }"/></td>
 											<td>
-											<select name="status" id="status">								
-												<option value=1 >접수</option>
-												<option value=2 >진행중</option>
-												<option value=3 >완료</option>
+											<select name="status" id="status" >								
+												<option value=1 <c:if test="${dto.status eq '1'}">selected</c:if> >접수</option>
+												<option value=2 <c:if test="${dto.status eq '2'}">selected</c:if>>진행중</option>
+												<option value=3 <c:if test="${dto.status eq '3'}">selected</c:if>>완료</option>
 											</select>
 											</td>
 										</tr>
@@ -131,7 +129,7 @@ $(function(){
 							</c:choose>
 						</tbody>
 					</table>
-					<button type="submit" class="ok-btn2">수정</button>
+					<button type="submit" class="ok-btn2" >수정</button>
 					</form>
 				</div>
 			</div>
