@@ -84,8 +84,8 @@ table {
 			<div class="blog-sidebar">
 				<div class="recent-post">
 					<h4>환급요청 목록</h4>
-					<form action="/point.do" method="post" name="withdraw" onsubmit="return pointChk()">
-  					 <input type="hidden" id="memberid" name="memberid" value="${dto.memberid }">
+					<form action="/manager.do" method="post">
+  					 <input type="hidden" id="memberrole" name="memberrole" value="${dto.memberrole }">
 						<table class="list-table">
 						<thead>
 							<tr>
@@ -117,11 +117,11 @@ table {
 											<td>${dto.withdrawpoint }</td>
 											<td><fmt:formatDate pattern="yyyy-MM-dd" value="${dto.pointdate }"/></td>
 											<td>
-											<!--  select name="status">								
-												<option value=1 <c:if test="${dto.status == 1}">selected</c:if>>접수</option>
-												<option value=2 <c:if test="${dto.status == 2}">selected</c:if>>진행중</option>
-												<option value=3 <c:if test="${dto.status == 3}">selected</c:if>>>완료</option>
-											</select>-->
+											<select name="status" id="status" >								
+												<option value=1 <c:if test="${dto.status eq '1'}">selected</c:if> >접수</option>
+												<option value=2 <c:if test="${dto.status eq '2'}">selected</c:if>>진행중</option>
+												<option value=3 <c:if test="${dto.status eq '3'}">selected</c:if>>완료</option>
+											</select>
 											</td>
 										</tr>
 									</c:forEach>
@@ -129,7 +129,7 @@ table {
 							</c:choose>
 						</tbody>
 					</table>
-					<button type="submit" class="ok-btn2">수정</button>
+					<button type="submit" class="ok-btn2" >수정</button>
 					</form>
 				</div>
 			</div>

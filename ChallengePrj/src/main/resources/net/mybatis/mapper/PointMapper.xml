@@ -33,6 +33,12 @@
    <select id="selectList" resultMap="pointMap">
    		SELECT * FROM POINTINFO;
    </select>
+   
+   <update id="updatestatus" parameterType="pointDto">
+		UPDATE POINTINFO
+		SET STATUS=#{status}
+		WHERE POINTNO=#{pointno}  
+	</update>
 
 	<insert id="insertMyinfo" parameterType="moneyDto">
 		INSERT INTO MYMONEY (MYMONEY.MEMBERID)
@@ -55,7 +61,7 @@
 
 	<insert id="insert" parameterType="pointDto">
 		INSERT INTO POINTINFO
-		VALUES( NULL, #{memberid}, #{bankname}, #{accountnumber},#{accountholder},#{withdrawpoint},"진행중", NOW())		
+		VALUES( NULL, #{memberid}, #{bankname}, #{accountnumber},#{accountholder},#{withdrawpoint},"1", NOW())		
 	</insert>
 	
 	<update id="updatepoint" parameterType="pointDto">
