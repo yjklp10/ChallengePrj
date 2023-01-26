@@ -16,7 +16,6 @@ import com.example.demo.biz.MainDetailBiz;
 import com.example.demo.dto.Testchallenge;
 
 
-
 @Controller
 public class MainController {
 	@RequestMapping("/home_main")
@@ -97,14 +96,17 @@ public class MainController {
         }
 	
 
-	@RequestMapping("/getSearchList")
-	public String getSearchList(@RequestParam("keyword") 
-			String keyword, Model model) throws Exception{
-		Testchallenge getSearchList = new Testchallenge();
-		getSearchList.setkeyword(keyword);
+	/*
+	@RequestMapping("/search")
+	public String search(@RequestParam(value="keyword") String keyword, Model model) {
+		
+		List<Testchallenge> search = BoardService.searchPosts(keyword);
+		
+		model.addAttribute("search", search);		
 		
 		return "getSearchList";
 		}
+	*/
 	
 }
 

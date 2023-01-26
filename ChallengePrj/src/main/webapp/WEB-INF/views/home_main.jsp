@@ -50,12 +50,16 @@
             </div>
     	</div>
     	
+    	
+   <!-- 
     	<div style="text-align:center">
  		 <span class="banner_dot"></span> 
  	 	<span class="banner_dot"></span> 
 	  	<span class="banner_dot"></span> 
 	    <span class="banner_dot"></span> 
 	</div>
+	-->
+	
     </section>
     <!-- 상단 홍보 배너 끝 -->
 

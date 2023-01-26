@@ -12,8 +12,6 @@ public interface MainDetailDao {
 	public List<Testchallenge> challenge_new();
 	public List<Testchallenge> challenge_onofflist(String onoffchoice);
 	public List<Testchallenge> challenge_categorylist(String category);
-	public List<Testchallenge> getSearchList(Testchallenge searchservice) throws Exception;
-	
 
 	
 }
