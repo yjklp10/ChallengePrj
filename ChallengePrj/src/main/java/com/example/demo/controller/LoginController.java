@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -8,12 +10,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.demo.biz.MemberBiz;
 import com.example.demo.biz.RegisterMailBizImpl;
 import com.example.demo.config.auth.PrincipalDetails;
+import com.example.demo.config.recaptcha.VerifyRecaptcha;
 import com.example.demo.dto.MemberDto;
 
 import lombok.RequiredArgsConstructor;
@@ -113,6 +117,21 @@ public class LoginController {
 	   return code;
 	}
 	
+	
+	@ResponseBody
+	@RequestMapping(value = "VerifyRecaptcha", method = RequestMethod.POST)
+	public int VerifyRecaptcha(HttpServletRequest request) {
+	    VerifyRecaptcha.setSecretKey("시크릿 코드");
+	    String gRecaptchaResponse = request.getParameter("recaptcha");
+	    try {
+	       if(VerifyRecaptcha.verify(gRecaptchaResponse))
+	          return 0; // 성공
+	       else return 1; // 실패
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        return -1; //에러
+	    }
+	}
 	
 
 

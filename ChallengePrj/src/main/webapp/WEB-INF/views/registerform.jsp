@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 
+<script src="https://www.google.com/recaptcha/api.js"></script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
 <script type="text/javascript">
 
@@ -118,7 +119,36 @@ function id_overlap_chk(){
 	}
 
 		
-
+	
+	$(function() {
+		$('#add_member_form').submit(function() {
+				var captcha = 1;
+				$.ajax({
+		            url: '/pro/VerifyRecaptcha',
+		            type: 'post',
+		            data: {
+		                recaptcha: $("#g-recaptcha-response").val()
+		            },
+		            success: function(data) {
+		                switch (data) {
+		                    case 0:
+		                        console.log("자동 가입 방지 봇 통과");
+		                        captcha = 0;
+		                		break;
+		                    case 1:
+		                        alert("자동 가입 방지 봇을 확인 한뒤 진행 해 주세요.");
+		                        break;
+		                    default:
+		                        alert("자동 가입 방지 봇을 실행 하던 중 오류가 발생 했습니다. [Error bot Code : " + Number(data) + "]");
+		                   		break;
+		                }
+		            }
+		        });
+				if(captcha != 0) {
+					return false;
+				} 
+		});
+		});
 </script>
 <style>
 	#memberemailconfirmTxt,
@@ -349,10 +379,11 @@ function id_overlap_chk(){
                         <form method="post" onsubmit="return overlap_chk()" action="register.do">
                             <div class="group-input">
                                 <label for="membername">아이디*</label>
-                                <input type="text" class="form-control" id="memberid" name="memberid" title="nid" required="required">
+                                <input type="text" class="form-control" id="memberid" name="memberid" title="nid" required="required" >
+                                <input type="button" value="중복확인" onclick="id_overlap_chk();" style="width: 100px;float: right;">
                                 <span class="id_use_chk">사용가능한 아이디입니다.</span>
                                 
-                                <input type="button" value="중복확인" onclick="id_overlap_chk();" style="width: 100px;float: right;">
+                                
                             </div>
                             <div class="group-input">
                                 <label for="pass">비밀번호 *</label>
@@ -366,10 +397,10 @@ function id_overlap_chk(){
                              <div class="group-input">
                              	<input type="hidden" id="emailcode">
                                 <label for="email">이메일 *</label>
-                                <input type="button" value="인증번호 발급" id="checkEmail" onclick="eamil_code();" style="width: 100px;float: right;">
-                                <input type="email" class="form-control" name="memberemail" id="memberemail" title="nemail" required="required" style="width:80%;"> <br>
-                                <input type="button" value="인증번호 확인" id="checkEmail" onclick="chkEmailConfirm();" style="width: 100px;float: right;">
-								<input type="text" class="form-control" id="memberemailconfirm" placeholder="인증번호를 입력해 주세요" style="width:80%;" >
+                                <input type="button" value="인증번호 발급" id="checkEmail" onclick="eamil_code();" style="width: 140px;float: right;">
+                                <input type="email" class="form-control" name="memberemail" id="memberemail" title="nemail" required="required" style="width:75%;"> <br>
+                                <input type="button" value="인증번호 확인" id="checkEmail" onclick="chkEmailConfirm();" style="width: 140px;float: right;">
+								<input type="text" class="form-control" id="memberemailconfirm" placeholder="인증번호를 입력해 주세요" style="width:75%;" >
 								
 								<span id="memberemailconfirmTxt"></span>
                                 
@@ -399,6 +430,7 @@ function id_overlap_chk(){
                             	<input type="radio" name="membergender" value="w" required="required">
                             	여성
                             </div>
+                            <div class="g-recaptcha" data-sitekey='6LcmDiokAAAAAGrPpnCPDUA12ENnLMo0DMeKdXX7'></div>
                             <button type="submit" onclick="overlap_chk()" class="site-btn register-btn">회원가입</button>
                         </form>
                         <div class="switch-login">
