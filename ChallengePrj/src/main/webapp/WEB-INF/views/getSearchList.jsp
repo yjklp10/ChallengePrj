@@ -137,7 +137,7 @@
     	 <div class="list-container">
    			 	<div class="list">
    			 		 <ul>
-   		  			<li class="list-name"><h3>챌린지 리스트 👀</h3></li>
+   		  			<li class="list-name"><h3>검색 결과 🔍<h3></li>
    		  			</ul>
 				</div>
     

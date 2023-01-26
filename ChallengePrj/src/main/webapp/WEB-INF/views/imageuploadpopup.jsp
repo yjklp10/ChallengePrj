@@ -38,7 +38,7 @@
 width:30px;
 height:30px;
 }
-.popup-wrap{
+ .popup-wrap{
   background-color:rgba(0,0,0,.3);  
   justify-content:center; 
   align-items:center;     
@@ -74,7 +74,7 @@ height:30px;
   padding:30px;             
 }
 .body-titlebox{             
-  text-align:center;      
+
   width:100%;
   height:40px;
   margin-bottom:10px;      
@@ -91,16 +91,17 @@ height:30px;
 }
 .pop-btn{ 
   display:inline-flex;           
-  width:50%;                    
+  width:100%;                    
   height:100%;                  
   justify-content:center;       
-  align-items:center;             
-  float:left;                   
+  align-items:center;                      
   color:#ffffff;                 
   cursor:pointer;                
 }
 
+
 </style>
+
 </head>
 <body>
 <div class="container"> 
@@ -196,15 +197,17 @@ function showUploadImage(uploadResultArr){
 	
 	let fileCallPath=encodeURIComponent(obj.uploadFilePath+"/s_"+obj.uuid+"_"+obj.fileName);
 	
+	let title=$(".head-title")[0].innerText;
+	
 	
 	str += "<div id='result_card'>";
 	str += "<img src='/display?fileName=" +fileCallPath +"'>";
 	str += "<div class='imgDeleteBtn' data-file='" + fileCallPath + "'>x</div>";
-	str += "<form action='/dbinsert' method='post'>"
+	str += "<form action='/dbinsert' method='post' onsubmit='return selectOne();'>";
 	str += "<input type='hidden' name='uploadFilePath' value='"+ obj.uploadFilePath +"'>";
 	str += "<input type='hidden' name='uuid' value='"+ obj.uuid +"'>";
 	str += "<input type='hidden' name='fileName' value='"+ obj.fileName +"'>";
-	str += "<input type='submit' value='작성' onclick='timecheck();'>"
+	str += "<input type='hidden' name='title' value='"+title+"'>";
 	str += "</form>"
 	str += "</div>";		
 	
@@ -241,7 +244,19 @@ function deleteFile(){
 	});
 }
 
-}
+function seletOne(){
+	let title=$(".head-title")[0].innerText;
+	var confirm=0;
+	$.ajax({
+		url:'/test',
+		type:'post',
+		data:{
+			  title,
+			  confirm         },
+		success:function(data){
+			console.log(data);
+		}
+	});
 
 </script>
 </body>
