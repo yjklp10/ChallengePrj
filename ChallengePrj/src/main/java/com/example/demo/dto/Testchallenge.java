@@ -2,6 +2,11 @@ package com.example.demo.dto;
 
 import java.util.Date;
 import java.util.List;
+import lombok.*;
+
+/*
+import com.example.demo.entity.BoardEntity;
+*/
 
 public class Testchallenge {
 	private int challengeno;
@@ -21,17 +26,36 @@ public class Testchallenge {
 	private String thumbnailpath;
 	private String memberid;
 	
-	//조아라 - 검색 기능
-	private String keyword; //검색 내용
-	
+
 	public Testchallenge() {
 		super();
 	}
 
+/*	
+	 public BoardEntity toEntity(){
+	        BoardEntity boardEntity = BoardEntity.builder()
+	                .challengeno(challengeno)
+	                .challengetitle(challengetitle)
+	                .onoffchoice(onoffchoice)
+	                .challengeintro(challengeintro)
+	                .chllengeprequency(chllengeprequency)
+	                .challengeperiod(challengeperiod)
+	                .challengestartdate(challengestartdate)
+	                .thumbnailname(thumbnailname)
+	                .thumbnailpath(thumbnailpath)
+	                .build();
+	        
+	        return boardEntity;
+	    }
+	
+	*/
+	
+	
 	public Testchallenge(int challengeno, String challengetitle, String onoffchoice, String chllengeprequency,
 			String challengeperiod, Date certificationstarttime, Date certificationendtime, Date challengestartdate,
 			String certificationway, String challengeintro, int deposit, int maxchallenger, String category,
-			String thumbnailname, String thumbnailpath, String memberid, String keyword) {
+			String thumbnailname, String thumbnailpath, String memberid) {
+		
 		super();
 		this.challengeno = challengeno;
 		this.challengetitle = challengetitle;
@@ -49,7 +73,7 @@ public class Testchallenge {
 		this.thumbnailname = thumbnailname;
 		this.thumbnailpath = thumbnailpath;
 		this.memberid = memberid;
-		this.keyword = keyword;
+
 	}
 
 	public int getChallengeno() {
@@ -180,16 +204,5 @@ public class Testchallenge {
 		this.memberid = memberid;
 	}
 
-	public String getkeyword() {
-		return keyword;
-	}
 
-	public void setkeyword(String keyword) {
-		this.keyword = keyword;
-	}
-
-	public static List<Testchallenge> getSearchList(Testchallenge searchservice) {
-		return getSearchList(searchservice);
-	}
-	
 }
