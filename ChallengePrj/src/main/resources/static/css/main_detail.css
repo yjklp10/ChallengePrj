@@ -521,14 +521,14 @@ img {
 -----------------------*/
 
 .hero-section {	
-	max-width: 100%;
+	width: 100%;
 	height: 725px;
 	object-fit: fill;
 }
 
 .hero-items .single-hero-items {
 	padding-top: 100px;
-	max-width: 100%;
+	width: 100%;
 	height: 725px;
 	object-fit: fill;
 }

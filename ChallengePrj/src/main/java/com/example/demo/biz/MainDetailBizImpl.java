@@ -35,9 +35,5 @@ public class MainDetailBizImpl implements MainDetailBiz {
 		return dao.challenge_categorylist(category);
 	}
 	
-	@Override
-	public List<Testchallenge> getSearchList(Testchallenge searchservice) throws Exception{
-		return dao.getSearchList(searchservice);
-	}
-
+	
 }

@@ -76,9 +76,5 @@ public class MainDetailDaoImpl implements MainDetailDao {
 		return challenge_categorylist;
 	}
 
-	@Override
-	public List<Testchallenge> getSearchList(Testchallenge searchservice) throws Exception{
-		return Testchallenge.getSearchList(searchservice);
-	}
 	
 }
