@@ -57,8 +57,6 @@
   	</select>
   
 
-</mapper>
-
    <!-- 이재혁 -->
    <insert id="offlineinsert" parameterType="makingChallengeDto">
 			INSERT INTO MAKECHALLENGE VALUES(
