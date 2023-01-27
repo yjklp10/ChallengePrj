@@ -248,21 +248,32 @@ function deleteFile(){
 	});
 }
 
-function seletOne(){
+function test(){
 	let title=$(".head-title")[0].innerText;
+    
 	let chid = $('input[name=chid]')[0].defaultValue;
-	var confirm=0;
+	console.log(title);
+
 	$.ajax({
 		url:'/test',
 		type:'post',
-		data:{
-			  title,
-			  confirm  
-			  chid },
+		data:{ title,
+			   chid },
 		success:function(data){
-			console.log(data);
+			if(data == 1){
+				alert("인증 성공");
+				return true;
+			}else{
+				alert("인증 한도를 초과했습니다");
+				return false;
+			}
+		},
+		error:function(){
+			alert("인증 오류!");
+			return false;
 		}
 	});
+}
 
 </script>
 </body>

@@ -8,4 +8,7 @@ public interface FileUploadbiz {
 public int insert(AttachImageDto dto);
 public List<AttachImageDto> getAttachList();
 public List<AttachImageDto> getAttachListtwo();
+public void challengeList();
+public void selectOne();
+public int updateOne();
 }

@@ -29,6 +29,24 @@ public List<AttachImageDto> getAttachListtwo() {
 	return fileUploadMapper.seletListtwo();
 }
 
+@Override
+public int updateOne() {
+	
+	return 0;
+}
+
+@Override
+public void selectOne() {
+	
+	
+}
+
+@Override
+public void challengeList() {
+
+	
+}
+
 
 
 }
