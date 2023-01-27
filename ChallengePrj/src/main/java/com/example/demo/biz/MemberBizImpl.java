@@ -38,4 +38,20 @@ public class MemberBizImpl implements MemberBiz{
 		return mapper.insert(dto);
 	}
 
+	@Override
+	public MemberDto forgetId(String membername, String memberemail) {
+		return mapper.forgetId(membername, memberemail);
+	}
+
+	@Override
+	public MemberDto forgetPw(String mameberid, String memberemail) {
+		return mapper.forgetPw(mameberid, memberemail);
+	}
+
+	@Override
+	public int pwUdate(String pw, String membername) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }

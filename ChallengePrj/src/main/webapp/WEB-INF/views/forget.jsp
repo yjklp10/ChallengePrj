@@ -11,11 +11,13 @@
 		$("#forget").attr("name","membername").attr("placeholder","이름")
 		$("#inputID").attr("class","active")
 		$("#inputPW").attr("class","")
+		$("#forgetform").attr("action","forgetid.do")
 	}
 	function forgetPW(){
 		$("#forget").attr("name","memberid").attr("placeholder","아이디")
 		$("#inputID").attr("class","")
 		$("#inputPW").attr("class","active")
+		$("#forgetform").attr("action","forgetpw.do")
 	}
 </script>
 <head>
@@ -229,7 +231,7 @@
                 <div class="col-lg-6 offset-lg-3">
                     <div class="register-form">
                         <h2>아이디/비밀번호 찾기</h2>
-                        <form action="#">
+                        <form id="forgetform" action="forgetid.do">
                             <div class="con">
                             	<ul class="ayer-tab" >
                             		<li id="inputID" class="active" onclick="forgetID()" >아이디</li>
@@ -238,10 +240,10 @@
                             	<div class="tab-cont">
                             		<strong class="cont-txt" style="margin-left:135px;">본인 확인을 위해 아래의 정보를 입력해 주세요</strong>
                             		<div class="group-input">
-                            			<input id="forget" type="text" placeholder="이름" name="name" required="required">
+                            			<input id="forget" type="text" placeholder="이름" name="membername" required="required">
                             		</div>
                             		<div class="group-input">
-                            			<input type="email" placeholder="이메일 'abcd@naver.com'" name="email" required="required">
+                            			<input type="email" placeholder="이메일 'abcd@naver.com'" name="memberemail" required="required">
                             		</div>
                             		 <button type="submit" class="site-btn register-btn">확인</button>
                             	</div>
