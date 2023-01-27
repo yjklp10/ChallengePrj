@@ -78,9 +78,9 @@
                             </a>
                         </div>
                         <div class="advanced-search">
-                        	<form action="search" method="GET">
+                        	<form action="detaillist_search" method="GET">
                             <div class="input-group">
-                                <input type="text" name="keyword" placeholder="챌린지 검색"></input>
+                                <input type="text" name="keyword" placeholder="챌린지 검색">
                                 <button type="button">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                                 <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
@@ -122,7 +122,7 @@
                         </li>
                         <li class="top-menu"><a href="#">MY 챌린지</a>
                             <ul class="dropdown">
-                                <li><a href="chdetail">개설하기</a></li>
+                                <li><a href="makingChallengeStart">개설하기</a></li>
                                  <li><a href="uploadAjax">인증하기</a></li>
                                 <li><a href="payment">포인트</a></li>
                             </ul>

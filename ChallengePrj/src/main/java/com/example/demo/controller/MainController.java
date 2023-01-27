@@ -15,6 +15,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.example.demo.biz.MainDetailBiz;
 import com.example.demo.dto.Testchallenge;
 
+/*
+import com.example.demo.Service.BoardService;
+*/
+
 
 @Controller
 public class MainController {
@@ -33,6 +37,11 @@ public class MainController {
 	
 	@Autowired
 	private MainDetailBiz biz;
+	
+	/*
+	@Autowired
+	private BoardService boardService;
+	*/
 	
 	@GetMapping("/home_main")
     public String mainlist(Model model) {
@@ -55,9 +64,21 @@ public class MainController {
 		model.addAttribute("newRes", newRes);
 		
 		return "detaillist";
-
+		
         }
 	
+	/*
+	@RequestMapping("/detaillist_search")
+    public String detaillist_search(String keyword, Model model) {
+		
+		List<Testchallenge> newRes = biz.detaillist_search(keyword);
+		
+		model.addAttribute("newRes", newRes);
+		
+		return "detaillist";
+		
+        }
+        */
 	
 	@RequestMapping("/detaillist_hot")
     public String detaillist_hot(Model model) {
@@ -96,18 +117,6 @@ public class MainController {
         }
 	
 
-	/*
-	@RequestMapping("/search")
-	public String search(@RequestParam(value="keyword") String keyword, Model model) {
-		
-		List<Testchallenge> search = BoardService.searchPosts(keyword);
-		
-		model.addAttribute("search", search);		
-		
-		return "getSearchList";
-		}
-	*/
-	
 }
 
 
