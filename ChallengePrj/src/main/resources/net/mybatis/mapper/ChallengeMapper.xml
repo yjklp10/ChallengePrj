@@ -17,7 +17,7 @@
    <!-- 메인 - 인기 챌린지 -->
   <select id="challenge_hot" resultType="Testchallenge">
 	SELECT * FROM MAKECHALLENGE
-	ORDER BY MEMBERNO DESC;
+	ORDER BY MEMBERID DESC;
   </select>
   
   
@@ -83,12 +83,35 @@
 			       #{category},
 			       #{thumbnailpath},
 			       #{thumbnailname},
-			       NULL)
+			       #{memberid})
 		</insert>
-		 <insert id="onlineinsert" parameterType="makingChallengeDto">
-			INSERT INTO MAKECHALLENGE VALUES(NULL, #{challengetitle}, 'online' ,NULL,NULL,NULL, #{challengefrequency}, #{challengestartdate}, #{challengeenddate} ,#{challengeperiod},#{certificationstarttime}, #{certificationendtime}, #{successimgpath},#{successimgname},#{failimgpath},#{failimgname},#{certificationway},#{challengeintro},#{deposit},#{maxchallenger},#{category},#{thumbnailpath},#{thumbnailname})
+	 <insert id="onlineinsert" parameterType="makingChallengeDto">
+			INSERT INTO MAKECHALLENGE VALUES(
+			NULL,
+			 #{challengetitle},
+			  'online' ,
+			  NULL,
+			  NULL,
+			  NULL,
+			   #{challengefrequency},
+			    #{challengestartdate},
+			     #{challengeenddate} ,
+			     #{challengeperiod},
+			     #{certificationstarttime},
+			      #{certificationendtime},
+			       #{successimgpath},
+			       #{successimgname},
+			       #{failimgpath},
+			       #{failimgname},
+			       #{certificationway},
+			       #{challengeintro},
+			       #{deposit},
+			       #{maxchallenger},
+			       #{category},
+			       #{thumbnailpath},
+			       #{thumbnailname},
+			       #{memberid})
 		</insert>
-		
 </mapper>
 <!-- <insert id="exampleinsert" parameterType="UploadDto">
 			INSERT INTO EXAMPLE VALUES(#{hi},#{filename1},#{filepath1}, #{filename2},#{filepath2})

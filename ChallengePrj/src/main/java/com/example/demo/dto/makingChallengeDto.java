@@ -1,6 +1,7 @@
 package com.example.demo.dto;
 
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 import javax.persistence.Id;
 
@@ -24,13 +25,13 @@ public class makingChallengeDto {
 	private String onoffchoice;				//온오프 여부
 	private String offlineaddress;			//오프라인시 주소
 	private String offlineaddressdetail;	//오프라인시 상세 주소
-	private String offlinestarttime;		//오프라인시 시작 시간
+	private LocalTime offlinestarttime;		//오프라인시 시작 시간
 	private String challengefrequency;		//인증빈도
-	private String challengestartdate;		//챌린지 시작일
-	private String challengeenddate;		//챌린지 마감일
-	private String challengeperiod;			// 챌린지 기간
-	private String certificationstarttime;	// 인증 가능 시간
-	private String certificationendtime;	// 인증 종료 시간
+	private LocalDate challengestartdate;		//챌린지 시작일
+	private LocalDate challengeenddate;		//챌린지 마감일
+	private int challengeperiod;			// 챌린지 기간
+	private LocalTime certificationstarttime;	// 인증 가능 시간
+	private LocalTime certificationendtime;	// 인증 종료 시간
 	private String successimgpath;			// 인증성공예시 경로
 	private String successimgname;			// 인증성공예시 이름
 	private String failimgpath;				// 인증실패예시 경로
@@ -42,6 +43,7 @@ public class makingChallengeDto {
 	private String category;				// 카테고리
 	private String thumbnailpath;			// 대표사진 경로
 	private String thumbnailname;			// 대표사진 이름
+	private String memberid;
 	public int getChallengeno() {
 		return challengeno;
 	}
@@ -72,10 +74,10 @@ public class makingChallengeDto {
 	public void setOfflineaddressdetail(String offlineaddressdetail) {
 		this.offlineaddressdetail = offlineaddressdetail;
 	}
-	public String getOfflinestarttime() {
+	public LocalTime getOfflinestarttime() {
 		return offlinestarttime;
 	}
-	public void setOfflinestarttime(String offlinestarttime) {
+	public void setOfflinestarttime(LocalTime offlinestarttime) {
 		this.offlinestarttime = offlinestarttime;
 	}
 	public String getChallengefrequency() {
@@ -84,34 +86,34 @@ public class makingChallengeDto {
 	public void setChallengefrequency(String challengefrequency) {
 		this.challengefrequency = challengefrequency;
 	}
-	public String getChallengestartdate() {
+	public LocalDate getChallengestartdate() {
 		return challengestartdate;
 	}
-	public void setChallengestartdate(String challengestartdate) {
+	public void setChallengestartdate(LocalDate challengestartdate) {
 		this.challengestartdate = challengestartdate;
 	}
-	public String getChallengeenddate() {
+	public LocalDate getChallengeenddate() {
 		return challengeenddate;
 	}
-	public void setChallengeenddate(String challengeenddate) {
+	public void setChallengeenddate(LocalDate challengeenddate) {
 		this.challengeenddate = challengeenddate;
 	}
-	public String getChallengeperiod() {
+	public int getChallengeperiod() {
 		return challengeperiod;
 	}
-	public void setChallengeperiod(String challengeperiod) {
+	public void setChallengeperiod(int challengeperiod) {
 		this.challengeperiod = challengeperiod;
 	}
-	public String getCertificationstarttime() {
+	public LocalTime getCertificationstarttime() {
 		return certificationstarttime;
 	}
-	public void setCertificationstarttime(String certificationstarttime) {
+	public void setCertificationstarttime(LocalTime certificationstarttime) {
 		this.certificationstarttime = certificationstarttime;
 	}
-	public String getCertificationendtime() {
+	public LocalTime getCertificationendtime() {
 		return certificationendtime;
 	}
-	public void setCertificationendtime(String certificationendtime) {
+	public void setCertificationendtime(LocalTime certificationendtime) {
 		this.certificationendtime = certificationendtime;
 	}
 	public String getSuccessimgpath() {
@@ -180,12 +182,19 @@ public class makingChallengeDto {
 	public void setThumbnailname(String thumbnailname) {
 		this.thumbnailname = thumbnailname;
 	}
+	public String getMemberid() {
+		return memberid;
+	}
+	public void setMemberid(String memberid) {
+		this.memberid = memberid;
+	}
 	public makingChallengeDto(int challengeno, String challengetitle, String onoffchoice, String offlineaddress,
-			String offlineaddressdetail, String offlinestarttime, String challengefrequency, String challengestartdate,
-			String challengeenddate, String challengeperiod, String certificationstarttime, String certificationendtime,
-			String successimgpath, String successimgname, String failimgpath, String failimgname,
-			String certificationway, String challengeintro, int deposit, int maxchallenger, String category,
-			String thumbnailpath, String thumbnailname) {
+			String offlineaddressdetail, LocalTime offlinestarttime, String challengefrequency,
+			LocalDate challengestartdate, LocalDate challengeenddate, int challengeperiod,
+			LocalTime certificationstarttime, LocalTime certificationendtime, String successimgpath,
+			String successimgname, String failimgpath, String failimgname, String certificationway,
+			String challengeintro, int deposit, int maxchallenger, String category, String thumbnailpath,
+			String thumbnailname, String memberid) {
 		super();
 		this.challengeno = challengeno;
 		this.challengetitle = challengetitle;
@@ -210,11 +219,13 @@ public class makingChallengeDto {
 		this.category = category;
 		this.thumbnailpath = thumbnailpath;
 		this.thumbnailname = thumbnailname;
+		this.memberid = memberid;
 	}
 	public makingChallengeDto() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
 	
 	
 }
