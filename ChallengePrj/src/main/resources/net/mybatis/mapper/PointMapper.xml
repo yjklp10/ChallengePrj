@@ -37,7 +37,7 @@
    <update id="updatestatus" parameterType="pointDto">
 		UPDATE POINTINFO
 		SET STATUS=#{status}
-		WHERE POINTNO=#{pointno}  
+		WHERE POINTNO=#{pointno} 
 	</update>
 
 	<insert id="insertMyinfo" parameterType="moneyDto">

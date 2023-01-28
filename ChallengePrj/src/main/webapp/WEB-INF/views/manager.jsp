@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@page import="java.util.List" %>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -63,6 +64,7 @@ table {
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script>
 
+
 </script>
 </head>
 
@@ -108,19 +110,19 @@ table {
 								</c:when>
 								<c:otherwise>
 									<c:forEach items="${list }" var="dto">
-										<tr>
-											<td>${dto.pointno }</td>
+										<tr>											
+											<td><input type="hidden" name="pointno" id="pointno" value="${dto.pointno }">${dto.pointno }</td>
 											<td>${dto.memberid }</td>
 											<td>${dto.bankname }</td>
 											<td>${dto.accountholder }</td>
 											<td>${dto.accountnumber }</td>
 											<td>${dto.withdrawpoint }</td>
 											<td><fmt:formatDate pattern="yyyy-MM-dd" value="${dto.pointdate }"/></td>
-											<td>
+											<td>							
 											<select name="status" id="status" >								
-												<option value=1 <c:if test="${dto.status eq '1'}">selected</c:if> >접수</option>
-												<option value=2 <c:if test="${dto.status eq '2'}">selected</c:if>>진행중</option>
-												<option value=3 <c:if test="${dto.status eq '3'}">selected</c:if>>완료</option>
+												<option value=1 <c:if test="${dto.status eq '1'}">selected</c:if>>1</option>
+												<option value=2 <c:if test="${dto.status eq '2'}">selected</c:if>>2</option>
+												<option value=3 <c:if test="${dto.status eq '3'}">selected</c:if>>3</option>
 											</select>
 											</td>
 										</tr>

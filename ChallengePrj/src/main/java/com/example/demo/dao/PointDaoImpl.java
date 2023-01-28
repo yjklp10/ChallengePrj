@@ -1,6 +1,7 @@
 package com.example.demo.dao;
 
 import java.util.ArrayList;
+
 import java.util.List;
 
 import org.mybatis.spring.SqlSessionTemplate;
@@ -85,28 +86,21 @@ public class PointDaoImpl implements PointDao {
 
 	@Override
 	public int updatepoint(PointDto dto) {
-		int res1=0;
+		int res=0;
 		try {
-			res1=sqlSession.update(NAMESPACE+"updatepoint",dto);
+			res=sqlSession.update(NAMESPACE+"updatepoint",dto);
 		} catch (Exception e) {
 			System.out.println("[error] : updatepoint");
 			e.printStackTrace();
 		}
 		
-		return res1;
+		return res;
 	}
 
 	@Override
 	public int updatestatus(PointDto dto) {
-		int res=0;
-		try {
-			res=sqlSession.update(NAMESPACE+"updatestatus",dto);
-		} catch (Exception e) {
-			System.out.println("[error] : updatestatus");
-			e.printStackTrace();
-		}
 		
-		return res;
+			return 0;
 
-	}
+		}
 }
