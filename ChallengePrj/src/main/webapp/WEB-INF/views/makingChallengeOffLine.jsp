@@ -263,6 +263,7 @@ padding-top: 8px;
         
         
     }
+  
 </script> 
   <!--   
     <script>
@@ -298,8 +299,7 @@ padding-top: 8px;
      </script>
    <script>
 $(document).ready(function() {
-    	   
-        	  
+    
     	   $("input[name='challengestartdate']").click(function () {
     		   var obj_length = document.getElementsByName("challengestartdate").length;
     		   
@@ -339,7 +339,92 @@ $(document).ready(function() {
                         $("input[name='challengestartdate']:checked").val(startDay);
 
              		   console.log("시작일: " + startDay);
+                        if($("input[name=challengeperiod]").is(':checked')){
+                            var obj_length = document.getElementsByName("challengeperiod").length;
+    		   
+    	        for (var i=0; i<obj_length; i++) {
+    	        	
+    	            if (document.getElementsByName("challengeperiod")[i].checked == true) {
+
+                        let now = new Date();
+
+
+                        var today_m = now.getTime();
+                        var tmr_m = new Date(now.setDate(now.getDate()+1)).getTime();
+                        var after2_m = new Date(now.setDate(now.getDate()+1)).getTime();
+                        var after3_m = new Date(now.setDate(now.getDate()+1)).getTime();
+                        var after4_m = new Date(now.setDate(now.getDate()+1)).getTime();
+                        var after5_m = new Date(now.setDate(now.getDate()+1)).getTime();
+                        var after6_m = new Date(now.setDate(now.getDate()+1)).getTime();
+                        var after7_m = new Date(now.setDate(now.getDate()+1)).getTime();
+
+                        
+
+                        
+                        $('#start_date_today').val(today_m);
+                        $('#start_date_tomorrow').val(tmr_m);
+                        $('#start_date_after2').val(after2_m);
+                        $('#start_date_after3').val(after3_m);
+                        $('#start_date_after4').val(after4_m);
+                        $('#start_date_after5').val(after5_m);
+                        $('#start_date_after6').val(after6_m);
+                        $('#start_date_after7').val(after7_m);
+
+                                    
+                        var week1 = 604800000;
+                        var week2 = 1209600000;
+                        var week3 = 1814400000;
+                        var week4 = 2419200000;
+                        
+                        $('#duration_week1').val(week1);
+                        $('#duration_week2').val(week2);
+                        $('#duration_week3').val(week3);
+                        $('#duration_week4').val(week4);
+
                        
+
+             		   var checkVal = parseInt($("input[name='challengestartdate']:checked").val());
+             		   
+             		  var durationVal = parseInt($("input[name='challengeperiod']:checked").val());
+                       console.log("기존 기간 밸류 값(밀리 초) : "+durationVal);
+                      var endDate = new Date(checkVal+durationVal);
+                    
+                      var checkVal2 = parseInt($("input[name='challengestartdate']:checked").val());
+                      var checkDate2 = new Date(checkVal2);
+                      
+                      var startDay2 = checkDate2.getFullYear()+"-"+("0" + (checkDate2.getMonth() + 1)).slice(-2)+"-"+("0" + checkDate2.getDate()).slice(-2);
+                      
+                      var endDayYear = endDate.getFullYear();
+                      var endDayMonth = ("0" + (endDate.getMonth() + 1)).slice(-2);
+                      var endDay = endDate.getFullYear()+"-"+("0" + (endDate.getMonth() + 1)).slice(-2)+"-"+("0" + endDate.getDate()).slice(-2);
+                      var durationDate = (durationVal/1000/60/60/24);
+                      
+                      var endday = document.getElementById("endday");
+                      
+                      $("input[name='challengeperiod']:checked").attr('value',durationDate);
+                      var newDurationVal = parseInt($("input[name='challengeperiod']:checked").val());
+                      console.log("챌린지 기간: "+durationDate);
+                        console.log("수정된 기간 밸류 값(밀리 초 -> 일로 변경): " + newDurationVal);
+                      console.log("마감일: "+endDay);
+                      $('#endday').val(endDay);
+                      $("input[name='challengestartdate']:checked").val(startDay2);
+                      
+                      if (!$("input[name=challengestartdate]").is(':checked')) {
+          	            alert("시작일을 먼저 설정해주세요!");
+          	            $("#startdate").attr("tabindex",-1).focus();
+          	            $("input[name=challengeperiod]").prop('checked',false);
+          	            
+          	        }else{
+          	          $('#enddayChk').html("챌린지 기간은 "+startDay2 +" ~ "+endDay+" 입니다. ").css("display","flex").css("color","#008000");	
+          	        	
+          	        }
+                       
+                    
+                      
+    	            }
+    	        }
+                        }
+        	  
                     
     	            }
     	        }
@@ -388,7 +473,7 @@ $(document).ready(function() {
                         $('#duration_week3').val(week3);
                         $('#duration_week4').val(week4);
 
-                        
+                       
 
              		   var checkVal = parseInt($("input[name='challengestartdate']:checked").val());
              		   
@@ -399,10 +484,11 @@ $(document).ready(function() {
                       var checkVal2 = parseInt($("input[name='challengestartdate']:checked").val());
                       var checkDate2 = new Date(checkVal2);
                       
-                      var startDay2 = checkDate2.getFullYear()+"-"+(checkDate2.getMonth()+1)+"-"+checkDate2.getDate();
+                      var startDay2 = checkDate2.getFullYear()+"-"+("0" + (checkDate2.getMonth() + 1)).slice(-2)+"-"+("0" + checkDate2.getDate()).slice(-2);
                       
-                      
-                      var endDay = endDate.getFullYear()+"-"+(endDate.getMonth()+1)+"-"+endDate.getDate();
+                      var endDayYear = endDate.getFullYear();
+                      var endDayMonth = ("0" + (endDate.getMonth() + 1)).slice(-2);
+                      var endDay = endDate.getFullYear()+"-"+("0" + (endDate.getMonth() + 1)).slice(-2)+"-"+("0" + endDate.getDate()).slice(-2);
                       var durationDate = (durationVal/1000/60/60/24);
                       
                       var endday = document.getElementById("endday");
@@ -414,7 +500,18 @@ $(document).ready(function() {
                       console.log("마감일: "+endDay);
                       $('#endday').val(endDay);
                       $("input[name='challengestartdate']:checked").val(startDay2);
-                      $('#enddayChk').html("챌린지 기간은 "+startDay2 +" ~ "+endDay+" 입니다. ").css("display","flex").css("color","#008000");
+                      
+                      if (!$("input[name=challengestartdate]").is(':checked')) {
+          	            alert("시작일을 먼저 설정해주세요!");
+          	            $("#startdate").attr("tabindex",-1).focus();
+          	            $("input[name=challengeperiod]").prop('checked',false);
+          	            
+          	        }else{
+          	          $('#enddayChk').html("챌린지 기간은 "+startDay2 +" ~ "+endDay+" 입니다. ").css("display","flex").css("color","#008000");	
+          	        	
+          	        }
+                       
+                    
                       
     	            }
     	        }
@@ -444,12 +541,7 @@ $(document).ready(function() {
                                 <label for="town">챌린지 제목<span>*</span></label>
                                 <input  type="text" id="challenge_title" name="challengetitle" >
                             </div>
-                            <!-- <div class="col-lg-12 choices" id="onOff_choice" name="onoffchoice">
-                                <label for="fir">온라인/오프라인 여부<span>*</span></label>
-                                <br>
-                                <input type="radio" id="onOff_select1" name="onOff" value="challenge_online" onclick="online_select();"><label for="onOff_select1">온라인</label>
-                                <input type="radio" id="onOff_select2" name="onOff" value="challenge_offline" onclick="offline_select();"><label for="onOff_select2">오프라인</label>
-                            </div> -->
+                            
                             <div class="col-lg-12" id="offline_select">
                                 <label for="fir">오프라인 모임 장소 지정<span>*</span></label>
                                 <br>
@@ -559,10 +651,10 @@ $(document).ready(function() {
                             <div class="col-lg-12 choices" id="period">
                                 <label  for="fir">챌린지 기간<span>*</span></label>
                                 <br>
-                                <input  type="radio"  id="duration_week1" name="challengeperiod" value="7"><label for="duration_week1">1주</label>
-                                <input  type="radio"  id="duration_week2" name="challengeperiod" value="14"><label for="duration_week2">2주</label>
-                                <input  type="radio"  id="duration_week3" name="challengeperiod" value="21"><label for="duration_week3">3주</label>
-                                <input  type="radio"  id="duration_week4" name="challengeperiod" value="28"><label for="duration_week4">4주</label>
+                                <input  type="radio"  id="duration_week1" name="challengeperiod" value="7" ><label for="duration_week1">1주</label>
+                                <input  type="radio"  id="duration_week2" name="challengeperiod" value="14" ><label for="duration_week2">2주</label>
+                                <input  type="radio"  id="duration_week3" name="challengeperiod" value="21" ><label for="duration_week3">3주</label>
+                                <input  type="radio"  id="duration_week4" name="challengeperiod" value="28" ><label for="duration_week4">4주</label>
                                 <div><input type="hidden"  id="endday" name="challengeenddate" value="">
                             <span id="enddayChk"></span>
                             </div>
