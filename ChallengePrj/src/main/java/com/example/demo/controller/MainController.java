@@ -38,10 +38,7 @@ public class MainController {
 	@Autowired
 	private MainDetailBiz biz;
 	
-	/*
-	@Autowired
-	private BoardService boardService;
-	*/
+	
 	
 	@GetMapping("/home_main")
     public String mainlist(Model model) {
@@ -67,18 +64,18 @@ public class MainController {
 		
         }
 	
-	/*
+	
 	@RequestMapping("/detaillist_search")
     public String detaillist_search(String keyword, Model model) {
 		
-		List<Testchallenge> newRes = biz.detaillist_search(keyword);
+		List<Testchallenge> newRes = biz.challenge_search(keyword);
 		
 		model.addAttribute("newRes", newRes);
 		
-		return "detaillist";
+		return "getSearchList";
 		
         }
-        */
+      
 	
 	@RequestMapping("/detaillist_hot")
     public String detaillist_hot(Model model) {

@@ -212,7 +212,7 @@
 
 				
   				  <li> 
-  				  <a href=""> 				  	
+  				  <a href="/chdetail?challengeno=${hotRes.challengeno }"> 				  	
    				   <img src="${pageContext.request.contextPath }/static2/thumb/${hotRes.thumbnailpath }" alt="${hotRes.thumbnailpath }">
    				    
    				    <div class="content-name">

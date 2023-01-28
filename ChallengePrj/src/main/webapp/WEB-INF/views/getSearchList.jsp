@@ -37,100 +37,7 @@
 	<!-- 스크롤 퀵 메뉴 끝 -->
 	
 	
-	
- <!-- 카테고리 아이콘 -->
-    <section class="category-icon">
-    <div class="banner-section spad">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="icon0">
-                    <div class="single-banner">
-                       <a href='detaillist'>
-                        <img src="img/신규.png">
-                        <div class="inner-text">
-                            <h5>신규</h5>
-                        </div>
-                       </a>
-                    </div>
-                </div>
-                <div class="icon0">
-                    <div class="single-banner">
-                    <a href='detaillist_hot'>
-                        <img src="img/인기.png">
-                        <div class="inner-text">
-                            <h5>인기</h5>
-                         </div>
-                    </a>
-                    </div>
-                </div>
-               <div class="icon0">
-                    <div class="single-banner">
-                    <a href='detaillist_onofflist?onoffchoice=온라인'>
-                        <img src="img/온라인2.png">
-                        <div class="inner-text">
-                            <h5>온라인</h5>
-                        </div>
-                      </a>
-                    </div>
-                </div>
-               <div class="icon0">
-                    <div class="single-banner">
-                    <a href='detaillist_onofflist?onoffchoice=오프라인'>
-                        <img src="img/오프라인.png">
-                        <div class="inner-text">
-                            <h5>오프라인</h5>
-                        </div>
-                        </a>
-                    </div>
-                </div>
-               <div class="icon0">
-                    <div class="single-banner">
-                    <a href='detaillist_category?category=운동'>
-                        <img src="img/운동.png">
-                        <div class="inner-text">
-                            <h5>운동</h5>
-                        </div>
-                    </a>
-                    </div>
-                </div>
-                <div class="icon0">
-                    <div class="single-banner">
-                    <a href='detaillist_category?category=공부'>
-                        <img src="img/공부2.png">
-                        <div class="inner-text">
-                            <h5>공부</h5>
-                        </div>
-                         </a>
-                    </div>
-                </div>
-               <div class="icon0">
-                    <div class="single-banner">
-                    <a href='detaillist_category?category=취미'>
-                        <img src="img/취미2.png">
-                        <div class="inner-text">
-                            <h5>취미</h5>
-                        </div>
-                         </a>
-                    </div>
-                </div>
-               <div class="icon0">
-                    <div class="single-banner">
-                    <a href='detaillist_category?category=규칙적인 생활'>
-                        <img src="img/규칙적인생활.png">
-                        <div class="inner-text">
-                           <h5>규칙적인 생활</h5>
-                         </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    </section>
-    <!-- 카테고리 아이콘 끝 -->
-    
-    
-    
+
     <!-- 챌린지 리스트 -->
     
      <section class="challenge-list">
@@ -146,21 +53,21 @@
    		 		
    		 		  <ul>
 					 <c:choose>
-    				<c:when test="${empty search }">
+    				<c:when test="${empty newRes }">
      					<p>--- 검색 결과가 없습니다 ---</p>
      				</c:when>
      			
      			<c:otherwise>
-    			<c:forEach var="boardList" items="${search }" begin="0" step="1">
+    			<c:forEach var="newRes" items="${newRes }" begin="0" step="1">
 
 				
   				  <li> 
   				  <a href=""> 				  	
-   				   <img src="${pageContext.request.contextPath }/static2/thumb/${search.thumbnailpath }" alt="${search.thumbnailpath }">
+   				   <img src="${pageContext.request.contextPath }/static2/thumb/${newRes.thumbnailpath }" alt="${newRes.thumbnailpath }">
    				    
    				    <div class="content-name">
-       					<p class="chname"><c:out value="${search.challengetitle }"/> / <span class="onoff"> <c:out value="${search.onoffchoice }"/></span></p>
-        				<p class="timeoff">시작일 : <fmt:formatDate value="${search.challengestartdate }" pattern="yyyy-MM-dd"/> ~ </p>
+       					<p class="chname"><c:out value="${newRes.challengetitle }"/> / <span class="onoff"> <c:out value="${newRes.onoffchoice }"/></span></p>
+        				<p class="timeoff">시작일 : <fmt:formatDate value="${newRes.challengestartdate }" pattern="yyyy-MM-dd"/> ~ </p>
       				 </div>
       				 </a>
      				</li>
