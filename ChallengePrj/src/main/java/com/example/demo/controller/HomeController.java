@@ -1,9 +1,14 @@
 package com.example.demo.controller;
 
+import java.util.ArrayList;
+
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo.biz.PointBiz;
 import com.example.demo.dto.MoneyDto;
@@ -87,12 +92,11 @@ public class HomeController {
 	
 	@RequestMapping("/manager.do")
 	public String updatestatus(PointDto dto){
-		int res = biz.updatestatus(dto);
-		
+		int res= biz.updatestatus(dto);
 		if(res>0) {
 			return "redirect:manager2";
 		}else {
-			return "redirect:manager2";
+			return "redirect:mypage";
 		}
 	}
 	
