@@ -14,7 +14,15 @@
    </select>
 	
 	<insert id="insert" parameterType="MemberDto">
-		INSERT INTO MEMBER VALUES(NULL,#{memberid}, #{memberpw}, #{memberemail}, #{membernick}, #{membername}, #{memberphone}, #{membergender}, #{memberrole}, 'n','','', NOW(), NULL)
+		INSERT INTO MEMBER VALUES(NULL,#{memberid}, #{memberpw}, #{memberemail}, #{membernick}, #{membername}, #{memberphone}, #{membergender}, #{memberrole},'','', NOW(), NULL)
 	</insert>
+	
+	<select id="forgetId" resultType="MemberDto">
+		SELECT * FROM MEMBER WHERE MEMBERNAME = #{membername} AND MEMBEREMAIL= #{memberemail}
+	</select>
+	
+	<select id="forgetPw" resultType="MemberDto">
+		SELECT * FROM MEMBER WHERE MEMBERNAME = #{memberid} AND MEMBEREMAIL= #{memberemail}
+	</select>
 	
 </mapper>

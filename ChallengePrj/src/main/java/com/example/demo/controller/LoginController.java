@@ -1,6 +1,9 @@
 package com.example.demo.controller;
 
+import java.io.PrintWriter;
+
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.example.demo.biz.ForgetPwMailBizImpl;
 import com.example.demo.biz.MemberBiz;
 import com.example.demo.biz.RegisterMailBizImpl;
 import com.example.demo.config.auth.PrincipalDetails;
@@ -29,6 +33,9 @@ public class LoginController {
 
 	@Autowired
     RegisterMailBizImpl registerMail;
+	
+	@Autowired
+	ForgetPwMailBizImpl forgetPwMail;
 	
 	@Autowired
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
@@ -121,7 +128,7 @@ public class LoginController {
 	@ResponseBody
 	@RequestMapping(value = "VerifyRecaptcha", method = RequestMethod.POST)
 	public int VerifyRecaptcha(HttpServletRequest request) {
-	    VerifyRecaptcha.setSecretKey("시크릿 코드");
+	    VerifyRecaptcha.setSecretKey("6LcmDiokAAAAAIMRecG-8B6QTXsclYdquiGpfR11");
 	    String gRecaptchaResponse = request.getParameter("recaptcha");
 	    try {
 	       if(VerifyRecaptcha.verify(gRecaptchaResponse))
@@ -133,6 +140,79 @@ public class LoginController {
 	    }
 	}
 	
+	@RequestMapping("/forgetid.do")
+	String forgetid(String membername, String memberemail, Model model, HttpServletResponse response) {
+		MemberDto res;
+		String id;
+		res = biz.forgetId(membername, memberemail);
+		if(res != null) {
+			id = res.getMemberid().substring(0,res.getMemberid().length()-3);
+			id = id+"***";
+			model.addAttribute("memberid",id);
+			
+			return "forgetid";
+		}else {
+			alert(response, "회원정보가 없습니다");
+			
+			
+			return "redirect:forget.do";
+		}
+		
+	}
+	
+	@RequestMapping("/forgetpw.do")
+	String forgetpw(String memberid, String membereamil) throws Exception {
+		MemberDto res;
+		String pw;
+		
+		res = biz.forgetPw(memberid, membereamil);
+		
+		if(res != null) {
+			 pw = forgetPwMail.sendSimpleMessagePw(membereamil);
+			   System.out.println("임시비밀번호 : " + pw);
+			   pw = bCryptPasswordEncoder.encode(pw);
+			   
+		}
+		
+		return null;
+	}
 
-
+	
+	
+	//알림창만 띄우기
+	public static void alert(HttpServletResponse response, String msg) {
+	    try {
+			response.setContentType("text/html; charset=utf-8");
+			PrintWriter w = response.getWriter();
+			w.write("<script>alert('"+msg+"');history.go(-1);</script>");
+			w.flush();
+			w.close();
+	    } catch(Exception e) {
+			e.printStackTrace();
+	    }
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
