@@ -31,7 +31,9 @@ public class SecurityConfig {
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
 		http.csrf().disable();
 		http.authorizeRequests()
-			.antMatchers("/makingChallengeForm/**").authenticated() 	//로그인 하였을 때만 접근가능
+			.antMatchers("/makingChallengeStart/**").authenticated() 	//로그인 하였을 때만 접근가능
+			.antMatchers("/makingChallengeOffLine/**").authenticated() 	//로그인 하였을 때만 접근가능
+			.antMatchers("/makingChallengeOnLine/**").authenticated() 	//로그인 하였을 때만 접근가능
 			.antMatchers("/manager/**").access("hasRole('ROLE_MANAGER') or hasRole('ROLE_ADMIN')")	//manager만 접근가능
 			.anyRequest().permitAll()					//위에 적힌 주소를 제외한 모든주소 접근허용
 			.and()
