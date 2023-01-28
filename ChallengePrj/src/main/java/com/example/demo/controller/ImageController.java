@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.example.demo.biz.FileUploadbiz;
@@ -37,7 +38,7 @@ public class ImageController {
 
     @GetMapping(value="/popen")	
 	public String popen(Model model) {
-    	
+    
 		return "imageuploadpopup";
 	}
 	
@@ -160,13 +161,10 @@ public class ImageController {
 	}	
 	
 	@PostMapping("/dbinsert")
-	public void dbinsert(AttachImageDto dto) {
-	  if(biz.insert(dto)>0) {
-		 
-	  }else {
-		 
-	  }
-
+	public String dbinsert(AttachImageDto dto) {
+		biz.insert(dto);
+		System.out.println("dbinsert controller");
+		return "redirect:/";
 	}
 	@PostMapping("/myuploadimage")
 	public String myuploadimage() {
@@ -182,17 +180,13 @@ public class ImageController {
 	public ResponseEntity<List<AttachImageDto>> getAttachListtwo(){
 		return new ResponseEntity<List<AttachImageDto>>(biz.getAttachListtwo(),HttpStatus.OK);
 	}
-	@RequestMapping(value="/test",method= {RequestMethod.POST})
-	public void test(@RequestParam("title") String title,
-			          @RequestParam("confirm") int confirm) {
-
-	int confirmrate=++confirm;
-
-	//biz.updateOne(title, confirmrate);
-
-
-
-
+	@RequestMapping(value = "/test", method = { RequestMethod.POST })
+	@ResponseBody
+	public int test() {
+		System.out.println();
+		int res = biz.updateOne();
+		System.out.println("res:  ");
+		return 0;
 	}
 	
 	
