@@ -4,9 +4,8 @@ import java.util.Date;
 import java.util.List;
 import lombok.*;
 
-/*
-import com.example.demo.entity.BoardEntity;
-*/
+
+
 
 public class Testchallenge {
 	private int challengeno;
@@ -31,26 +30,7 @@ public class Testchallenge {
 		super();
 	}
 
-/*	
-	 public BoardEntity toEntity(){
-	        BoardEntity boardEntity = BoardEntity.builder()
-	                .challengeno(challengeno)
-	                .challengetitle(challengetitle)
-	                .onoffchoice(onoffchoice)
-	                .challengeintro(challengeintro)
-	                .chllengeprequency(chllengeprequency)
-	                .challengeperiod(challengeperiod)
-	                .challengestartdate(challengestartdate)
-	                .thumbnailname(thumbnailname)
-	                .thumbnailpath(thumbnailpath)
-	                .build();
-	        
-	        return boardEntity;
-	    }
-	
-	*/
-	
-	
+
 	public Testchallenge(int challengeno, String challengetitle, String onoffchoice, String chllengeprequency,
 			String challengeperiod, Date certificationstarttime, Date certificationendtime, Date challengestartdate,
 			String certificationway, String challengeintro, int deposit, int maxchallenger, String category,
@@ -203,6 +183,8 @@ public class Testchallenge {
 	public void setMemberid(String memberid) {
 		this.memberid = memberid;
 	}
+
+
 
 
 }

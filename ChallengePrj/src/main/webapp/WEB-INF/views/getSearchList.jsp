@@ -146,21 +146,21 @@
    		 		
    		 		  <ul>
 					 <c:choose>
-    				<c:when test="${empty boardList }">
+    				<c:when test="${empty search }">
      					<p>--- 검색 결과가 없습니다 ---</p>
      				</c:when>
      			
      			<c:otherwise>
-    			<c:forEach var="boardList" items="${boardList }" begin="0" step="1">
+    			<c:forEach var="boardList" items="${search }" begin="0" step="1">
 
 				
   				  <li> 
   				  <a href=""> 				  	
-   				   <img src="${pageContext.request.contextPath }/static2/thumb/${boardList.thumbnailpath }" alt="${boardList.thumbnailpath }">
+   				   <img src="${pageContext.request.contextPath }/static2/thumb/${search.thumbnailpath }" alt="${search.thumbnailpath }">
    				    
    				    <div class="content-name">
-       					<p class="chname"><c:out value="${boardList.challengetitle }"/> / <span class="onoff"> <c:out value="${boardList.onoffchoice }"/></span></p>
-        				<p class="timeoff">시작일 : <fmt:formatDate value="${boardList.challengestartdate }" pattern="yyyy-MM-dd"/> ~ </p>
+       					<p class="chname"><c:out value="${search.challengetitle }"/> / <span class="onoff"> <c:out value="${search.onoffchoice }"/></span></p>
+        				<p class="timeoff">시작일 : <fmt:formatDate value="${search.challengestartdate }" pattern="yyyy-MM-dd"/> ~ </p>
       				 </div>
       				 </a>
      				</li>
