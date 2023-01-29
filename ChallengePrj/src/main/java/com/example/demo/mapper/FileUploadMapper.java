@@ -15,10 +15,10 @@ public interface FileUploadMapper {
 	int insert(AttachImageDto dto);
 
 	@Select("SELECT*FROM image_upload where MEMBERID=${memberid}")
-	List<AttachImageDto> seletList();
+	List<AttachImageDto> seletList(String memberid);
 	
 	@Select("SELECT*FROM image_upload where CHALLENGETITLE=${challengetitle}")
-	List<AttachImageDto> seletListtwo();
+	List<AttachImageDto> seletListtwo(AttachImageDto challengetitle);
 	
 	@Select("SELECT*FROM MAKECHALLENGE")
 	List<makingChallengeDto> challengeList(makingChallengeDto dto);

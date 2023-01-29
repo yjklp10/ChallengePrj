@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URLDecoder;
 import java.nio.file.Files;
+import java.security.Principal;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -41,7 +42,7 @@ public class ImageController {
 	
     @GetMapping(value="/popen")	
 	public String popen(Model model,makingChallengeDto dto) {
-    
+   
      model.addAttribute("list",biz.selectOne(dto));
 		return "imageuploadpopup";
 	}
@@ -172,11 +173,14 @@ public class ImageController {
 	}
 	@PostMapping("/myuploadimage")
 	public String myuploadimage(AttachImageDto memberid) {
-		
+	
 		return "mypage_image";
 	}
 	@GetMapping(value="/getAttachList",produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
-	public ResponseEntity<List<AttachImageDto>> getAttachList(AttachImageDto memberid){
+	public ResponseEntity<List<AttachImageDto>> getAttachList(Principal principal){
+	
+		String memberid=principal.getName();
+	
 	    return	new  ResponseEntity<List<AttachImageDto>>(biz.getAttachList(memberid),HttpStatus.OK);
 		  
 	}
@@ -184,7 +188,7 @@ public class ImageController {
 	
 	@GetMapping(value="getAtttachListtwo",produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public ResponseEntity<List<AttachImageDto>> getAttachListtwo(AttachImageDto  challengetitle ){
-		return new ResponseEntity<List<AttachImageDto>>(biz.getAttachListtwo(),HttpStatus.OK);
+		return new ResponseEntity<List<AttachImageDto>>(biz.getAttachListtwo(challengetitle),HttpStatus.OK);
 	}
 	@RequestMapping(value = "/test", method = { RequestMethod.POST })
 	@ResponseBody
@@ -194,8 +198,7 @@ public class ImageController {
 		System.out.println("res:  ");
 		return 0;
 	}
-	
-	
+
 	
 	
 }
