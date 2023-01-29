@@ -8,6 +8,25 @@ public class AttachImageDto {
 	private String fileName;
 
 	private int bookId;
+	
+	private String challengetitle;
+	
+	private String memberid;
+
+	public  AttachImageDto() {
+		super();
+	}
+
+	public AttachImageDto(String uploadFilePath, String uuid, String fileName, int bookId, String challengetitle,
+			String memberid) {
+		super();
+		this.uploadFilePath = uploadFilePath;
+		this.uuid = uuid;
+		this.fileName = fileName;
+		this.bookId = bookId;
+		this.challengetitle = challengetitle;
+		this.memberid = memberid;
+	}
 
 	public String getUploadFilePath() {
 		return uploadFilePath;
@@ -41,10 +60,26 @@ public class AttachImageDto {
 		this.bookId = bookId;
 	}
 
+	public String getChallengetitle() {
+		return challengetitle;
+	}
+
+	public void setChallengetitle(String challengetitle) {
+		this.challengetitle = challengetitle;
+	}
+
+	public String getMemberid() {
+		return memberid;
+	}
+
+	public void setMemberid(String memberid) {
+		this.memberid = memberid;
+	}
+
 	@Override
 	public String toString() {
 		return "AttachImageDto [uploadFilePath=" + uploadFilePath + ", uuid=" + uuid + ", fileName=" + fileName
-				+ ", bookId=" + bookId + "]";
+				+ ", bookId=" + bookId + ", challengetitle=" + challengetitle + ", memberid=" + memberid + "]";
 	}
-
+	
 }
