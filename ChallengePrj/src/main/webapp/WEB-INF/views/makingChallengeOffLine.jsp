@@ -526,7 +526,7 @@ $(document).ready(function() {
 </head>
 
 <body>
-    
+    <%@include file="./include/header.jsp" %>
 
     <!-- Shopping Cart Section Begin -->
     <section class="checkout-section spad">
@@ -1044,7 +1044,7 @@ searchAddrFromCoords(map.getCenter(), displayCenterInfo);
 
 	<!--  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9ac0def900a39c342fe65cab35fe4b06=LIBRARY"></script> -->
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9ac0def900a39c342fe65cab35fe4b06&libraries=services,clusterer,drawing"></script>
-	 
+	 <%@include file="./include/footer.jsp" %>
 </body>
 
 </html>

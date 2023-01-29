@@ -9,5 +9,5 @@ public interface MemberBiz {
 	public int insert(MemberDto dto);
 	public MemberDto forgetId(String membername, String membereil);
 	public MemberDto forgetPw(String mameberid, String memberemail);
-	public int pwUdate(String pw, String membername);
+	public int pwUpdate(String pw, String memberid);
 }
