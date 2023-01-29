@@ -5,7 +5,10 @@
 
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta http-equiv="X-UA-Compatible" content="ie=chrome">
-
+ <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+ <script>
+ 
+ </script>
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
@@ -214,6 +217,7 @@
   				  <li> 
   				  <a href="/chdetail?challengeno=${hotRes.challengeno }"> 				  	
    				   <img src="${pageContext.request.contextPath }/static2/thumb/${hotRes.thumbnailpath }" alt="${hotRes.thumbnailpath }">
+
    				    
    				    <div class="content-name">
        					<p class="chname"><c:out value="${hotRes.challengetitle }"/> / <span class="onoff"> <c:out value="${hotRes.onoffchoice }"/></span></p>
@@ -262,7 +266,7 @@
 				
   				  <li> 
   				  <a href=""> 				  	
-   				   <img src="${pageContext.request.contextPath }/static2/thumb/${newRes.thumbnailpath }" alt="${newRes.thumbnailpath }">
+   				   <img src="../static2/thumb/${newRes.thumbnailname }" alt="${newRes.thumbnailname }">
    				    
    				    <div class="content-name">
        					<p class="chname"><c:out value="${newRes.challengetitle }"/> / <span class="onoff"> <c:out value="${newRes.onoffchoice }"/></span></p>

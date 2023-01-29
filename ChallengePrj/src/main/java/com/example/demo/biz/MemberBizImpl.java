@@ -49,9 +49,8 @@ public class MemberBizImpl implements MemberBiz{
 	}
 
 	@Override
-	public int pwUdate(String pw, String membername) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int pwUpdate(String pw, String memberid) {
+		return mapper.pwUpdate(pw, memberid);
 	}
 
 }
