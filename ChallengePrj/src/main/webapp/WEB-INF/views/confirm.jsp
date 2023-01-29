@@ -352,13 +352,13 @@
 
 			<div class="card-body-header">
 
-				<h1>${dto.title }</h1>
+				<h1>${dto.challengetitle }</h1>
 
-				<p class="card-body-hashtag">${dto.endline}</p>
+				<p class="card-body-hashtag">${dto.challengeenddate}</p>
 
 				 <p class = "card-body-nickname"> 
 
-                                 인증시간 ${dto.starttime }~${dto.endtime }
+                                 인증시간 ${dto.certificationstarttime }~${dto.certificationendtime }
 
            		         </p>
 
@@ -366,7 +366,7 @@
 
 			<p class="card-body-description">
 
-		      ${dto.detail }
+		      ${dto.challengeintro }
              
 
 			</p>
@@ -381,9 +381,9 @@
 
 				<hr style="margin-bottom: 8px; opacity: 0.5; border-color: #EF5A31">
 
-				    <i class="detail"><button onclick="location.href='/mychallenge?title=${dto.title}'">상세 페이지</button></i>
+				    <i class="detail"><button onclick="location.href='/myuploadimage?memberid=<% %>'">인증페이지</button></i>
 
-		           <i class="popup"><button onclick="location.href='/fopen?title=${dto.title}&chid=${dto.chid }'">인증페이지</button></i>
+		           <i class="popup"><button onclick="location.href='/popen?challengetitle=${dto.challengetitle}'">인증페이지</button></i>
 		         
     
 
@@ -403,7 +403,7 @@
  
      </c:forEach>
    
-
+ 
     <!-- Footer Section Begin -->
    	<%@include file="./include/footer.jsp" %>
     <!-- Footer Section End -->
