@@ -15,10 +15,12 @@
   <!-- 조아라 -->
    
    <!-- 메인 - 인기 챌린지 -->
+  
   <select id="challenge_hot" resultType="Testchallenge">
 	SELECT * FROM MAKECHALLENGE
-	ORDER BY MEMBERID DESC;
+	ORDER BY MAXCHALLENGER  DESC;
   </select>
+
   
   
 	<!-- 메인 - 신규 챌린지 -->
@@ -45,14 +47,14 @@
   
   
     <!-- 검색 기능 -->
-    <select id="getSearchList" resultType="Testchallenge" parameterType="String">
-    SELECT * 
+	<select id="challenge_search" resultType="Testchallenge" parameterType="String">
+	SELECT * 
 	FROM MAKECHALLENGE
-	where CHALLENGETITLE like CONCAT('%', '#{keyword}', '%')
-	or ONOFFCHOICE like CONCAT('%', '#{keyword}', '%')
-	or CATEGORY like CONCAT('%', '#{keyword}', '%')
-	or OFFLINEADDRESS like CONCAT('%', '#{keyword}', '%')
-	or OFFLINEADDRESSDETAIL like CONCAT('%', '#{keyword}', '%')
+	where CHALLENGETITLE like  CONCAT('%', #{keyword}, '%')
+	or ONOFFCHOICE like  CONCAT('%', #{keyword}, '%')
+	or CATEGORY like  CONCAT('%', #{keyword}, '%')
+	or OFFLINEADDRESS like  CONCAT('%', #{keyword}, '%')
+	or OFFLINEADDRESSDETAIL like  CONCAT('%', #{keyword}, '%')
 	ORDER BY CHALLENGENO DESC;
   	</select>
   

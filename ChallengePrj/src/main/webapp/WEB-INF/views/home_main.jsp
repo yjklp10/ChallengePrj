@@ -215,8 +215,9 @@
 
 				
   				  <li> 
-  				  <a href=""> 				  	
-   				   <img id="hotRes" src="../static2/thumb/${hotRes.thumbnailname }" alt="${hotRes.thumbnailname }">
+  				  <a href="/chdetail?challengeno=${hotRes.challengeno }"> 				  	
+   				   <img src="${pageContext.request.contextPath }/static2/thumb/${hotRes.thumbnailpath }" alt="${hotRes.thumbnailpath }">
+
    				    
    				    <div class="content-name">
        					<p class="chname"><c:out value="${hotRes.challengetitle }"/> / <span class="onoff"> <c:out value="${hotRes.onoffchoice }"/></span></p>

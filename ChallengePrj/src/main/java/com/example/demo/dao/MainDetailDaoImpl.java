@@ -75,6 +75,21 @@ public class MainDetailDaoImpl implements MainDetailDao {
 
 		return challenge_categorylist;
 	}
+	
+	@Override
+	public List<Testchallenge> challenge_search(String keyword) {
+		
+	List<Testchallenge> challenge_search = new ArrayList<Testchallenge>();
+		
+		try {
+			challenge_search = sqlSession.selectList(NAMESPACE+"challenge_search", keyword);
+		} catch (Exception e) {
+			System.out.println("[error] : challenge_search");
+			e.printStackTrace();
+		}
+
+		return challenge_search;
+	}
 
 	
 }
