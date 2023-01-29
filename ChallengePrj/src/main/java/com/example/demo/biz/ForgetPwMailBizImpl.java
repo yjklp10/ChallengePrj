@@ -20,11 +20,11 @@ public class ForgetPwMailBizImpl implements ForgetPwMailBiz{
  
     private MimeMessage createMessage(String to)throws Exception{
         System.out.println("보내는 대상 : "+ to);
-        System.out.println("인증 번호 : "+ePw);
+        System.out.println("임시 비밀번호 : "+ePw);
         MimeMessage  message = emailSender.createMimeMessage();
  
         message.addRecipients(RecipientType.TO, to);//보내는 대상
-        message.setSubject("작심백일 인증코드");//제목
+        message.setSubject("작심백일 임시비밀번호");//제목
  
         String msgg="";
         msgg+= "<div style='margin:20px;'>";

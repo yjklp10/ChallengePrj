@@ -22,7 +22,11 @@
 	</select>
 	
 	<select id="forgetPw" resultType="MemberDto">
-		SELECT * FROM MEMBER WHERE MEMBERNAME = #{memberid} AND MEMBEREMAIL= #{memberemail}
+		SELECT * FROM MEMBER WHERE MEMBERID = #{memberid} AND MEMBEREMAIL= #{memberemail}
 	</select>
+	
+	<update id="pwUpdate">
+		UPDATE MEMBER SET MEMBERPW = #{pw} WHERE MEMBERID = #{memberid};
+	</update>
 	
 </mapper>
