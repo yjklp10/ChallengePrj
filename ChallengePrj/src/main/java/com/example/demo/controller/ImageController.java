@@ -17,6 +17,8 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.FileCopyUtils;
@@ -38,6 +40,8 @@ public class ImageController {
 	
 	@Autowired
 	private FileUploadbiz biz;
+	
+
 
 	
     @GetMapping(value="/popen")	
@@ -177,11 +181,12 @@ public class ImageController {
 		return "mypage_image";
 	}
 	@GetMapping(value="/getAttachList",produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
-	public ResponseEntity<List<AttachImageDto>> getAttachList(Principal principal){
+	public ResponseEntity<List<AttachImageDto>> getAttachList(){
+	   
+		
 	
-		String memberid=principal.getName();
 	
-	    return	new  ResponseEntity<List<AttachImageDto>>(biz.getAttachList(memberid),HttpStatus.OK);
+	    return	new  ResponseEntity<List<AttachImageDto>>(biz.getAttachList(),HttpStatus.OK);
 		  
 	}
 	

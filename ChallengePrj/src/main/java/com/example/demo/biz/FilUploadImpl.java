@@ -20,9 +20,9 @@ public int insert(AttachImageDto dto) {
 }
 
 @Override
-public List<AttachImageDto> getAttachList(String memberid) {
+public List<AttachImageDto> getAttachList() {
 
-	return fileUploadMapper.seletList(memberid);
+	return fileUploadMapper.seletList();
 }
 
 @Override
