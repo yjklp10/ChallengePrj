@@ -35,5 +35,9 @@ public class MainDetailBizImpl implements MainDetailBiz {
 		return dao.challenge_categorylist(category);
 	}
 	
+	@Override
+	public List<Testchallenge> challenge_search(String keyword) {
+		return dao.challenge_search(keyword);
+	}
 	
 }

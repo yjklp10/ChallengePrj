@@ -152,7 +152,7 @@ public class LoginController {
 			
 			return "forgetid";
 		}else {
-			alert(response, "회원정보가 없습니다");
+			alertAndGo(response, "회원정보가 없습니다","forget.do");
 			
 			
 			return "redirect:forget.do";
@@ -161,34 +161,44 @@ public class LoginController {
 	}
 	
 	@RequestMapping("/forgetpw.do")
-	String forgetpw(String memberid, String membereamil) throws Exception {
+	String forgetpw(String memberid, String memberemail, HttpServletResponse response) throws Exception {
 		MemberDto res;
+		int pwset;
 		String pw;
-		
-		res = biz.forgetPw(memberid, membereamil);
-		
+		System.out.println(memberid);
+		System.out.println(memberemail);
+		res = biz.forgetPw(memberid, memberemail);
+		System.out.println(res);
 		if(res != null) {
-			 pw = forgetPwMail.sendSimpleMessagePw(membereamil);
-			   System.out.println("임시비밀번호 : " + pw);
-			   pw = bCryptPasswordEncoder.encode(pw);
-			   
+			 pw = forgetPwMail.sendSimpleMessagePw(memberemail);
+			 System.out.println("임시비밀번호 : " + pw);
+			 pw = bCryptPasswordEncoder.encode(pw);
+			 pwset = biz.pwUpdate(pw, memberid);
+			 
+			 alertAndGo(response, "이메일로 임시비밀번호를 발송했습니다!!","loginform.do");
+			 
+			 return "redirect:loginform.do"; 
+			 
+		}else {
+			alertAndGo(response, "회원정보가 없습니다","forget.do");
+			
+			
+			return "redirect:forget.do";
 		}
-		
-		return null;
+	
 	}
 
 	
 	
-	//알림창만 띄우기
-	public static void alert(HttpServletResponse response, String msg) {
+	public static void alertAndGo(HttpServletResponse response, String msg, String url) {
 	    try {
-			response.setContentType("text/html; charset=utf-8");
-			PrintWriter w = response.getWriter();
-			w.write("<script>alert('"+msg+"');history.go(-1);</script>");
-			w.flush();
-			w.close();
+	        response.setContentType("text/html; charset=utf-8");
+	        PrintWriter w = response.getWriter();
+	        w.write("<script>alert('"+msg+"');location.href='"+url+"';</script>");
+	        w.flush();
+	        w.close();
 	    } catch(Exception e) {
-			e.printStackTrace();
+	        e.printStackTrace();
 	    }
 	}
 	

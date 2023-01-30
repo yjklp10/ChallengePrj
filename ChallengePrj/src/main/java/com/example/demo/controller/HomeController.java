@@ -10,9 +10,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.example.demo.biz.FileUploadbiz;
 import com.example.demo.biz.PointBiz;
 import com.example.demo.dto.MoneyDto;
 import com.example.demo.dto.PointDto;
+import com.example.demo.dto.makingChallengeDto;
+
 
 @Controller
 public class HomeController {
@@ -20,8 +23,10 @@ public class HomeController {
 
 	@Autowired
 	private PointBiz biz;
-
-
+	
+	@Autowired
+	private FileUploadbiz service;
+    
 	@RequestMapping("/")
 	public String index() {
 		return "index";
@@ -105,7 +110,8 @@ public class HomeController {
 		return "exwrite";
 	}
     @RequestMapping("/confirmopen")
-    public String  confirmopen(){
+   public String  confirmopen(Model model,makingChallengeDto dto){
+    	model.addAttribute("list",service.challengeList(dto));
     	return "confirm";
     }
 }

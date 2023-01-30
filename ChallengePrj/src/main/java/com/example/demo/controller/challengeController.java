@@ -187,9 +187,8 @@ public class challengeController {
     		int res = makingChallengeBiz.offlineinsert(dto);
     		
     		if(res>0) {
-    			return "index";
-    		}
-    		return "home_main";
+
+    		return "redirect:/home_main";
 	}
 	
 	@PostMapping("/registOnlineChallenge")
@@ -292,8 +291,7 @@ public class challengeController {
     		int res = makingChallengeBiz.onlineinsert(dto);
     		
     		if(res>0) {
-    			return "index";
-    		}
+
     		return "home_main";
 	}
 	

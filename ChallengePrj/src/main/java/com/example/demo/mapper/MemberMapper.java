@@ -16,5 +16,6 @@ public interface MemberMapper {
 	public int insert(MemberDto dto);
 	public MemberDto forgetId(@Param("membername")String membername, @Param("memberemail")String memberemail);
 	public MemberDto forgetPw(@Param("memberid")String mameberid, @Param("memberemail")String memberemail);
+	public int pwUpdate(@Param("pw")String pw, @Param("memberid")String memberid);
 
 }
