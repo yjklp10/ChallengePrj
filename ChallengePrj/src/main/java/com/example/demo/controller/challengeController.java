@@ -51,7 +51,7 @@ public class challengeController {
 	
 	//신호준
 	@GetMapping(value="/chdetail")
-	public String challengeView(Testchallenge challenge, Model model) {
+	public String challengeView(makingChallengeDto challenge, Model model) {
 		logger.info("challenge");
 		
 		model.addAttribute("challenge", makingChallengeBiz.getDetail(challenge.getChallengeno()));
@@ -65,7 +65,7 @@ public class challengeController {
 	}
 	
 	@GetMapping(value="/payment")
-	public String paymentView(Testchallenge challenge, Model model) {
+	public String paymentView(makingChallengeDto challenge, Model model) {
 		logger.info("payment");
 		
 		model.addAttribute("payment", makingChallengeBiz.getDetail(challenge.getChallengeno()));
@@ -187,7 +187,7 @@ public class challengeController {
     		int res = makingChallengeBiz.offlineinsert(dto);
     		
     		if(res>0) {
-    			return "indeex";
+    			return "index";
     		}
     		return "home_main";
 	}
@@ -292,7 +292,7 @@ public class challengeController {
     		int res = makingChallengeBiz.onlineinsert(dto);
     		
     		if(res>0) {
-    			return "indeex";
+    			return "index";
     		}
     		return "home_main";
 	}

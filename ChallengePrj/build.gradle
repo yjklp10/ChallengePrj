@@ -18,6 +18,7 @@ sourceCompatibility = '11'
 
 repositories {
 	mavenCentral()
+	maven { url 'https://jitpack.io' }
 }
 
 dependencies {  
@@ -40,6 +41,7 @@ dependencies {
   	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
 	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.4'
 	implementation 'org.apache.commons:commons-lang3'
+	implementation 'com.github.iamport:iamport-rest-client-java:0.2.15'
 	
 	//이재ㄴ
 	// https://mvnrepository.com/artifact/net.coobird/thumbnailator

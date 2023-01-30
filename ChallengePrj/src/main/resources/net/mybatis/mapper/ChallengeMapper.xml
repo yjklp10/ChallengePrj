@@ -4,7 +4,7 @@
 
 <mapper namespace="com.example.demo.mapper.ChallengeMapper">
    <!-- 신호준 -->
-   <select id="getDetail" resultType="Testchallenge" >
+   <select id="getDetail" resultType="makingChallengeDto" >
    		select *
    		from MAKECHALLENGE
    		where CHALLENGENO = #{CHALLENGENO} 

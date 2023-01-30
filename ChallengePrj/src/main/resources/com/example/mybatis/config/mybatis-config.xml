@@ -19,5 +19,7 @@
 
 		<mapper resource="net/mybatis/mapper/CommentMapper.xml"/>
 		
+		<mapper resource="net/mybatis/mapper/PaymentMapper.xml"/>
+		
 	</mappers>
 </configuration>

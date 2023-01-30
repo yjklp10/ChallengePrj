@@ -306,7 +306,7 @@ ul, ol {
 					<div class="row">
 						<div class="col-lg-6">
 							<div class="mainsimg">
-								<img src="img/certification/X-3.jpg" alt="">
+								<img src="${pageContext.request.contextPath }/static2/thumb/${challenge.thumbnailname }" alt="">
 
 							</div>
 
@@ -325,8 +325,8 @@ ul, ol {
 										class="fa fa-star-o"></i> <span>(5)</span>
 								</div>
 								<hr>
-
-								<div class="dropdown">
+							
+							<!--  	<div class="dropdown">
 									<button class="dropbtn">
 										 <span
 											class="dropbtn_content" style="font-size: 15px;"><c:out value="${challenge.challengetitle}" /></span> <span
@@ -346,9 +346,9 @@ ul, ol {
 										<div class="fastfood" onclick="showMenu(this.innerText)">Shake
 											shack</div>
 									</div>
-								</div>
-								<br>
-								<br>
+								</div>-->
+								
+								
 								<div class="pd-desc">
 
 									<h4>
@@ -367,7 +367,7 @@ ul, ol {
 							<ul class="nav" role="tablist">
 								<li><a class="active" data-toggle="tab" href="#tab-1"
 									role="tab">챌린지 소개글</a></li>
-								<li><a data-toggle="tab" href="#tab-2" role="tab">주의사항</a></li>
+								<li><a data-toggle="tab" href="#tab-2" role="tab">알아두세요</a></li>
 								<li><a data-toggle="tab" href="#tab-3" role="tab">인증방법</a></li>
 								<li><a data-toggle="tab" href="#tab-4" role="tab">후기</a></li>
 							</ul>
@@ -396,12 +396,11 @@ ul, ol {
 									<div class="product-content">
 										<div class="row">
 											<div class="col-lg-7">
-												<h3 style="margin-bottom: 23px;">주의사항</h3>
-												<p>Lorem ipsum dolor sit amet, consectetur adipisicing
-													elit, sed do eiusmod tempor incididunt ut labore et dolore
-													magna aliqua. Ut enim ad minim veniam, quis nostrud
-													exercitation ullamco laboris nisi ut aliquip ex ea commodo
-													consequat. Duis aute irure dolor in</p>
+												<h3 style="margin-bottom: 23px;">알아두세요!!</h3>
+												<p>1.이 챌린지는 시작과 마무리 인증을 모두 인중 해주셔야 합니다.<br>
+												2.첫 번째 인증샷을 촬영하신 후 최소 1분 후에 두 번째 인증샷을 촬영하실 수 있습니다.<br>
+												3.00시 00분 ~ 23시 59분 사이에 인증 하셔야 합니다.
+												</p>
 											</div>
 										</div>
 									</div>
@@ -410,17 +409,17 @@ ul, ol {
 									<div class="specification-table">
 										<table>
 											<tr>
-												<td class="p-catagory">인증법</td>
+												<td class="p-catagory"><c:out value="${challenge.certificationway }"/></td>
 											</tr>
 										</table>
 										<br>
 										<div class="tgrid-image">
 											<div class="grid-image">
-												<img src="img/certification/X-2.jpg">
+												<img src="${pageContext.request.contextPath }/static2/thumb/${challenge.successimgname }">
 												<p>O</p>
 											</div>
 											<div class="grid-image">
-												<img src="img/certification/X-2.jpg">
+												<img src="${pageContext.request.contextPath }/static2/thumb/${challenge.failimgname }">
 												<p style="background-color: red;">X</p>
 											</div>
 										</div>
@@ -536,9 +535,10 @@ $(".rate_radio").on("click",function(){
  
 </script>
 
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=617c64aeafcfa7bd484ea2b0d79f230b"></script>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=617c64aeafcfa7bd484ea2b0d79f230b&libraries=services"></script>
 
 <script>
+var Nmap ='<c:out value="${challenge.offlineaddress}"/>'
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 mapOption = { 
     center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
@@ -547,16 +547,34 @@ mapOption = {
 
 var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
 
-//마커가 표시될 위치입니다 
-var markerPosition  = new kakao.maps.LatLng(33.450701, 126.570667); 
 
-//마커를 생성합니다
-var marker = new kakao.maps.Marker({
-position: markerPosition
-});
+//주소-좌표 변환 객체를 생성합니다
+var geocoder = new kakao.maps.services.Geocoder();
 
-//마커가 지도 위에 표시되도록 설정합니다
-marker.setMap(map);
+//주소로 좌표를 검색합니다
+geocoder.addressSearch(Nmap, function(result, status) {
+
+    // 정상적으로 검색이 완료됐으면 
+     if (status === kakao.maps.services.Status.OK) {
+
+        var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+
+        // 결과값으로 받은 위치를 마커로 표시합니다
+        var marker = new kakao.maps.Marker({
+            map: map,
+            position: coords
+        });
+
+        // 인포윈도우로 장소에 대한 설명을 표시합니다
+        var infowindow = new kakao.maps.InfoWindow({
+            content: '<div style="width:150px;text-align:center;padding:6px 0;"><c:out value="${challenge.offlineaddress}"/></div>'
+        });
+        infowindow.open(map, marker);
+
+        // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+        map.setCenter(coords);
+    } 
+});    
 
 </script>
 
@@ -566,7 +584,7 @@ marker.setMap(map);
 
 
 
-if($("#onoff").val() == "OFF" ){
+if($("#onoff").val() == "online" ){
 	$("#map").hide();
 }else{
 	$("#map").show();
