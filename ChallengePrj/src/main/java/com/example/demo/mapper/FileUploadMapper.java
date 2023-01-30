@@ -18,7 +18,7 @@ public interface FileUploadMapper {
 	List<AttachImageDto> seletList();
 	
 	@Select("SELECT*FROM image_upload where CHALLENGETITLE=${challengetitle}")
-	List<AttachImageDto> seletListtwo();
+	List<AttachImageDto> seletListtwo(AttachImageDto challengetitle);
 	
 	@Select("SELECT*FROM MAKECHALLENGE")
 	List<makingChallengeDto> challengeList(makingChallengeDto dto);

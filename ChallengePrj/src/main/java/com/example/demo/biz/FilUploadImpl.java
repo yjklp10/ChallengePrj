@@ -20,15 +20,15 @@ public int insert(AttachImageDto dto) {
 }
 
 @Override
-public List<AttachImageDto> getAttachList(AttachImageDto memberid) {
+public List<AttachImageDto> getAttachList() {
 
 	return fileUploadMapper.seletList();
 }
 
 @Override
-public List<AttachImageDto> getAttachListtwo() {
+public List<AttachImageDto> getAttachListtwo(AttachImageDto  challengetitle) {
 
-	return fileUploadMapper.seletListtwo();
+	return fileUploadMapper.seletListtwo(challengetitle);
 }
 
 @Override
