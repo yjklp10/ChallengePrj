@@ -81,14 +81,19 @@
 }
 .guide{
 	margin: 10px 150px
+	
 }
 .guide p{
 	width:900px;
-	height:400px;
+	height:420px;
 	border:1px solid black;
 	font-size: 25px;
 	text-align: center;
 	line-height: 70px;
+}
+
+.guide h2{
+     text-align: center
 }
 #selected button{ background:red }
 
@@ -143,8 +148,9 @@ overflow-x: hidden;
                         </div>
                         <hr>
                         <div class="payment">
+                        <input type="hidden" id="memberid" name="memberid" value="${payment.memberid }">
                         <div class="paymentimg">
-                            <img src="img/certification/X-3.jpg" alt="">
+                            <img src="${pageContext.request.contextPath }/static2/thumb/${payment.thumbnailname }">
                         </div>
                         <div class="payments">
                         <div class="payment-1">
@@ -154,7 +160,7 @@ overflow-x: hidden;
                         <br><br>
                         <div class="payment-1">
                         	<p>챌린지 기간</p>
-                        	<a>12-22(월)~12-26(월)</a>
+                        	<a><c:out value="${payment.challengestartdate }"/>~<c:out value="${payment.challengeenddate }"/></a>
                         </div>
                         </div>
                         </div>
@@ -169,26 +175,31 @@ overflow-x: hidden;
                         <hr>
                         <div class="moneys">
                         <div class="moneybut-1">
-                        	<button id="pay1">10000원</button>
+                        	<button class="pay" id="pay1">10000원</button>
                         </div>
                         <div class="moneybut-1">
-                        	<button id="pay2">30000원</button>
+                        	<button class="pay" id="pay2">30000원</button>
                         	</div>
                         	<div class="moneybut-1">
-                        	<button id="pay3">50000원</button>
+                        	<button class="pay" id="pay3">50000원</button>
                         	</div>
                         <div class="moneybut-1">
-                        	<button id="pay4">100000원</button>
+                        	<button class="pay" id="pay4">100000원</button>
                         </div>
                         </div>
                         <br><br>
                         <div class="guide">
-                        	<p>주의사항</p>
-                        	
+                        	<h2>환불정책</h2><br>
+                        	<p>1.챌린지 시작 전까지 100% 환불<br>
+                        		챌린지가 시작되기 전까지 신청한 챌린지를 자유롭게 취소할 수 있습니다.<br><br>
+                        		2.챌린지 시작 후 취소 불가<br>
+                        		챌린지에는 여러 회원님들이 함께 하는 대회인만큼,<br> 챌린지 시작후에는 환불이 불가능합니다.
+                        	</p>
                         </div>
+                        
                         <br><br><br>
                         <div class="buy">
-                        	<button id="buys" onclick="requestPay()">10000원 충전하기</button>
+                        	<button type="button" id="buys" onclick="requestPay()">10,000원 충전하기</button>
                         </div>
                    </div>     
                 </div>
@@ -210,9 +221,15 @@ overflow-x: hidden;
     <script src="js/jquery.slicknav.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
-
+ <!-- jQuery -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
+<!-- iamport.payment.js -->
+<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
     
     <script>
+    
+    
+    
     /** 버튼 색 변경 및 텍스트 변경**/
     $(document).ready(function () {
         $(".moneybut-1").each(function () {
@@ -235,34 +252,35 @@ overflow-x: hidden;
 	$("#pay3").click(function(){
 		$("#depoite").text("50000원");
 		$("#buys").text("50000원 충전하기");
+		
 	});
 	$("#pay4").click(function(){
 		$("#depoite").text("100000원");
 		$("#buys").text("100000원 충전하기");
+
 	});
+	
+	
+	
+	
    
-    </script>
     
-     <!-- jQuery -->
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
-<!-- iamport.payment.js -->
-<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
     
-    <script>
+    
+    
     
     
     /** 결제api **/
     // 결제금액,  구매자 이름, 챌린지 이름
-    const payamount = $("#depoite").val();
-    const payname = "${payment.challengetitle }";
-    const paybutton = $("#pay1").innerText();
     
-    parseInt(payamount);
-    
-    console.log(paybutton);
-    console.log(payamount);
-    console.log(payname);
-    
+    	var money = $("#depoite").val();
+    	
+        var title = "${payment.challengetitle }";
+        var  id = $("#memberid").val();
+        
+        console.log(money);
+        console.log(title);
+        console.log(id);
     
     var IMP = window.IMP; 
     IMP.init("imp56247621"); 
@@ -271,14 +289,17 @@ overflow-x: hidden;
     IMP.request_pay({
       pg: "kakaopay",
       pay_method: "card",
-      merchant_uid: "ORD20180131-00000442",   // 주문번호
-      name: payname,
-      amount: payamount                        // 숫자 타입
+      merchant_uid: 'merchant_' + new Date().getTime(),   // 주문번호
+      buy_id: id,
+      name: title,
+      amount: money                        // 숫자 타입
+      
     }, function (rsp) { // callback
       if (rsp.success) {
     	 console.log("발령키 발급 성공", rsp)
         // 결제 성공 시 로직
         alert("결제 성공");
+    	 location.href = "/mypage"
       } else {
         // 결제 실패 시 로직
         var msg = "결제 실패";
@@ -288,7 +309,7 @@ overflow-x: hidden;
       }
     });
   }
-</script>
+  </script>
 </body>
 <!-- footer -->
 <%@include file="./include/footer.jsp"%>
