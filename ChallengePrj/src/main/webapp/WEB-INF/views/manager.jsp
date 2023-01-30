@@ -118,20 +118,13 @@ table {
 											<td>${dto.accountnumber }</td>
 											<td>${dto.withdrawpoint }</td>
 											<td><fmt:formatDate pattern="yyyy-MM-dd" value="${dto.pointdate }"/></td>
-											<td>							
-											<select name="status" id="status" >								
-												<option value=1 <c:if test="${dto.status eq '1'}">selected</c:if>>1</option>
-												<option value=2 <c:if test="${dto.status eq '2'}">selected</c:if>>2</option>
-												<option value=3 <c:if test="${dto.status eq '3'}">selected</c:if>>3</option>
-											</select>
-											</td>
+											<td>${dto.status }</td>
 										</tr>
 									</c:forEach>
 								</c:otherwise>
 							</c:choose>
 						</tbody>
 					</table>
-					<button type="submit" class="ok-btn2" >수정</button>
 					</form>
 				</div>
 			</div>
