@@ -41,24 +41,34 @@ function getInfo() {
            // var kakao_account = result.kakao_account;
             var email = res.kakao_account.email;
             var gender = res.kakao_account.gender;
-            
+            sessionStorage.setItem("id", id );
+            sessionStorage.setItem("email", email );
+            sessionStorage.setItem("gender", gender );
            
 
             console.log(id, gender);
             
             $.ajax({
             	data:{memberid:id},
-            	url:'idchk.do',
+            	url:'idchkkakao.do',
             	type:'post',
             	async:false,
-        		success:function(res){
-        			if(res == 0){
-        				sessionStorage.setItem("dto",res );
+        		success:function(out){
+        			if(out == 0){
+        				
         				$(location).attr('href','registerformkakao.do')
         				
         			}
-        			else if(res == 1){
-        				$(location).attr('href','home_main')
+        			else if(out == 1){
+        				$.ajax({
+        					data:{memberid:id, memberpw:'카카오비밀번호'},
+        					url:'login',
+        					type:'post',
+        					async:false,
+        					success:function(res){
+        						$(location).attr('href','home_main')
+        					}
+        				})
         			}
         		}
             })
