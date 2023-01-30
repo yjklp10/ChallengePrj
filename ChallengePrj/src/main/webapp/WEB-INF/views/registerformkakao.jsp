@@ -314,10 +314,10 @@ function id_overlap_chk(){
                     <div class="register-form">
                         <h2>회원가입</h2>
                         <form method="post" onsubmit="return overlap_chk()" action="register.do">
-                        	<input type="hidden" name="memberid" value="${memberdto.memberid }">
-                        	<input type="hidden" name="memberpw" value="${memberdto.memberpw }">
-                        	<input type="hidden" name="memberemail" value="${memberdto.memberemail }">
-                        	<input type="hidden" name="membername" value="${memberdto.membername }">
+                        	<input type="hidden" name="memberid" value="${dto.memberid }">
+                        	<input type="hidden" name="memberpw" value="${dto.memberpw }">
+                        	<input type="hidden" name="memberemail" value="">
+                        	<input type="hidden" name="membername" value="${dto.membername }">
                             
                              <div class="group-input">
                                 <label for="nick">닉네임 *</label>
