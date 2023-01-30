@@ -64,7 +64,7 @@
 			INSERT INTO MAKECHALLENGE VALUES(
 			NULL,
 			 #{challengetitle},
-			  'offline' ,
+			  '오프라인' ,
 			  #{offlineaddress},
 			  #{offlineaddressdetail},
 			  #{offlinestarttime},
@@ -91,7 +91,7 @@
 			INSERT INTO MAKECHALLENGE VALUES(
 			NULL,
 			 #{challengetitle},
-			  'online' ,
+			  '온라인' ,
 			  NULL,
 			  NULL,
 			  NULL,

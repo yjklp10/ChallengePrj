@@ -189,6 +189,9 @@ public class challengeController {
     		if(res>0) {
 
     		return "redirect:/home_main";
+    		}
+    		return "redirect:/home_main";
+    		
 	}
 	
 	@PostMapping("/registOnlineChallenge")
@@ -292,7 +295,9 @@ public class challengeController {
     		
     		if(res>0) {
 
-    		return "home_main";
+    		return "redirect:/home_main";
+    		}
+    		return "redirect:/home_main";
 	}
 	
 //	
