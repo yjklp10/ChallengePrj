@@ -200,7 +200,7 @@ function showUploadImage(uploadResultArr){
 	
 	let  challengetitle=$(".head-title")[0].innerText;
 	console.log(challengetitle);
-	let memberid ="sam6754";
+
 	
 	
 	str += "<div id='result_card'>";
@@ -211,7 +211,6 @@ function showUploadImage(uploadResultArr){
 	str += "<input type='hidden' name='uuid' value='"+ obj.uuid +"'>";
 	str += "<input type='hidden' name='fileName' value='"+ obj.fileName +"'>";
 	str += "<input type='hidden' name='challengetitle' value='"+ challengetitle+"'>";
-	str += "<input type='hidden' name='memberid' value='"+ memberid+"'>";
 	str += "<input type='submit' value='인증하기' >";
 	str += "</form>"
 	str += "</div>";		
