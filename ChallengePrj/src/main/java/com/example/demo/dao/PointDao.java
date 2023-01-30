@@ -15,6 +15,5 @@ public interface PointDao {
 	public int update(MoneyDto dto);
 	public int insertMyinfo(MoneyDto dto);
 	public MoneyDto selectMyinfo(String memberid);
-	public int updatestatus(PointDto dto);
 
 }

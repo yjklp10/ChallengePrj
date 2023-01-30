@@ -97,10 +97,5 @@ public class PointDaoImpl implements PointDao {
 		return res;
 	}
 
-	@Override
-	public int updatestatus(PointDto dto) {
-		
-			return 0;
-
-		}
+	
 }

@@ -144,7 +144,7 @@ $(function (){
 						</div>
 						<div class="group-input">
 							<label for="membereail">이메일</label> 
-							<input id="memberemail" name="memberemail" type="text" value="${dto.memberemail }">
+							<input id="memberemail" name="memberemail" type="text" value="${dto.memberemail }" disabled>
 						</div>
 						<div class="group-input">
 							<label for="memberphone">전화번호</label> 
