@@ -17,6 +17,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
@@ -46,8 +47,7 @@ public class ImageController {
 	
     @GetMapping(value="/popen")	
 	public String popen(Model model,makingChallengeDto dto) {
-   
-     model.addAttribute("list",biz.selectOne(dto));
+        model.addAttribute("list",biz.selectOne(dto));
 		return "imageuploadpopup";
 	}
 	
@@ -170,29 +170,35 @@ public class ImageController {
 	
 	@PostMapping("/dbinsert")
 	public String dbinsert(AttachImageDto dto) {
+	
+    	Authentication A = SecurityContextHolder.getContext().getAuthentication();
+        String memberid=A.getName();
+        dto.setMemberid(memberid);
 		System.out.println(dto);
 		biz.insert(dto);
 		System.out.println("dbinsert controller");
 		return "redirect:/";
 	}
-	@PostMapping("/myuploadimage")
-	public String myuploadimage(AttachImageDto memberid) {
+	@GetMapping("/myuploadimage")
+	public String myuploadimage() {
 	
 		return "mypage_image";
 	}
 	@GetMapping(value="/getAttachList",produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
+	@ResponseBody
 	public ResponseEntity<List<AttachImageDto>> getAttachList(){
-	   
+		Authentication A = SecurityContextHolder.getContext().getAuthentication();
+		String memberid = A.getName();
+		AttachImageDto dto=new AttachImageDto();
+		dto.setMemberid(memberid);
 		
-	
-	
-	    return	new  ResponseEntity<List<AttachImageDto>>(biz.getAttachList(),HttpStatus.OK);
+	    return	new  ResponseEntity<List<AttachImageDto>>(biz.getAttachList(dto),HttpStatus.OK);
 		  
 	}
 	
 	
 	@GetMapping(value="getAtttachListtwo",produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
-	public ResponseEntity<List<AttachImageDto>> getAttachListtwo(AttachImageDto  challengetitle ){
+	public ResponseEntity<List<AttachImageDto>> getAttachListtwo(AttachImageDto  challengetitle){
 		return new ResponseEntity<List<AttachImageDto>>(biz.getAttachListtwo(challengetitle),HttpStatus.OK);
 	}
 	@RequestMapping(value = "/test", method = { RequestMethod.POST })
