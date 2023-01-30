@@ -8,54 +8,66 @@
 
 <!-- 네이버 스크립트 -->
 <script src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js" charset="utf-8"></script>
-
+<script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
 <script>
 
-var naverLogin = new naver.LoginWithNaverId(
-		{
-			clientId: "1w1W1TfzsLpR_jUMM8rn", //내 애플리케이션 정보에 cliendId를 입력해줍니다.
-			callbackUrl: "http://localhost:8686/naverLogin", // 내 애플리케이션 API설정의 Callback URL 을 입력해줍니다.
-			isPopup: false,
-			callbackHandle: true
-		}
-	);	
+//2. 카카오 초기화
+Kakao.init('9556a955d2ae033cd558c3f1ee140857');
+console.log( Kakao.isInitialized() ); // 초기화 판단여부
 
-naverLogin.init();
+// 3. 데모버전으로 들어가서 카카오로그인 코드를 확인.
+function loginWithKakao() {
+    Kakao.Auth.login({
+        success: function (authObj) {
+            console.log(authObj); // access토큰 값
+            Kakao.Auth.setAccessToken(authObj.access_token); // access토큰값 저장
 
-window.addEventListener('load', function () {
-	naverLogin.getLoginStatus(function (status) {
-		if (status) {
-			var email = naverLogin.user.getEmail(); // 필수로 설정할것을 받아와 아래처럼 조건문을 줍니다.
-    		
-			console.log(naverLogin.user); 
-    		
-            if( email == undefined || email == null) {
-				alert("이메일은 필수정보입니다. 정보제공을 동의해주세요.");
-				naverLogin.reprompt();
-				return;
-			}
-		} else {
-			console.log("callback 처리에 실패하였습니다.");
-		}
-	});
-});
-
-
-var testPopUp;
-function openPopUp() {
-    testPopUp= window.open("https://nid.naver.com/nidlogin.logout", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,width=1,height=1");
-}
-function closePopUp(){
-    testPopUp.close();
+            getInfo();
+        },
+        fail: function (err) {
+            console.log(err);
+        }
+    });
 }
 
-function naverLogout() {
-	openPopUp();
-	setTimeout(function() {
-		closePopUp();
-		}, 1000);
-	
-	
+// 4. 엑세스 토큰을 발급받고, 아래 함수를 호출시켜서 사용자 정보를 받아옴.
+function getInfo() {
+    Kakao.API.request({
+        url: '/v2/user/me',
+        success: function (res) {
+            console.log(res);
+            // 이메일, 성별, 닉네임, 프로필이미지
+            var id = res.id;
+           // var kakao_account = result.kakao_account;
+            var email = res.kakao_account.email;
+            var gender = res.kakao_account.gender;
+            
+           
+
+            console.log(id, gender);
+            
+            $.ajax({
+            	data:{memberid:id},
+            	url:'idchk.do',
+            	type:'post',
+            	async:false,
+        		success:function(res){
+        			if(res == 0){
+        				sessionStorage.setItem("dto",res );
+        				$(location).attr('href','registerformkakao.do')
+        				
+        			}
+        			else if(res == 1){
+        				$(location).attr('href','home_main')
+        			}
+        		}
+            })
+            
+        },
+        fail: function (error) {
+            alert('카카오 로그인에 실패했습니다. 관리자에게 문의하세요.' + JSON.stringify(error));
+        }
+    });
 }
 </script>
 <head>
@@ -133,7 +145,7 @@ function naverLogout() {
                             			<a href="/oauth2/authorization/google">
                             				구글로그인
                             			</a>
-                            			<a href="#">
+                            			<a id="custom-login-btn" href="javascript:loginWithKakao()">
                             				<img alt="카카오" src="img/kakao.png" style="whid:215px; margin-left:30px;">
                             			</a>
                             			<a id="naverIdLogin_loginButton" href="javascript:void(0)">

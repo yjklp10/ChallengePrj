@@ -1,9 +1,11 @@
 package com.example.demo.controller;
 
+import java.io.IOException;
 import java.io.PrintWriter;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.example.demo.biz.ForgetPwMailBizImpl;
 import com.example.demo.biz.MemberBiz;
@@ -62,6 +65,12 @@ public class LoginController {
 	public String registerForm() {
 		
 		return "registerform";
+	}
+	
+	@RequestMapping("/registerformkakao.do")
+	public String registerFormKakao() {
+		
+		return "registerformkakao";
 	}
 	
 	public String registerFormGoogle(Model model, MemberDto dto) {
@@ -201,10 +210,6 @@ public class LoginController {
 	        e.printStackTrace();
 	    }
 	}
-	
-	
-	
-	
 	
 	
 	
