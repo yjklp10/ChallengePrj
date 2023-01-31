@@ -104,22 +104,22 @@ height:30px;
 
 </head>
 <body>
-    <input type="hidden" name="chid" value="${list.chid}">
+   
 <div class="container"> 
         <div class="popup-wrap" id="popup"> 
           <div class="popup">	
             <div class="popup-head">	
-                <span class="head-title">인증 사진 올리기</span>
+                <span class="head-title">${list.challengetitle}</span>
             </div>
             <div class="popup-body">	
               <div class="body-content">
                 <div class="body-titlebox">
-                  <h1>파일 입력</h1>
+                  <h1>챌린지 인증사진 업로드</h1>
                 </div>
                 <div class="body-contentbox">
                  <div class="form_section">
     <div class="form_section_title">
-        <label>인증 사진</label>
+        <label></label>
     </div>
     <div class="form_section_content">
         <input type="file" name="uploadFile">
@@ -154,7 +154,7 @@ $("input[type='file']").on("change",function(e) {
 	}
 	formData.append("uploadFile",fileObj);
 	$.ajax({
-		url:"uploadAjaxAction",
+		url:"uploadAjaxActioning",
 		processData:false,
 		contentType:false,
 		data:formData,
@@ -198,20 +198,20 @@ function showUploadImage(uploadResultArr){
 	
 	let fileCallPath=encodeURIComponent(obj.uploadFilePath+"/s_"+obj.uuid+"_"+obj.fileName);
 	
-	let title=$(".head-title")[0].innerText;
-	
-	let chid = $('input[name=chid]')[0].defaultValue;
+	let  challengetitle=$(".head-title")[0].innerText;
+	console.log(challengetitle);
+
 	
 	
 	str += "<div id='result_card'>";
-	str += "<img src='/display?fileName=" +fileCallPath +"'>";
+	str += "<img src='/displaying?fileName=" +fileCallPath +"'>";
 	str += "<div class='imgDeleteBtn' data-file='" + fileCallPath + "'>x</div>";
 	str += "<form action='/dbinsert' method='post' onsubmit='return selectOne();'>";
 	str += "<input type='hidden' name='uploadFilePath' value='"+ obj.uploadFilePath +"'>";
 	str += "<input type='hidden' name='uuid' value='"+ obj.uuid +"'>";
 	str += "<input type='hidden' name='fileName' value='"+ obj.fileName +"'>";
-	str += "<input type='hidden' name='title' value='"+title+"'>";
-	str += "<input type='hidden' name='title' value='"+chid+"'>";
+	str += "<input type='hidden' name='challengetitle' value='"+ challengetitle+"'>";
+	str += "<input type='submit' value='인증하기' >";
 	str += "</form>"
 	str += "</div>";		
 	
@@ -248,32 +248,32 @@ function deleteFile(){
 	});
 }
 
-function test(){
-	let title=$(".head-title")[0].innerText;
+//function test(){
+	//let  challengetitle=$(".head-title")[0].innerText;
     
-	let chid = $('input[name=chid]')[0].defaultValue;
-	console.log(title);
+	//let chid = $('input[name=chid]')[0].defaultValue;
+	//console.log(title);
 
-	$.ajax({
-		url:'/test',
-		type:'post',
-		data:{ title,
-			   chid },
-		success:function(data){
-			if(data == 1){
-				alert("인증 성공");
-				return true;
-			}else{
-				alert("인증 한도를 초과했습니다");
-				return false;
-			}
-		},
-		error:function(){
-			alert("인증 오류!");
-			return false;
-		}
-	});
-}
+	//$.ajax({
+	//	url:'/test',
+	//	type:'post',
+	//	data:{ title,
+	//		   chid },
+	////	success:function(data){
+	//		if(data == 1){
+		//		alert("인증 성공");
+		//		return true;
+	//		}else{
+		//		alert("인증 한도를 초과했습니다");
+		//		return false;
+	//		}
+	//	},
+	//	error:function(){
+	//		alert("인증 오류!");
+	//		return false;
+	//	}
+//	});
+//}
 
 </script>
 </body>

@@ -6,7 +6,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.UUID;
 
@@ -30,8 +29,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.example.demo.biz.CommentBiz;
 import com.example.demo.biz.MakingChallengeBiz;
 import com.example.demo.dto.CommentDto;
-import com.example.demo.dto.MemberDto;
-import com.example.demo.dto.Testchallenge;
 import com.example.demo.dto.makingChallengeDto;
 
 @Controller
@@ -51,7 +48,7 @@ public class challengeController {
 	
 	//신호준
 	@GetMapping(value="/chdetail")
-	public String challengeView(Testchallenge challenge, Model model) {
+	public String challengeView(makingChallengeDto challenge, Model model) {
 		logger.info("challenge");
 		
 		model.addAttribute("challenge", makingChallengeBiz.getDetail(challenge.getChallengeno()));
@@ -65,7 +62,7 @@ public class challengeController {
 	}
 	
 	@GetMapping(value="/payment")
-	public String paymentView(Testchallenge challenge, Model model) {
+	public String paymentView(makingChallengeDto challenge, Model model) {
 		logger.info("payment");
 		
 		model.addAttribute("payment", makingChallengeBiz.getDetail(challenge.getChallengeno()));
@@ -187,9 +184,13 @@ public class challengeController {
     		int res = makingChallengeBiz.offlineinsert(dto);
     		
     		if(res>0) {
-    			return "redirect:/home_main";
-    		}
+
     		return "redirect:/home_main";
+    		}
+
+    		return "redirect:/home_main";
+    		
+
 	}
 	
 	@PostMapping("/registOnlineChallenge")
@@ -292,11 +293,13 @@ public class challengeController {
     		int res = makingChallengeBiz.onlineinsert(dto);
     		
     		if(res>0) {
-    			return "redirect:/home_main";
+
+
+    		return "redirect:/home_main";
     		}
-    		return "home_main";
+    		return "redirect:/home_main";
+
 	}
-	
 //	
 //	 private String makeFolder() {
 //

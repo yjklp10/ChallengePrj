@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.example.demo.dto.MoneyDto;
 import com.example.demo.dto.PointDto;
+import com.example.demo.dto.makingChallengeDto;
 
 public interface PointDao {
 
@@ -15,6 +16,5 @@ public interface PointDao {
 	public int update(MoneyDto dto);
 	public int insertMyinfo(MoneyDto dto);
 	public MoneyDto selectMyinfo(String memberid);
-	public int updatestatus(PointDto dto);
-
+	public List<makingChallengeDto> selectchall(String memberid);
 }

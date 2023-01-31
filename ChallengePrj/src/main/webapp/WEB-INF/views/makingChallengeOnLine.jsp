@@ -621,10 +621,10 @@ $(document).ready(function() {
                             <div class="col-lg-12 choices" id="categories">
                                 <label  for="fir">카테고리 선택<span>*</span></label>
                                 <br>
-                                <input  type="radio"  id="category_select1" value="exercise" name="category"><label for="category_select1">운동</label>
-                                <input  type="radio"  id="category_select2" value="eatingHabits" name="category"><label for="category_select2">식습관</label>
-                                <input  type="radio"  id="category_select3" value="wakeUp" name="category"><label for="category_select3">기상</label>
-                                <input  type="radio"  id="category_select4" value="hobby" name="category"><label for="category_select4">취미</label>
+                                <input  type="radio"  id="category_select1" value="운동" name="category"><label for="category_select1">운동</label>
+                                <input  type="radio"  id="category_select2" value="공부" name="category"><label for="category_select2">공부</label>
+                                <input  type="radio"  id="category_select3" value="취미" name="category"><label for="category_select3">취미</label>
+                                <input  type="radio"  id="category_select4" value="규칙적인 생활" name="category"><label for="category_select4">규칙적인 생활</label>
                             </div>
                             
 		<div>

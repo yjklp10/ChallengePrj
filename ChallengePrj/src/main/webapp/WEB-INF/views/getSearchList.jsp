@@ -34,7 +34,9 @@
 
 				
   				  <li> 
+
   				  <a href="/chdetail?challengeno=${newRes.challengeno }"> 				  	
+
    				   <img src="../static2/thumb/${newRes.thumbnailname }" alt="${newRes.thumbnailname }">
    				    
    				    <div class="content-name">

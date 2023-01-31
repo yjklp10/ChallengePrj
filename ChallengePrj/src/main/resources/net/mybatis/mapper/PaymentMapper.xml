@@ -4,10 +4,22 @@
 
 <mapper namespace="com.example.demo.mapper.PaymentMapper">
    <!-- 신호준 -->
-   <select id="payment" resultType="PaymentDto" >
-   		select *
-   		from PAYMENT
-   		where PAYNUM = #{PAYNUM} 
-   </select>
    
+   
+   
+   <insert id="payment">
+       INSERT INTO PAYMENT(
+	PAYNUM
+	, CHALLENGENO
+	, MEMBERID
+	, MERCHANT_UID
+	, CHALLENGETITLE
+	, DEPOSIT
+)
+VALUES( NULL
+	, #{challengeno}
+	, #{memberid}
+	, #{challengetitle}
+	, #{deposit} ) 
+    </insert>
 </mapper>

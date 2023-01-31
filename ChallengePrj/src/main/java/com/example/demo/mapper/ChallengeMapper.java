@@ -10,7 +10,7 @@ import com.example.demo.dto.makingChallengeDto;
 @Repository
 @Mapper
 public interface ChallengeMapper {
-	public Testchallenge getDetail(int challengeno);
+	public makingChallengeDto getDetail(int challengeno);
 	public int onlineinsert(makingChallengeDto dto);
 	public int offlineinsert(makingChallengeDto dto);
 }

@@ -25,19 +25,41 @@
     <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
-    
-    <style>
+      <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+      <style>
      
-       </style>   
+        h2{
+            text-align: center;
+            
+            margin: 30px 0 50px;
+        }
+        .minho{
+           text-align: center;
+            margin: 10px 50px;
+        }
+         .minho img{
+            width: 230px;
+            height: 230px;
+            padding: 5px;
+            filter: grayscale(100%);
+            transition: 1s;
+       
+        }
+          .minho img:hover{
+            filter: grayscale(0%);
+            transform: scale(1.1);
+        }
+       </style>  
+     
 </head>
 
 <body>
    
-    <h1>mypage_image</h1>
+    <h2>mypage_image</h2s>
     <div class="minho">
 
     </div>
-     <script> 
+      <script> 
     
        
         	 let minho= $(".minho");
@@ -49,20 +71,14 @@
          for(key in arr){
              let fileCallPath=encodeURIComponent(arr[key].uploadFilePath+ "/s_"+arr[key].uuid+"_"+arr[key].fileName);
                
-                 str += "<img src='/display?fileName=" + fileCallPath +"'>";
-                 //"<a href='/display?fileName="  + fileCallPath +"' data-lightbox='mygallery' >";
+                 str += "<img src='/displaying?fileName=" + fileCallPath +"'>";
+              
            
                  minho.html(str);
         
          }
            });
-        	 
-            
-         
-       
        </script>
-   
-  
      	<%@include file="./include/footer.jsp" %>
     <!-- Js Plugins -->
     <script src="js/jquery-3.3.1.min.js"></script>

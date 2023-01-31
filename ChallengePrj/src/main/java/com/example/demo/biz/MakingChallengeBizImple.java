@@ -24,7 +24,7 @@ public class MakingChallengeBizImple implements MakingChallengeBiz{
 	}
 
 	@Override
-	public Testchallenge getDetail(int challengeno) {
+	public makingChallengeDto getDetail(int challengeno) {
 		return mapper.getDetail(challengeno);
 	}
 

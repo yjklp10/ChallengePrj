@@ -10,15 +10,18 @@
 <script src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js" charset="utf-8"></script>
 <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
 <script>
+
 //2. 카카오 초기화
 Kakao.init('9556a955d2ae033cd558c3f1ee140857');
 console.log( Kakao.isInitialized() ); // 초기화 판단여부
+
 // 3. 데모버전으로 들어가서 카카오로그인 코드를 확인.
 function loginWithKakao() {
     Kakao.Auth.login({
         success: function (authObj) {
             console.log(authObj); // access토큰 값
             Kakao.Auth.setAccessToken(authObj.access_token); // access토큰값 저장
+
             getInfo();
         },
         fail: function (err) {
@@ -26,6 +29,7 @@ function loginWithKakao() {
         }
     });
 }
+
 // 4. 엑세스 토큰을 발급받고, 아래 함수를 호출시켜서 사용자 정보를 받아옴.
 function getInfo() {
     Kakao.API.request({
@@ -41,6 +45,7 @@ function getInfo() {
             sessionStorage.setItem("email", email );
             sessionStorage.setItem("gender", gender );
            
+
             console.log(id, gender);
             
             $.ajax({

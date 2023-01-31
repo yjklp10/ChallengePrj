@@ -22,6 +22,16 @@ $(function(){
 			 $('#pwchk').html("비밀번호가 일치합니다.").css("display","flex").css("color","#008000");
 		}
 	}); 
+	
+	var id = sessionStorage.getItem('id');
+	var email = sessionStorage.getItem('email');
+	var gender = sessionStorage.getItem('gender');
+	
+	$("#memberid").attr('value',id);
+	$("#memberemail").attr('value',email);
+	$("#membergender").attr('value',gender);
+	
+	
 	         
 });
 
@@ -313,11 +323,11 @@ function id_overlap_chk(){
                 <div class="col-lg-6 offset-lg-3">
                     <div class="register-form">
                         <h2>회원가입</h2>
-                        <form method="post" onsubmit="return overlap_chk()" action="register.do">
-                        	<input type="hidden" name="memberid" value="${memberdto.memberid }">
-                        	<input type="hidden" name="memberpw" value="${memberdto.memberpw }">
-                        	<input type="hidden" name="memberemail" value="${memberdto.memberemail }">
-                        	<input type="hidden" name="membername" value="${memberdto.membername }">
+                        <form method="post" onsubmit="return overlap_chk()" action="registerkakao.do">
+                        	<input type="hidden" id="memberid" name="memberid" value="">
+                        	<input type="hidden" id="memberpw" name="memberpw" value="카카오비밀번호">
+                        	<input type="hidden" id="memberemail" name="memberemail" value="">
+                        	<input type="hidden" id="membergender" name="membergender" value="">
                             
                              <div class="group-input">
                                 <label for="nick">닉네임 *</label>
@@ -326,20 +336,16 @@ function id_overlap_chk(){
                                 
                                 <input type="button" value="중복확인" onclick="nick_overlap_chk()" style="width: 100px;float: right;">
                             </div>
-                             
+                             <div class="group-input">
+                                <label for="name">이름 *</label>
+                                <input type="text" class="form-control" name="membername" id="name" required="required">
+                            </div>
                            
                              <div class="group-input">
                                 <label for="tel">전화번호 *</label>
-                                <input type="tel" name="memberphone" id="memberphone">
+                                <input type="tel" name="memberphone" id="memberphone" required="required">
                             </div>
-                             <div class="group-input-radio" style="margin-bottom: 25px;">
-                            	<label for="gender" style="display: block;font-size: 18px;color: #252525;margin-bottom: 13px;">성별 *</label>
-                            	<input type="radio" name="membergender" value="m" required="required">
-                            	남성
-                            	&nbsp;&nbsp;
-                            	<input type="radio" name="membergender" value="w" required="required">
-                            	여성
-                            </div>
+                             
                             <button type="submit" onclick="overlap_chk()" class="site-btn register-btn">회원가입</button>
                         </form>
                         <div class="switch-login">

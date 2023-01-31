@@ -109,29 +109,22 @@ table {
 									</tr>
 								</c:when>
 								<c:otherwise>
-									<c:forEach items="${list }" var="dto">
+									<c:forEach items="${list }" var="list">
 										<tr>											
-											<td><input type="hidden" name="pointno" id="pointno" value="${dto.pointno }">${dto.pointno }</td>
-											<td>${dto.memberid }</td>
-											<td>${dto.bankname }</td>
-											<td>${dto.accountholder }</td>
-											<td>${dto.accountnumber }</td>
-											<td>${dto.withdrawpoint }</td>
-											<td><fmt:formatDate pattern="yyyy-MM-dd" value="${dto.pointdate }"/></td>
-											<td>							
-											<select name="status" id="status" >								
-												<option value=1 <c:if test="${dto.status eq '1'}">selected</c:if>>1</option>
-												<option value=2 <c:if test="${dto.status eq '2'}">selected</c:if>>2</option>
-												<option value=3 <c:if test="${dto.status eq '3'}">selected</c:if>>3</option>
-											</select>
-											</td>
+											<td><input type="hidden" name="pointno" id="pointno" value="${list.pointno }">${list.pointno }</td>
+											<td>${list.memberid }</td>
+											<td>${list.bankname }</td>
+											<td>${list.accountholder }</td>
+											<td>${list.accountnumber }</td>
+											<td>${list.withdrawpoint }</td>
+											<td><fmt:formatDate pattern="yyyy-MM-dd" value="${list.pointdate }"/></td>
+											<td>${list.status }</td>
 										</tr>
 									</c:forEach>
 								</c:otherwise>
 							</c:choose>
 						</tbody>
 					</table>
-					<button type="submit" class="ok-btn2" >수정</button>
 					</form>
 				</div>
 			</div>

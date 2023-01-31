@@ -16,7 +16,7 @@ public interface MakingChallengeBiz {
 	public void writeEx(makingChallengeDto dto);
 	
 	//신호준
-	public Testchallenge getDetail(int challengeno);
+	public makingChallengeDto getDetail(int challengeno);
 	
 	
 	public int offlineinsert(makingChallengeDto dto);
