@@ -19,7 +19,7 @@
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
-
+ 
     <!-- Css Styles -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="css/main_detail.css" type="text/css">
@@ -53,8 +53,10 @@
 	            <div class="container">
 	                <div class="ht-right">
 	                    <span class="login-panel">
+
 	                    <sec:authentication property="principal.username" var="memberid"/>
 	                    <img src="img/백일블럭2.png"><a href="mypage?memberid=${memberid }">마이페이지</a> / <a href="/logout">로그아웃</a>
+
 	                </div>
 	            </div>
 	        </div>
@@ -101,18 +103,17 @@
                 <nav class="nav-menu mobile-menu">
                     <ul>
                         <li class="active"><a href="home_main">Home</a></li>
-                        <li class="top-menu"><a href="#">정보</a>
+                        <li class="top-menu"><a href="introduction">정보</a>
                             <ul class="dropdown">
-                                <li><a href="#">소개</a></li>
-                                <li><a href="#">공지사항</a></li>
-                                <li><a href="#">가이드</a></li>
-                                <li><a href="#">이벤트</a></li>
+                                <li><a href="introduction">소개</a></li>
+                                <li><a href="guide">가이드</a></li>
+                                <li><a href="event">이벤트</a></li>
                             </ul>
                         </li>
                       	<li class="top-menu"><a href="detaillist">작심백일!</a>
                             <ul class="dropdown">
                                 <li><a href="detaillist">신규</a></li>
-                                <li><a href="detaillist_hot">인기</a></li>
+                                <li><a href='detaillist_category?category=공식'>공식</a></li>
                                 <li><a href='detaillist_onofflist?onoffchoice=온라인'>온라인</a></li>
                                 <li><a href='detaillist_onofflist?onoffchoice=오프라인'>오프라인</a></li>
                                 <li><a href='detaillist_category?category=운동'>운동</a></li>
@@ -124,8 +125,7 @@
                         <li class="top-menu"><a href="#">MY 챌린지</a>
                             <ul class="dropdown">
                                 <li><a href="makingChallengeStart">개설하기</a></li>
-                                 <li><a href="uploadAjax">인증하기</a></li>
-                                <li><a href="payment">포인트</a></li>
+                                 <li><a href="confirmopen">인증하기</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -136,6 +136,45 @@
         <div class="hr">
         <hr size="5" color="gray" padding-top="-10">
         </div>
+        
+        
+        <!-- 스크롤 퀵 메뉴 -->
+
+	<div id="quick">
+
+			<a href="introduction">
+			<img src="img/공지사항.png">
+			<p id="quick-text">소개</p>
+			</a>
+			
+			<a href="guide">
+			<img src="img/가이드.png">
+			<p id="quick-text">가이드</p>
+			</a>
+			
+			<a href="makingChallengeStart">
+			<img src="img/챌린지개설.png">
+			<p id="quick-text">챌린지 개설</p>
+			</a>
+			
+			<a href="mypage">
+			<img src="img/마이페이지.png">
+			<p id="quick-text">마이페이지</p>
+			</a>
+			
+	</div>
+        
+        
+        
+         <!-- top 버튼 -->
+
+		</div>
+		  <p class="btn_top"><a href="#none">
+			 <img src="img/화살표.png">
+		  </a></p>
+		</div>
+	
+	<!-- top 버튼 끝 -->
         
         
         	<script src="js/jquery-3.3.1.min.js"></script>

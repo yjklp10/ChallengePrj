@@ -5,55 +5,16 @@
 
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta http-equiv="X-UA-Compatible" content="ie=chrome">
-
+ <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+ <script>
+ 
+ </script>
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
     </div>
-
-         
-        
-        
-        <!-- 챌린지 선택 제목 -->
-      
-      <section class="challenge-choice">
-    	  <div class="challenge_guide">
-     		<h3>챌린지를 선택해주세요!</h3>
-	  	 </div>
-       </section>
-
-
-
-
-        <!-- 챌린지 선택  -->
-         
-
-        <section class="challenge-choice-icon">
-        	<a href="makingChallengeOffLine">
-        		<div class="choice_offline">
-        			<img src="img/오프라인초이스.png">
-        			<h3><b>오프라인 챌린지</b></h3>
-        		</div>
-        	</a>
-        
-
-       		 <a href="makingChallengeOnLine">
-     		  	<div class="choice_online">
-	  				<img src="img/온라인초이스.png">
-	  				<h3><b>온라인 챌린지</b></h3>
-       			 </div>
-       		 </a>
-       		 
-        </section>
-        
-      <<!-- 챌린지 선택 끝 -->
-      
-      
-   
  
 
-
-    
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
@@ -74,4 +35,3 @@
 
 </body>
 </html>
-
