@@ -59,15 +59,23 @@
 	</update>	
 	
 
-	<insert id="insert" parameterType="pointDto">
+	<insert id="insert" parameterType="PointDto">
 		INSERT INTO POINTINFO
 		VALUES( NULL, #{memberid}, #{bankname}, #{accountnumber},#{accountholder},#{withdrawpoint},"접수", NOW())		
 	</insert>
 	
-	<update id="updatepoint" parameterType="pointDto">
+	<update id="updatepoint" parameterType="PointDto">
 		UPDATE MYMONEY
 		SET MYPOINT=(#{mypoint}-#{withdrawpoint})
 		WHERE MEMBERID=#{memberid} 
 	</update>
+
+	<select id="selectchall" resultType="makingChallengeDto">
+   		SELECT  MAKECHALLENGE.CHALLENGENO, MAKECHALLENGE.CHALLENGETITLE, MAKECHALLENGE.CHALLENGESTARTDATE, 
+   		MAKECHALLENGE.CHALLENGEENDDATE,MAKECHALLENGE.THUMBNAILPATH, MAKECHALLENGE.ONOFFCHOICE 
+   		FROM MAKECHALLENGE
+   		INNER JOIN PAYMENT on PAYMENT.CHALLENGENO=MAKECHALLENGE.CHALLENGENO  
+		WHERE PAYMENT.MEMBERID = #{memberid};
+   	</select>
 
 </mapper>
