@@ -584,6 +584,7 @@ geocoder.addressSearch(Nmap, function(result, status) {
 
 
 
+
 if($("#onoff").val() == "online" ){
 	$("#map").hide();
 }else{
