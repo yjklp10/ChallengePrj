@@ -4,7 +4,7 @@
     
 <!DOCTYPE html>
 <html lang="ko">
-
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 
 <!-- 네이버 스크립트 -->
 <script src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js" charset="utf-8"></script>
@@ -66,6 +66,7 @@ function getInfo() {
         					type:'post',
         					async:false,
         					success:function(res){
+        					
         						$(location).attr('href','home_main')
         					}
         				})
