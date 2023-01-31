@@ -46,14 +46,6 @@ public class LoginController {
 	@Autowired
 	private MemberBiz biz;
 	
-	@RequestMapping("/test/login")
-	public @ResponseBody String testLogin(Authentication authentication, @AuthenticationPrincipal PrincipalDetails userDetails) {
-		System.out.println("/test/login ====================");
-		System.out.println("userDetails"+ userDetails.getMemberDto());
-		
-		
-		return "세션정보확인하기";
-	}
 	
 
 	@RequestMapping("/loginform.do")
@@ -96,6 +88,16 @@ public class LoginController {
 	}
 	
 	@ResponseBody
+	@RequestMapping("/idchkkakao.do")
+	public int idchkkakao(@RequestParam("memberid") String memberid) {
+		MemberDto res;
+		System.out.println(memberid);
+		res = biz.idChk(memberid);
+		
+		return (res != null)?1:0;
+	}
+	
+	@ResponseBody
 	@RequestMapping("/nickchk.do")
 	public int nickchk(@RequestParam("membernick") String membernick) {
 		MemberDto res;
@@ -119,6 +121,25 @@ public class LoginController {
 			return "redirect:loginform.do";
 		}else {
 			return "redirect:registerform.do";
+		}
+		
+	}
+	
+	@RequestMapping("/registerkakao.do")
+	public String memberinsertkakao(MemberDto dto) {
+		String rawPassword = dto.getMemberpw();
+		String encPassword = bCryptPasswordEncoder.encode(rawPassword);
+		dto.setMemberpw(encPassword);
+		dto.setMemberrole("ROLE_USER");
+		dto.setProvider("카카오");
+		dto.setProviderId("카카오_"+dto.getMemberid());
+		int res = biz.insert(dto);
+		
+		
+		if(res  > 0 ){
+			return "redirect:home_main";
+		}else {
+			return "redirect:registerformkakao.do";
 		}
 		
 	}

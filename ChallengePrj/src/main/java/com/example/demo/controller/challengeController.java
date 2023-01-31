@@ -6,7 +6,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.UUID;
 
@@ -30,8 +29,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.example.demo.biz.CommentBiz;
 import com.example.demo.biz.MakingChallengeBiz;
 import com.example.demo.dto.CommentDto;
-import com.example.demo.dto.MemberDto;
-import com.example.demo.dto.Testchallenge;
 import com.example.demo.dto.makingChallengeDto;
 
 @Controller
@@ -190,8 +187,10 @@ public class challengeController {
 
     		return "redirect:/home_main";
     		}
+
     		return "redirect:/home_main";
     		
+
 	}
 	
 	@PostMapping("/registOnlineChallenge")
@@ -295,11 +294,12 @@ public class challengeController {
     		
     		if(res>0) {
 
+
     		return "redirect:/home_main";
     		}
     		return "redirect:/home_main";
+
 	}
-	
 //	
 //	 private String makeFolder() {
 //
