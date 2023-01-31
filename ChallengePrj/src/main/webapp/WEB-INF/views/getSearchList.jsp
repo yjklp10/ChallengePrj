@@ -9,7 +9,7 @@
 
 
 
-
+ 
     <!-- 챌린지 리스트 -->
     
      <section class="challenge-list">

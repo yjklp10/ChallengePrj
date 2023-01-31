@@ -11,7 +11,7 @@
         <div class="loader"></div>
     </div>
 
-        
+         
         
         
         <!-- 챌린지 선택 제목 -->

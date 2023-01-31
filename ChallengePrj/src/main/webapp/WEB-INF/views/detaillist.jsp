@@ -10,7 +10,7 @@
 
 
 	
-	
+	 
 	
  <!-- 카테고리 아이콘 -->
     <section class="category-icon">
