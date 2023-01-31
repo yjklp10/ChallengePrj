@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo.biz.FileUploadbiz;
+import com.example.demo.biz.MemberBiz;
 import com.example.demo.biz.PointBiz;
 import com.example.demo.dto.MoneyDto;
 import com.example.demo.dto.PointDto;
@@ -20,7 +21,9 @@ import com.example.demo.dto.makingChallengeDto;
 @Controller
 public class HomeController {
 
-
+	@Autowired
+	private MemberBiz memberBiz;
+	
 	@Autowired
 	private PointBiz biz;
 	
@@ -57,6 +60,7 @@ public class HomeController {
 	public String mypage(Model model,String memberid,MoneyDto dto) {
 		biz.insertMyinfo(dto);
 		model.addAttribute("dto", biz.selectMyinfo(memberid));
+		model.addAttribute("memberdto", memberBiz.idChk(memberid));
 		return "mypage";
 	}
 	

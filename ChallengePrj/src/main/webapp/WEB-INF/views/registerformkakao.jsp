@@ -328,6 +328,7 @@ function id_overlap_chk(){
                         	<input type="hidden" id="memberpw" name="memberpw" value="카카오비밀번호">
                         	<input type="hidden" id="memberemail" name="memberemail" value="">
                         	<input type="hidden" id="membergender" name="membergender" value="">
+                        	
                             
                              <div class="group-input">
                                 <label for="nick">닉네임 *</label>

@@ -131,8 +131,8 @@ public class LoginController {
 		String encPassword = bCryptPasswordEncoder.encode(rawPassword);
 		dto.setMemberpw(encPassword);
 		dto.setMemberrole("ROLE_USER");
-		dto.setProvider("카카오");
-		dto.setProviderId("카카오_"+dto.getMemberid());
+		dto.setProvider("kakao");
+		dto.setProviderId("kakao_"+dto.getMemberid());
 		int res = biz.insert(dto);
 		
 		

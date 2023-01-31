@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
+<%@ taglib prefix="c"   uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -158,6 +160,12 @@ $(function (){
 							<label for="point">포인트</label> 
 							<input id="point" name="point" type="text" value="${dto.mypoint }" disabled>
 						</div>
+						
+							<c:if test="${'' eq memberdto.provider }">
+								<input type="button" class="blog-btn1" value="비밀번호 바꾸기" >
+							</c:if>
+					
+						
 						<button type="submit" class="blog-btn1" >수정하기</button>
 						<button type="button" class="blog-btn" onclick="location.href='/point?memberid=${dto.memberid }'">환급신청</button>
 					</form>
