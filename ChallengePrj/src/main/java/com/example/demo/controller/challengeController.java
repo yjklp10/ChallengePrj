@@ -187,7 +187,10 @@ public class challengeController {
 
     		return "redirect:/home_main";
     		}
-    		return null;
+
+    		return "redirect:/home_main";
+    		
+
 	}
 	
 	@PostMapping("/registOnlineChallenge")
@@ -291,9 +294,11 @@ public class challengeController {
     		
     		if(res>0) {
 
-    		return "home_main";
+
+    		return "redirect:/home_main";
     		}
-    		return null;
+    		return "redirect:/home_main";
+
 	}
 //	
 //	 private String makeFolder() {
