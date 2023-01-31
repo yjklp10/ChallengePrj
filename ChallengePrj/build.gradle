@@ -30,9 +30,8 @@ dependencies {
 	runtimeOnly 'mysql:mysql-connector-java'
 
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-  	compileOnly 'org.projectlombok:lombok'
-	compileOnly 'org.projectlombok:lombok:1.18.24'
-	annotationProcessor 'org.projectlombok:lombok:1.18.24'
+	compileOnly 'org.projectlombok:lombok:1.18.20'
+	annotationProcessor 'org.projectlombok:lombok:1.18.20'
 	
 	// https://mvnrepository.com/artifact/commons-io/commons-io
 	implementation 'commons-io:commons-io:2.6'
