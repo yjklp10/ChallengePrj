@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import com.example.demo.dto.MoneyDto;
 import com.example.demo.dto.PointDto;
+import com.example.demo.dto.makingChallengeDto;
 
 @Repository
 public class PointDaoImpl implements PointDao {
@@ -95,6 +96,19 @@ public class PointDaoImpl implements PointDao {
 		}
 		
 		return res;
+	}
+
+	@Override
+	public List<makingChallengeDto> selectchall(String memberid) {
+		List<makingChallengeDto> challList = new ArrayList<makingChallengeDto>();
+		
+		try {
+			challList = sqlSession.selectList(NAMESPACE+"selectchall",memberid);
+		} catch (Exception e) {
+			System.out.println("[error] : select challList");
+			e.printStackTrace();
+		}
+		return challList;
 	}
 
 	

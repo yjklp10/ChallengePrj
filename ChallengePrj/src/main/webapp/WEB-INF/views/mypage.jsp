@@ -1,4 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@page import="java.util.List" %>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -166,36 +169,43 @@ $(function (){
 					<h4>챌린지 현황</h4>
 					<div class="recent-blog">
 						<c:choose>
-							<c:when test="${empty chlist }">
+							<c:when test="${empty challList }">
 								------참여한 챌린지가 없습니다. ------ <br>
 							</c:when>
 							<c:otherwise>
-								<a href="#" class="rb-item">
+								<c:forEach items="${challList  }" var="challList">
+								<a href="/chdetail?challengeno=${challList.challengeno }" class="rb-item">
 								<div class="rb-pic">
-								<img src="img/blog/recent-1.jpg" alt="">
+								<img src="${pageContext.request.contextPath }/static2/thumb/${challList.thumbnailpath }" alt="">
 								</div>
 								<div class="rb-text">
-								<h6>${dto.challengeintro }</h6>								
+								<h6><c:out value="${challList.challengetitle}"/></h6>								
 								<p>
-									참여중 <span>${dto.challengstartdate}</span>
+								<jsp:useBean id="now" class="java.util.Date" />
+								<fmt:formatDate value="${now}" pattern="yyyy.MM.dd" var="nowDate" /> 
+								<fmt:parseDate value='${challList.challengeenddate}' var='challengeenddate' pattern='yyyy-mm-dd'/>
+								<fmt:formatDate value="${challengeenddate}" pattern="yyyy.mm.dd" var='enddate'/>
+									<c:if test="${nowDate>enddate}">
+									참가완료
+									</c:if>
+									<c:if test="${nowDate<=enddate}">
+									참가중
+									</c:if>
+									<span> <fmt:parseDate value='${challList.challengestartdate}' var='challengestartdate' pattern='yyyy-mm-dd'/>
+										 <fmt:formatDate value="${challengestartdate}" pattern="yyyy.mm.dd"/>~
+										 <fmt:parseDate value='${challList.challengeenddate}' var='challengeenddate' pattern='yyyy-mm-dd'/>
+										 <fmt:formatDate value="${challengeenddate}" pattern="yyyy.mm.dd"/></span>
+								</P>
+								<P>	
+								<span>	 
+								<c:out value="${challList.onoffchoice }"/>
+								</span>
 								</p>
 								</div>
 								</a> 
+								</c:forEach>
 							</c:otherwise>	
 						</c:choose>		
-						 
-						<a href="#" class="rb-item">
-							<div class="rb-pic">
-								<img src="img/blog/recent-2.jpg" alt="">
-							</div>
-							<div class="rb-text">
-								<h6>1시간 독서하기</h6>
-								<p>
-								
-									참여완료 <span>11.28-12.05</span>
-								</p>
-							</div>
-						</a> 
 					</div>
 				</div>
 				<div class="managerpage">

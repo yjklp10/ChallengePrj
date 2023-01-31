@@ -109,16 +109,16 @@ table {
 									</tr>
 								</c:when>
 								<c:otherwise>
-									<c:forEach items="${list }" var="dto">
+									<c:forEach items="${list }" var="list">
 										<tr>											
-											<td><input type="hidden" name="pointno" id="pointno" value="${dto.pointno }">${dto.pointno }</td>
-											<td>${dto.memberid }</td>
-											<td>${dto.bankname }</td>
-											<td>${dto.accountholder }</td>
-											<td>${dto.accountnumber }</td>
-											<td>${dto.withdrawpoint }</td>
-											<td><fmt:formatDate pattern="yyyy-MM-dd" value="${dto.pointdate }"/></td>
-											<td>${dto.status }</td>
+											<td><input type="hidden" name="pointno" id="pointno" value="${list.pointno }">${list.pointno }</td>
+											<td>${list.memberid }</td>
+											<td>${list.bankname }</td>
+											<td>${list.accountholder }</td>
+											<td>${list.accountnumber }</td>
+											<td>${list.withdrawpoint }</td>
+											<td><fmt:formatDate pattern="yyyy-MM-dd" value="${list.pointdate }"/></td>
+											<td>${list.status }</td>
 										</tr>
 									</c:forEach>
 								</c:otherwise>
