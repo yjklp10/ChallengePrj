@@ -17,7 +17,7 @@ public class MainDetailDaoImpl implements MainDetailDao {
 	private SqlSessionTemplate sqlSession;
 
 
-	
+	 
 	@Override
 	public List<Testchallenge> challenge_hot() {
 		List<Testchallenge> challenge_hot = new ArrayList<Testchallenge>();

@@ -8,35 +8,9 @@
 
 
 
-<!-- 스크롤 퀵 메뉴 -->
 
-	<div id="quick">
-
-			<a href="#">
-			<img src="img/공지사항.png">
-			<p id="quick-text">공지사항</p>
-			</a>
-			
-			<a href="#">
-			<img src="img/가이드.png">
-			<p id="quick-text">가이드</p>
-			</a>
-			
-			<a href="#">
-			<img src="img/챌린지개설.png">
-			<p id="quick-text">챌린지 개설</p>
-			</a>
-			
-			<a href="#">
-			<img src="img/마이페이지.png">
-			<p id="quick-text">마이페이지</p>
-			</a>
-			
-	</div>
-
-	<!-- 스크롤 퀵 메뉴 끝 -->
 	
-	
+	 
 	
  <!-- 카테고리 아이콘 -->
     <section class="category-icon">
@@ -55,10 +29,10 @@
                 </div>
                 <div class="icon0">
                     <div class="single-banner">
-                    <a href='detaillist_hot'>
+                    <a href='detaillist_category?category=공식'>
                         <img src="img/인기.png">
                         <div class="inner-text">
-                            <h5>인기</h5>
+                            <h5>공식</h5>
                          </div>
                     </a>
                     </div>
@@ -155,8 +129,8 @@
 
 				
   				  <li> 
-  				  <a href=""> 				  	
-   				   <img src="../static2/thumb/${newRes.thumbnailname }" alt="${newRes.thumbnailname }">
+  				  <a href="/chdetail?challengeno=${newRes.challengeno }"> 				  	
+   				  <img src="../static2/thumb/${newRes.thumbnailname }" alt="${newRes.thumbnailname }">
    				    
    				    <div class="content-name">
        					<p class="chname"><c:out value="${newRes.challengetitle }"/> / <span class="onoff"> <c:out value="${newRes.onoffchoice }"/></span></p>
@@ -185,16 +159,6 @@
         <section class="blank">
         </section>
 
-
-	 <!-- top 버튼 -->
-
-		</div>
-		 <p class="btn_top"><a href="#none">
-		 <img src="img/화살표.png">
-	 	 </a></p>
-		</div>
-	
-	<!-- top 버튼 끝 -->
 
 
 

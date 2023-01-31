@@ -39,5 +39,5 @@ public class MainDetailBizImpl implements MainDetailBiz {
 	public List<Testchallenge> challenge_search(String keyword) {
 		return dao.challenge_search(keyword);
 	}
-	
+	 
 }
