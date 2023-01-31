@@ -14,11 +14,12 @@
    
   <!-- 조아라 -->
    
-   <!-- 메인 - 인기 챌린지 -->
+   <!-- 메인 - 공식 챌린지 -->
   
   <select id="challenge_hot" resultType="Testchallenge">
 	SELECT * FROM MAKECHALLENGE
-	ORDER BY MAXCHALLENGER  DESC;
+	WHERE CATEGORY= '공식'
+	ORDER BY CHALLENGENO DESC;
   </select>
 
   
@@ -64,7 +65,7 @@
 			INSERT INTO MAKECHALLENGE VALUES(
 			NULL,
 			 #{challengetitle},
-			  'offline' ,
+			  '오프라인' ,
 			  #{offlineaddress},
 			  #{offlineaddressdetail},
 			  #{offlinestarttime},
@@ -91,7 +92,7 @@
 			INSERT INTO MAKECHALLENGE VALUES(
 			NULL,
 			 #{challengetitle},
-			  'online' ,
+			  '온라인' ,
 			  NULL,
 			  NULL,
 			  NULL,

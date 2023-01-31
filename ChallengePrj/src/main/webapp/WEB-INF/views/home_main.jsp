@@ -68,31 +68,7 @@
 
 
 
- <!-- 스크롤 퀵 메뉴 -->
 
-	<div id="quick">
-
-			<a href="#">
-			<img src="img/공지사항.png">
-			<p id="quick-text">공지사항</p>
-			</a>
-			
-			<a href="#">
-			<img src="img/가이드.png">
-			<p id="quick-text">가이드</p>
-			</a>
-			
-			<a href="#">
-			<img src="img/챌린지개설.png">
-			<p id="quick-text">챌린지 개설</p>
-			</a>
-			
-			<a href="#">
-			<img src="img/마이페이지.png">
-			<p id="quick-text">마이페이지</p>
-			</a>
-			
-	</div>
 
 	<!-- 스크롤 퀵 메뉴 끝 -->
 
@@ -114,10 +90,10 @@
                 </div>
                 <div class="icon0">
                     <div class="single-banner">
-                    <a href='detaillist_hot'>
+                    <a href='detaillist_category?category=공식'>
                         <img src="img/인기.png">
                         <div class="inner-text">
-                            <h5>인기</h5>
+                            <h5>공식</h5>
                          </div>
                     </a>
                     </div>
@@ -189,58 +165,8 @@
     <!-- 카테고리 아이콘 끝 -->
     
    
-      
-    <!-- 인기 챌린지 리스트 -->
-    
-     <section class="challenge-list">
-    	 <div class="list-container">
-   			 	<div class="list">
-   			 		 <ul>
-   		  			<li class="list-name"><a href='detaillist_hot'><h3>인기 챌린지 🔥</h3></a></li>
-   		  			<li class="list-plus"><a href='detaillist_hot'><h6>더보기 +</h6></a></li>
-   		  			</ul>
-				</div>
-				
-   		 	<div class="content-list">
-   		 		<div class="content-pic">
-   		 		
-   		 		  <ul>
-					 <c:choose>
-    				<c:when test="${empty hotRes }">
-     					<p>--- 작성된 글이 없습니다 ---</p>
-     				</c:when>
-     			
-     			<c:otherwise>
-    			<c:forEach var="hotRes" items="${hotRes }" begin="0" end="3" step="1">
-
-				
-  				  <li> 
-  				  <a href="/chdetail?challengeno=${hotRes.challengeno }"> 				  	
-   				   <img src="${pageContext.request.contextPath }/static2/thumb/${hotRes.thumbnailpath }" alt="${hotRes.thumbnailpath }">
-
-   				    
-   				    <div class="content-name">
-       					<p class="chname"><c:out value="${hotRes.challengetitle }"/> / <span class="onoff"> <c:out value="${hotRes.onoffchoice }"/></span></p>
-        				<p class="timeoff">시작일 : <fmt:formatDate value="${hotRes.challengestartdate }" pattern="yyyy-MM-dd"/> ~ </p>
-      				 </div>
-      				 </a>
-     				</li>
-     				
-  
-       			 </c:forEach>
-       			 </c:otherwise>
-        		</c:choose>
-   				 </ul>
-   					 		
-  		 		</div>	
-  		 		</div>	
-  		 	</div>
-  		 
-    </section>
-    
-        <!-- 인기 챌린지 리스트 끝 -->
-        
-      <!-- 신규 챌린지 리스트 -->
+   
+       <!-- 신규 챌린지 리스트 -->
     
      <section class="challenge-list">
     	 <div class="list-container">
@@ -265,7 +191,7 @@
 
 				
   				  <li> 
-  				  <a href=""> 				  	
+  				  <a href="/chdetail?challengeno=${newRes.challengeno }">  				  	
    				   <img src="../static2/thumb/${newRes.thumbnailname }" alt="${newRes.thumbnailname }">
    				    
    				    <div class="content-name">
@@ -289,13 +215,83 @@
     
         <!-- 신규 챌린지 리스트 끝 -->
         
+   
+   
+      
+    <!-- 공식 챌린지 리스트 -->
+    
+     <section class="challenge-list">
+    	 <div class="list-container">
+   			 	<div class="list">
+   			 		 <ul>
+   		  			<li class="list-name"><a href='detaillist_category?category=공식'><h3>공식 챌린지 🔥</h3></a></li>
+   		  			<li class="list-plus"><a href='detaillist_category?category=공식'><h6>더보기 +</h6></a></li>
+   		  			</ul>
+				</div>
+				
+   		 	<div class="content-list">
+   		 		<div class="content-pic">
+   		 		
+   		 		  <ul>
+					 <c:choose>
+    				<c:when test="${empty hotRes }">
+     					<p>--- 작성된 글이 없습니다 ---</p>
+     				</c:when>
+     			
+     			<c:otherwise>
+    			<c:forEach var="hotRes" items="${hotRes }" begin="0" end="3" step="1">
+
+				
+  				  <li> 
+  				  <a href="/chdetail?challengeno=${hotRes.challengeno }"> 				  	
+   				   <img src="../static2/thumb/${hotRes.thumbnailname }" alt="${hotRes.thumbnailname }">
+
+   				    
+   				    <div class="content-name">
+       					<p class="chname"><c:out value="${hotRes.challengetitle }"/> / <span class="onoff"> <c:out value="${hotRes.onoffchoice }"/></span></p>
+        				<p class="timeoff">시작일 : <fmt:formatDate value="${hotRes.challengestartdate }" pattern="yyyy-MM-dd"/> ~ </p>
+      				 </div>
+      				 </a>
+     				</li>
+     				
+  
+       			 </c:forEach>
+       			 </c:otherwise>
+        		</c:choose>
+   				 </ul>
+   					 		
+  		 		</div>	
+  		 		</div>	
+  		 	</div>
+  		 
+    </section>
+    
+        <!-- 인기 챌린지 리스트 끝 -->
         
+  
         
-        <!-- 공백용 -->
+		  <!-- 수평선 -->
+      
+        <section class="horizen">
+          <img src="img/수평선.png">
+           </section>
+        
+       	  <!-- 수평선 끝 -->
+       	  
+       	  
+       	  
+       	 <!-- 공백용 -->
         
         <section class="blank">
+        	<div class="blank">
+        	</div>
         </section>
         
+      	<!-- 공백용 끝 -->
+       
+       
+       
+       
         <!-- 온라인/오프라인 가이드 -->
         
         <section class="guide_onoff">
@@ -320,14 +316,15 @@
       <!-- 온라인/오프라인 가이드 끝 -->
       
       
-      <!-- 공백용 -->
+     <!-- 공백용 -->
         
         <section class="blank">
         <div class="blank">
         </div>
         </section>
-      
+        
       <!-- 공백용 끝 -->
+      
         
       
       <!-- 작심삼일 가이드 -->
@@ -357,120 +354,7 @@
       <!-- 공백용 끝 -->
         
     			
-  <!--
-    <section class="women-banner spad">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-3">
-                </div>
-                <div class="col-lg-8 offset-lg-1">
-                    <div class="filter-control">
-                        <ul>
-                            <li class="active">이달의 챌린지</li>
-                        </ul>
-                    </div>
-                    <div class="product-slider owl-carousel owl-loaded owl-drag">
-
-                    <div class="owl-stage-outer">
-                    <div class="owl-stage" style="transform: translate3d(-808px, 0px, 0px); transition: all 1.2s ease 0s; width: 2695px;"><div class="owl-item cloned" style="width: 244.443px; margin-right: 25px;"><div class="product-item">
-                            <div class="pi-pic">
-                                <img src="img/임시3.png" alt="">
-                                <div class="icon">
-                                </div>
-                            </div>
-                            <div class="pi-text">
-                                <div class="catagory-name"></div>
-                                <a href="#">
-                                    <h5>매일 필사 1가지</h5>
-                                </a>
-                                <div class="product-price">
-                                    ~ 23/3/1
-                                </div>
-                           		</div>
-                       		</div>
-       				  </div>
-        			</div>
-    			</section>  
  
-    	<section class="women-banner spad">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-3">
-                </div>
-                <div class="col-lg-8 offset-lg-1">
-                    <div class="filter-control">
-                        <ul>
-                            <li class="active">인기 챌린지</li>
-                        </ul>
-                    </div>
-                    <div class="product-slider owl-carousel owl-loaded owl-drag">
-
-                    <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-808px, 0px, 0px); transition: all 1.2s ease 0s; width: 2695px;"><div class="owl-item cloned" style="width: 244.443px; margin-right: 25px;"><div class="product-item">
-                            <div class="pi-pic">
-                                <img src="img/임시3.png" alt="">
-                                <div class="icon">
-                                </div>
-                            </div>
-                            <div class="pi-text">
-                                <div class="catagory-name"></div>
-                                <a href="#">
-                                    <h5>매일 필사 1가지</h5>
-                                </a>
-                                <div class="product-price">
-                                    ~ 23/3/1
-                                </div>
-                           		</div>
-                       		</div>
-       				  </div>
-        			</div>
-    			</section> 
-
-	<section class="women-banner spad">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-3">
-                </div>
-                <div class="col-lg-8 offset-lg-1">
-                    <div class="filter-control">
-                        <ul>
-                            <li class="active">신규 챌린지</li>
-                        </ul>
-                    </div>
-                    <div class="product-slider owl-carousel owl-loaded owl-drag">
-
-                    <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-808px, 0px, 0px); transition: all 1.2s ease 0s; width: 2695px;"><div class="owl-item cloned" style="width: 244.443px; margin-right: 25px;"><div class="product-item">
-                            <div class="pi-pic">
-                                <img src="img/임시3.png" alt="">
-                                <div class="icon">
-                                </div>
-                            </div>
-                            <div class="pi-text">
-                                <div class="catagory-name"></div>
-                                <a href="#">
-                                    <h5>매일 필사 1가지</h5>
-                                </a>
-                                <div class="product-price">
-                                    ~ 23/3/1
-                                </div>
-                           		</div>
-                       		</div>
-       				  </div>
-        			</div>
-    			</section> 
-    			-->
-    			    <!-- 각 챌린지 끝-->
-		
-	 <!-- top 버튼 -->
-
-	</div>
-	  <p class="btn_top"><a href="#none">
-		 <img src="img/화살표.png">
-	  </a></p>
-	</div>
-	
-	<!-- top 버튼 끝 -->
-
-    
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>

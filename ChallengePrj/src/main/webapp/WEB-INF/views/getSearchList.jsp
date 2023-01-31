@@ -8,35 +8,7 @@
 
 
 
-<!-- 스크롤 퀵 메뉴 -->
 
-	<div id="quick">
-
-			<a href="#">
-			<img src="img/공지사항.png">
-			<p id="quick-text">공지사항</p>
-			</a>
-			
-			<a href="#">
-			<img src="img/가이드.png">
-			<p id="quick-text">가이드</p>
-			</a>
-			
-			<a href="#">
-			<img src="img/챌린지개설.png">
-			<p id="quick-text">챌린지 개설</p>
-			</a>
-			
-			<a href="#">
-			<img src="img/마이페이지.png">
-			<p id="quick-text">마이페이지</p>
-			</a>
-			
-	</div>
-
-	<!-- 스크롤 퀵 메뉴 끝 -->
-	
-	
 
     <!-- 챌린지 리스트 -->
     
@@ -62,8 +34,8 @@
 
 				
   				  <li> 
-  				  <a href=""> 				  	
-   				   <img src="${pageContext.request.contextPath }/static2/thumb/${newRes.thumbnailpath }" alt="${newRes.thumbnailpath }">
+  				  <a href="/chdetail?challengeno=${newRes.challengeno }"> 				  	
+   				   <img src="../static2/thumb/${newRes.thumbnailname }" alt="${newRes.thumbnailname }">
    				    
    				    <div class="content-name">
        					<p class="chname"><c:out value="${newRes.challengetitle }"/> / <span class="onoff"> <c:out value="${newRes.onoffchoice }"/></span></p>
