@@ -54,8 +54,10 @@
 	                <div class="ht-right">
 	                    <span class="login-panel">
 
+
 	                    <sec:authentication property="principal.username" var="memberid"/>
 	                    <img src="img/백일블럭2.png"><a href="mypage?memberid=${memberid }">마이페이지</a> / <a href="/logout">로그아웃</a>
+
 
 	                </div>
 	            </div>
