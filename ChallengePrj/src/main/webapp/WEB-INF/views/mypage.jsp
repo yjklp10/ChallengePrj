@@ -183,7 +183,7 @@ $(function (){
 							</c:when>
 							<c:otherwise>
 								<c:forEach items="${challList  }" var="challList">
-								<a href="/chdetail?challengeno=${challList.challengeno }" class="rb-item">
+								<a href="/participant?challengeno=${challList.challengeno }" class="rb-item">
 								<div class="rb-pic">
 								<img src="${pageContext.request.contextPath }/static2/thumb/${challList.thumbnailpath }" alt="">
 								</div>
