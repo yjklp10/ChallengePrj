@@ -1,7 +1,9 @@
 package com.example.demo.controller;
 
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -97,11 +99,12 @@ public class HomeController {
 		}	
 	}
 	
-	@RequestMapping("/manager2")
+	@RequestMapping("/manager")
 	public String list(Model model) {
 		model.addAttribute("list", biz.selectList());
 		return "manager";
 	}
+	
 	
 	
 	@RequestMapping("/ex")

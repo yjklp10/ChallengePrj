@@ -110,6 +110,4 @@ public class PointDaoImpl implements PointDao {
 		}
 		return challList;
 	}
-
-	
 }

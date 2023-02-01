@@ -209,7 +209,7 @@ $(function (){
 					</div>
 				</div>
 				<div class="managerpage">
-				<button type="button" class="blog-btn" onclick="location.href='/manager?memberrole=${dto.memberrole }'">관리자 페이지</button>
+				<button type="button" class="blog-btn" onclick="location.href='/manager'">관리자 페이지</button>
 				</div>
 			</div>
 		</div>
