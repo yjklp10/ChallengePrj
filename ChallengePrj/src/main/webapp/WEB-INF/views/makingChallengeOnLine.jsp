@@ -526,15 +526,15 @@ $(document).ready(function() {
                             <div class="col-lg-12 scrollMenu choices" id="frequency">
                                 <label  for="fir">인증빈도<span>*</span></label>
                                 <br>
-                                <input  type="radio"  id="frequency_everyday" name="challengefrequency" value="everyday"><label for="frequency_everyday">매일</label>
-                                <input  type="radio"  id="frequency_everyweek" name="challengefrequency" value="everyweek"><label for="frequency_everyweek">평일만</label>
-                                <input  type="radio"  id="frequency_everyweekend" name="challengefrequency" value="everyweekend"><label for="frequency_everyweekend">주말만</label>
-                                <input  type="radio"  id="frequency_week1" name="challengefrequency" value="week1"><label for="frequency_week1">주 1회</label>
-                                <input  type="radio"  id="frequency_week2" name="challengefrequency" value="week2"><label for="frequency_week2">주 2회</label>
-                                <input  type="radio"  id="frequency_week3" name="challengefrequency" value="week3"><label for="frequency_week3">주 3회</label>
-                                <input  type="radio"  id="frequency_week4" name="challengefrequency" value="week4"><label for="frequency_week4">주 4회</label>
-                                <input  type="radio"  id="frequency_week5" name="challengefrequency" value="week5"><label for="frequency_week5">주 5회</label>
-                                <input  type="radio"  id="frequency_week6" name="challengefrequency" value="week6"><label for="frequency_week6">주 6회</label>
+                                <input  type="radio"  id="frequency_everyday" name="challengefrequency" value="매일"><label for="frequency_everyday">매일</label>
+                                <input  type="radio"  id="frequency_everyweek" name="challengefrequency" value="평일만"><label for="frequency_everyweek">평일만</label>
+                                <input  type="radio"  id="frequency_everyweekend" name="challengefrequency" value="주말만"><label for="frequency_everyweekend">주말만</label>
+                                <input  type="radio"  id="frequency_week1" name="challengefrequency" value="주 1회"><label for="frequency_week1">주 1회</label>
+                                <input  type="radio"  id="frequency_week2" name="challengefrequency" value="주 2회"><label for="frequency_week2">주 2회</label>
+                                <input  type="radio"  id="frequency_week3" name="challengefrequency" value="주 3회"><label for="frequency_week3">주 3회</label>
+                                <input  type="radio"  id="frequency_week4" name="challengefrequency" value="주 4회"><label for="frequency_week4">주 4회</label>
+                                <input  type="radio"  id="frequency_week5" name="challengefrequency" value="주 5회"><label for="frequency_week5">주 5회</label>
+                                <input  type="radio"  id="frequency_week6" name="challengefrequency" value="주 6회"><label for="frequency_week6">주 6회</label>
                             </div>
   							<div class="col-lg-12 scrollMenu choices" id="startdate">
                                 <label  for="fir">시작일<span>*</span></label>
