@@ -26,10 +26,12 @@ $(function(){
 	var id = sessionStorage.getItem('id');
 	var email = sessionStorage.getItem('email');
 	var gender = sessionStorage.getItem('gender');
+	var name = sessionStorage.getItem('name');
 	
 	$("#memberid").attr('value',id);
 	$("#memberemail").attr('value',email);
 	$("#membergender").attr('value',gender);
+	$("#membername").attr('value',name);
 	
 	
 	         
@@ -164,10 +166,11 @@ function id_overlap_chk(){
                         <h2>회원가입</h2>
                         <form method="post" onsubmit="return overlap_chk()" action="registerkakao.do">
                         	<input type="hidden" id="memberid" name="memberid" value="">
-                        	<input type="hidden" id="memberpw" name="memberpw" value="카카오비밀번호">
+                        	<input type="hidden" id="memberpw" name="memberpw" value="네이버비밀번호">
                         	<input type="hidden" id="memberemail" name="memberemail" value="">
                         	<input type="hidden" id="membergender" name="membergender" value="">
-                        	<input type="hidden" id="provider" name="provider" value="kakao">
+                        	<input type="hidden" id="membername" name="membername" value="">
+                        	<input type="hidden" id="provider" name="provider" value="naver">
                         	
                             
                              <div class="group-input">
@@ -177,10 +180,7 @@ function id_overlap_chk(){
                                 
                                 <input type="button" value="중복확인" onclick="nick_overlap_chk()" style="width: 100px;float: right;">
                             </div>
-                             <div class="group-input">
-                                <label for="name">이름 *</label>
-                                <input type="text" class="form-control" name="membername" id="name" required="required">
-                            </div>
+                             
                            
                              <div class="group-input">
                                 <label for="tel">전화번호 *</label>

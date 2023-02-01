@@ -31,15 +31,16 @@ function id_overlap_chk(){
 		type:'post',
 		async:false,
 		success:function(res){
-			if(res == 0){
+			if(res == 0 && memberid.length <=15 && memberid.length>5){
 				$(".id_use_chk").css("display","flex");
 				$(".id_use_chk").html("사용가능한 아이디입니다.")
 				$("#memberid").attr("title","yid");
-				
+				console.log(memberid.length);
+				console.log(memberid);
 			}
-			else if(res == 1){
+			else{
 				$(".id_use_chk").css("display","flex");
-				$(".id_use_chk").html("이미 사용중인 아이디입니다.").css("color","#f23c3c");
+				$(".id_use_chk").html("이미 사용중인 아이디아이디이거나 조건에 맞지 않습니다.").css("color","#f23c3c");
 				$("#memberid").attr("title","nid");
 			}
 		}
@@ -72,9 +73,10 @@ function id_overlap_chk(){
 		let nickchk = document.getElementById("membernick").title;
 		let idchk = document.getElementById("memberid").title;
 		let emailchk = document.getElementById("memberemail").title;
+		let pwchk = document.getElementById("memberpwchk").title;
 		
 		if(idchk == 'nid'){
-			alert("아이디 중복체크를 해주세요");
+			alert("아이디를 확인해주세요");
 			document.getElementById("memberid").focus();
 			return false;
 		}else if(idchk == 'yid' && nickchk == 'nnick'){
@@ -85,7 +87,12 @@ function id_overlap_chk(){
 			alert("인증코드를 확인해 주세요");
 			document.getElementById("memberemail").focus();
 			return false;
+		}else if(pwchk == "nchk"){
+			alert("비밀번호가 일치하지 않습니다");
+			document.getElementById("memberpwchk").focus();
+			return false;
 		}
+		
 		
 	}
 	
@@ -143,6 +150,17 @@ function id_overlap_chk(){
 				} 
 		});
 		});
+	
+	
+	function checkAlphaNum(param){
+		  var str = param.value;
+		  var i = str.length - 1;
+		  if((str[i]>='0' && str[i]<='9') || (str[i]>='a' && str[i]<='z')){
+			  return ;
+		  }
+		  param.value=str.substring(0,i);
+		  param.focus();
+	  }
 </script>
 <style>
 	#memberemailconfirmTxt,
@@ -199,8 +217,8 @@ function id_overlap_chk(){
                         <h2>회원가입</h2>
                         <form method="post" onsubmit="return overlap_chk()" action="register.do">
                             <div class="group-input">
-                                <label for="membername">아이디*</label>
-                                <input type="text" class="form-control" id="memberid" name="memberid" title="nid" required="required" >
+                                <label for="membername">아이디*(소문자와 숫자만 사용하여 6자 이상 15자이하로 만들어 주세요)</label>
+                                <input type="text" class="form-control" id="memberid" name="memberid" title="nid" onkeyup="checkAlphaNum(this)" required="required" >
                                 <input type="button" value="중복확인" onclick="id_overlap_chk();" style="width: 100px;float: right;">
                                 <span class="id_use_chk">사용가능한 아이디입니다.</span>
                                 
@@ -255,7 +273,7 @@ function id_overlap_chk(){
                             <button type="submit" onclick="overlap_chk()" class="site-btn register-btn">회원가입</button>
                         </form>
                         <div class="switch-login">
-                            <a href="login.do" class="or-login">로그인</a>
+                            <a href="loginform.do" class="or-login">로그인</a>
                         </div>
                     </div>
                 </div>

@@ -1,25 +1,60 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
+
 <!DOCTYPE html>
 <html lang="ko">
 
-
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
 <script type="text/javascript">
-	function forgetID(){
-		$("#forget").attr("name","membername").attr("placeholder","이름")
-		$("#inputID").attr("class","active")
-		$("#inputPW").attr("class","")
-		$("#forgetform").attr("action","forgetid.do")
+
+
+	
+$(function(){
+	$('#memberpwnew').keyup(function(){
+		$('#pwchk').text('');
+	}); 
+	$('#memberpwchk').keyup(function(){
+		if($('#memberpwnew').val()!=$('#memberpwchk').val()){
+			$('#pwchk').html("비밀번호가 일치하지 않습니다.").css("display","flex").css("color","#f23c3c").attr("title","nchk");
+		}else{
+			 $('#pwchk').html("비밀번호가 일치합니다.").css("display","flex").css("color","#008000").attr("title","ychk");
+		}
+	}); 
+	         
+});
+
+function overlap_chk(){
+	
+	let pwchk = document.getElementById("pwchk").title;
+	
+	
+	if(pwchk == "nchk"){
+		alert("비밀번호가 일치하지 않습니다");
+		document.getElementById("memberpwchk").focus();
+		return false;
 	}
-	function forgetPW(){
-		$("#forget").attr("name","memberid").attr("placeholder","아이디")
-		$("#inputID").attr("class","")
-		$("#inputPW").attr("class","active")
-		$("#forgetform").attr("action","forgetpw.do")
-	}
+	
+	
+}
+	
+
 </script>
+<style>
+	#pwchk{
+		display:none;
+		color: red;
+		float: right;
+		font-size: 18px;
+	}
+	.id_use_chk,
+	.nick_use_chk{
+		display:none;
+		color:#008000;
+		font-size: 18px;
+	}
+</style>
+
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Fashi Template">
@@ -41,11 +76,11 @@
     <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
-	<link rel="stylesheet" href="css/mystyle.css" type="text/css">
 </head>
 
 <body>
-   <%@include file="./include/header.jsp" %>
+    <%@include file="./include/header.jsp" %>
+    <!-- Header End -->
 
     <!-- Breadcrumb Section Begin -->
     <div class="breacrumb-section">
@@ -54,7 +89,7 @@
                 <div class="col-lg-12">
                     <div class="breadcrumb-text">
                         <a href="#"><i class="fa fa-home"></i> Home</a>
-                        <span>아이디/비밀번호 찾기</span>
+                        <span>Register</span>
                     </div>
                 </div>
             </div>
@@ -68,38 +103,40 @@
             <div class="row">
                 <div class="col-lg-6 offset-lg-3">
                     <div class="register-form">
-                        <h2>아이디/비밀번호 찾기</h2>
-                        <form id="forgetform" action="forgetid.do">
-                            <div class="con">
-                            	<ul class="ayer-tab" >
-                            		<li id="inputID" class="active" onclick="forgetID()" >아이디</li>
-                            		<li id="inputPW" class="" onclick="forgetPW()">비밀번호</li>
-                            	</ul>
-                            	<div class="tab-cont">
-                            		<strong class="cont-txt" style="margin-left:135px;">본인 확인을 위해 아래의 정보를 입력해 주세요</strong>
-                            		<div class="group-input">
-                            			<input id="forget" type="text" placeholder="이름" name="membername" required="required">
-                            		</div>
-                            		<div class="group-input">
-                            			<input type="email" placeholder="이메일 'abcd@naver.com'" name="memberemail" required="required">
-                            		</div>
-                            		 <button type="submit" class="site-btn register-btn">확인</button>
-                            	</div>
+                        <h2>회원가입</h2>
+                        <form method="post" onsubmit="return overlap_chk()" action="updatepw">
+                        <sec:authentication property="principal.username" var="memberid"/>
+                        	<input type="hidden" id="memberid" name="memberid" value="${memberid }">
+                        	
+                            
+                             <div class="group-input">
+                                <label for="nick">현재 비밀번호</label>
+                                <input type="password" name="memberpw" id="memberpw"  required="required">
+                             
+                              
                             </div>
+                              <div class="group-input">
+                                <label for="pass">새 비밀번호 </label>
+                                <input type="password" class="form-control" name="memberpwnew" id="memberpwnew" required="required">
+                            </div>
+                            <div class="group-input">
+                                <label for="passch">새 비밀번호 확인 *</label>
+                                <input type="password" class="form-control" name="memberpwchk" id="memberpwchk" required="required">
+                                <span id="pwchk"></span>
+                            </div>
+                             
+                            <button type="submit" onclick="overlap_chk()" class="site-btn register-btn">비밀번호 변경</button>
                         </form>
-                        <div class="switch-login">
-                            <a href="login.do" class="or-login">Or Login</a>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- Register Form Section End -->
+    <%@include file="./include/footer.jsp" %>
+    <!-- Partner Logo Section Begin -->
     
-  <%@include file="./include/footer.jsp" %>
-
-    <!-- Js Plugins -->
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>

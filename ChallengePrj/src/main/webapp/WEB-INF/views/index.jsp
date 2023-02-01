@@ -1,28 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
-
 <!DOCTYPE html>
 <html>
-
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
 <body>
-
-<h3><a href="home_main">home_main</a></h3>
-
-<h3><a href="detaillist">detail</a></h3>
-<h3><a href="makingChallengeStart">챌린지 만들기</a></h3>
-   
-    <!-- Js Plugins -->
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery-ui.min.js"></script>
-    <script src="js/jquery.countdown.min.js"></script>
-    <script src="js/jquery.nice-select.min.js"></script>
-    <script src="js/jquery.zoom.min.js"></script>
-    <script src="js/jquery.dd.min.js"></script>
-    <script src="js/jquery.slicknav.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/main.js"></script>
+<script type="text/javascript">
+        location.href="/home_main";
+    </script>
 </body>
-
 </html>

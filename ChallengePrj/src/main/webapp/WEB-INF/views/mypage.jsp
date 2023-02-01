@@ -164,7 +164,7 @@ $(function (){
 						</div>
 						
 							<c:if test="${'' eq memberdto.provider }">
-								<input type="button" class="blog-btn1" value="비밀번호 바꾸기" >
+								<input type="button" class="blog-btn" value="비밀번호 바꾸기" onclick="location.href='/updatepwform'" >
 							</c:if>
 					
 						
