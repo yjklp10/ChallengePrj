@@ -70,6 +70,15 @@ public class challengeController {
 		return "payment";
 	}
 	
+	@GetMapping(value="/participant")
+	public String participantnoView(makingChallengeDto challenge, Model model) {
+		logger.info("participant");
+		
+		model.addAttribute("participant", makingChallengeBiz.getDetail(challenge.getChallengeno()));
+		
+		return "challengelist";
+	}
+	
 	@RequestMapping(value="/replyWrite", method = RequestMethod.POST)
 	public String replyWrite(CommentDto comment, RedirectAttributes rttr) throws Exception {
 		logger.info("reply Write");

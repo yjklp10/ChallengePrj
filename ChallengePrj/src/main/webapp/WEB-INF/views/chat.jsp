@@ -315,12 +315,12 @@ display: flex;
 
 <div id="chatDiv">
 <div id="username-page">
-<h1 class="title">임시 채팅방</h1>
+<h1 class="title">챌린지 채팅방</h1>
     <div class="username-page-container">
-        <h1 class="title">임시 닉네임을 입력하세요</h1>
+        <h1 class="title">채팅 닉네임을 입력하세요</h1>
         <form id="usernameForm" name="usernameForm">
             <div class="form-group">
-                <input type="text" id="name" placeholder="임시 닉네임" autocomplete="off" class="form-control" />
+                <input type="text" id="name" placeholder="채팅 닉네임" autocomplete="off" class="form-control" />
             </div>
             <div class="form-group">
                 <button type="submit" class="accent username-submit">채팅 시작하기</button>

@@ -119,7 +119,7 @@ public class ImageController {
 		
 	
 		
-		File file = new File(uploadPath2 + fileName);
+		File file = new File(uploadPath2 +"\\"+ fileName);
 
 		ResponseEntity<byte[]> result = null;
 		

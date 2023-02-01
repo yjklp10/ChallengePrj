@@ -273,19 +273,7 @@ ul, ol {
 
 
 
-	<!-- Breadcrumb Section Begin -->
-	<div class="breacrumb-section">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="breadcrumb-text product-more">
-						<a href="/home_main"><i class="fa fa-home"></i>Main</a> 
-						<a href="./shop.html">Categories</a> <span>Detail</span>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+	
 	<!-- Breadcrumb Section Begin -->
 
 	<!-- Product Shop Section Begin -->
