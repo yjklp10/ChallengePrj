@@ -144,7 +144,7 @@ public class LoginController {
 		
 		
 		if(res  > 0 ){
-			return "redirect:home_main";
+			return "redirect:loginform.do";
 		}else {
 			return "redirect:registerformkakao.do";
 		}
