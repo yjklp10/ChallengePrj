@@ -47,6 +47,8 @@ dependencies {
 	// https://mvnrepository.com/artifact/net.coobird/thumbnailator
 	implementation group: 'net.coobird', name: 'thumbnailator', version: '0.4.17'
 	implementation group: 'org.webjars', name: 'jquery', version: '3.6.0'
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-websocket
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-websocket', version: '2.3.2.RELEASE'
 
 	implementation 'org.springframework.boot:spring-boot-devtools:2.7.2'
 	implementation 'org.springframework.boot:spring-boot-starter-security:2.7.6'

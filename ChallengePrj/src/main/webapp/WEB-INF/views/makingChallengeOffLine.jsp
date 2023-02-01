@@ -552,8 +552,8 @@ $(document).ready(function() {
    										 <label for="town">주소 검색<span>*</span></label>
                                         <br>
                                         <div id="searchDiv">
-                                        <input  type="text"  id="offline_address" style="width: 300px;" placeholder="주소를 검색해주세요." >
-										<input type="button" value="검색" id="address_btn"onclick="search_location();">
+                                        <input  type="text"  name="searchDiv"id="offline_address" style="width: 300px;" placeholder="주소를 검색해주세요." >
+										<input type="button" value="검색" id="address_btn" onclick="search_location();">
                                         </div>
                                         <label for="town">지번 주소<span>*</span></label>
                                         <br>
@@ -626,15 +626,15 @@ $(document).ready(function() {
                             <div class="col-lg-12 scrollMenu choices" id="frequency">
                                 <label  for="fir">인증빈도<span>*</span></label>
                                 <br>
-                                <input  type="radio"  id="frequency_everyday" name="challengefrequency" value="everyday"><label for="frequency_everyday">매일</label>
-                                <input  type="radio"  id="frequency_everyweek" name="challengefrequency" value="everyweek"><label for="frequency_everyweek">평일만</label>
-                                <input  type="radio"  id="frequency_everyweekend" name="challengefrequency" value="everyweekend"><label for="frequency_everyweekend">주말만</label>
-                                <input  type="radio"  id="frequency_week1" name="challengefrequency" value="week1"><label for="frequency_week1">주 1회</label>
-                                <input  type="radio"  id="frequency_week2" name="challengefrequency" value="week2"><label for="frequency_week2">주 2회</label>
-                                <input  type="radio"  id="frequency_week3" name="challengefrequency" value="week3"><label for="frequency_week3">주 3회</label>
-                                <input  type="radio"  id="frequency_week4" name="challengefrequency" value="week4"><label for="frequency_week4">주 4회</label>
-                                <input  type="radio"  id="frequency_week5" name="challengefrequency" value="week5"><label for="frequency_week5">주 5회</label>
-                                <input  type="radio"  id="frequency_week6" name="challengefrequency" value="week6"><label for="frequency_week6">주 6회</label>
+                                <input  type="radio"  id="frequency_everyday" name="challengefrequency" value="매일"><label for="frequency_everyday">매일</label>
+                                <input  type="radio"  id="frequency_everyweek" name="challengefrequency" value="평일만"><label for="frequency_everyweek">평일만</label>
+                                <input  type="radio"  id="frequency_everyweekend" name="challengefrequency" value="주말만"><label for="frequency_everyweekend">주말만</label>
+                                <input  type="radio"  id="frequency_week1" name="challengefrequency" value="주 1회"><label for="frequency_week1">주 1회</label>
+                                <input  type="radio"  id="frequency_week2" name="challengefrequency" value="주 2회"><label for="frequency_week2">주 2회</label>
+                                <input  type="radio"  id="frequency_week3" name="challengefrequency" value="주 3회"><label for="frequency_week3">주 3회</label>
+                                <input  type="radio"  id="frequency_week4" name="challengefrequency" value="주 4회"><label for="frequency_week4">주 4회</label>
+                                <input  type="radio"  id="frequency_week5" name="challengefrequency" value="주 5회"><label for="frequency_week5">주 5회</label>
+                                <input  type="radio"  id="frequency_week6" name="challengefrequency" value="주 6회"><label for="frequency_week6">주 6회</label>
                             </div>
   							<div class="col-lg-12 scrollMenu choices" id="startdate">
                                 <label  for="fir">시작일<span>*</span></label>
@@ -891,7 +891,14 @@ function displayMarker(place) {
     });
 }
 
-    
+//
+$('input[name="searchDiv"]').keydown(function() {
+	  if (event.keyCode === 13) { // 엔터키 입력시
+	    event.preventDefault();		// 엔터시 input submit 막기
+	    search_location();			// 엔터기 눌렀을 때 실행하고자 함수
+	  };
+	});
+
 
 function search_location(){
 	var address = document.getElementById("offline_address").value;
@@ -960,6 +967,7 @@ searchAddrFromCoords(map.getCenter(), displayCenterInfo);
          }
      }    
  }
+ 
 </script>
 <style>
     .map_wrap {position:relative;width:100%;height:350px;}
@@ -968,81 +976,7 @@ searchAddrFromCoords(map.getCenter(), displayCenterInfo);
     #centerAddr {display:block;margin-top:2px;font-weight: normal;}
     .bAddr {padding:5px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;}
 </style>
-  <script>
 
-    $('.uploadBtn').click(function( ) {
-
-        var formData = new FormData();
-
-        var inputFile = $("input[type='file']");
-
-        var files = inputFile[0].files;
-
-        for (var i = 0; i < files.length; i++) {
-            console.log(files[i]);
-            formData.append("uploadFiles", files[i]);
-        }
-
-        //실제 업로드 부분
-        //upload ajax
-        $.ajax({
-            url: '/uploadAjax',
-            processData: false,
-            contentType: false,
-            data: formData,
-            type: 'POST',
-            dataType:'json',
-            success: function(result){
-                console.log(result);
-                //나중에 화면 처리
-                showUploadedImages(result);
-            },
-            error: function(jqXHR, textStatus, errorThrown){
-                console.log(textStatus);
-            }
-
-        }); //$.ajax
-    }); //end click
-
-    function showUploadedImages(arr){
-
-        console.log(arr);
-
-        var divArea = $(".uploadResult");
-
-        var str = "";
-
-        for(var i = 0; i < arr.length; i++){
-            str += "<div>";
-            str += "<img src='/display?fileName="+arr[i].thumbnailURL+"'>";
-            str += "<button class='removeBtn' data-name='"+arr[i].imageURL+"'>REMOVE</button>"
-            str += "<div>"
-        }
-        divArea.append(str);
-
-    }
-
-    $(".uploadResult").on("click", ".removeBtn", function(e){
-
-        var target = $(this);
-        var fileName = target.data("name");
-        var targetDiv = $(this).closest("div");
-
-        console.log(fileName);
-
-        $.post('/removeFile', {fileName: fileName}, function(result){
-            console.log(result);
-            if(result === true){
-                targetDiv.remove();
-            }
-        } )
-
-    });
-
-
-
-
-</script>
 
 
 	<!--  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9ac0def900a39c342fe65cab35fe4b06=LIBRARY"></script> -->
