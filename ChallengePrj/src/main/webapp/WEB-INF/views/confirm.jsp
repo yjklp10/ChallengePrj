@@ -143,7 +143,7 @@
         
             border-radius: 15px 15px 0 0;
         
-            background-image: url("img/TSOY-4988.jpg");
+            background-image: url("img/가이드2.jpg");
         
             background-size: 100% 200px;
         
@@ -381,7 +381,7 @@
 
 				<hr style="margin-bottom: 8px; opacity: 0.5; border-color: #EF5A31">
 
-				    <i class="detail"><button onclick="location.href='/myuploadimage?memberid=<% %>'">인증페이지</button></i>
+				    <i class="detail"><button onclick="location.href='/detail?=challengetitle=${dto.challengetitle}'">챌린지 사진관</button></i>
 
 		           <i class="popup"><button onclick="location.href='/popen?challengetitle=${dto.challengetitle}'">인증페이지</button></i>
 		         
