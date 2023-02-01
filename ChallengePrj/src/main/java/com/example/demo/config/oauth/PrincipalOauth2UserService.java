@@ -1,7 +1,6 @@
 
 package com.example.demo.config.oauth;
 
-import javax.servlet.http.HttpSession;
 import javax.transaction.Transactional;
 
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
@@ -17,7 +16,6 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class PrincipalOauth2UserService extends DefaultOAuth2UserService{
 	
-	private final HttpSession httpSession = null;
 	
 	
 	
@@ -32,7 +30,7 @@ public class PrincipalOauth2UserService extends DefaultOAuth2UserService{
 		OAuth2User oauth2User = super.loadUser(userRequest);
 		System.out.println("getAttributes : "+super.loadUser(userRequest).getAttributes());
 		System.out.println(super.loadUser(userRequest).getAttributes());
-		System.out.println(oauth2User.getName());
+
 		
 		
 		

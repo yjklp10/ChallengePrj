@@ -65,15 +65,22 @@ public class LoginController {
 		return "registerformkakao";
 	}
 	
-	public String registerFormGoogle(Model model, MemberDto dto) {
-		model.addAttribute("memberDto",dto);
+	@RequestMapping("/registerformnaver.do")
+	public String registerFormnaver() {
 		
-		return "registerformgoogle";
+		return "registerformnaver";
 	}
+	
+	
 	
 	@RequestMapping("/forget.do")
 	public String forget() {
 		return "forget";
+	}
+	
+	@RequestMapping("/loginnaver")
+	public String loginnaver( ) {
+		return "loginnaver";
 	}
 	
 
@@ -218,7 +225,27 @@ public class LoginController {
 	
 	}
 
+	@RequestMapping("/updatepwform")
+	String updatePwFrom() {
+		return "updatepwform";
+	}
 	
+	@RequestMapping("/updatepw")
+	String updatePw(String memberid, String memberpw, String memberpwnew,HttpServletResponse response) {
+		MemberDto dto = biz.idChk(memberid);
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+		if(encoder.matches(memberpw, dto.getMemberpw())) {
+			biz.pwUpdate(memberid, encoder.encode(memberpwnew));
+			return "redirect:mypage?memberid="+memberid;
+		}else {
+			alertAndGo(response, "비밀번호가 일치하지 않습니다 다시 시도해주세요", "updatepwform");
+			
+			return "redirect:updatepwform";
+		}
+		
+		
+		
+	}
 	
 	public static void alertAndGo(HttpServletResponse response, String msg, String url) {
 	    try {
