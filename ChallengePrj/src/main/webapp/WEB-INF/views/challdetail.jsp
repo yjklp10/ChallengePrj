@@ -296,9 +296,14 @@ ul, ol {
 					<div class="filter-widget">
 						<h4 class="fw-title">Categories</h4>
 						<ul class="filter-catagories">
-							<li><a href="#">운동</a></li>
-							<li><a href="#">기상</a></li>
-							<li><a href="#">취미</a></li>
+						<li><a href="detaillist">신규</a></li>
+						<li><a href="detaillist_category?category=공식">공식</a></li>
+						<li><a href="detaillist_onofflist?onoffchoice=온라인">온라인</a></li>
+						<li><a href="detaillist_onofflist?onoffchoice=오프라인">오프라인</a></li>
+							<li><a href="detaillist_category?category=운동">운동</a></li>
+							<li><a href="detaillist_category?category=공부">공부</a></li>
+							<li><a href="detaillist_category?category=취미">취미</a></li>
+							<li><a href="detaillist_category?category=규칙적인%20생활">규칙적인생활</a></li>
 						</ul>
 					</div>
 				</div>
@@ -585,7 +590,7 @@ geocoder.addressSearch(Nmap, function(result, status) {
 
 
 
-if($("#onoff").val() == "online" ){
+if($("#onoff").val() == "온라인" ){
 	$("#map").hide();
 }else{
 	$("#map").show();
