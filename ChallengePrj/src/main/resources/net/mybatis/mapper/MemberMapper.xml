@@ -16,6 +16,9 @@
 	<insert id="insert" parameterType="MemberDto">
 		INSERT INTO MEMBER VALUES(NULL,#{memberid}, #{memberpw}, #{memberemail}, #{membernick}, #{membername}, #{memberphone}, #{membergender}, #{memberrole},'','', NOW(), NULL)
 	</insert>
+	<insert id="insertpf" parameterType="MemberDto">
+		INSERT INTO MEMBER VALUES(NULL,#{memberid}, #{memberpw}, #{memberemail}, #{membernick}, #{membername}, #{memberphone}, #{membergender}, #{memberrole},#{provider},'', NOW(), NULL)
+	</insert>
 	
 	<select id="forgetId" resultType="MemberDto">
 		SELECT * FROM MEMBER WHERE MEMBERNAME = #{membername} AND MEMBEREMAIL= #{memberemail}

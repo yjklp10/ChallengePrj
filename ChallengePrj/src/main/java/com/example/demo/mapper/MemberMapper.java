@@ -14,6 +14,7 @@ public interface MemberMapper {
 	public MemberDto nickChk(String membernick);
 	public MemberDto login(MemberDto dto);
 	public int insert(MemberDto dto);
+	public int insertpf(MemberDto dto);
 	public MemberDto forgetId(@Param("membername")String membername, @Param("memberemail")String memberemail);
 	public MemberDto forgetPw(@Param("memberid")String mameberid, @Param("memberemail")String memberemail);
 	public int pwUpdate(@Param("pw")String pw, @Param("memberid")String memberid);

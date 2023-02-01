@@ -138,9 +138,9 @@ public class LoginController {
 		String encPassword = bCryptPasswordEncoder.encode(rawPassword);
 		dto.setMemberpw(encPassword);
 		dto.setMemberrole("ROLE_USER");
-		dto.setProvider("kakao");
+		
 		dto.setProviderId("kakao_"+dto.getMemberid());
-		int res = biz.insert(dto);
+		int res = biz.insertpf(dto);
 		
 		
 		if(res  > 0 ){
@@ -233,9 +233,13 @@ public class LoginController {
 	@RequestMapping("/updatepw")
 	String updatePw(String memberid, String memberpw, String memberpwnew,HttpServletResponse response) {
 		MemberDto dto = biz.idChk(memberid);
+		
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+		String pw = encoder.encode(memberpwnew);
 		if(encoder.matches(memberpw, dto.getMemberpw())) {
-			biz.pwUpdate(memberid, encoder.encode(memberpwnew));
+			biz.pwUpdate(pw, memberid);
+			
+			
 			return "redirect:mypage?memberid="+memberid;
 		}else {
 			alertAndGo(response, "비밀번호가 일치하지 않습니다 다시 시도해주세요", "updatepwform");
