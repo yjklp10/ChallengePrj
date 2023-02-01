@@ -68,7 +68,8 @@ public class HomeController {
     	MoneyDto dto = new MoneyDto();
     	dto.setMemberid(memberid);
     
-		biz.insertMyinfo(dto);		
+		biz.insertMyinfo(dto);	
+		biz.updateMyinfo(dto);
 		model.addAttribute("dto", biz.selectMyinfo(memberid));
 
 		model.addAttribute("memberdto", memberBiz.idChk(memberid));
