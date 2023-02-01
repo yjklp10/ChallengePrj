@@ -260,7 +260,7 @@ overflow-x: hidden;
 
 	});
 	
-	
+	</script>
 	
 	
    
@@ -269,7 +269,7 @@ overflow-x: hidden;
     
     
     
-    
+    <script>
     /** 결제api **/
     // 결제금액,  구매자 이름, 챌린지 이름
     
@@ -299,13 +299,13 @@ overflow-x: hidden;
     	 console.log("발령키 발급 성공", rsp)
         // 결제 성공 시 로직
         alert("결제 성공");
-    	 location.href = "/mypage"
+    	 location.href = "/home_main"
       } else {
         // 결제 실패 시 로직
         var msg = "결제 실패";
         msg += rsp.error_msg;
         alert(msg);
-        return false;
+        location.href = "/payment?challengeno='${challenge.challengeno}'";
       }
     });
   }
