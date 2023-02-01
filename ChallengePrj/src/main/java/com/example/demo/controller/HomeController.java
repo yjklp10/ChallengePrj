@@ -1,14 +1,14 @@
 package com.example.demo.controller;
 
-import java.util.ArrayList;
 
-import java.util.List;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo.biz.FileUploadbiz;
 import com.example.demo.biz.MemberBiz;
@@ -26,6 +26,7 @@ public class HomeController {
 	
 	@Autowired
 	private PointBiz biz;
+
 	
 	@Autowired
 	private FileUploadbiz service;
@@ -57,10 +58,18 @@ public class HomeController {
 	}
 	
 	@RequestMapping("/mypage")
-	public String mypage(Model model,String memberid,MoneyDto dto) {
-		biz.insertMyinfo(dto);
+	public String mypage(Model model) {
+		Authentication A = SecurityContextHolder.getContext().getAuthentication();
+    	String memberid = A.getName();
+    	
+    	MoneyDto dto = new MoneyDto();
+    	dto.setMemberid(memberid);
+    
+		biz.insertMyinfo(dto);		
 		model.addAttribute("dto", biz.selectMyinfo(memberid));
+
 		model.addAttribute("memberdto", memberBiz.idChk(memberid));
+
 		return "mypage";
 	}
 	

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.example.demo.dao.PointDao;
 import com.example.demo.dto.MoneyDto;
 import com.example.demo.dto.PointDto;
+import com.example.demo.dto.makingChallengeDto;
 
 @Service
 public class PointBizImpl implements PointBiz {
@@ -44,5 +45,11 @@ public class PointBizImpl implements PointBiz {
 	public int updatepoint(PointDto dto) {
 		return dao.updatepoint(dto);
 	}
+
+	@Override
+	public List<makingChallengeDto> selectchall(String memberid) {
+		return dao.selectchall(memberid);
+	}
+
 
 }
