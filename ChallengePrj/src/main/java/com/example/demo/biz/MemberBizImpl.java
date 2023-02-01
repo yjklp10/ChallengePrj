@@ -32,6 +32,11 @@ public class MemberBizImpl implements MemberBiz{
 	public MemberDto login(MemberDto dto) {
 		return null;
 	}
+	
+	@Override
+	public int insertpf(MemberDto dto) {
+		return mapper.insertpf(dto);
+	}
 
 	@Override
 	public int insert(MemberDto dto) {

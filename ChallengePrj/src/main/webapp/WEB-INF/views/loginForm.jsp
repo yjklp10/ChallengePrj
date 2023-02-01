@@ -10,6 +10,7 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 
 <!-- 네이버 스크립트 -->
+ <script src="https://apis.google.com/js/platform.js" async defer></script>
 <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
 <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
 <script>
@@ -86,7 +87,9 @@ function getInfo() {
     
 }
 
-  
+
+
+ 
 </script>
 <head>
     <meta charset="UTF-8">
@@ -94,7 +97,7 @@ function getInfo() {
     <meta name="keywords" content="Fashi, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
+	<meta name="google-signin-client_id" content="338342471782-ul30vcmgre9nr09ojmko6cha6ps0c5vt.apps.googleusercontent.com">
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
@@ -150,9 +153,9 @@ function getInfo() {
                             <div class="group-input gi-check">
                                 <div class="gi-more">
                                     <label for="save-pass">
-                                        Save Username or email address
-                                        <input type="checkbox" id="save-pass">
-                                        <span class="checkmark"></span>
+                                        
+                                        
+                                       
                                     </label>
                                     <a href="forget.do" class="forget-pass">Forget your ID or Password</a>
                             </div>
@@ -162,9 +165,7 @@ function getInfo() {
                             	<sction class="c_login_easy">
                             		<h2 class="title" style="margin-top:30px;font-size:18px;">간편 로그인</h2>
                             		<div>
-                            			<a href="/oauth2/authorization/google">
-                            				<img alt="구글" src="img/google.png" style="whid:215px;height:45px; float:right;">
-                            			</a>
+                            			
                             			<a id="custom-login-btn" href="javascript:loginWithKakao()">
                             				<img alt="카카오" src="img/kakao.png" style="whid:215px; float:right;">
                             			</a>
@@ -175,6 +176,7 @@ function getInfo() {
                             			</a> -->
                             			
                             		                            		<div id="naver_id_login"></div>
+                            		                            		
                             		
                             		</div>
                             	</sction>
@@ -188,6 +190,7 @@ function getInfo() {
             </div>
         </div>
     </div>
+
     <!-- Register Form Section End -->
 
 	<script type="text/javascript">
@@ -196,10 +199,10 @@ function getInfo() {
 	  	naver_id_login.setButton("white", 3,40);
 	  	naver_id_login.setDomain("http://localhost:8686/loginform.do");
 	  	naver_id_login.setState(state);
-	  	naver_id_login.setPopup();
+	  	//naver_id_login.setPopup();
 	  	naver_id_login.init_naver_id_login();
 
-	
+	  
 	</script>
 
     <!-- Partner Logo Section Begin -->
