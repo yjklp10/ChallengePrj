@@ -68,10 +68,11 @@ public class HomeController {
     	MoneyDto dto = new MoneyDto();
     	dto.setMemberid(memberid);
     
-		biz.insertMyinfo(dto);	
-		biz.updateMyinfo(dto);
+    	int res = biz.insertMyinfo(dto);	
+    	if(res>0) {
+		biz.updateMyinfo(dto);}
 		model.addAttribute("dto", biz.selectMyinfo(memberid));
-
+		model.addAttribute("challList", biz.selectchall(memberid));
 		model.addAttribute("memberdto", memberBiz.idChk(memberid));
 
 		return "mypage";
