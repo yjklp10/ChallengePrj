@@ -30,7 +30,7 @@
 
         <section class="challenge-choice-icon">
         	<a href="makingChallengeOffLine">
-        		<div class="choice_offline">
+        		<div class="choice_icon">
         			<img src="img/오프라인초이스.png">
         			<h3><b>오프라인 챌린지</b></h3>
         		</div>
@@ -38,7 +38,7 @@
         
 
        		 <a href="makingChallengeOnLine">
-     		  	<div class="choice_online">
+     		  	<div class="choice_icon">
 	  				<img src="img/온라인초이스.png">
 	  				<h3><b>온라인 챌린지</b></h3>
        			 </div>
