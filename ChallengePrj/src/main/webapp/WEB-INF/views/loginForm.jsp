@@ -1,13 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+<%@ page import="java.net.URLEncoder" %>
+<%@ page import="java.security.SecureRandom" %>
+<%@ page import="java.math.BigInteger" %>
+
     
 <!DOCTYPE html>
 <html lang="ko">
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 
 <!-- 네이버 스크립트 -->
-<script src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
 <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
 <script>
 
@@ -79,7 +82,18 @@ function getInfo() {
             alert('카카오 로그인에 실패했습니다. 관리자에게 문의하세요.' + JSON.stringify(error));
         }
     });
+   
+    
 }
+
+    var naver_id_login = new naver_id_login("1w1W1TfzsLpR_jUMM8rn", "http://localhost:8686/loginnaver.jsp");
+  	var state = naver_id_login.getUniqState();
+  	naver_id_login.setButton("white", 2,40);
+  	naver_id_login.setDomain("http://localhost:8686/loginform.do");
+  	naver_id_login.setState(state);
+  	naver_id_login.setPopup();
+  	naver_id_login.init_naver_id_login();
+
 </script>
 <head>
     <meta charset="UTF-8">
@@ -105,6 +119,9 @@ function getInfo() {
 </head>
 
 <body>
+	
+	
+
    <%@include file="./include/header.jsp" %>
 
     <!-- Breadcrumb Section Begin -->
@@ -154,14 +171,19 @@ function getInfo() {
                             		<h2 class="title" style="margin-top:30px;font-size:18px;">간편 로그인</h2>
                             		<div>
                             			<a href="/oauth2/authorization/google">
-                            				구글로그인
+                            				<img alt="구글" src="img/google.png" style="whid:215px;height:45px; float:center;">
                             			</a>
                             			<a id="custom-login-btn" href="javascript:loginWithKakao()">
-                            				<img alt="카카오" src="img/kakao.png" style="whid:215px; margin-left:30px;">
+                            				<img alt="카카오" src="img/kakao.png" style="whid:215px; ">
                             			</a>
-                            			<a id="naverIdLogin_loginButton" href="javascript:void(0)">
-                            				<img alt="네이버" src="img/naver.png" style="whid:215px;height:45px; float:right; margin-right:30px;">
-                            			</a>
+                            			
+                            			
+                            			<!-- <a id="naver_id_login">
+                            				<img alt="네이버" src="img/naver.png" style="whid:215px;height:45px; float:right; margin-right:20px;">
+                            			</a> -->
+                            			
+                            		                            		<div id="naver_id_login"></div>
+                            		
                             		</div>
                             	</sction>
                             </div>

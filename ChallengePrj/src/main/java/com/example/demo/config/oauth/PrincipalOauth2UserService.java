@@ -31,6 +31,8 @@ public class PrincipalOauth2UserService extends DefaultOAuth2UserService{
 		
 		OAuth2User oauth2User = super.loadUser(userRequest);
 		System.out.println("getAttributes : "+super.loadUser(userRequest).getAttributes());
+		System.out.println(super.loadUser(userRequest).getAttributes());
+		System.out.println(oauth2User.getName());
 		
 		
 		
