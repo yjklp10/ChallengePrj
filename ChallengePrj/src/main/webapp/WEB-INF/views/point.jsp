@@ -181,8 +181,8 @@ function pointChk(){
 						<div class="group-input">
 							<label for="deposit">예치금</label> 
 							<input id="mydeposit" name="mydeposit" type="text" value="${dto.mydeposit}" disabled><br>
-							<button type="button" class="cancel-btn">환급신청</button>
-							<div class="cancel-div">
+						<!--	<button type="button" class="cancel-btn">환급신청</button>
+						  	<div class="cancel-div">
 								<c:choose>
 									<c:when test="${0 eq dto.mydeposit}">
 									------환급 신청 가능한 예치금이 없습니다. ------ <br>
@@ -196,7 +196,7 @@ function pointChk(){
 								</c:choose>
 								<button type="submit" class="ok-btn">환급신청</button>
 								<button type="button" class="no-btn">취소</button>
-							</div>
+							</div>-->
 						</div>
 					</form>
 					<form action="/point.do" method="post" name="withdraw" onsubmit="return pointChk()">

@@ -17,4 +17,5 @@ public interface PointBiz {
 	public int insertMyinfo(MoneyDto dto);
 	public MoneyDto selectMyinfo(String memberid);
 	public List<makingChallengeDto> selectchall(String memberid);
+	public int updateMyinfo(MoneyDto dto);
 }

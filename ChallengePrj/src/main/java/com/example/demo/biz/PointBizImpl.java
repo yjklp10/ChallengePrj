@@ -51,5 +51,10 @@ public class PointBizImpl implements PointBiz {
 		return dao.selectchall(memberid);
 	}
 
+	@Override
+	public int updateMyinfo(MoneyDto dto) {
+		return dao.updateMyinfo(dto);
+	}
+
 
 }

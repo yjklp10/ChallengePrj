@@ -41,11 +41,17 @@
 	</update>
 
 	<insert id="insertMyinfo" parameterType="moneyDto">
-		INSERT INTO MYMONEY (MYMONEY.MEMBERID)
+		INSERT INTO MYMONEY (MYMONEY.MEMBERID) 
 		SELECT B.MEMBERID FROM MYMONEY
 		RIGHT JOIN MEMBER B ON MYMONEY.MEMBERID =B.MEMBERID 
 		WHERE MYMONEY.MEMBERID IS NULL AND B.MEMBERID=#{memberid};		
 	</insert>
+	
+	<update id="updateMyinfo" parameterType="moneyDto">
+		UPDATE MYMONEY
+		SET MYDEPOSIT=5000
+		WHERE MEMBERID=#{memberid};  
+	</update>
 	
    <select id="selectMyinfo" resultMap="moneyMap">
  		 SELECT * FROM MEMBER INNER JOIN MYMONEY ON MEMBER.MEMBERID =MYMONEY.MEMBERID 

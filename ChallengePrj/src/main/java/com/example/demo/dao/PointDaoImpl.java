@@ -110,4 +110,17 @@ public class PointDaoImpl implements PointDao {
 		}
 		return challList;
 	}
+
+	@Override
+	public int updateMyinfo(MoneyDto dto) {
+		int res=0;
+		try {
+			res=sqlSession.update(NAMESPACE+"updateMyinfo",dto);
+		} catch (Exception e) {
+			System.out.println("[error] : updateMyinfo");
+			e.printStackTrace();
+		}
+		
+		return res;
+	}
 }
