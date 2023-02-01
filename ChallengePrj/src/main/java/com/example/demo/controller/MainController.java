@@ -9,15 +9,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+
 
 import com.example.demo.biz.MainDetailBiz;
 import com.example.demo.dto.Testchallenge;
 
-/*
-import com.example.demo.Service.BoardService;
-*/
+
 
 
 @Controller
@@ -32,13 +29,28 @@ public class MainController {
 		return "detaillist";
 		}
 	
+	@RequestMapping("/introduction")
+	public String introduction() {
+		return "0_introduction";
+		}
+	
+	@RequestMapping("/guide")
+	public String guide() {
+		return "1_guide";
+		}
+	
+	@RequestMapping("/event")
+	public String event() {
+		return "2_event";
+		}
+	
+	
 	private static final Logger logger = LoggerFactory.getLogger(MainController.class);
 
 	
 	@Autowired
 	private MainDetailBiz biz;
-	
-	
+
 	
 	@GetMapping("/home_main")
     public String mainlist(Model model) {
@@ -113,7 +125,7 @@ public class MainController {
 		
         }
 	
-
+ 
 }
 
 

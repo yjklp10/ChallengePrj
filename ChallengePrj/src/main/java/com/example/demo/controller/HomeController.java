@@ -13,8 +13,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.demo.biz.FileUploadbiz;
+import com.example.demo.biz.MemberBiz;
 import com.example.demo.biz.PointBiz;
 import com.example.demo.dto.MoneyDto;
+import com.example.demo.dto.PaymentDto;
 import com.example.demo.dto.PointDto;
 import com.example.demo.dto.makingChallengeDto;
 
@@ -22,7 +24,9 @@ import com.example.demo.dto.makingChallengeDto;
 @Controller
 public class HomeController {
 
-
+	@Autowired
+	private MemberBiz memberBiz;
+	
 	@Autowired
 	private PointBiz biz;
 
@@ -66,7 +70,9 @@ public class HomeController {
     
 		biz.insertMyinfo(dto);		
 		model.addAttribute("dto", biz.selectMyinfo(memberid));
-		model.addAttribute("challList", biz.selectchall(memberid));
+
+		model.addAttribute("memberdto", memberBiz.idChk(memberid));
+
 		return "mypage";
 	}
 	
@@ -112,8 +118,12 @@ public class HomeController {
 		return "exwrite";
 	}
     @RequestMapping("/confirmopen")
-   public String  confirmopen(Model model,makingChallengeDto dto){
-    	model.addAttribute("list",service.challengeList(dto));
+   public String  confirmopen(Model model){
+    	PaymentDto dto2=new PaymentDto();
+    	Authentication A = SecurityContextHolder.getContext().getAuthentication();
+        String memberid=A.getName();
+        dto2.setMemberid(memberid);
+    	model.addAttribute("list",service.challengeList(dto2));
     	return "confirm";
     }
 }

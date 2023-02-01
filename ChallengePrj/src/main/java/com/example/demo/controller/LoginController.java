@@ -46,14 +46,6 @@ public class LoginController {
 	@Autowired
 	private MemberBiz biz;
 	
-	@RequestMapping("/test/login")
-	public @ResponseBody String testLogin(Authentication authentication, @AuthenticationPrincipal PrincipalDetails userDetails) {
-		System.out.println("/test/login ====================");
-		System.out.println("userDetails"+ userDetails.getMemberDto());
-		
-		
-		return "세션정보확인하기";
-	}
 	
 
 	@RequestMapping("/loginform.do")
@@ -73,21 +65,38 @@ public class LoginController {
 		return "registerformkakao";
 	}
 	
-	public String registerFormGoogle(Model model, MemberDto dto) {
-		model.addAttribute("memberDto",dto);
+	@RequestMapping("/registerformnaver.do")
+	public String registerFormnaver() {
 		
-		return "registerformgoogle";
+		return "registerformnaver";
 	}
+	
+	
 	
 	@RequestMapping("/forget.do")
 	public String forget() {
 		return "forget";
 	}
 	
+	@RequestMapping("/loginnaver")
+	public String loginnaver( ) {
+		return "loginnaver";
+	}
+	
 
 	@ResponseBody
 	@RequestMapping("/idchk.do")
 	public int idchk(@RequestParam("memberid") String memberid) {
+		MemberDto res;
+		System.out.println(memberid);
+		res = biz.idChk(memberid);
+		
+		return (res != null)?1:0;
+	}
+	
+	@ResponseBody
+	@RequestMapping("/idchkkakao.do")
+	public int idchkkakao(@RequestParam("memberid") String memberid) {
 		MemberDto res;
 		System.out.println(memberid);
 		res = biz.idChk(memberid);
@@ -119,6 +128,25 @@ public class LoginController {
 			return "redirect:loginform.do";
 		}else {
 			return "redirect:registerform.do";
+		}
+		
+	}
+	
+	@RequestMapping("/registerkakao.do")
+	public String memberinsertkakao(MemberDto dto) {
+		String rawPassword = dto.getMemberpw();
+		String encPassword = bCryptPasswordEncoder.encode(rawPassword);
+		dto.setMemberpw(encPassword);
+		dto.setMemberrole("ROLE_USER");
+		dto.setProvider("kakao");
+		dto.setProviderId("kakao_"+dto.getMemberid());
+		int res = biz.insert(dto);
+		
+		
+		if(res  > 0 ){
+			return "redirect:home_main";
+		}else {
+			return "redirect:registerformkakao.do";
 		}
 		
 	}
@@ -197,7 +225,27 @@ public class LoginController {
 	
 	}
 
+	@RequestMapping("/updatepwform")
+	String updatePwFrom() {
+		return "updatepwform";
+	}
 	
+	@RequestMapping("/updatepw")
+	String updatePw(String memberid, String memberpw, String memberpwnew,HttpServletResponse response) {
+		MemberDto dto = biz.idChk(memberid);
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+		if(encoder.matches(memberpw, dto.getMemberpw())) {
+			biz.pwUpdate(memberid, encoder.encode(memberpwnew));
+			return "redirect:mypage?memberid="+memberid;
+		}else {
+			alertAndGo(response, "비밀번호가 일치하지 않습니다 다시 시도해주세요", "updatepwform");
+			
+			return "redirect:updatepwform";
+		}
+		
+		
+		
+	}
 	
 	public static void alertAndGo(HttpServletResponse response, String msg, String url) {
 	    try {

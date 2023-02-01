@@ -42,13 +42,18 @@ public class ImageController {
 	@Autowired
 	private FileUploadbiz biz;
 	
-
-
+	 @Value("${com.example.upload.path}") // application.properties의 변수
+	    private String uploadPath2;
 	
     @GetMapping(value="/popen")	
 	public String popen(Model model,makingChallengeDto dto) {
         model.addAttribute("list",biz.selectOne(dto));
 		return "imageuploadpopup";
+	}
+    @GetMapping(value="/detail")	
+	public String detail(String challengetitle) {
+
+		return "challengeimage";
 	}
 	
 	@PostMapping(value = "/uploadAjaxActioning", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
@@ -63,7 +68,7 @@ public class ImageController {
 				e.printStackTrace();
 			}
 		}
-		String uploadFolder = "C:\\uploading";
+		//String uploadFolder = "C:\\uploading";
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-DD");
 
 		Date date = new Date();
@@ -72,7 +77,7 @@ public class ImageController {
 
 		String datePath = str.replace("-", File.separator);
 
-		File uploadPath = new File(uploadFolder, datePath);
+		File uploadPath = new File(uploadPath2, datePath);
 
 		if (uploadPath.exists() == false) {
 			uploadPath.mkdirs();
@@ -114,8 +119,8 @@ public class ImageController {
 		
 	
 		
-		File file = new File("c:\\uploading\\" + fileName);
-		
+		File file = new File(uploadPath2 + fileName);
+
 		ResponseEntity<byte[]> result = null;
 		
 		try {
@@ -142,7 +147,7 @@ public class ImageController {
 		
 		try {
 			/* 썸네일 파일 삭제 */
-			file = new File("c:\\uploading\\" + URLDecoder.decode(fileName, "UTF-8"));
+			file = new File(uploadPath2 + URLDecoder.decode(fileName, "UTF-8"));
 			
 			file.delete();
 			

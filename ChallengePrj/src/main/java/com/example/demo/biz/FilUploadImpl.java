@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.dto.AttachImageDto;
+import com.example.demo.dto.PaymentDto;
 import com.example.demo.dto.makingChallengeDto;
 import com.example.demo.mapper.FileUploadMapper;
 @Service
@@ -40,9 +41,9 @@ public int updateOne() {
 
 
 @Override
-public List<makingChallengeDto> challengeList(makingChallengeDto dto) {
+public List<makingChallengeDto> challengeList(PaymentDto dto2) {
 
-	return fileUploadMapper.challengeList(dto);
+	return fileUploadMapper.challengeList(dto2);
 		
 }
 

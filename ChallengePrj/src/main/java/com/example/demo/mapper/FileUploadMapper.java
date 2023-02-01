@@ -8,6 +8,7 @@ import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
 import com.example.demo.dto.AttachImageDto;
+import com.example.demo.dto.PaymentDto;
 import com.example.demo.dto.makingChallengeDto;
 @Mapper
 public interface FileUploadMapper {
@@ -20,8 +21,8 @@ public interface FileUploadMapper {
 	@Select("SELECT*FROM image_upload where CHALLENGETITLE=#{challengetitle}")
 	List<AttachImageDto> seletListtwo(AttachImageDto challengetitle);
 	
-	@Select("SELECT*FROM MAKECHALLENGE")
-	List<makingChallengeDto> challengeList(makingChallengeDto dto);
+	@Select("select*from MAKECHALLENGE inner join PAYMENT on (PAYMENT.challengeno = MAKECHALLENGE.CHALLENGENO) WHERE PAYMENT.memberid=#{memberid}")
+	List<makingChallengeDto> challengeList(PaymentDto dto2);
 	
 	@Select("SELECT*FROM MAKECHALLENGE WHERE CHALLENGETITLE=#{challengetitle}")
 	makingChallengeDto selectOne(makingChallengeDto dto);

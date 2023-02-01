@@ -14,5 +14,5 @@ public interface MainDetailDao {
 	public List<Testchallenge> challenge_categorylist(String category);
 	public List<Testchallenge> challenge_search(String keyword);
 
-	
+	 
 }
