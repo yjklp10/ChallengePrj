@@ -144,7 +144,7 @@
 
 			<a href="introduction">
 			<img src="img/공지사항.png">
-			<p id="quick-text">소개</p>
+			<p id="quick-text">이벤트</p>
 			</a>
 			
 			<a href="guide">

@@ -495,7 +495,7 @@ img {
 	right: 0;
 	top: 370px;
 	background: #d4b9ff;
-	opacity: 0.7;
+	opacity: 0.6;
 	z-index: 0;
 	color: #252525; 
 	text-align: center;
@@ -525,6 +525,8 @@ img {
 	width: auto;
 	height: 725px;
 	object-fit: fill;
+	justify-content: center;
+	text-align: center;
 }
 
 .single-hero-items {
@@ -533,7 +535,11 @@ img {
 	padding-top: 100px;
 	height: 725px;
 	object-fit: fill;
+	justify-content: center;
+	text-align: center;
 }
+
+
 
 
 .hero-items .owl-nav button[type=button] {
@@ -624,7 +630,7 @@ img {
 	border-radius: 100px;
 	background: #d4b9ff;
 	content: "";
-	opacity: 0.7;
+	opacity: 0.6;
 	width: calc(100% - 40px);
 	height: calc(100% - 20px);
 	-webkit-transform: scale(0);
@@ -646,7 +652,7 @@ img {
 	padding: 100px #d4b9ff;
 	border-radius: 100px;
 	background: #d4b9ff;
-	opacity: 0.7;
+	opacity: 0.6;
 }
 
 
@@ -794,6 +800,11 @@ img {
 .blank2	{
 	padding-bottom: 70px;
 }
+
+.blank3	{
+	padding-bottom: 50px;
+}
+
 
 
 /*---------------------
@@ -1123,6 +1134,8 @@ img {
 	margin: 0 auto;
 	padding-top: 75px;
 	bottom: 0;
+	justify-content: center;
+	text-align: center;
 }
 
 
@@ -1150,7 +1163,9 @@ img {
 	padding-top: 100px;
 	max-width: 1200px;
 	margin: 0 auto;
-	padding-bottom: 500px;
+	padding-bottom: 150px;
+	display: flex;
+	justify-content: space-evenly;
 }
 
 .challenge-choice-icon img {
@@ -1158,25 +1173,30 @@ img {
 	padding-bottom: 50px;
 }
 
+.choice_icon {
+	display: inline-block;
+	flex-direction: row;
+	position: relative;
+}
 
 
 
-.choice_offline:hover::before {
+.choice_icon:hover::before {
 	-webkit-transform: scale(1);
 	-ms-transform: scale(1);
 	transform: scale(1);
 }
 
 
-.choice_offline::before {
+.choice_icon::before {
 	z-index: -1;
 	position: absolute;
 	border-radius: 100px;
 	background: #d4b9ff;
 	content: "";
-	opacity: 0.7;
-	top: 585px;
-	left: 485px;
+	opacity: 0.6;
+	top: 20px;
+	right: -15px;
 	width: 330px;
 	height: 300px;
 	-webkit-transform: scale(0);
@@ -1187,51 +1207,100 @@ img {
 	transition: all 0s;
 }
 
-
-.choice_online:hover::before {
-	-webkit-transform: scale(1);
-	-ms-transform: scale(1);
-	transform: scale(1);
-}
-
-
-.choice_online::before {
-	z-index: -1;
-	position: absolute;
-	border-radius: 100px;
-	background: #d4b9ff;
-	content: "";
-	opacity: 0.7;
-	top: 585px;
-	right: 485px;
-	width: 330px;
-	height: 300px;
-	-webkit-transform: scale(0);
-	-ms-transform: scale(0);
-	transform: scale(0);
-	-webkit-transition: all 0s;
-	-o-transition: all 0s;
-	transition: all 0s;
-}
-
-
-
-.choice_offline {
-	float: left;
-	margin: 0 auto;
-	margin-left: 150px;
-}
-
-.choice_offline h3 {
+.choice_icon h3 {
 	text-align: center;
 }
 
-.choice_online {
-	float: right;
-	margin: 0 auto;
-	margin-right: 150px;
+
+
+
+/*---------------------
+	소개 페이지
+-----------------------*/
+
+
+.introduction h1 {
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.5em;
+  padding-bottom: 15px;
+  position: relative;
 }
 
-.choice_online h3 {
+.introduction h1:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 5px;
+  width: 55px;
+  background-color: #7c36ff;
+}
+
+.introduction h1:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 2px;
+  height: 1px;
+  width: 95%;
+  max-width: 255px;
+  background-color: #7c36ff;
+}
+
+
+.introduction_head {
+	padding-bottom: 50px;
+}
+
+
+.introduction {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+
+
+.0_introduction img {
+	margin: 0 auto;
 	text-align: center;
 }
+
+
+.summary {
+	font-size: 20px;
+}
+
+
+.guide_summary {
+	padding-left: 20px;
+	padding-bottom: 20px;
+}
+
+.guide_summary p {
+	padding-left: 40px;
+	padding-top: 20px;
+	line-height: 2em;
+	
+}
+
+
+.event_summary details summary::marker{font-size:0;}
+
+
+.event_summary {
+	padding-left: 20px;
+	padding-bottom: 20px;
+}
+
+
+
+.event_summary p {
+	padding-left: 40px;
+	padding-top: 20px;
+	line-height: 2em;
+	
+}
+
+

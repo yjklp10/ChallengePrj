@@ -295,20 +295,27 @@
         <!-- 온라인/오프라인 가이드 -->
         
         <section class="guide_onoff">
+        
       	  <div class="guide_offline">
+      		  <a href="guide">
       	     <h3>코로나 싫어! 밖에 나갈래!</h3>
       		 <h5>그럼 오프라인 모임은 어때? 😉</h5>
        		 <img src="img/오프라인가이드.png">
+       		  </a>
       	  </div>
+      	 
         
       		 <div class="vs">
       	 	<h2><b>VS</b></h2>
       		 </div>
         
+        
      	  <div class="guide_online">
+     	  <a href="guide">
       		<h3>날 추운데 어딜나가!</h3>
 	  		<h5>온라인으로 하면되지! 😁</h5>
 	  		 <img src="img/온라인가이드.png">
+	  		  </a>
         </div>
         
         </section>
@@ -331,15 +338,18 @@
       
       <section class="guide3">
     	  <div class="challenge_guide">
+    	  
      		<h3>작심삼일? NO!</h3>
 	  		<h6>어떻게 하면 더 잘할 수 있을까? 자기 관리 잘하는 고수들의 노하우!</h6>
 	  	 </div>
 	  	 
+	  	 
 	  	  <div class="challenge_guide_img">
-	  		 <img src="img/가이드0.jpg">
-	  		 <img src="img/가이드1.jpg">
-	  		 <img src="img/가이드2.jpg">
+	  		 <a href="https://brunch.co.kr/@ljs-president/126"><img src="img/가이드0.jpg"></a>
+	  		 <a href="https://brunch.co.kr/@hyung6260/559"><img src="img/가이드1.jpg"></a>
+	  		 <a href="https://brunch.co.kr/@sat10am/131"><img src="img/가이드2.jpg"></a>
 	   	</div>
+	   	</a>
 	    
        </section>
        

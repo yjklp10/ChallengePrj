@@ -14,6 +14,64 @@
         <div class="loader"></div>
     </div>
  
+	 <!-- 공백용 -->
+        
+        <section class="blank3">
+        	<div class="blank3">
+        	</div>
+        </section>
+        
+     <!-- 공백용 끝 -->
+ 
+ 
+  	<section class="introduction">
+ 	
+ 	<div class="introduction_head">
+ 	<h1><b>소개</b></h1>
+ 	</div>
+ 	
+ 	</section>
+ 
+ 
+ 	<section class="introduction">
+ 	
+ 		<div class="0_introduction">
+ 			<img src="img/소개001.png">
+ 			<img src="img/소개002.png">
+ 		</div>
+ 	
+ 	</section>
+ 	
+
+       	 <!-- 공백용 -->
+        
+        <section class="blank">
+        	<div class="blank">
+        	</div>
+        </section>
+        
+      	<!-- 공백용 끝 -->
+      	
+      	
+      	<section class="introduction">
+ 	
+ 		<div class="0_introduction">
+ 			<img src="img/소개003.png">
+ 		</div>
+ 	
+ 		</section>
+ 		
+ 		
+ 		
+        <!-- 공백용 -->
+        
+        <section class="blank2">
+        	<div class="blank2">
+        	</div>
+        </section>
+        
+      	<!-- 공백용 끝 -->
+ 	
 
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
