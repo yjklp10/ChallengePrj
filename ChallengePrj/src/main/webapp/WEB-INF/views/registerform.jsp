@@ -34,7 +34,7 @@ function id_overlap_chk(){
 			if(res == 0 && memberid.length <=15 && memberid.length>5){
 				$(".id_use_chk").css("display","flex");
 				$(".id_use_chk").html("사용가능한 아이디입니다.")
-				$("#memberid").attr("title","yid");
+				$("#memberid").attr("title","yid").css("color","#008000");
 				console.log(memberid.length);
 				console.log(memberid);
 			}
