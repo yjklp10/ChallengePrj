@@ -144,7 +144,7 @@
 
 	<div id="quick">
 
-			<a href="introduction">
+			<a href="event">
 			<img src="img/공지사항.png">
 			<p id="quick-text">이벤트</p>
 			</a>

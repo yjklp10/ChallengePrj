@@ -53,17 +53,10 @@
             </div>
     	</div>
     	
-    	
-   <!-- 
-    	<div style="text-align:center">
- 		 <span class="banner_dot"></span> 
- 	 	<span class="banner_dot"></span> 
-	  	<span class="banner_dot"></span> 
-	    <span class="banner_dot"></span> 
-	</div>
-	-->
+  
 	
     </section>
+    
     <!-- 상단 홍보 배너 끝 -->
 
 
@@ -297,7 +290,7 @@
         <section class="guide_onoff">
         
       	  <div class="guide_offline">
-      		  <a href="guide">
+      		  <a href='detaillist_onofflist?onoffchoice=온라인'>
       	     <h3>코로나 싫어! 밖에 나갈래!</h3>
       		 <h5>그럼 오프라인 모임은 어때? 😉</h5>
        		 <img src="img/오프라인가이드.png">
@@ -311,7 +304,7 @@
         
         
      	  <div class="guide_online">
-     	  <a href="guide">
+     	  <a href='detaillist_onofflist?onoffchoice=오프라인'>
       		<h3>날 추운데 어딜나가!</h3>
 	  		<h5>온라인으로 하면되지! 😁</h5>
 	  		 <img src="img/온라인가이드.png">
@@ -345,9 +338,23 @@
 	  	 
 	  	 
 	  	  <div class="challenge_guide_img">
-	  		 <a href="https://brunch.co.kr/@ljs-president/126"><img src="img/가이드0.jpg"></a>
-	  		 <a href="https://brunch.co.kr/@hyung6260/559"><img src="img/가이드1.jpg"></a>
-	  		 <a href="https://brunch.co.kr/@sat10am/131"><img src="img/가이드2.jpg"></a>
+	  		 <a href="https://brunch.co.kr/@ljs-president/126" target="_blank">
+	  		 	<img src="img/가이드0.jpg">
+	  		 	<div class="challenge_guide_head"><b>긍정적인 습관을 형성하고 유지하는 방법</b></div>
+	  		 	<div class="challenge_guide_writer">by 더불어 사는 사회</div>
+	  		 	</a>
+	  		 	
+	  		 <a href="https://brunch.co.kr/@hyung6260/559" target="_blank">
+	  		 	<img src="img/가이드1.jpg">
+	  		 	<div class="challenge_guide_head"><b>작심삼일이 습관을 만든다</b></div>
+	  		 	<div class="challenge_guide_writer">by 김형준</div>
+	  		 	</a>
+	  		 	
+	  		 <a href="https://brunch.co.kr/@sat10am/131" target="_blank">
+	  			 <img src="img/가이드2.jpg">
+	  			 <div class="challenge_guide_head"><b>좋은 습관을 유지하는 법</b></div>
+	  			 <div class="challenge_guide_writer">by 박철</div>
+	  			 </a>
 	   	</div>
 	   	</a>
 	    
