@@ -49,7 +49,7 @@
 ![ERD](https://user-images.githubusercontent.com/67477544/229784021-885ccb67-31df-4cbd-94c4-af2036427ed0.PNG)
 
 
-## 구현 기능
+### 구현 기능
 ***
 1. 메인페이지
 2. 회원가입, 로그인(네이버 등), 아이디&비밀번호찾기
@@ -60,7 +60,7 @@
 7. 마이페이지 - 비밀번호 변경, 내가 참여한 챌린지 보기
 8. 챌린지 검색 - 온오프라인,지역,카테고리 별로 검색가능<br><br>
 
-## View
+### View
 ***
 + 메인페이지<br><br>
 ![1](https://user-images.githubusercontent.com/67477544/229784026-5e2de540-831b-44b0-84a2-20283ea9c025.PNG)
