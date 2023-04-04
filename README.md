@@ -43,7 +43,7 @@
   + MySQL 8.0<br>
 
 <b>Build Tool</b>
-    + Gradle 7.5.1<br><br>
+  + Gradle 7.5.1<br><br>
 
 <b>ERD</b>
 ![ERD](https://user-images.githubusercontent.com/67477544/229784021-885ccb67-31df-4cbd-94c4-af2036427ed0.PNG)
