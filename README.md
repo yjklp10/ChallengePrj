@@ -1,12 +1,12 @@
-# "ChallengePrj" - 좋은 습관을 위한 챌린지 사이트
+# "ChallengePrj" - 좋은 습관을 위한 챌린지 사이트<br><br>
 
-## 프로젝트 소개
-
+### 프로젝트 소개
+***
 좋은 습관을 만들기 위해 챌린지 형식으로 만들어진 웹 애플리케이션 입니다.<br><br>
-## 개발기간
+### 개발기간
 ***
 2022.12.06 ~ 2023.02.02<br><br>
-## 팀원
+### 팀원
 ***
 + 신호준(팀장)
 + 조아라
@@ -15,7 +15,7 @@
 + 이숭욱
 + 이재혁<br><br>
 
-## 개발 환경
+### 개발 환경
 ---
 <b>OS</b>
  + Window 10<br>
@@ -29,7 +29,7 @@
 <b>Communication</b>
  + Notion
 
-## 사용기술
+### 사용기술
 ***
 <b>Front-End</b>
   + HTML5/CSS3
@@ -50,7 +50,7 @@
 ![ERD.PNG](https://github.com/yjklp10/ChallengePrj/blob/master/ERD.PNG?raw=true)
 
 
-## 구현 기능
+### 구현 기능
 ***
 1. 메인페이지
 2. 회원가입, 로그인(네이버 등), 아이디&비밀번호찾기
@@ -61,7 +61,7 @@
 7. 마이페이지 - 비밀번호 변경, 내가 참여한 챌린지 보기
 8. 챌린지 검색 - 온오프라인,지역,카테고리 별로 검색가능<br><br>
 
-## View
+### View
 ***
 + 메인페이지<br><br>
 ![1.PNG](https://github.com/yjklp10/ChallengePrj/blob/master/1.PNG?raw=true)<br><br>
