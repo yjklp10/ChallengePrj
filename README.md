@@ -1,4 +1,4 @@
-# "ChallengePrj" - 좋은 습관을 위한 챌린지 사이트<br><br>
+# "ChallengePrj" - 좋은 습관을 위한 챌린지 사이트
 
 ### 프로젝트 소개
 ***
